@@ -1,0 +1,10 @@
+h2o-tip3p            h2o-tip3p     NCOUL BASIC LJ FAST 
+h2o-tip3p  h2o-tip3p COUL SUM FAST EWALD KMAX@12 KAPPA@8.0 LOCUT@1e-10 
+#SPME
+
+CF4        CF4         NCOUL OFF
+CF4        CF4         COUL OFF
+
+CF4        h2o-tip3p         NCOUL BASIC LJ FAST 
+CF4        h2o-tip3p         COUL OFF
+

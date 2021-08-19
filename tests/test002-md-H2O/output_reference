@@ -1,0 +1,809 @@
+ Looking for Control file : test002.ctr
+Welcome to Music
+Reading from control file test002.ctr
+ Initializing General Parameters
+------------------------------------------------------------
+The ATOMS structure:
+  No. of atom types:     2
+    Atom Name           : H_TIP3P
+    Atom Symbol         : H
+    Atom File           : H_TIP3P.atm
+    Atom Mass           :     1.01
+    sscharge, szcharge  :   0.0000  0.0000
+    Required # of bonds :   1
+    Ion Type            : NONE 
+ 
+    Atom Name           : O_TIP3P
+    Atom Symbol         : O
+    Atom File           : O_TIP3P.atm
+    Atom Mass           :    16.00
+    sscharge, szcharge  :   0.0000  0.0000
+    Required # of bonds :   2
+    Ion Type            : NONE 
+------------------------------------------------------------
+    Reading molecule information for h2o-tip3p from: ./potentials/molecules/h2o-tip3p-rattle.mol
+ molecule.F90 : 1065
+  Molecule will be rotated so that the principle axes 
+   will coincide with coordinate system axes
+ Generating Connections for h2o-tip3p                                       
+  The SIMCELL structure:
+  nx, ny, nz            :    1   1   1
+  ncells                :    1
+  ORTHORHOMBIC
+  edge lengths (Ang)    :    20.0000   20.0000   20.0000
+  cell angles (degrees) :    90.0000   90.0000   90.0000
+  origin shift (Ang)    : 0.0000   0.0000   0.0000
+  cell vector a         : 20.0000   0.0000   0.0000
+  cell vector b         : 0.0000  20.0000   0.0000
+  cell vector c         : 0.0000   0.0000  20.0000
+  box width in (a,b,c)  :    20.0000   20.0000   20.0000
+  minimum width (Ang)   :    20.0000
+  volume (Angstroms^3)  : 8000.000
+------------------------------------------------------------
+The MOLECULES structure:
+  No. of molecule types:     1
+------------------------------------------------------------
+  Molecule Name       : h2o-tip3p
+  Molecule Mass       : 18.02
+  Molecule File       : h2o-tip3p-rattle.mol
+  Degrees of freedom  : 9
+  DOF origin          : 3N_Calculation
+  Number of atoms     : 3
+  Net Charge          : 0.0
+  Dipole Moment(debye): 2.3477516866
+  Translation xform   : 0.00000   0.00000   0.00000
+  Rotational xform    : 
+    1.00000   0.00000   0.00000
+    0.00000   1.00000   0.00000
+    0.00000   0.00000   1.00000
+      Atom Name           : O_TIP3P
+      Atom Type           :    2
+      Atom Position       :   0.0000  0.0000  0.0000
+      Equilibrium charge  :  -0.8340
+      MD Set, type        :    0   0
+      Atom Name           : H_TIP3P
+      Atom Type           :    1
+      Atom Position       :  -0.9572  0.0000  0.0000
+      Equilibrium charge  :   0.4170
+      MD Set, type        :    0   0
+      Atom Name           : H_TIP3P
+      Atom Type           :    1
+      Atom Position       :   0.2400  0.9266  0.0000
+      Equilibrium charge  :   0.4170
+      MD Set, type        :    0   0
+  Connection Information : 
+    Connection Information for h2o-tip3p                                       
+    Atom     1:      2    3    0.957   0.957
+    Atom     2:      1    0.957
+    Atom     3:      1    0.957
+------------------------------------------------------------
+------------------------------------------------------------
+Configuration Section 
+No. of species :      1
+  ----------------------------------------------------------
+  Species name : h2o-tip3p                                       
+    No. of molecules :    264
+    No. of atoms     :    3
+    Initial Config. Source : RESTARTFILE
+    Source Filename: equil-tip3p.res.1
+    ----------------------------------------------------------
+Initializing intra molecular info from molecule file: ./potentials/molecules/h2o-tip3p-rattle.mol
+ intramolecular.F90 :  165
+ intra filename passed israttle_intramolecular_file                      xx
+ intramolecular.F90 :  171
+ Initializing constraints for h2o-tip3p
+intramolecular.F90 Changed DOF h2o-tip3p   6
+Initialized all intramolecular stuff for h2o-tip3p
+ Finished Initializing Intramolecular interactions
+ Initializing Species-Species interactions....
+ewald.F90:   155 WARNING: nkmax is hard coded to 50000
+ ewald.F90 :  219
+ finished initializing ewald
+ Finished Initializing Species-Species interactions.
+ ff.F90 :  299
+ copying ewald to basic for spcs :            1           1
+ Finished Initializing Ff interactions.
+ Calling ff_initCal
+ Total number of K vectors calculated:         7808
+ Total number of atoms used for K vec:          792
+ Call to ff_initCalc successful 
+  ------------------------------------------------------------
+  The "BASIC" FF information:
+  ------------------------------------------------------------
+  NON-COULOMBIC SPECIES-SPECIES pair parameters:
+  Information taken from: ewald_mol_file
+    ------------------------------------------------------------
+    (1,1)  h2o-tip3p, h2o-tip3p:      BASIC
+      Input Line: NCOUL  BASIC  LJ  FAST  
+      Fast interaction?    T
+      COM-based cut-off?   F
+      COM-COM smoothing?   F
+      Atom-Atom PAIR PARAMETERS:
+        Information taken from: atom_atom_file
+      Overview by atomic pairs:
+      (1,1)  H_TIP3P, H_TIP3P:          LJ  EWALD REAL SPACE
+          H_TIP3P-H_TIP3P Interaction OFF
+           EWALD REAL SPACE
+      (1,2)  H_TIP3P, O_TIP3P:          LJ  EWALD REAL SPACE
+          H_TIP3P-O_TIP3P Interaction OFF
+           EWALD REAL SPACE
+      (2,2)  O_TIP3P, O_TIP3P:          LJ  EWALD REAL SPACE
+          O_TIP3P-O_TIP3P LJ parameters from SIGEPS
+            Sigma: 3.1506 Ang   Epsilon/k_Boltz: 76.580 K
+            A: 582254.6 kcal A^12/mol   B: 595.3239 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.300 Ang
+           EWALD REAL SPACE
+  ------------------------------------------------------------
+  COULOMBIC SPECIES-SPECIES pair parameters:
+  Information taken from: ewald_mol_file
+    ------------------------------------------------------------
+    (1,1)  h2o-tip3p, h2o-tip3p:      BASIC
+      Input Line: 
+      Fast interaction?    T
+      COM-based cut-off?   F
+      COM-COM smoothing?   F
+      Atom-Atom PAIR PARAMETERS:
+        Information taken from: atom_atom_file
+      Overview by atomic pairs:
+      (1,1)  H_TIP3P, H_TIP3P:          LJ  EWALD REAL SPACE
+          H_TIP3P-H_TIP3P Interaction OFF
+           EWALD REAL SPACE
+      (1,2)  H_TIP3P, O_TIP3P:          LJ  EWALD REAL SPACE
+          H_TIP3P-O_TIP3P Interaction OFF
+           EWALD REAL SPACE
+      (2,2)  O_TIP3P, O_TIP3P:          LJ  EWALD REAL SPACE
+          O_TIP3P-O_TIP3P LJ parameters from SIGEPS
+            Sigma: 3.1506 Ang   Epsilon/k_Boltz: 76.580 K
+            A: 582254.6 kcal A^12/mol   B: 595.3239 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.300 Ang
+           EWALD REAL SPACE
+  ------------------------------------------------------------
+  INTRAMOLECULAR information for each species 
+    ------------------------------------------------------------
+    Intramolecular information for h2o-tip3p:
+      Bond Stretching   :  OFF
+      Bond Bending      :  OFF
+      Torsion Angles    :  OFF
+      Intra Pairwise Pot:  OFF
+      Intra Coulombic Pot:  OFF
+      Bond Length Constr: T
+        Constraint information for h2o-tip3p
+          Model name :  RATTLE                                         
+            Atom pair and constr distance :    1   2     0.957
+            Atom pair and constr distance :    1   3     0.957
+            Atom pair and constr distance :    2   3     1.514
+------------------------------------------------------------
+ md.F90 :  109
+ Initializing MD Params
+ thermostat used is : NULL                                            
+ Finished Initializing MD Params
+ objf for h2o-tip3p  0.000000000000000E+000
+-----------------------------------------------
+ MD Simulation Information
+-----------------------------------------------
+    number of movetypes          :      1
+     Different movetypes during prodn run: 
+    -----------------------------------------------
+   Ensemble        : NVE
+   Integrator Name : VELOCITYVERLET
+   No. Iterations  :         1           Time Step       :      0.00200 ps
+   slowStep        :         0
+   Writes to I/O   :      1000           Writes to Config:    100000
+      Velocity Verlet Integrator Information
+      No Extra Parameters
+     Equilibration details : 
+    -----------------------------------------------
+     Velocities Taken from file : equil-tip3p.res.1
+ 
+      Movie Information
+        Movie output file : movie.xyz
+        Starting step     : 0
+        Ending step       : 500
+        Steps btwn frames : 5
+        Dumping zeolite   : F
+ Begining Simulation
+ Number of Iterations to Perform :        50
+ music.F90 :  204 Start of sim :   1
+ 
+ MD Step: 2    Time      4.000 fs  
+ --------------------------------------------------
+ h2o-tip3p Information
+           Variable        Current       CumulAvg          Block            Std
+   Tmole          :        884.440        889.630        889.630          5.190
+   Tatom          :        457.294        454.443        454.443          2.851
+   Intramolecular :       0.000000       0.000000       0.000000       0.000000
+   Kinetic Energy :      11.405825      11.334706      11.334706       0.071119
+   Constraint PE  :       0.000000       0.000000       0.000000       0.000000
+ Energy for h2o-tip3p-h2o-tip3p
+   Noncoulombic   :       7.032553       6.977971       6.977971       0.054582
+   Coulombic      :     -51.386771     -51.259337     -51.259337       0.127434
+   Pressure (Tot, I   34977.277229    4112.275176   30865.002052
+   Pressure stats    34977.2772  34822.6875  34822.6875    154.5898
+ System Energy Totals(per total moles)
+   Total Potential:     -44.354218     -44.281367
+   Total Kinetic  :      11.405825      11.334706
+   Total Energy   :     -32.948393     -32.946660
+   COM Velocity (for each species) : SPC-1: 0.0000005536,
+ Total # Moles          264
+ --------------------------------------------------
+ 
+ 
+ MD Step: 4    Time      8.000 fs  
+ --------------------------------------------------
+ h2o-tip3p Information
+           Variable        Current       CumulAvg          Block            Std
+   Tmole          :        848.516        874.168        874.168         17.449
+   Tatom          :        471.323        461.268        461.268          7.475
+   Intramolecular :       0.000000       0.000000       0.000000       0.000000
+   Kinetic Energy :      11.755748      11.504947      11.504947       0.186429
+   Constraint PE  :       0.000000       0.000000       0.000000       0.000000
+ Energy for h2o-tip3p-h2o-tip3p
+   Noncoulombic   :       7.419759       7.143686       7.143686       0.187191
+   Coulombic      :     -52.134038     -51.599972     -51.599972       0.377968
+   Pressure (Tot, I   36011.252832    4238.436795   31772.816037
+   Pressure stats    36011.2528  35273.3032  35273.3032    506.2449
+ System Energy Totals(per total moles)
+   Total Potential:     -44.714279     -44.456286
+   Total Kinetic  :      11.755748      11.504947
+   Total Energy   :     -32.958531     -32.951340
+   COM Velocity (for each species) : SPC-1: 0.0000005536,
+ Total # Moles          264
+ --------------------------------------------------
+ 
+movie.F90: Opening file movie.xyz  23
+ 
+ MD Step: 6    Time     12.000 fs  
+ --------------------------------------------------
+ h2o-tip3p Information
+           Variable        Current       CumulAvg          Block            Std
+   Tmole          :        795.833        852.730        852.730         34.463
+   Tatom          :        470.151        464.829        464.829          7.980
+   Intramolecular :       0.000000       0.000000       0.000000       0.000000
+   Kinetic Energy :      11.726506      11.593756      11.593756       0.199036
+   Constraint PE  :       0.000000       0.000000       0.000000       0.000000
+ Energy for h2o-tip3p-h2o-tip3p
+   Noncoulombic   :       7.992825       7.375902       7.375902       0.372774
+   Coulombic      :     -52.682283     -51.924735     -51.924735       0.556841
+   Pressure (Tot, I   37337.543802    4227.893792   33109.650010
+   Pressure stats    37337.5438  35848.3085  35848.3085    932.9930
+ System Energy Totals(per total moles)
+   Total Potential:     -44.689458     -44.548833
+   Total Kinetic  :      11.726506      11.593756
+   Total Energy   :     -32.962953     -32.955078
+   COM Velocity (for each species) : SPC-1: 0.0000005536,
+ Total # Moles          264
+ --------------------------------------------------
+ 
+ 
+ MD Step: 8    Time     16.000 fs  
+ --------------------------------------------------
+ h2o-tip3p Information
+           Variable        Current       CumulAvg          Block            Std
+   Tmole          :        734.504        827.057        827.057         54.114
+   Tatom          :        444.815        461.736        461.736          9.542
+   Intramolecular :       0.000000       0.000000       0.000000       0.000000
+   Kinetic Energy :      11.094573      11.516618      11.516618       0.238007
+   Constraint PE  :       0.000000       0.000000       0.000000       0.000000
+ Energy for h2o-tip3p-h2o-tip3p
+   Noncoulombic   :       8.648759       7.652936       7.652936       0.584164
+   Coulombic      :     -52.700482     -52.125630     -52.125630       0.594831
+   Pressure (Tot, I   38637.762341    4000.055595   34637.706747
+   Pressure stats    38637.7623  36466.9052  36466.9052   1351.1696
+ System Energy Totals(per total moles)
+   Total Potential:     -44.051723     -44.472694
+   Total Kinetic  :      11.094573      11.516618
+   Total Energy   :     -32.957150     -32.956076
+   COM Velocity (for each species) : SPC-1: 0.0000005536,
+ Total # Moles          264
+ --------------------------------------------------
+ 
+ 
+ MD Step: 10    Time     20.000 fs  
+ --------------------------------------------------
+ h2o-tip3p Information
+           Variable        Current       CumulAvg          Block            Std
+   Tmole          :        675.722        799.628        799.628         73.433
+   Tatom          :        408.301        452.884        452.884         20.077
+   Intramolecular :       0.000000       0.000000       0.000000       0.000000
+   Kinetic Energy :      10.183833      11.295843      11.295843       0.500764
+   Constraint PE  :       0.000000       0.000000       0.000000       0.000000
+ Energy for h2o-tip3p-h2o-tip3p
+   Noncoulombic   :       9.238964       7.942386       7.942386       0.782288
+   Coulombic      :     -52.372031     -52.193293     -52.193293       0.550510
+   Pressure (Tot, I   39688.478695    3671.696163   36016.782531
+   Pressure stats    39688.4787  37062.7696  37062.7696   1700.7299
+ System Energy Totals(per total moles)
+   Total Potential:     -43.133068     -44.250907
+   Total Kinetic  :      10.183833      11.295843
+   Total Energy   :     -32.949234     -32.955064
+   COM Velocity (for each species) : SPC-1: 0.0000005536,
+ Total # Moles          264
+ --------------------------------------------------
+ 
+ 
+ MD Step: 12    Time     24.000 fs  
+ --------------------------------------------------
+ h2o-tip3p Information
+           Variable        Current       CumulAvg          Block            Std
+   Tmole          :        628.874        772.966        772.966         89.819
+   Tatom          :        378.830        441.635        441.635         31.238
+   Intramolecular :       0.000000       0.000000       0.000000       0.000000
+   Kinetic Energy :       9.448778      11.015257      11.015257       0.779148
+   Constraint PE  :       0.000000       0.000000       0.000000       0.000000
+ Energy for h2o-tip3p-h2o-tip3p
+   Noncoulombic   :       9.637063       8.210659       8.210659       0.933293
+   Coulombic      :     -52.032717     -52.179654     -52.179654       0.504495
+   Pressure (Tot, I   40364.237720    3406.677926   36957.559793
+   Pressure stats    40364.2377  37589.1686  37589.1686   1949.1775
+ System Energy Totals(per total moles)
+   Total Potential:     -42.395654     -43.968995
+   Total Kinetic  :       9.448778      11.015257
+   Total Energy   :     -32.946877     -32.953738
+   COM Velocity (for each species) : SPC-1: 0.0000005536,
+ Total # Moles          264
+ --------------------------------------------------
+ 
+ 
+ MD Step: 14    Time     28.000 fs  
+ --------------------------------------------------
+ h2o-tip3p Information
+           Variable        Current       CumulAvg          Block            Std
+   Tmole          :        597.253        748.861        748.861        102.020
+   Tatom          :        362.502        430.808        430.808         39.260
+   Intramolecular :       0.000000       0.000000       0.000000       0.000000
+   Kinetic Energy :       9.041529      10.745210      10.745210       0.979231
+   Constraint PE  :       0.000000       0.000000       0.000000       0.000000
+ Energy for h2o-tip3p-h2o-tip3p
+   Noncoulombic   :       9.796887       8.433643       8.433643       1.022264
+   Coulombic      :     -51.787411     -52.131816     -52.131816       0.482034
+   Pressure (Tot, I   40612.715418    3259.847988   37352.867431
+   Pressure stats    40612.7154  38016.0678  38016.0678   2085.7065
+ System Energy Totals(per total moles)
+   Total Potential:     -41.990524     -43.698173
+   Total Kinetic  :       9.041529      10.745210
+   Total Energy   :     -32.948994     -32.952964
+   COM Velocity (for each species) : SPC-1: 0.0000005536,
+ Total # Moles          264
+ --------------------------------------------------
+ 
+ 
+ MD Step: 16    Time     32.000 fs  
+ --------------------------------------------------
+ h2o-tip3p Information
+           Variable        Current       CumulAvg          Block            Std
+   Tmole          :        578.401        728.061        728.061        110.171
+   Tatom          :        354.547        421.485        421.485         44.243
+   Intramolecular :       0.000000       0.000000       0.000000       0.000000
+   Kinetic Energy :       8.843115      10.512675      10.512675       1.103520
+   Constraint PE  :       0.000000       0.000000       0.000000       0.000000
+ Energy for h2o-tip3p-h2o-tip3p
+   Noncoulombic   :       9.750323       8.601038       8.601038       1.053854
+   Coulombic      :     -51.544966     -52.066434     -52.066434       0.483471
+   Pressure (Tot, I   40462.275965    3188.311315   37273.964650
+   Pressure stats    40462.2760  38329.3254  38329.3254   2119.8491
+ System Energy Totals(per total moles)
+   Total Potential:     -41.794643     -43.465396
+   Total Kinetic  :       8.843115      10.512675
+   Total Energy   :     -32.951528     -32.952720
+   COM Velocity (for each species) : SPC-1: 0.0000005536,
+ Total # Moles          264
+ --------------------------------------------------
+ 
+ 
+ MD Step: 18    Time     36.000 fs  
+ --------------------------------------------------
+ h2o-tip3p Information
+           Variable        Current       CumulAvg          Block            Std
+   Tmole          :        567.516        710.486        710.486        115.155
+   Tatom          :        349.615        413.625        413.625         47.269
+   Intramolecular :       0.000000       0.000000       0.000000       0.000000
+   Kinetic Energy :       8.720097      10.316623      10.316623       1.178995
+   Constraint PE  :       0.000000       0.000000       0.000000       0.000000
+ Energy for h2o-tip3p-h2o-tip3p
+   Noncoulombic   :       9.568273       8.714248       8.714248       1.044047
+   Coulombic      :     -51.240173     -51.983495     -51.983495       0.513333
+   Pressure (Tot, I   40024.208833    3143.958141   36880.250692
+   Pressure stats    40024.2088  38531.3064  38531.3064   2079.0632
+ System Energy Totals(per total moles)
+   Total Potential:     -41.671900     -43.269248
+   Total Kinetic  :       8.720097      10.316623
+   Total Energy   :     -32.951803     -32.952624
+   COM Velocity (for each species) : SPC-1: 0.0000005536,
+ Total # Moles          264
+ --------------------------------------------------
+ 
+ 
+ MD Step: 20    Time     40.000 fs  
+ --------------------------------------------------
+ h2o-tip3p Information
+           Variable        Current       CumulAvg          Block            Std
+   Tmole          :        560.379        695.641        695.641        117.976
+   Tatom          :        346.347        406.968        406.968         49.090
+   Intramolecular :       0.000000       0.000000       0.000000       0.000000
+   Kinetic Energy :       8.638593      10.150585      10.150585       1.224408
+   Constraint PE  :       0.000000       0.000000       0.000000       0.000000
+ Energy for h2o-tip3p-h2o-tip3p
+   Noncoulombic   :       9.319461       8.781223       8.781223       1.010850
+   Coulombic      :     -50.909606     -51.884328     -51.884328       0.571264
+   Pressure (Tot, I   39443.320672    3114.572580   36328.748092
+   Pressure stats    39443.3207  38637.4969  38637.4969   1998.4964
+ System Energy Totals(per total moles)
+   Total Potential:     -41.590145     -43.103106
+   Total Kinetic  :       8.638593      10.150585
+   Total Energy   :     -32.951552     -32.952521
+   COM Velocity (for each species) : SPC-1: 0.0000005536,
+ Total # Moles          264
+ --------------------------------------------------
+ 
+ 
+ MD Step: 22    Time     44.000 fs  
+ --------------------------------------------------
+ h2o-tip3p Information
+           Variable        Current       CumulAvg          Block            Std
+   Tmole          :        554.149        682.921        682.921        119.462
+   Tatom          :        344.397        401.321        401.321         50.097
+   Intramolecular :       0.000000       0.000000       0.000000       0.000000
+   Kinetic Energy :       8.589954      10.009740      10.009740       1.249509
+   Constraint PE  :       0.000000       0.000000       0.000000       0.000000
+ Energy for h2o-tip3p-h2o-tip3p
+   Noncoulombic   :       9.056229       8.812159       8.812159       0.968961
+   Coulombic      :     -50.598381     -51.774376     -51.774376       0.646608
+   Pressure (Tot, I   38836.803806    3097.036185   35739.767621
+   Pressure stats    38836.8038  38669.2968  38669.2968   1908.6827
+ System Energy Totals(per total moles)
+   Total Potential:     -41.542153     -42.962217
+   Total Kinetic  :       8.589954      10.009740
+   Total Energy   :     -32.952199     -32.952477
+   COM Velocity (for each species) : SPC-1: 0.0000005536,
+ Total # Moles          264
+ --------------------------------------------------
+ 
+ 
+ MD Step: 24    Time     48.000 fs  
+ --------------------------------------------------
+ h2o-tip3p Information
+           Variable        Current       CumulAvg          Block            Std
+   Tmole          :        546.571        671.729        671.729        120.250
+   Tatom          :        341.411        396.404        396.404         50.661
+   Intramolecular :       0.000000       0.000000       0.000000       0.000000
+   Kinetic Energy :       8.515463       9.887112       9.887112       1.263575
+   Constraint PE  :       0.000000       0.000000       0.000000       0.000000
+ Energy for h2o-tip3p-h2o-tip3p
+   Noncoulombic   :       8.819115       8.817444       8.817444       0.928018
+   Coulombic      :     -50.287798     -51.657078     -51.657078       0.731524
+   Pressure (Tot, I   38277.444876    3070.179101   35207.265775
+   Pressure stats    38277.4449  38647.8993  38647.8993   1829.2177
+ System Energy Totals(per total moles)
+   Total Potential:     -41.468683     -42.839634
+   Total Kinetic  :       8.515463       9.887112
+   Total Energy   :     -32.953220     -32.952521
+   COM Velocity (for each species) : SPC-1: 0.0000005536,
+ Total # Moles          264
+ --------------------------------------------------
+ 
+ 
+ MD Step: 26    Time     52.000 fs  
+ --------------------------------------------------
+ h2o-tip3p Information
+           Variable        Current       CumulAvg          Block            Std
+   Tmole          :        535.579        661.488        661.488        120.860
+   Tatom          :        334.984        391.821        391.821         51.200
+   Intramolecular :       0.000000       0.000000       0.000000       0.000000
+   Kinetic Energy :       8.355172       9.772796       9.772796       1.277022
+   Constraint PE  :       0.000000       0.000000       0.000000       0.000000
+ Energy for h2o-tip3p-h2o-tip3p
+   Noncoulombic   :       8.643421       8.807063       8.807063       0.892402
+   Coulombic      :     -49.951212     -51.532418     -51.532418       0.825231
+   Pressure (Tot, I   37824.362640    3012.387491   34811.975148
+   Pressure stats    37824.3626  38592.5938  38592.5938   1768.1050
+ System Energy Totals(per total moles)
+   Total Potential:     -41.307791     -42.725355
+   Total Kinetic  :       8.355172       9.772796
+   Total Energy   :     -32.952619     -32.952559
+   COM Velocity (for each species) : SPC-1: 0.0000005536,
+ Total # Moles          264
+ --------------------------------------------------
+ 
+ 
+ MD Step: 28    Time     56.000 fs  
+ --------------------------------------------------
+ h2o-tip3p Information
+           Variable        Current       CumulAvg          Block            Std
+   Tmole          :        520.225        651.691        651.691        121.708
+   Tatom          :        326.251        387.296        387.296         51.968
+   Intramolecular :       0.000000       0.000000       0.000000       0.000000
+   Kinetic Energy :       8.137365       9.659930       9.659930       1.296196
+   Constraint PE  :       0.000000       0.000000       0.000000       0.000000
+ Energy for h2o-tip3p-h2o-tip3p
+   Noncoulombic   :       8.550201       8.789994       8.789994       0.862152
+   Coulombic      :     -49.638849     -51.402415     -51.402415       0.923285
+   Pressure (Tot, I   37536.215763    2933.858924   34602.356839
+   Pressure stats    37536.2158  38521.4399  38521.4399   1723.0705
+ System Energy Totals(per total moles)
+   Total Potential:     -41.088647     -42.612421
+   Total Kinetic  :       8.137365       9.659930
+   Total Energy   :     -32.951282     -32.952491
+   COM Velocity (for each species) : SPC-1: 0.0000005536,
+ Total # Moles          264
+ --------------------------------------------------
+ 
+ 
+ MD Step: 30    Time     60.000 fs  
+ --------------------------------------------------
+ h2o-tip3p Information
+           Variable        Current       CumulAvg          Block            Std
+   Tmole          :        501.672        642.007        642.007        123.043
+   Tatom          :        318.705        382.838        382.838         52.906
+   Intramolecular :       0.000000       0.000000       0.000000       0.000000
+   Kinetic Energy :       7.949140       9.548750       9.548750       1.319580
+   Constraint PE  :       0.000000       0.000000       0.000000       0.000000
+ Energy for h2o-tip3p-h2o-tip3p
+   Noncoulombic   :       8.535755       8.773006       8.773006       0.835340
+   Coulombic      :     -49.435767     -51.274139     -51.274139       1.012973
+   Pressure (Tot, I   37435.116110    2865.996144   34569.119966
+   Pressure stats    37435.1161  38449.9826  38449.9826   1685.9835
+ System Energy Totals(per total moles)
+   Total Potential:     -40.900012     -42.501133
+   Total Kinetic  :       7.949140       9.548750
+   Total Energy   :     -32.950872     -32.952383
+   COM Velocity (for each species) : SPC-1: 0.0000005536,
+ Total # Moles          264
+ --------------------------------------------------
+ 
+ 
+ MD Step: 32    Time     64.000 fs  
+ --------------------------------------------------
+ h2o-tip3p Information
+           Variable        Current       CumulAvg          Block            Std
+   Tmole          :        482.922        632.351        632.351        124.873
+   Tatom          :        313.617        378.584        378.584         53.812
+   Intramolecular :       0.000000       0.000000       0.000000       0.000000
+   Kinetic Energy :       7.822229       9.442635       9.442635       1.342169
+   Constraint PE  :       0.000000       0.000000       0.000000       0.000000
+ Energy for h2o-tip3p-h2o-tip3p
+   Noncoulombic   :       8.568283       8.759606       8.759606       0.810481
+   Coulombic      :     -49.342325     -51.154570     -51.154570       1.084645
+   Pressure (Tot, I   37460.596893    2820.239452   34640.357441
+   Pressure stats    37460.5969  38387.4664  38387.4664   1650.3070
+ System Energy Totals(per total moles)
+   Total Potential:     -40.774042     -42.394963
+   Total Kinetic  :       7.822229       9.442635
+   Total Energy   :     -32.951813     -32.952328
+   COM Velocity (for each species) : SPC-1: 0.0000005536,
+ Total # Moles          264
+ --------------------------------------------------
+ 
+ 
+ MD Step: 34    Time     68.000 fs  
+ --------------------------------------------------
+ h2o-tip3p Information
+           Variable        Current       CumulAvg          Block            Std
+   Tmole          :        467.333        622.856        622.856        126.961
+   Tatom          :        309.490        374.580        374.580         54.607
+   Intramolecular :       0.000000       0.000000       0.000000       0.000000
+   Kinetic Energy :       7.719290       9.342769       9.342769       1.362007
+   Constraint PE  :       0.000000       0.000000       0.000000       0.000000
+ Energy for h2o-tip3p-h2o-tip3p
+   Noncoulombic   :       8.602944       8.749954       8.749954       0.787232
+   Coulombic      :     -49.274736     -51.045055     -51.045055       1.139810
+   Pressure (Tot, I   37497.556209    2783.125550   34714.430659
+   Pressure stats    37497.5562  38334.7459  38334.7459   1614.8623
+ System Energy Totals(per total moles)
+   Total Potential:     -40.671792     -42.295102
+   Total Kinetic  :       7.719290       9.342769
+   Total Energy   :     -32.952502     -32.952333
+   COM Velocity (for each species) : SPC-1: 0.0000005536,
+ Total # Moles          264
+ --------------------------------------------------
+ 
+ 
+ MD Step: 36    Time     72.000 fs  
+ --------------------------------------------------
+ h2o-tip3p Information
+           Variable        Current       CumulAvg          Block            Std
+   Tmole          :        457.021        613.766        613.766        128.952
+   Tatom          :        305.290        370.788        370.788         55.323
+   Intramolecular :       0.000000       0.000000       0.000000       0.000000
+   Kinetic Energy :       7.614533       9.248205       9.248205       1.379877
+   Constraint PE  :       0.000000       0.000000       0.000000       0.000000
+ Energy for h2o-tip3p-h2o-tip3p
+   Noncoulombic   :       8.599428       8.741826       8.741826       0.765786
+   Coulombic      :     -49.166714     -50.942386     -50.942386       1.185849
+   Pressure (Tot, I   37445.759099    2745.356187   34700.402913
+   Pressure stats    37445.7591  38286.5042  38286.5042   1581.9262
+ System Energy Totals(per total moles)
+   Total Potential:     -40.567285     -42.200560
+   Total Kinetic  :       7.614533       9.248205
+   Total Energy   :     -32.952753     -32.952355
+   COM Velocity (for each species) : SPC-1: 0.0000005536,
+ Total # Moles          264
+ --------------------------------------------------
+ 
+ 
+ MD Step: 38    Time     76.000 fs  
+ --------------------------------------------------
+ h2o-tip3p Information
+           Variable        Current       CumulAvg          Block            Std
+   Tmole          :        452.297        605.313        605.313        130.536
+   Tatom          :        301.810        367.199        367.199         55.960
+   Intramolecular :       0.000000       0.000000       0.000000       0.000000
+   Kinetic Energy :       7.527751       9.158681       9.158681       1.395754
+   Constraint PE  :       0.000000       0.000000       0.000000       0.000000
+ Energy for h2o-tip3p-h2o-tip3p
+   Noncoulombic   :       8.534441       8.731986       8.731986       0.746544
+   Coulombic      :     -49.014367     -50.843022     -50.843022       1.228832
+   Pressure (Tot, I   37258.267173    2714.067908   34544.199265
+   Pressure stats    37258.2672  38235.3200  38235.3200   1555.0244
+ System Energy Totals(per total moles)
+   Total Potential:     -40.479925     -42.111036
+   Total Kinetic  :       7.527751       9.158681
+   Total Energy   :     -32.952174     -32.952354
+   COM Velocity (for each species) : SPC-1: 0.0000005536,
+ Total # Moles          264
+ --------------------------------------------------
+ 
+ 
+ MD Step: 40    Time     80.000 fs  
+ --------------------------------------------------
+ h2o-tip3p Information
+           Variable        Current       CumulAvg          Block            Std
+   Tmole          :        451.793        597.634        597.634        131.560
+   Tatom          :        300.169        363.862        363.862         56.450
+   Intramolecular :       0.000000       0.000000       0.000000       0.000000
+   Kinetic Energy :       7.486804       9.075435       9.075435       1.407975
+   Constraint PE  :       0.000000       0.000000       0.000000       0.000000
+ Energy for h2o-tip3p-h2o-tip3p
+   Noncoulombic   :       8.408387       8.717541       8.717541       0.730402
+   Coulombic      :     -48.847034     -50.745306     -50.745306       1.271233
+   Pressure (Tot, I   36946.870232    2699.304790   34247.565443
+   Pressure stats    36946.8702  38175.0941  38175.0941   1538.3316
+ System Energy Totals(per total moles)
+   Total Potential:     -40.438648     -42.027765
+   Total Kinetic  :       7.486804       9.075435
+   Total Energy   :     -32.951844     -32.952330
+   COM Velocity (for each species) : SPC-1: 0.0000005536,
+ Total # Moles          264
+ --------------------------------------------------
+ 
+ 
+ MD Step: 42    Time     84.000 fs  
+ --------------------------------------------------
+ h2o-tip3p Information
+           Variable        Current       CumulAvg          Block            Std
+   Tmole          :        452.801        590.725        590.725        132.055
+   Tatom          :        300.279        360.829        360.829         56.734
+   Intramolecular :       0.000000       0.000000       0.000000       0.000000
+   Kinetic Energy :       7.489564       8.999796       8.999796       1.415069
+   Constraint PE  :       0.000000       0.000000       0.000000       0.000000
+ Energy for h2o-tip3p-h2o-tip3p
+   Noncoulombic   :       8.252291       8.697266       8.697266       0.718595
+   Coulombic      :     -48.694583     -50.649398     -50.649398       1.312673
+   Pressure (Tot, I   36582.302016    2700.299730   33882.002285
+   Pressure stats    36582.3020  38103.6072  38103.6072   1535.0512
+ System Energy Totals(per total moles)
+   Total Potential:     -40.442292     -41.952132
+   Total Kinetic  :       7.489564       8.999796
+   Total Energy   :     -32.952728     -32.952337
+   COM Velocity (for each species) : SPC-1: 0.0000005536,
+ Total # Moles          264
+ --------------------------------------------------
+ 
+ 
+ MD Step: 44    Time     88.000 fs  
+ --------------------------------------------------
+ h2o-tip3p Information
+           Variable        Current       CumulAvg          Block            Std
+   Tmole          :        452.610        584.455        584.455        132.179
+   Tatom          :        300.834        358.096        358.096         56.827
+   Intramolecular :       0.000000       0.000000       0.000000       0.000000
+   Kinetic Energy :       7.503396       8.931637       8.931637       1.417378
+   Constraint PE  :       0.000000       0.000000       0.000000       0.000000
+ Energy for h2o-tip3p-h2o-tip3p
+   Noncoulombic   :       8.108881       8.672073       8.672073       0.711539
+   Coulombic      :     -48.565307     -50.556074     -50.556074       1.351935
+   Pressure (Tot, I   36248.873251    2705.286831   33543.586420
+   Pressure stats    36248.8733  38022.9189  38022.9189   1544.7603
+ System Energy Totals(per total moles)
+   Total Potential:     -40.456426     -41.884001
+   Total Kinetic  :       7.503396       8.931637
+   Total Energy   :     -32.953030     -32.952364
+   COM Velocity (for each species) : SPC-1: 0.0000005536,
+ Total # Moles          264
+ --------------------------------------------------
+ 
+ 
+ MD Step: 46    Time     92.000 fs  
+ --------------------------------------------------
+ h2o-tip3p Information
+           Variable        Current       CumulAvg          Block            Std
+   Tmole          :        450.127        578.648        578.648        132.112
+   Tatom          :        300.843        355.609        355.609         56.789
+   Intramolecular :       0.000000       0.000000       0.000000       0.000000
+   Kinetic Energy :       7.503615       8.869599       8.869599       1.416434
+   Constraint PE  :       0.000000       0.000000       0.000000       0.000000
+ Energy for h2o-tip3p-h2o-tip3p
+   Noncoulombic   :       7.997250       8.643862       8.643862       0.708388
+   Coulombic      :     -48.453992     -50.465855     -50.465855       1.388294
+   Pressure (Tot, I   35982.309628    2705.365702   33276.943926
+   Pressure stats    35982.3096  37936.9203  37936.9203   1563.7808
+ System Energy Totals(per total moles)
+   Total Potential:     -40.456742     -41.821993
+   Total Kinetic  :       7.503615       8.869599
+   Total Energy   :     -32.953127     -32.952395
+   COM Velocity (for each species) : SPC-1: 0.0000005536,
+ Total # Moles          264
+ --------------------------------------------------
+ 
+ 
+ MD Step: 48    Time     96.000 fs  
+ --------------------------------------------------
+ h2o-tip3p Information
+           Variable        Current       CumulAvg          Block            Std
+   Tmole          :        445.850        573.163        573.163        131.979
+   Tatom          :        299.933        353.301        353.301         56.684
+   Intramolecular :       0.000000       0.000000       0.000000       0.000000
+   Kinetic Energy :       7.480926       8.812041       8.812041       1.413821
+   Constraint PE  :       0.000000       0.000000       0.000000       0.000000
+ Energy for h2o-tip3p-h2o-tip3p
+   Noncoulombic   :       7.908478       8.614113       8.614113       0.708010
+   Coulombic      :     -48.342320     -50.378574     -50.378574       1.422076
+   Pressure (Tot, I   35759.250866    2697.185447   33062.065418
+   Pressure stats    35759.2509  37848.4589  37848.4589   1588.5928
+ System Energy Totals(per total moles)
+   Total Potential:     -40.433842     -41.764461
+   Total Kinetic  :       7.480926       8.812041
+   Total Energy   :     -32.952916     -32.952420
+   COM Velocity (for each species) : SPC-1: 0.0000005536,
+ Total # Moles          264
+ --------------------------------------------------
+ 
+ 
+ MD Step: 50    Time    100.000 fs  
+ --------------------------------------------------
+ h2o-tip3p Information
+           Variable        Current       CumulAvg          Block            Std
+   Tmole          :        440.976        567.924        567.924        131.836
+   Tatom          :        298.376        351.120        351.120         56.558
+   Intramolecular :       0.000000       0.000000       0.000000       0.000000
+   Kinetic Energy :       7.442084       8.757631       8.757631       1.410669
+   Constraint PE  :       0.000000       0.000000       0.000000       0.000000
+ Energy for h2o-tip3p-h2o-tip3p
+   Noncoulombic   :       7.819077       8.583239       8.583239       0.710019
+   Coulombic      :     -48.213403     -50.293291     -50.293291       1.454652
+   Pressure (Tot, I   35528.758685    2683.181316   32845.577369
+   Pressure stats    35528.7587  37758.0524  37758.0524   1618.3274
+ System Energy Totals(per total moles)
+   Total Potential:     -40.394326     -41.710052
+   Total Kinetic  :       7.442084       8.757631
+   Total Energy   :     -32.952242     -32.952420
+   COM Velocity (for each species) : SPC-1: 0.0000005536,
+ Total # Moles          264
+ --------------------------------------------------
+ 
+ 
+ 
+ -----------------------------------------------------
+                    MD SUMMARY
+            Total Steps:         51
+            Total Time :    100.000 fs  
+ =====================================================
+               System Energy Totals
+   Average Potential Energy:                8.583 kJ/mol
+   Average Kinetic Energy:                  8.758 kJ/mol
+   Average Total Energy:                   17.341 kJ/mol
+   Total System Energy (not divide      -8699.391802 kJ/mol
+ =====================================================
+ h2o-tip3p Summary Information
+        T(mole)      :         567.924 K
+        T(atom)      :         351.120 K
+        Cnstr Energy :           0.000 kJ/mol
+   Total Intramolecular          0.000 kJ/mol
+   Total Kinetic Energy          8.758 kJ/mol
+ =====================================================
+               Pairwise Interaction Energies
+ Energy for h2o-tip3p-h2o-tip3p
+   Noncoul Inter Energy          8.583 kJ/mol (total of 264 mols)
+   Coul Inter Energy :         -50.293 kJ/mol (total of 264 mols)
+ -----------------------------------------------------
+ pcalls :            0
+Main Program   Time: 8.8127 sec   Number of calls: 1   Time per call: 8.8127 sec

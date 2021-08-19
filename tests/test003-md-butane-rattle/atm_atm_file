@@ -1,0 +1,28 @@
+Silicon   Silicon   OFF
+Silicon   Oxygen    OFF
+Oxygen    Oxygen    OFF
+Methane   Methane   LJ SIG@3.730  EPS@148.013  HICUT@13.0
+CF4 	  CF4       LJ SIG@4.662  EPS@134.048  HICUT@13.0
+Methane   CF4       LJ SIG@LBMIX  EPS@LBMIX  HICUT@13.0
+Methane   Oxygen    OFF
+Methane   Silicon   OFF
+CF4 	  Oxygen    OFF
+CF4 	  Silicon   OFF
+Methylene Methylene LJ SIG@3.923  EPS@72.048  HICUT@13.0 LOCUT@0.0001
+Methyl    Methylene LJ SIG@3.923  EPS@72.048  HICUT@13.0 LOCUT@0.0001
+Methyl    Methyl    LJ SIG@3.775  EPS@104.282  HICUT@13.0 LOCUT@0.0001
+Methyl    Silicon   OFF
+Methylene Silicon   OFF
+Methyl    Oxygen    OFF
+Methylene Oxygen    OFF
+################### Benzene Potentials #####################
+Carbon    Carbon   BenzPot A@698828.9 B@569.7  C@8.389  D@-0.3346 Rhigh@13.0 Rlow@5.0
+Carbon    Hydrogen BenzPot A@91826.0  B@112.26 C@-8.389 D@0.3346  Rhigh@13.0 Rlow@5.0
+Hydrogen  Hydrogen BenzPot A@6630.0   B@18.6   C@8.389  D@-0.3346 Rhigh@13.0 Rlow@5.0
+Carbon    Silicon  OFF
+Carbon    Oxygen   OFF
+Hydrogen  Silicon  OFF
+Hydrogen  Oxygen   OFF
+Carbon    Methane  LJ SIG@3.5009 EPS@92.98 HICUT@13.0
+Hydrogen  Methane  LJ SIG@3.1964 EPS@31.16 HICUT@13.0
+

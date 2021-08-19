@@ -1,0 +1,369 @@
+ Looking for Control file : test007.ctr
+Welcome to MuSiC (GCMC implementation)
+Reading from control file test007.ctr
+ Initializing General Parameters
+------------------------------------------------------------
+The ATOMS structure:
+  No. of atom types:     1
+    Atom Name           : CH4
+    Atom Symbol         : C
+    Atom File           : CH4.atm
+    Atom Mass           :    16.00
+    sscharge, szcharge  :   0.0000  0.0000
+    Required # of bonds :   0
+    Ion Type            : NONE 
+------------------------------------------------------------
+    Reading molecule information for CH4 from: ./potentials/molecules/CH4.mol
+ molecule.F90 : 1065
+  Molecule will be rotated so that the principle axes 
+   will coincide with coordinate system axes
+ Generating Connections for CH4                                             
+------------------------------------------------------------
+The MOLECULES structure:
+  No. of molecule types:     1
+------------------------------------------------------------
+  Molecule Name       : CH4
+  Molecule Mass       : 16.00
+  Molecule File       : CH4.mol
+  Degrees of freedom  : 3
+  DOF origin          : 3N_Calculation
+  body axes atom nos  :    0   0   0
+  Number of atoms     : 1
+  Net Charge          : 0.0
+  Dipole Moment(debye): 0.000000000
+  Translation xform   : 0.00000   0.00000   0.00000
+  Rotational xform    : 
+    1.00000   0.00000   0.00000
+    0.00000   1.00000   0.00000
+    0.00000   0.00000   1.00000
+      Atom Name           : CH4
+      Atom Type           :    1
+      Atom Position       :   0.0000  0.0000  0.0000
+      Equilibrium charge  :   0.0000
+      MD Set, type        :    0   0
+  Connection Information : 
+    Connection Information for CH4                                             
+    Atom     1: No connections
+------------------------------------------------------------
+      The SIMCELL structure:
+      nx, ny, nz            :    1   1   1
+      ncells                :    1
+      ORTHORHOMBIC
+      edge lengths (Ang)    :    20.0000   20.0000   20.0000
+      cell angles (degrees) :    90.0000   90.0000   90.0000
+      origin shift (Ang)    : 0.0000   0.0000   0.0000
+      cell vector a         : 20.0000   0.0000   0.0000
+      cell vector b         : 0.0000  20.0000   0.0000
+      cell vector c         : 0.0000   0.0000  20.0000
+      box width in (a,b,c)  :    20.0000   20.0000   20.0000
+      minimum width (Ang)   :    20.0000
+      volume (Angstroms^3)  : 8000.000
+------------------------------------------------------------
+Configuration Section 
+No. of species :      1
+  ----------------------------------------------------------
+  Species name : CH4                                             
+    No. of molecules :      0
+    No. of atoms     :    1
+    Initial Config. Source : GCMC
+    Source Filename: NULL
+    ----------------------------------------------------------
+Initializing intra molecular info from molecule file: ./potentials/molecules/CH4.mol
+ intramolecular.F90 :  165
+ intra filename passed isintramolecular_file                             xx
+ intramolecular.F90 :  171
+Initialized all intramolecular stuff for CH4
+ Finished Initializing Intramolecular interactions
+ Initializing Species-Species interactions....
+ Finished Initializing Species-Species interactions.
+ Finished Initializing Ff interactions.
+ Calling ff_initCal
+ Call to ff_initCalc successful 
+  ------------------------------------------------------------
+  The "BASIC" FF information:
+  ------------------------------------------------------------
+  NON-COULOMBIC SPECIES-SPECIES pair parameters:
+  Information taken from: mol_mol_file
+    ------------------------------------------------------------
+    (1,1)  CH4, CH4:                  BASIC
+      Input Line: NCOUL  BASIC  LJ  FAST  
+      Fast interaction?    T
+      COM-based cut-off?   F
+      COM-COM smoothing?   F
+      Atom-Atom PAIR PARAMETERS:
+        Information taken from: atom_atom_file
+      Overview by atomic pairs:
+      (1,1)  CH4, CH4:                  LJ
+          CH4-CH4 LJ parameters from SIGEPS
+            Sigma: 3.1660 Ang   Epsilon/k_Boltz: 78.150 K
+            A: 629996.7 kcal A^12/mol   B: 625.5655 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.300 Ang
+  ------------------------------------------------------------
+  COULOMBIC SPECIES-SPECIES pair parameters:
+  Information taken from: mol_mol_file
+    ------------------------------------------------------------
+    (1,1)  CH4, CH4:                  OFF
+  ------------------------------------------------------------
+  INTRAMOLECULAR information for each species 
+    ------------------------------------------------------------
+    Intramolecular information for CH4:
+      Bond Stretching   :  OFF
+      Bond Bending      :  OFF
+      Torsion Angles    :  OFF
+      Intra Pairwise Pot:  OFF
+      Intra Coulombic Pot:  OFF
+      Constraints       :  OFF
+------------------------------------------------------------
+Initializing GCMC moves for: CH4                                             
+ Energies at the beginning of GCMC simulation: 
+   Species Name : CH4                                             
+   Species Type : 1
+   Pairwise Energies(noncoul, coul) in kJ/mol
+                  CH4   :   0.00000  0.00000
+   Intramolecular Energies (bs,bb,tor,ip,con,total) in kJ/mol
+      0.00000  0.00000  0.00000  0.00000  0.00000  0.00000  0.00000
+ 
+------------------------------------------------------------
+The GCMC Parameters Section:
+  No. of iterations  :      1
+  No. of simulations :      1
+  Temperature(K)     :  300.000
+  No. of species     :      1
+  ------------------------------------------------------------
+  GCMC Moves Parameters:
+  ------------------------------------------------------------
+  Species Name: CH4
+    Thermophysical simulation points:
+    Pressure  Fugacity     murti  B(Adams)
+   0.100E+05 0.100E+05   -10.161     2.961
+    Allowed Move Types and Parameters:
+      Basic Move type:    INSERT
+      Specific Move type: RINSERT
+      ------------------------------------------------------------
+      Basic Move type:    DELETE
+      Specific Move type: RDELETE
+      ------------------------------------------------------------
+      Basic Move type:    TRANSLATE
+      Specific Move type: RTRANSLATE
+        Rigid Molecule Random-Translation Parameters :
+        Scaling of Translation length not allowed.
+        Initial translation length:      0.40000
+        Maximum allowed energy: 0.10E+11 kcal/mol
+      ------------------------------------------------------------
+ 
+ 
+------------------------------------------------------------
+Beginning GCMC simulation number 1 of 1   (20000 steps)
+------------------------------------------------------------
+The GCMC Simulation Parameters:
+  Simulation Number :    1
+  Configuration file: temp.con.1
+  Restart file      : 100.res.1
+  ------------------------------------------------------------
+  GCMC Species Parameters:
+    ----------------------------------------------------------
+    Species Name: CH4
+      Press.(kPa)   Fugacity      murti   B(Adams)
+        10000.000  10000.000    -10.161      2.961
+    ----------------------------------------------------------
+
+
+  Macro-iteration number 1000 (1000 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: CH4    Pressure: 10000.0 kPa
+      INSERT (RINSERT)          Acc. Ratio: 0.739   (260 of 352)  
+      DELETE (RDELETE)          Acc. Ratio: 0.780   (241 of 309)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.944   (318 of 337)  Max disp:  0.400
+      Number of Molecules (ins, blk, cum, stdd)  19.00  15.03  19.12   4.81
+ 
+  Macro-iteration number 2000 (2000 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: CH4    Pressure: 10000.0 kPa
+      INSERT (RINSERT)          Acc. Ratio: 0.760   (513 of 675)  
+      DELETE (RDELETE)          Acc. Ratio: 0.772   (495 of 641)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.943   (643 of 682)  Max disp:  0.400
+      Number of Molecules (ins, blk, cum, stdd)  18.00  17.61  19.02   4.38
+ 
+  Macro-iteration number 3000 (3000 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: CH4    Pressure: 10000.0 kPa
+      INSERT (RINSERT)          Acc. Ratio: 0.771   (765 of 992)  
+      DELETE (RDELETE)          Acc. Ratio: 0.757   (752 of 994)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.948   (959 of 1012)  Max disp:  0.400
+      Number of Molecules (ins, blk, cum, stdd)  13.00  16.58  18.29   4.06
+ 
+  Macro-iteration number 4000 (4000 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: CH4    Pressure: 10000.0 kPa
+      INSERT (RINSERT)          Acc. Ratio: 0.767   (1020 of 1330)  
+      DELETE (RDELETE)          Acc. Ratio: 0.760   (995 of 1309)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.950   (1291 of 1359)  Max disp:  0.400
+      Number of Molecules (ins, blk, cum, stdd)  25.00  18.52  18.41   3.97
+ 
+  Macro-iteration number 5000 (5000 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: CH4    Pressure: 10000.0 kPa
+      INSERT (RINSERT)          Acc. Ratio: 0.773   (1281 of 1657)  
+      DELETE (RDELETE)          Acc. Ratio: 0.752   (1267 of 1684)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.949   (1573 of 1657)  Max disp:  0.400
+      Number of Molecules (ins, blk, cum, stdd)  14.00  15.76  18.38   4.20
+ 
+  Macro-iteration number 6000 (6000 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: CH4    Pressure: 10000.0 kPa
+      INSERT (RINSERT)          Acc. Ratio: 0.775   (1536 of 1982)  
+      DELETE (RDELETE)          Acc. Ratio: 0.750   (1516 of 2022)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.951   (1896 of 1994)  Max disp:  0.400
+      Number of Molecules (ins, blk, cum, stdd)  20.00  19.53  18.19   4.16
+ 
+  Macro-iteration number 7000 (7000 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: CH4    Pressure: 10000.0 kPa
+      INSERT (RINSERT)          Acc. Ratio: 0.772   (1790 of 2319)  
+      DELETE (RDELETE)          Acc. Ratio: 0.748   (1775 of 2374)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.954   (2198 of 2305)  Max disp:  0.400
+      Number of Molecules (ins, blk, cum, stdd)  15.00  21.84  18.19   4.24
+ 
+  Macro-iteration number 8000 (8000 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: CH4    Pressure: 10000.0 kPa
+      INSERT (RINSERT)          Acc. Ratio: 0.771   (2047 of 2654)  
+      DELETE (RDELETE)          Acc. Ratio: 0.755   (2026 of 2685)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.955   (2539 of 2659)  Max disp:  0.400
+      Number of Molecules (ins, blk, cum, stdd)  21.00  20.82  18.39   4.13
+ 
+  Macro-iteration number 9000 (9000 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: CH4    Pressure: 10000.0 kPa
+      INSERT (RINSERT)          Acc. Ratio: 0.768   (2311 of 3008)  
+      DELETE (RDELETE)          Acc. Ratio: 0.758   (2279 of 3005)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.955   (2852 of 2985)  Max disp:  0.400
+      Number of Molecules (ins, blk, cum, stdd)  32.00  26.87  18.59   4.25
+ 
+  Macro-iteration number 10000 (10000 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: CH4    Pressure: 10000.0 kPa
+      INSERT (RINSERT)          Acc. Ratio: 0.762   (2562 of 3360)  
+      DELETE (RDELETE)          Acc. Ratio: 0.764   (2546 of 3331)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.956   (3161 of 3307)  Max disp:  0.400
+      Number of Molecules (ins, blk, cum, stdd)  16.00  21.11  18.80   4.20
+ 
+  Macro-iteration number 11000 (11000 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: CH4    Pressure: 10000.0 kPa
+      INSERT (RINSERT)          Acc. Ratio: 0.766   (2814 of 3673)  
+      DELETE (RDELETE)          Acc. Ratio: 0.763   (2796 of 3664)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.956   (3501 of 3661)  Max disp:  0.400
+      Number of Molecules (ins, blk, cum, stdd)  18.00  16.46  18.65   4.14
+ 
+  Macro-iteration number 12000 (12000 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: CH4    Pressure: 10000.0 kPa
+      INSERT (RINSERT)          Acc. Ratio: 0.766   (3085 of 4026)  
+      DELETE (RDELETE)          Acc. Ratio: 0.769   (3061 of 3980)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.955   (3812 of 3992)  Max disp:  0.400
+      Number of Molecules (ins, blk, cum, stdd)  24.00  17.81  18.87   4.19
+ 
+  Macro-iteration number 13000 (13000 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: CH4    Pressure: 10000.0 kPa
+      INSERT (RINSERT)          Acc. Ratio: 0.766   (3357 of 4384)  
+      DELETE (RDELETE)          Acc. Ratio: 0.773   (3333 of 4311)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.954   (4107 of 4303)  Max disp:  0.400
+      Number of Molecules (ins, blk, cum, stdd)  24.00  21.66  18.99   4.16
+ 
+  Macro-iteration number 14000 (14000 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: CH4    Pressure: 10000.0 kPa
+      INSERT (RINSERT)          Acc. Ratio: 0.763   (3603 of 4722)  
+      DELETE (RDELETE)          Acc. Ratio: 0.774   (3589 of 4635)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.954   (4426 of 4641)  Max disp:  0.400
+      Number of Molecules (ins, blk, cum, stdd)  14.00  12.00  19.05   4.17
+ 
+  Macro-iteration number 15000 (15000 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: CH4    Pressure: 10000.0 kPa
+      INSERT (RINSERT)          Acc. Ratio: 0.762   (3859 of 5061)  
+      DELETE (RDELETE)          Acc. Ratio: 0.773   (3844 of 4975)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.955   (4741 of 4962)  Max disp:  0.400
+      Number of Molecules (ins, blk, cum, stdd)  15.00  14.05  18.86   4.19
+ 
+  Macro-iteration number 16000 (16000 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: CH4    Pressure: 10000.0 kPa
+      INSERT (RINSERT)          Acc. Ratio: 0.763   (4116 of 5392)  
+      DELETE (RDELETE)          Acc. Ratio: 0.774   (4100 of 5298)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.955   (5068 of 5308)  Max disp:  0.400
+      Number of Molecules (ins, blk, cum, stdd)  16.00  16.08  18.79   4.14
+ 
+  Macro-iteration number 17000 (17000 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: CH4    Pressure: 10000.0 kPa
+      INSERT (RINSERT)          Acc. Ratio: 0.765   (4380 of 5725)  
+      DELETE (RDELETE)          Acc. Ratio: 0.773   (4363 of 5645)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.955   (5374 of 5628)  Max disp:  0.400
+      Number of Molecules (ins, blk, cum, stdd)  17.00  15.24  18.75   4.13
+ 
+  Macro-iteration number 18000 (18000 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: CH4    Pressure: 10000.0 kPa
+      INSERT (RINSERT)          Acc. Ratio: 0.764   (4643 of 6077)  
+      DELETE (RDELETE)          Acc. Ratio: 0.775   (4631 of 5978)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.956   (5680 of 5943)  Max disp:  0.400
+      Number of Molecules (ins, blk, cum, stdd)  12.00  14.10  18.78   4.15
+ 
+  Macro-iteration number 19000 (19000 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: CH4    Pressure: 10000.0 kPa
+      INSERT (RINSERT)          Acc. Ratio: 0.764   (4906 of 6418)  
+      DELETE (RDELETE)          Acc. Ratio: 0.776   (4888 of 6295)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.955   (6002 of 6285)  Max disp:  0.400
+      Number of Molecules (ins, blk, cum, stdd)  18.00  21.06  18.78   4.13
+ 
+  Macro-iteration number 20000 (20000 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: CH4    Pressure: 10000.0 kPa
+      INSERT (RINSERT)          Acc. Ratio: 0.764   (5163 of 6759)  
+      DELETE (RDELETE)          Acc. Ratio: 0.777   (5142 of 6615)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.954   (6318 of 6624)  Max disp:  0.400
+      Number of Molecules (ins, blk, cum, stdd)  21.00  19.61  18.80   4.08
+ 
+ ________ ACTUAL ENERGIES    _____________
+    Energy:           -6.435
+     Coul:  0.000E+00
+    NCoul: -0.643E+01
+    Intramolecular:    bs       bb      tor       ip      con    total
+                      0.00000  0.00000  0.00000  0.00000  0.00000  0.00000  0.00000  0.00000
+ 
+ ________ STORED ENERGIES    _____________
+    Energy:           -6.435
+     Coul:  0.000E+00
+    NCoul: -0.643E+01
+    Intramolecular:    bs       bb      tor       ip      con    total
+                      0.00000  0.00000  0.00000  0.00000  0.00000  0.00000  0.00000  0.00000
+------------------------------------------------------------
+Ending GCMC simulation number 1    Nrg dev check: 0.222E-13
+  CH4:  P (kPa): 10000.0    loading (molec/uc): 18.80
+------------------------------------------------------------
+ music.F90 :  297
+Main Program   Time: 0.1090 sec   Number of calls: 1   Time per call: 0.1090 sec

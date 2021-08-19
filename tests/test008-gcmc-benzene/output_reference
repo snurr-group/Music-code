@@ -1,0 +1,557 @@
+ Looking for Control file : test008.ctr
+Welcome to MuSiC (GCMC implementation)
+Reading from control file test008.ctr
+ Initializing General Parameters
+------------------------------------------------------------
+The ATOMS structure:
+  No. of atom types:     4
+    Atom Name           : Hydrogen
+    Atom Symbol         : H
+    Atom File           : Hydrogen.atm
+    Atom Mass           :     1.00
+    sscharge, szcharge  :   0.4000  0.4000
+    Required # of bonds :   1
+    Ion Type            : NONE 
+ 
+    Atom Name           : Carbon
+    Atom Symbol         : C
+    Atom File           : Carbon.atm
+    Atom Mass           :    12.00
+    sscharge, szcharge  :   0.4000  0.4000
+    Required # of bonds :   4
+    Ion Type            : NONE 
+ 
+    Atom Name           : Silicon
+    Atom Symbol         : Si
+    Atom File           : Silicon.atm
+    Atom Mass           :    28.09
+    sscharge, szcharge  :   1.8000  1.8000
+    Required # of bonds :   4
+    Ion Type            : NONE 
+ 
+    Atom Name           : Oxygen
+    Atom Symbol         : O
+    Atom File           : Oxygen.atm
+    Atom Mass           :    16.00
+    sscharge, szcharge  :  -1.0000 -1.0000
+    Required # of bonds :   2
+    Ion Type            : NONE 
+------------------------------------------------------------
+    Reading molecule information for Benzene from: ./potentials/molecules/Benzene.mol
+ molecule.F90 : 1058
+  Molecule will be rotated so that the principle axes 
+   will coincide with coordinate system axes
+ molecule.F90 :  889 WARNING: Molecule 'Benzene' was not centered at origin, now shifted
+  Note that the NOTRANSFORM flag will prevent this shifting
+  Former center-of-mass:         0.000000    0.700000    0.000000
+ molecule.F90 :  950 WARNING: Molecule 'Benzene' has been realigned to place
+  the cartesian axes along the moments of inertia
+  Note that the NOROTATE or NOTRANSFORM flags will prevent this
+ molecule.F90        1217  Generating connections
+ Generating Connections for Benzene                                         
+ molecule.F90 : 1260
+ molecule.F90 : 1265
+ molecule.F90 : 1265
+    Reading molecule information for sili from: ./potentials/molecules/sili.mol
+ molecule.F90 : 1058
+  Molecule will be rotated so that the principle axes 
+   will coincide with coordinate system axes
+ molecule.F90        1217  Generating connections
+------------------------------------------------------------
+The MOLECULES structure:
+  No. of molecule types:     2
+------------------------------------------------------------
+  Molecule Name       : Benzene
+  Molecule Mass       : 78.00
+  Molecule File       : Benzene.mol
+  Degrees of freedom  : 6
+  DOF origin          : Molecule_File
+  body axes atom nos  :    1   3   0
+  Number of atoms     : 12
+  Net Charge          : 0.6E-16
+  Dipole Moment(debye): 0.4E-15
+  Translation xform   : 0.00000  -0.70000   0.00000
+  Rotational xform    : 
+    1.00000   0.00000   0.00000
+    0.00000   1.00000   0.00000
+    0.00000   0.00000   1.00000
+  Atom list omitted (natoms > 10)
+  Connection Information : 
+    Connection Information for Benzene                                         
+    Atom     1:      2    6    7    1.400   1.400   1.030
+    Atom     2:      1    3    8    1.400   1.400   1.030
+    Atom     3:      2    4    9    1.400   1.400   1.030
+    Atom     4:      3    5   10    1.400   1.400   1.030
+    Atom     5:      4    6   11    1.400   1.400   1.030
+    Atom     6:      1    5   12    1.400   1.400   1.030
+    Atom     7:      1    1.030
+    Atom     8:      2    1.030
+    Atom     9:      3    1.030
+    Atom    10:      4    1.030
+    Atom    11:      5    1.030
+    Atom    12:      6    1.030
+------------------------------------------------------------
+  Molecule Name       : sili
+  Molecule Mass       : 5768.3
+  Molecule File       : sili.mol
+  Degrees of freedom  : 864
+  DOF origin          : 3N_Calculation
+  body axes atom nos  :    0   0   0
+  Number of atoms     : 288
+  Net Charge          : 0.6-153
+  Dipole Moment(debye): 0.9E-11
+  Translation xform   : 0.00000   0.00000   0.00000
+  Rotational xform    : 
+    1.00000   0.00000   0.00000
+    0.00000   1.00000   0.00000
+    0.00000   0.00000   1.00000
+  Atom list omitted (natoms > 10)
+  Connection Information : 
+    No connectivity information for sili
+------------------------------------------------------------
+      The SIMCELL structure:
+      nx, ny, nz            :    2   2   4
+      ncells                :   16
+      ORTHORHOMBIC
+      edge lengths (Ang)    :    40.1400   39.8400   53.6800
+      cell angles (degrees) :    90.0000   90.0000   90.0000
+      origin shift (Ang)    : 0.0000   0.0000   0.0000
+      cell vector a         : 40.1400   0.0000   0.0000
+      cell vector b         : 0.0000  39.8400   0.0000
+      cell vector c         : 0.0000   0.0000  53.6800
+      box width in (a,b,c)  :    40.1400   39.8400   53.6800
+      minimum width (Ang)   :    39.8400
+      volume (Angstroms^3)  : 85843.85
+------------------------------------------------------------
+Configuration Section 
+No. of species :      2
+  ----------------------------------------------------------
+  Species name : Benzene                                         
+    No. of molecules :      0
+    No. of atoms     :   12
+    Initial Config. Source : GCMC
+    Source Filename: #
+    ----------------------------------------------------------
+  Species name : sili                                            
+    No. of molecules :      1
+    No. of atoms     : 4608
+    Initial Config. Source : FIXED
+    Source Filename: NULL
+    ----------------------------------------------------------
+Initializing intra molecular info from molecule file: ./potentials/molecules/Benzene.mol
+ intramolecular.F90 :  164
+ intra filename passed isintramolecular_file                             xx
+ intramolecular.F90 :  170
+Initialized all intramolecular stuff for Benzene
+Initializing intra molecular info from molecule file: ./potentials/molecules/sili.mol
+ intramolecular.F90 :  164
+ intra filename passed isintramolecular_file                             xx
+ intramolecular.F90 :  170
+Initialized all intramolecular stuff for sili
+ Finished Initializing Intramolecular interactions
+ Initializing Species-Species interactions....
+ssdriver.F90:  140 WARNING: map species name should be specified like: MAP@species_name
+  Will assume that map species is: "sili"
+pmap.F90 :  348
+ Reading potential map: ./potentials/pmaps/sili.Hydrogen.pmap
+   ------------------------------------------------------------
+   Pmap Header Section:
+     No. of tabulated pts.:   325080
+     Edge Lengths         :   20.070  19.920  13.420
+     Grid size (x, y, z)  :   101  100   68
+     Grid spacing         :    0.201   0.201   0.200
+     Potential Cutoff(kJ) :        100.000
+     No. of types of atoms:     3
+       Atom: Oxygen
+       Symbol    : O
+       Charge    :  -1.0000
+       Parameters:    38217.01172     122.09000       0.00000       0.00000
+       Atom: Silicon
+       Symbol    : Si
+       Charge    :   2.0000
+       Parameters:        0.00000       0.00000       0.00000       0.00000
+       Atom: Aluminum
+       Symbol    : Al
+       Charge    :   0.0000
+       Parameters:        0.00000       0.00000       0.00000       0.00000
+ Warning: charges are taken from molecule file and are not displayed here!
+pmap.F90 :  348
+ Reading potential map: ./potentials/pmaps/sili.Carbon.pmap
+   ------------------------------------------------------------
+   Pmap Header Section:
+     No. of tabulated pts.:   197404
+     Edge Lengths         :   20.070  19.920  13.420
+     Grid size (x, y, z)  :   101  100   68
+     Grid spacing         :    0.201   0.201   0.200
+     Potential Cutoff(kJ) :        100.000
+     No. of types of atoms:     4
+       Atom: Oxygen
+       Symbol    : O
+       Charge    :  -0.7100
+       Parameters:   319195.00000     431.95999       0.00000       0.00000
+       Atom: Silicon
+       Symbol    : Si
+       Charge    :   1.4200
+       Parameters:        0.00000       0.00000       0.00000       0.00000
+       Atom: Aluminum
+       Symbol    : Al
+       Charge    :   0.0000
+       Parameters:        0.00000       0.00000       0.00000       0.00000
+       Atom: Hydrogen
+       Symbol    : H
+       Charge    :   0.0000
+       Parameters:        0.00000       0.00000       0.00000       0.00000
+ Warning: charges are taken from molecule file and are not displayed here!
+ssdriver.F90:  140 WARNING: map species name should be specified like: MAP@species_name
+  Will assume that map species is: "sili"
+pmap.F90 :  348
+ Reading potential map: ./potentials/pmaps/sili.full.emap
+   ------------------------------------------------------------
+   Pmap Header Section:
+     No. of tabulated pts.:   327562
+     Edge Lengths         :   20.070  19.920  13.420
+     Grid size (x, y, z)  :   101  100   68
+     Grid spacing         :    0.201   0.201   0.200
+     Potential Cutoff(kJ) :        100.000
+     No. of types of atoms:     4
+       Atom: Oxygen
+       Symbol    : O
+       Charge    :  -1.0000
+       Parameters:    35541.00000     101.90000       0.00000       0.00000
+       Atom: Silicon
+       Symbol    : Si
+       Charge    :   2.0000
+       Parameters:        0.00000       0.00000       0.00000       0.00000
+       Atom: Aluminum
+       Symbol    : Al
+       Charge    :   0.0000
+       Parameters:        0.00000       0.00000       0.00000       0.00000
+       Atom: Hydrogen
+       Symbol    : H
+       Charge    :   0.0000
+       Parameters:        0.00000       0.00000       0.00000       0.00000
+ Warning: charges are taken from molecule file and are not displayed here!
+ Finished Initializing Species-Species interactions.
+ Finished Initializing Ff interactions.
+ Calling ff_initCal
+ Call to ff_initCalc successful 
+  ------------------------------------------------------------
+  The "BASIC" FF information:
+  ------------------------------------------------------------
+  NON-COULOMBIC SPECIES-SPECIES pair parameters:
+  Information taken from: spc_spc_file
+    ------------------------------------------------------------
+    (1,1)  Benzene, Benzene:          BASIC
+      Input Line: NCOUL  BASIC  BENZPOT  LJ  FAST  
+      Fast interaction?    T
+      Use neighbor-list?   F
+      COM-based cut-off?   F
+      COM-COM smoothing?   F
+      Atom-Atom PAIR PARAMETERS:
+        Information taken from: atm_atm_file
+      Overview by atomic pairs:
+      (1,1)  Hydrogen, Hydrogen:        LJ  BENZPOT
+          Hydrogen-Hydrogen LJ parameters from AB
+            Sigma: 2.6628 Ang   Epsilon/k_Boltz: 6.5650 K
+            A: 6630.000 kcal A^12/mol   B: 18.60000 kcal A^6/mol
+            high cutoff: 13.00 Ang   low cutoff: 0.001 Ang
+          Hydrogen-Hydrogen BENZPOT parameters from 
+            C: 8.389000 D: -0.33460  kcal A^(12,6,2,0)/mol
+            high cutoff: 5.00 Ang   low cutoff: 0.1E-02 Ang
+      (1,2)  Hydrogen, Carbon:          LJ  BENZPOT
+          Carbon-Hydrogen LJ parameters from AB
+            Sigma: 3.0581 Ang   Epsilon/k_Boltz: 17.267 K
+            A: 91826.00 kcal A^12/mol   B: 112.2600 kcal A^6/mol
+            high cutoff: 13.00 Ang   low cutoff: 0.001 Ang
+          Carbon-Hydrogen BENZPOT parameters from 
+            C: -8.38900 D: 0.334600  kcal A^(12,6,2,0)/mol
+            high cutoff: 5.00 Ang   low cutoff: 0.1E-02 Ang
+      (2,2)  Carbon, Carbon:            LJ  BENZPOT
+          Carbon-Carbon LJ parameters from AB
+            Sigma: 3.2718 Ang   Epsilon/k_Boltz: 58.431 K
+            A: 698828.9 kcal A^12/mol   B: 569.7000 kcal A^6/mol
+            high cutoff: 13.00 Ang   low cutoff: 0.001 Ang
+          Carbon-Carbon BENZPOT parameters from 
+            C: 8.389000 D: -0.33460  kcal A^(12,6,2,0)/mol
+            high cutoff: 5.00 Ang   low cutoff: 0.1E-02 Ang
+    ------------------------------------------------------------
+    (1,2)  Benzene, sili:             MAP
+      Benzene sili      NCOUL  MAP FAST hydrogen@PMAP@sili.Hydrogen.pmap Carbon@PMAP@sili.Carbon.pmap
+      Hydrogen(1):     PMAP map from: sili.Hydrogen.pmap   tabulated points: 325080
+      Carbon(2):       PMAP map from: sili.Carbon.pmap   tabulated points: 197404
+      Silicon(3):      No map associated
+      Oxygen(4):       No map associated
+    ------------------------------------------------------------
+    (2,2)  sili, sili:                OFF
+  ------------------------------------------------------------
+  COULOMBIC SPECIES-SPECIES pair parameters:
+  Information taken from: spc_spc_file
+    ------------------------------------------------------------
+    (1,1)  Benzene, Benzene:          OFF
+    ------------------------------------------------------------
+    (1,2)  Benzene, sili:             MAP
+      Benzene sili      COUL   MAP FAST all@EMAP@sili.full.emap
+      Hydrogen(1):     EMAP map from: sili.full.emap   tabulated points: 327562
+      Carbon(2):       EMAP map from: sili.full.emap   tabulated points: 327562
+      Silicon(3):      No map associated
+      Oxygen(4):       No map associated
+    ------------------------------------------------------------
+    (2,2)  sili, sili:                OFF
+  ------------------------------------------------------------
+  INTRAMOLECULAR information for each species 
+    ------------------------------------------------------------
+    Intramolecular information for Benzene:
+      Bond Stretching   :  OFF
+      Bond Bending      :  OFF
+      Torsion Angles    :  OFF
+      Intra Pairwise Pot:  OFF
+      Intra Coulombic Pot:  OFF
+      Constraints       :  OFF
+    ------------------------------------------------------------
+    Intramolecular information for sili:
+      Bond Stretching   :  OFF
+      Bond Bending      :  OFF
+      Torsion Angles    :  OFF
+      Intra Pairwise Pot:  OFF
+      Intra Coulombic Pot:  OFF
+      Constraints       :  OFF
+------------------------------------------------------------
+Initializing GCMC moves for: Benzene                                         
+ Initializing biasing details : cavity, bmap etc 
+ --------------- WARNING during bmap_cubeinit ---------------
+ bmap.F90 :  290
+ Automatically adjusting bmap energies here
+ maxnrgval :  9.128297734723986E-002
+ For biasing purposes all energies above this  will be converted to this value
+ --------------- END WARNING --------------------------------
+ Energies at the beginning of GCMC simulation: 
+   Species Name : Benzene                                         
+   Species Type : 1
+   Pairwise Energies(noncoul, coul) in kJ/mol
+              Benzene   :   0.00000  0.00000
+                 sili   :   0.00000  0.00000
+   Intramolecular Energies (bs,bb,tor,ip,con,total) in kJ/mol
+      0.00000  0.00000  0.00000  0.00000  0.00000  0.00000  0.00000
+ 
+   Species Name : sili                                            
+   Species Type : 2
+   Pairwise Energies(noncoul, coul) in kJ/mol
+              Benzene   :   0.00000  0.00000
+                 sili   :   0.00000  0.00000
+   Intramolecular Energies (bs,bb,tor,ip,con,total) in kJ/mol
+      0.00000  0.00000  0.00000  0.00000  0.00000  0.00000  0.00000
+ 
+------------------------------------------------------------
+The GCMC Parameters Section:
+  No. of iterations  :      1
+  No. of simulations :      1
+  Temperature(K)     :  343.000
+  No. of species     :      1
+  ------------------------------------------------------------
+  GCMC Moves Parameters:
+  ------------------------------------------------------------
+  Species Name: Benzene
+    Thermophysical simulation points:
+    Pressure  Fugacity     murti  B(Adams)
+   0.101E+01 0.101E+01   -22.073    -4.000
+    Allowed Move Types and Parameters:
+      Basic Move type:    INSERT
+      Specific Move type: BINSERT
+        Rigid Molecule Biased-Insertion Parameters :
+          Type of bias: MAP_BIAS
+          Details of Bias for insertion: 
+          Bias map file: sili.Carbon.pmap
+          Bias Temperature, K:  300.000
+          Bias map details: 
+              Bias map filename: sili.Carbon.pmap
+              Cumulative Wt:  910780.38    
+              No. of tabulated cubelets:   150144
+              Cutoff Potential(kcal):     30.00000
+          Maximum allowed energy: 0.10E+11 kcal/mol
+      ------------------------------------------------------------
+      Basic Move type:    DELETE
+      Specific Move type: BDELETE
+        Rigid Molecule Deletion Parameters :
+          Type of bias: MAP_BIAS
+          Details of Bias for insertion: 
+          Bias map file: sili.Carbon.pmap
+          Bias Temperature, K:  300.000
+          Bias map details: 
+              Bias map filename: sili.Carbon.pmap
+              Cumulative Wt:  910780.38    
+              No. of tabulated cubelets:   150144
+              Cutoff Potential(kcal):     30.00000
+          Maximum allowed energy: 0.10E+11 kcal/mol
+      ------------------------------------------------------------
+      Basic Move type:    ROTATE
+      Specific Move type: RROTATE
+        Rigid Molecule Random-Rotation Parameters :
+        Scaling of Rotation increment not allowed.
+        Initial rotation-delta:      0.20000
+        Maximum allowed energy: 0.10E+11 kcal/mol
+      ------------------------------------------------------------
+      Basic Move type:    TRANSLATE
+      Specific Move type: RTRANSLATE
+        Rigid Molecule Random-Translation Parameters :
+        Scaling of Translation length not allowed.
+        Initial translation length:      0.20000
+        Maximum allowed energy: 0.10E+11 kcal/mol
+      ------------------------------------------------------------
+ 
+  Movie Information
+    Movie output file : movie.xyz
+    Starting step     : 0
+    Ending step       : 100000
+    Steps btwn frames : 1000
+    Dumping zeolite   : F
+ 
+------------------------------------------------------------
+Beginning GCMC simulation number 1 of 1   (1000 steps)
+------------------------------------------------------------
+The GCMC Simulation Parameters:
+  Simulation Number :    1
+  Configuration file: benzene.con.1
+  Restart file      : benzene.res.1
+  ------------------------------------------------------------
+  GCMC Species Parameters:
+    ----------------------------------------------------------
+    Species Name: Benzene
+      Press.(kPa)   Fugacity      murti   B(Adams)
+            1.010      1.010    -22.073     -4.000
+    ----------------------------------------------------------
+
+
+  Macro-iteration number 100 (100 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Benzene    Pressure: 1.0100 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.00   (0 of 23)  
+      DELETE (BDELETE)          Acc. Ratio: 0.00   (0 of 0)  
+      ROTATE (RROTATE)          Acc. Ratio: 0.00   (0 of 0)  Max disp:  0.200
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.00   (0 of 0)  Max disp:  0.200
+      Number of Molecules (ins, blk, cum, stdd)   0.00   0.00   0.00   0.00
+ 
+  Macro-iteration number 200 (200 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Benzene    Pressure: 1.0100 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.028   (1 of 36)  
+      DELETE (BDELETE)          Acc. Ratio: 0.00   (0 of 12)  
+      ROTATE (RROTATE)          Acc. Ratio: 0.727   (8 of 11)  Max disp:  0.200
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.647   (11 of 17)  Max disp:  0.200
+      Number of Molecules (ins, blk, cum, stdd)   1.00   0.46   0.23   0.42
+ 
+  Macro-iteration number 300 (300 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Benzene    Pressure: 1.0100 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.051   (3 of 59)  
+      DELETE (BDELETE)          Acc. Ratio: 0.00   (0 of 45)  
+      ROTATE (RROTATE)          Acc. Ratio: 0.697   (23 of 33)  Max disp:  0.200
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.769   (30 of 39)  Max disp:  0.200
+      Number of Molecules (ins, blk, cum, stdd)   3.00   2.25   0.90   1.11
+ 
+  Macro-iteration number 400 (400 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Benzene    Pressure: 1.0100 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.049   (4 of 81)  
+      DELETE (BDELETE)          Acc. Ratio: 0.00   (0 of 71)  
+      ROTATE (RROTATE)          Acc. Ratio: 0.657   (44 of 67)  Max disp:  0.200
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.807   (46 of 57)  Max disp:  0.200
+      Number of Molecules (ins, blk, cum, stdd)   4.00   3.86   1.64   1.61
+ 
+  Macro-iteration number 500 (500 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Benzene    Pressure: 1.0100 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.038   (4 of 104)  
+      DELETE (BDELETE)          Acc. Ratio: 0.00   (0 of 98)  
+      ROTATE (RROTATE)          Acc. Ratio: 0.655   (55 of 84)  Max disp:  0.200
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.778   (70 of 90)  Max disp:  0.200
+      Number of Molecules (ins, blk, cum, stdd)   4.00   4.00   2.11   1.72
+ 
+  Macro-iteration number 600 (600 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Benzene    Pressure: 1.0100 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.038   (5 of 130)  
+      DELETE (BDELETE)          Acc. Ratio: 0.00   (0 of 124)  
+      ROTATE (RROTATE)          Acc. Ratio: 0.670   (69 of 103)  Max disp:  0.200
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.739   (88 of 119)  Max disp:  0.200
+      Number of Molecules (ins, blk, cum, stdd)   5.00   4.95   2.59   1.90
+ 
+  Macro-iteration number 700 (700 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Benzene    Pressure: 1.0100 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.045   (7 of 157)  
+      DELETE (BDELETE)          Acc. Ratio: 0.00   (0 of 147)  
+      ROTATE (RROTATE)          Acc. Ratio: 0.700   (91 of 130)  Max disp:  0.200
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.746   (106 of 142)  Max disp:  0.200
+      Number of Molecules (ins, blk, cum, stdd)   7.00   5.45   3.00   2.04
+ 
+  Macro-iteration number 800 (800 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Benzene    Pressure: 1.0100 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.038   (7 of 182)  
+      DELETE (BDELETE)          Acc. Ratio: 0.00   (0 of 163)  
+      ROTATE (RROTATE)          Acc. Ratio: 0.684   (108 of 158)  Max disp:  0.200
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.728   (126 of 173)  Max disp:  0.200
+      Number of Molecules (ins, blk, cum, stdd)   7.00   7.00   3.50   2.32
+ 
+  Macro-iteration number 900 (900 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Benzene    Pressure: 1.0100 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.034   (7 of 205)  
+      DELETE (BDELETE)          Acc. Ratio: 0.00   (0 of 194)  
+      ROTATE (RROTATE)          Acc. Ratio: 0.659   (122 of 185)  Max disp:  0.200
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.703   (135 of 192)  Max disp:  0.200
+      Number of Molecules (ins, blk, cum, stdd)   7.00   7.00   3.89   2.45
+ 
+  Macro-iteration number 1000 (1000 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Benzene    Pressure: 1.0100 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.035   (8 of 230)  
+      DELETE (BDELETE)          Acc. Ratio: 0.00   (0 of 213)  
+      ROTATE (RROTATE)          Acc. Ratio: 0.640   (135 of 211)  Max disp:  0.200
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.707   (157 of 222)  Max disp:  0.200
+      Number of Molecules (ins, blk, cum, stdd)   8.00   7.62   4.26   2.59
+ 
+movie.F90: Opening file movie.xyz  29
+ Need more code here
+ ________ ACTUAL ENERGIES    _____________
+    Energy:         -360.850
+     Coul:  0.000E+00-0.145E+02
+    NCoul: -0.477E+00-0.346E+03
+    Intramolecular:    bs       bb      tor       ip      con    total
+                      0.00000  0.00000  0.00000  0.00000  0.00000  0.00000  0.00000  0.00000
+ 
+ ________ STORED ENERGIES    _____________
+    Energy:            0.000
+     Coul:  0.000E+00-0.145E+02
+    NCoul: -0.477E+00-0.346E+03
+    Intramolecular:    bs       bb      tor       ip      con    total
+                      0.00000  0.00000  0.00000  0.00000  0.00000  0.00000  0.00000  0.00000
+ ________ ACTUAL ENERGIES    _____________
+    Energy:         -360.373
+     Coul: -0.145E+02 0.000E+00
+    NCoul: -0.346E+03 0.000E+00
+    Intramolecular:    bs       bb      tor       ip      con    total
+                      0.00000  0.00000  0.00000  0.00000  0.00000  0.00000  0.00000  0.00000
+ 
+ ________ STORED ENERGIES    _____________
+    Energy:            0.000
+     Coul: -0.145E+02 0.000E+00
+    NCoul: -0.346E+03 0.000E+00
+    Intramolecular:    bs       bb      tor       ip      con    total
+                      0.00000  0.00000  0.00000  0.00000  0.00000  0.00000  0.00000  0.00000
+------------------------------------------------------------
+Ending GCMC simulation number 1    Nrg dev check: 0.804E-12
+  Benzene:  P (kPa): 1.010    loading (molec/uc): 0.266
+------------------------------------------------------------
+ music.F90 :  262
+Main Program   Time: 0.2120 sec   Number of calls: 1   Time per call: 0.2120 sec

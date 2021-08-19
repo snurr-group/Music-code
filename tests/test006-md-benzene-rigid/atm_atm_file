@@ -1,0 +1,12 @@
+################### Benzene Potentials #####################
+Carbon    Carbon   LJ A@698828.9 B@569.7  HICUT@13.0 LOCUT@0.001
+Carbon    Hydrogen LJ A@91826.0  B@112.26 HICUT@13.0 LOCUT@0.001
+Hydrogen  Hydrogen LJ A@6630.0   B@18.6   HICUT@13.0 LOCUT@0.001
+Carbon    Carbon   BENZPOT C@8.389  D@-0.3346 HICUT@5.0 LOCUT@0.001
+Carbon    Hydrogen BENZPOT C@-8.389 D@0.3346  HICUT@5.0 LOCUT@0.001
+Hydrogen  Hydrogen BENZPOT C@8.389  D@-0.3346 HICUT@5.0 LOCUT@0.001
+Carbon    Silicon  OFF
+Carbon    Oxygen   OFF
+Hydrogen  Silicon  OFF
+Hydrogen  Oxygen   OFF
+

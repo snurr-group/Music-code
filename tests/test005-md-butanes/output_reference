@@ -1,0 +1,547 @@
+ Looking for Control file : test005.ctr
+Welcome to Music
+Reading from control file test005.ctr
+ Initializing General Parameters
+------------------------------------------------------------
+The ATOMS structure:
+  No. of atom types:     4
+    Atom Name           : Methyl
+    Atom Symbol         : C
+    Atom File           : Methyl.atm
+    Atom Mass           :    15.00
+    sscharge, szcharge  :   0.0000  0.0000
+    Required # of bonds :   1
+    Ion Type            : NONE 
+ 
+    Atom Name           : Methylene
+    Atom Symbol         : C
+    Atom File           : Methylene.atm
+    Atom Mass           :    14.00
+    sscharge, szcharge  :   0.0000  0.0000
+    Required # of bonds :   2
+    Ion Type            : NONE 
+ 
+    Atom Name           : Silicon
+    Atom Symbol         : Si
+    Atom File           : Silicon.atm
+    Atom Mass           :    28.09
+    sscharge, szcharge  :   1.8000  1.8000
+    Required # of bonds :   4
+    Ion Type            : NONE 
+ 
+    Atom Name           : Oxygen
+    Atom Symbol         : O
+    Atom File           : Oxygen.atm
+    Atom Mass           :    16.00
+    sscharge, szcharge  :  -1.0000 -1.0000
+    Required # of bonds :   2
+    Ion Type            : NONE 
+------------------------------------------------------------
+    Reading molecule information for Butane from: ./potentials/molecules/Butane.mol
+ molecule.F90 : 1065
+  Molecule will be rotated so that the principle axes 
+   will coincide with coordinate system axes
+ Generating Connections for Butane                                          
+    Reading molecule information for ButaneCopy from: ./potentials/molecules/ButaneCopy.mol
+ molecule.F90 : 1065
+  Molecule will be rotated so that the principle axes 
+   will coincide with coordinate system axes
+ Generating Connections for ButaneCopy                                      
+    Reading molecule information for sili from: ./potentials/molecules/sili.mol
+ molecule.F90 : 1065
+  Molecule will be rotated so that the principle axes 
+   will coincide with coordinate system axes
+  The SIMCELL structure:
+  nx, ny, nz            :    2   2   2
+  ncells                :    8
+  ORTHORHOMBIC
+  edge lengths (Ang)    :    40.1400   39.8400   26.8400
+  cell angles (degrees) :    90.0000   90.0000   90.0000
+  origin shift (Ang)    : 0.0000   0.0000   0.0000
+  cell vector a         : 40.1400   0.0000   0.0000
+  cell vector b         : 0.0000  39.8400   0.0000
+  cell vector c         : 0.0000   0.0000  26.8400
+  box width in (a,b,c)  :    40.1400   39.8400   26.8400
+  minimum width (Ang)   :    26.8400
+  volume (Angstroms^3)  : 42921.93
+------------------------------------------------------------
+The MOLECULES structure:
+  No. of molecule types:     3
+------------------------------------------------------------
+  Molecule Name       : Butane
+  Molecule Mass       : 58.00
+  Molecule File       : Butane.mol
+  Degrees of freedom  : 12
+  DOF origin          : 3N_Calculation
+  Number of atoms     : 4
+  Net Charge          : 0.0
+  Dipole Moment(debye): 0.000000000
+  Translation xform   : 0.00000   0.00000   0.00000
+  Rotational xform    : 
+    1.00000   0.00000   0.00000
+    0.00000   1.00000   0.00000
+    0.00000   0.00000   1.00000
+      Atom Name           : Methyl
+      Atom Type           :    1
+      Atom Position       :   0.0000  0.0000  0.0000
+      Equilibrium charge  :   0.0000
+      MD Set, type        :    0   0
+      Atom Name           : Methylene
+      Atom Type           :    2
+      Atom Position       :   1.2684 -0.8556  0.0000
+      Equilibrium charge  :   0.0000
+      MD Set, type        :    0   0
+      Atom Name           : Methylene
+      Atom Type           :    2
+      Atom Position       :   2.5369  0.0000  0.0000
+      Equilibrium charge  :   0.0000
+      MD Set, type        :    0   0
+      Atom Name           : Methyl
+      Atom Type           :    1
+      Atom Position       :   3.8053 -0.8556  0.0000
+      Equilibrium charge  :   0.0000
+      MD Set, type        :    0   0
+  Connection Information : 
+    Connection Information for Butane                                          
+    Atom     1:      2    1.530
+    Atom     2:      1    3    1.530   1.530
+    Atom     3:      2    4    1.530   1.530
+    Atom     4:      3    1.530
+------------------------------------------------------------
+  Molecule Name       : ButaneCopy
+  Molecule Mass       : 58.00
+  Molecule File       : ButaneCopy.mol
+  Degrees of freedom  : 12
+  DOF origin          : 3N_Calculation
+  Number of atoms     : 4
+  Net Charge          : 0.0
+  Dipole Moment(debye): 0.000000000
+  Translation xform   : 0.00000   0.00000   0.00000
+  Rotational xform    : 
+    1.00000   0.00000   0.00000
+    0.00000   1.00000   0.00000
+    0.00000   0.00000   1.00000
+      Atom Name           : Methyl
+      Atom Type           :    1
+      Atom Position       :   0.0000  0.0000  0.0000
+      Equilibrium charge  :   0.0000
+      MD Set, type        :    0   0
+      Atom Name           : Methylene
+      Atom Type           :    2
+      Atom Position       :   1.2684 -0.8556  0.0000
+      Equilibrium charge  :   0.0000
+      MD Set, type        :    0   0
+      Atom Name           : Methylene
+      Atom Type           :    2
+      Atom Position       :   2.5369  0.0000  0.0000
+      Equilibrium charge  :   0.0000
+      MD Set, type        :    0   0
+      Atom Name           : Methyl
+      Atom Type           :    1
+      Atom Position       :   3.8053 -0.8556  0.0000
+      Equilibrium charge  :   0.0000
+      MD Set, type        :    0   0
+  Connection Information : 
+    Connection Information for ButaneCopy                                      
+    Atom     1:      2    1.530
+    Atom     2:      1    3    1.530   1.530
+    Atom     3:      2    4    1.530   1.530
+    Atom     4:      3    1.530
+------------------------------------------------------------
+  Molecule Name       : sili
+  Molecule Mass       : 46146.0
+  Molecule File       : sili.mol
+  Degrees of freedom  : 6912
+  DOF origin          : 3N_Calculation
+  Number of atoms     : 2304
+  Net Charge          : 0.0
+  Dipole Moment(debye): 0.1E-09
+  Translation xform   : 0.00000   0.00000   0.00000
+  Rotational xform    : 
+    1.00000   0.00000   0.00000
+    0.00000   1.00000   0.00000
+    0.00000   0.00000   1.00000
+  Atom list omitted (natoms > 10)
+  Connection Information : 
+    No connectivity information for sili
+------------------------------------------------------------
+------------------------------------------------------------
+Configuration Section 
+No. of species :      3
+  ----------------------------------------------------------
+  Species name : Butane                                          
+    No. of molecules :     16
+    No. of atoms     :    4
+    Initial Config. Source : RESTARTFILE
+    Source Filename: start_config
+    ----------------------------------------------------------
+  Species name : ButaneCopy                                      
+    No. of molecules :     16
+    No. of atoms     :    4
+    Initial Config. Source : RESTARTFILE
+    Source Filename: start_config
+    ----------------------------------------------------------
+  Species name : sili                                            
+    No. of molecules :      1
+    No. of atoms     : 2304
+    Initial Config. Source : FIXED
+    Source Filename: NULL
+    ----------------------------------------------------------
+Initializing intra molecular info from molecule file: ./potentials/molecules/Butane.mol
+ intramolecular.F90 :  165
+ intra filename passed isintramolecular_file                             xx
+ intramolecular.F90 :  171
+ Initilizing stretching...
+ Generating list of bond stretches..
+ ...finished initilizing bond stretching for this molecule
+ Initilizing bending...
+ Initializing bond bending...
+ ... finished initializing bond bending
+Initializing torsions ..
+.. finished initializing torsions
+Initialized all intramolecular stuff for Butane
+Initializing intra molecular info from molecule file: ./potentials/molecules/ButaneCopy.mol
+ intramolecular.F90 :  165
+ intra filename passed isintramolecular_file                             xx
+ intramolecular.F90 :  171
+ Initilizing stretching...
+ Generating list of bond stretches..
+ ...finished initilizing bond stretching for this molecule
+ Initilizing bending...
+ Initializing bond bending...
+ ... finished initializing bond bending
+Initializing torsions ..
+.. finished initializing torsions
+Initialized all intramolecular stuff for ButaneCopy
+Initializing intra molecular info from molecule file: ./potentials/molecules/sili.mol
+ intramolecular.F90 :  165
+ intra filename passed isintramolecular_file                             xx
+ intramolecular.F90 :  171
+Initialized all intramolecular stuff for sili
+ Finished Initializing Intramolecular interactions
+ Initializing Species-Species interactions....
+ssdriver.F90:  160 WARNING: map species name should be specified like: MAP@species_name
+  Will assume that map species is: "sili"
+pmap.F90 :  348
+ Reading potential map: ./potentials/pmaps/sili.Carbon.pmap
+   ------------------------------------------------------------
+   Pmap Header Section:
+     No. of tabulated pts.:   197404
+     Edge Lengths         :   20.070  19.920  13.420
+     Grid size (x, y, z)  :   101  100   68
+     Grid spacing         :    0.201   0.201   0.200
+     Potential Cutoff(kJ) :        100.000
+     No. of types of atoms:     4
+       Atom: Oxygen
+       Symbol    : O
+       Charge    :  -0.7100
+       Parameters:   319195.00000     431.95999       0.00000       0.00000
+       Atom: Silicon
+       Symbol    : Si
+       Charge    :   1.4200
+       Parameters:        0.00000       0.00000       0.00000       0.00000
+       Atom: Aluminum
+       Symbol    : Al
+       Charge    :   0.0000
+       Parameters:        0.00000       0.00000       0.00000       0.00000
+       Atom: Hydrogen
+       Symbol    : H
+       Charge    :   0.0000
+       Parameters:        0.00000       0.00000       0.00000       0.00000
+ Warning: charges are taken from molecule file and are not displayed here!
+ssdriver.F90:  160 WARNING: map species name should be specified like: MAP@species_name
+  Will assume that map species is: "sili"
+ Finished Initializing Species-Species interactions.
+ Finished Initializing Ff interactions.
+ Calling ff_initCal
+ Call to ff_initCalc successful 
+  ------------------------------------------------------------
+  The "BASIC" FF information:
+  ------------------------------------------------------------
+  NON-COULOMBIC SPECIES-SPECIES pair parameters:
+  Information taken from: spc_spc_file
+    ------------------------------------------------------------
+    (1,1)  Butane, Butane:            BASIC
+      Input Line: NCOUL  BASIC  LJ  FAST  
+      Fast interaction?    T
+      COM-based cut-off?   F
+      COM-COM smoothing?   F
+      Atom-Atom PAIR PARAMETERS:
+        Information taken from: atm_atm_file
+      Overview by atomic pairs:
+      (1,1)  Methyl, Methyl:            LJ
+          Methyl-Methyl LJ parameters from SIGEPS
+            Sigma: 3.7750 Ang   Epsilon/k_Boltz: 104.28 K
+            A: 0.69E+07 kcal A^12/mol   B: 2398.774 kcal A^6/mol
+            high cutoff: 13.00 Ang   low cutoff: 0.1E-03 Ang
+      (1,2)  Methyl, Methylene:         LJ
+          Methyl-Methylene LJ parameters from SIGEPS
+            Sigma: 3.9230 Ang   Epsilon/k_Boltz: 72.048 K
+            A: 0.76E+07 kcal A^12/mol   B: 2087.421 kcal A^6/mol
+            high cutoff: 13.00 Ang   low cutoff: 0.1E-03 Ang
+      (2,2)  Methylene, Methylene:      LJ
+          Methylene-Methylene LJ parameters from SIGEPS
+            Sigma: 3.9230 Ang   Epsilon/k_Boltz: 72.048 K
+            A: 0.76E+07 kcal A^12/mol   B: 2087.421 kcal A^6/mol
+            high cutoff: 13.00 Ang   low cutoff: 0.1E-03 Ang
+    ------------------------------------------------------------
+    (1,2)  Butane, ButaneCopy:        BASIC
+      Input Line: NCOUL  BASIC  LJ  FAST  
+      Fast interaction?    T
+      COM-based cut-off?   F
+      COM-COM smoothing?   F
+      Atom-Atom PAIR PARAMETERS:
+        Information taken from: atm_atm_file
+      Overview by atomic pairs:
+      (1,1)  Methyl, Methyl:            LJ
+          Methyl-Methyl LJ parameters from SIGEPS
+            Sigma: 3.7750 Ang   Epsilon/k_Boltz: 104.28 K
+            A: 0.69E+07 kcal A^12/mol   B: 2398.774 kcal A^6/mol
+            high cutoff: 13.00 Ang   low cutoff: 0.1E-03 Ang
+      (1,2)  Methyl, Methylene:         LJ
+          Methyl-Methylene LJ parameters from SIGEPS
+            Sigma: 3.9230 Ang   Epsilon/k_Boltz: 72.048 K
+            A: 0.76E+07 kcal A^12/mol   B: 2087.421 kcal A^6/mol
+            high cutoff: 13.00 Ang   low cutoff: 0.1E-03 Ang
+      (2,2)  Methylene, Methylene:      LJ
+          Methylene-Methylene LJ parameters from SIGEPS
+            Sigma: 3.9230 Ang   Epsilon/k_Boltz: 72.048 K
+            A: 0.76E+07 kcal A^12/mol   B: 2087.421 kcal A^6/mol
+            high cutoff: 13.00 Ang   low cutoff: 0.1E-03 Ang
+    ------------------------------------------------------------
+    (1,3)  Butane, sili:              MAP
+      Butane sili              NCOUL  MAP FAST ALL@PMAP@sili.Carbon.pmap
+      Methyl(1):       PMAP map from: sili.Carbon.pmap   tabulated points: 197404
+      Methylene(2):    PMAP map from: sili.Carbon.pmap   tabulated points: 197404
+      Silicon(3):      OFF
+      Oxygen(4):       OFF
+    ------------------------------------------------------------
+    (2,2)  ButaneCopy, ButaneCopy:    BASIC
+      Input Line: NCOUL  BASIC  LJ  FAST  
+      Fast interaction?    T
+      COM-based cut-off?   F
+      COM-COM smoothing?   F
+      Atom-Atom PAIR PARAMETERS:
+        Information taken from: atm_atm_file
+      Overview by atomic pairs:
+      (1,1)  Methyl, Methyl:            LJ
+          Methyl-Methyl LJ parameters from SIGEPS
+            Sigma: 3.7750 Ang   Epsilon/k_Boltz: 104.28 K
+            A: 0.69E+07 kcal A^12/mol   B: 2398.774 kcal A^6/mol
+            high cutoff: 13.00 Ang   low cutoff: 0.1E-03 Ang
+      (1,2)  Methyl, Methylene:         LJ
+          Methyl-Methylene LJ parameters from SIGEPS
+            Sigma: 3.9230 Ang   Epsilon/k_Boltz: 72.048 K
+            A: 0.76E+07 kcal A^12/mol   B: 2087.421 kcal A^6/mol
+            high cutoff: 13.00 Ang   low cutoff: 0.1E-03 Ang
+      (2,2)  Methylene, Methylene:      LJ
+          Methylene-Methylene LJ parameters from SIGEPS
+            Sigma: 3.9230 Ang   Epsilon/k_Boltz: 72.048 K
+            A: 0.76E+07 kcal A^12/mol   B: 2087.421 kcal A^6/mol
+            high cutoff: 13.00 Ang   low cutoff: 0.1E-03 Ang
+    ------------------------------------------------------------
+    (2,3)  ButaneCopy, sili:          MAP
+      ButaneCopy sili          NCOUL  MAP FAST ALL@PMAP@sili.Carbon.pmap
+      Methyl(1):       PMAP map from: sili.Carbon.pmap   tabulated points: 197404
+      Methylene(2):    PMAP map from: sili.Carbon.pmap   tabulated points: 197404
+      Silicon(3):      OFF
+      Oxygen(4):       OFF
+    ------------------------------------------------------------
+    (3,3)  sili, sili:                OFF
+  ------------------------------------------------------------
+  COULOMBIC SPECIES-SPECIES pair parameters:
+  Information taken from: spc_spc_file
+    ------------------------------------------------------------
+    (1,1)  Butane, Butane:            OFF
+    ------------------------------------------------------------
+    (1,2)  Butane, ButaneCopy:        OFF
+    ------------------------------------------------------------
+    (1,3)  Butane, sili:              OFF
+    ------------------------------------------------------------
+    (2,2)  ButaneCopy, ButaneCopy:    OFF
+    ------------------------------------------------------------
+    (2,3)  ButaneCopy, sili:          OFF
+    ------------------------------------------------------------
+    (3,3)  sili, sili:                OFF
+  ------------------------------------------------------------
+  INTRAMOLECULAR information for each species 
+    ------------------------------------------------------------
+    Intramolecular information for Butane:
+      Bond Stretching   :  On Morse Fast      3 stretch pairs
+        Bond Stretch Information for Butane
+          Fast Interaction
+        Bond stretch pair :  2   3
+            Model and Params: Morse   0.8394E+02 0.1841E+01 0.1536E+01
+        Bond stretch pair :  1   2
+            Model and Params: Morse   0.8394E+02 0.1841E+01 0.1536E+01
+        Bond stretch pair :  4   3
+            Model and Params: Morse   0.8394E+02 0.1841E+01 0.1536E+01
+      Bond Bending      :  On Harmonica Fast    2 bending triplets
+        Bond Bending Information for Butane
+          Fast Interaction
+          Bond bending groups :  1  2 3
+            Model and Params: Harmonica   0.1244E+03  112.000
+          Bond bending groups :  4  3 2
+            Model and Params: Harmonica   0.1244E+03  112.000
+      Four-Body Interactions:  On Fast    1 four-body atom sets
+        Four-Body Forcefield Information for "Butane"
+          Fast Interaction
+          Atom set:  1  2  3  4
+            Model and Params: Cosexpansion   2.217  2.905 -3.136 -0.731  6.271 -7.527
+      Intra Pairwise Pot:  OFF
+      Intra Coulombic Pot:  OFF
+      Constraints       :  OFF
+    ------------------------------------------------------------
+    Intramolecular information for ButaneCopy:
+      Bond Stretching   :  On Morse Fast      3 stretch pairs
+        Bond Stretch Information for ButaneCopy
+          Fast Interaction
+        Bond stretch pair :  2   3
+            Model and Params: Morse   0.8394E+02 0.1841E+01 0.1536E+01
+        Bond stretch pair :  1   2
+            Model and Params: Morse   0.8394E+02 0.1841E+01 0.1536E+01
+        Bond stretch pair :  4   3
+            Model and Params: Morse   0.8394E+02 0.1841E+01 0.1536E+01
+      Bond Bending      :  On Harmonica Fast    2 bending triplets
+        Bond Bending Information for ButaneCopy
+          Fast Interaction
+          Bond bending groups :  1  2 3
+            Model and Params: Harmonica   0.1244E+03  112.000
+          Bond bending groups :  4  3 2
+            Model and Params: Harmonica   0.1244E+03  112.000
+      Four-Body Interactions:  On Fast    1 four-body atom sets
+        Four-Body Forcefield Information for "ButaneCopy"
+          Fast Interaction
+          Atom set:  1  2  3  4
+            Model and Params: Cosexpansion   2.217  2.905 -3.136 -0.731  6.271 -7.527
+      Intra Pairwise Pot:  OFF
+      Intra Coulombic Pot:  OFF
+      Constraints       :  OFF
+    ------------------------------------------------------------
+    Intramolecular information for sili:
+      Bond Stretching   :  OFF
+      Bond Bending      :  OFF
+      Torsion Angles    :  OFF
+      Intra Pairwise Pot:  OFF
+      Intra Coulombic Pot:  OFF
+      Constraints       :  OFF
+------------------------------------------------------------
+ md.F90 :  109
+ Initializing MD Params
+ thermostat used is : NULL                                            
+ Finished Initializing MD Params
+-----------------------------------------------
+ MD Simulation Information
+-----------------------------------------------
+    number of movetypes          :      1
+     Different movetypes during prodn run: 
+    -----------------------------------------------
+   Ensemble        : NVE
+   Integrator Name : VELOCITYVERLET
+   No. Iterations  :         1           Time Step       :      0.00100 ps
+   slowStep        :         0
+   Writes to I/O   :      1000           Writes to Config:    100000
+      Velocity Verlet Integrator Information
+      No Extra Parameters
+     Equilibration details : 
+    -----------------------------------------------
+     Velocities Taken from file : start_config
+ 
+ Begining Simulation
+ Number of Iterations to Perform :       100
+ music.F90 :  204 Start of sim :   1
+ 
+ MD Step: 100    Time    100.000 fs  
+ --------------------------------------------------
+ Butane Information
+           Variable        Current       CumulAvg          Block            Std
+   Tmole          :        184.041        192.425        192.425          2.977
+   Tatom          :        279.802        303.437        303.437         16.596
+   Intramolecular :      10.073177       9.471788       9.471788       0.738085
+   Kinetic Energy :      13.957659      15.136676      15.136676       0.827860
+   Stretch PE     :       4.631160       4.414696       4.414696       0.505261
+   Bending PE     :       2.499986       2.766580       2.766580       0.474573
+   Tosional PE    :       2.942031       2.290513       2.290513       0.394508
+ ButaneCopy Information
+           Variable        Current       CumulAvg          Block            Std
+   Tmole          :        286.240        285.389        285.389          2.111
+   Tatom          :        295.052        310.578        310.578         15.418
+   Intramolecular :      10.519288       9.690051       9.690051       0.735237
+   Kinetic Energy :      14.718380      15.492878      15.492878       0.769134
+   Stretch PE     :       4.022720       3.716246       3.716246       0.556976
+   Bending PE     :       3.913955       3.366062       3.366062       0.478708
+   Tosional PE    :       2.582613       2.607742       2.607742       0.563638
+ Energy for Butane-Butane
+   Noncoulombic   :      -0.703764      -0.728119      -0.728119       0.024261
+   Coulombic      :       0.000000       0.000000       0.000000       0.000000
+ Energy for Butane-ButaneCopy
+   Noncoulombic   :      -1.334426      -1.370729      -1.370729       0.042103
+   Coulombic      :       0.000000       0.000000       0.000000       0.000000
+ Energy for Butane-sili
+   Noncoulombic   :     -13.148198     -13.374530     -13.374530       0.076258
+   Coulombic      :       0.000000       0.000000       0.000000       0.000000
+ Energy for ButaneCopy-ButaneCopy
+   Noncoulombic   :      -0.990218      -0.965843      -0.965843       0.058520
+   Coulombic      :       0.000000       0.000000       0.000000       0.000000
+ Energy for ButaneCopy-sili
+   Noncoulombic   :     -25.579997     -25.586114     -25.586114       0.036814
+   Coulombic      :       0.000000       0.000000       0.000000       0.000000
+   Pressure (Tot, I     -90.227728     116.788868    -207.016596
+   Pressure stats      -90.2277    -16.1536    -16.1536    106.3151
+ System Energy Totals(per total moles)
+   Total Potential:     -17.823381     -18.804378
+   Total Kinetic  :      14.338020      15.314777
+   Total Energy   :      -3.485361      -3.489601
+   COM Velocity (for each species) : SPC-1: 0.9731707879,SPC-2: 0.8048950003,
+ Total # Moles           32
+ --------------------------------------------------
+ 
+ 
+ 
+ -----------------------------------------------------
+                    MD SUMMARY
+            Total Steps:        101
+            Total Time :    100.000 fs  
+ =====================================================
+               System Energy Totals
+   Average Potential Energy:              -22.863 kJ/mol
+   Average Kinetic Energy:                 30.630 kJ/mol
+   Average Total Energy:                    7.766 kJ/mol
+   Total System Energy (not divide       -111.531551 kJ/mol
+ =====================================================
+ Butane Summary Information
+        T(mole)      :         192.425 K
+        T(atom)      :         303.437 K
+      Stretch Energy :           4.415 kJ/mol
+      Bending Energy :           2.767 kJ/mol
+      Torsion Energy :           2.291 kJ/mol
+   Total Intramolecular          9.472 kJ/mol
+   Total Kinetic Energy         15.137 kJ/mol
+ ButaneCopy Summary Information
+        T(mole)      :         285.389 K
+        T(atom)      :         310.578 K
+      Stretch Energy :           3.716 kJ/mol
+      Bending Energy :           3.366 kJ/mol
+      Torsion Energy :           2.608 kJ/mol
+   Total Intramolecular          9.690 kJ/mol
+   Total Kinetic Energy         15.493 kJ/mol
+ =====================================================
+               Pairwise Interaction Energies
+ Energy for Butane-Butane
+   Noncoul Inter Energy         -0.728 kJ/mol (total of 16 mols)
+   Coul Inter Energy :           0.000 kJ/mol (total of 16 mols)
+ Energy for Butane-ButaneCopy
+   Noncoul Inter Energy         -1.371 kJ/mol (total of 32 mols)
+   Coul Inter Energy :           0.000 kJ/mol (total of 32 mols)
+ Energy for Butane-sili
+   Noncoul Inter Energy        -26.749 kJ/mol (total of 16 mols)
+   Coul Inter Energy :           0.000 kJ/mol (total of 16 mols)
+ Energy for ButaneCopy-ButaneCopy
+   Noncoul Inter Energy         -0.966 kJ/mol (total of 16 mols)
+   Coul Inter Energy :           0.000 kJ/mol (total of 16 mols)
+ Energy for ButaneCopy-sili
+   Noncoul Inter Energy        -25.586 kJ/mol (total of 16 mols)
+   Coul Inter Energy :           0.000 kJ/mol (total of 16 mols)
+ -----------------------------------------------------
+ pcalls :            0
+Main Program   Time: 0.1860 sec   Number of calls: 1   Time per call: 0.1860 sec

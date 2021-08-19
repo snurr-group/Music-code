@@ -1,0 +1,11 @@
+---------------------------------------------------------------------------
+# for h2o-h2o forcefield SPC/E force field is used
+# Berendsen et al JPC 1987 6269
+# H2O -- H2O
+H_SPCE       H_SPCE          LJ OFF 
+H_SPCE       O_SPCE          LJ OFF
+CH4       CH4          LJ  SIG@3.166 EPS@78.15  HICUT@9.00 LOCUT@0.3 
+H_SPCE       H_SPCE          COUL
+H_SPCE       O_SPCE          COUL
+O_SPCE       O_SPCE          COUL
+---------------------------------------------------------------------------
