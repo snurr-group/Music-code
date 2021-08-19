@@ -1,0 +1,473 @@
+#!/usr/bin/perl
+#-*- mode: cperl;-*-
+
+#This script is intended to map the calls of a program starting
+#from some level in the hierarchy, given by the code file on 
+#the command line.  I wrote it to help me learn what was going 
+#on with the MUSIC code
+#----From the laptop of Louis Clark
+
+#--------------------------------------------
+# Defaults and key words
+#--------------------------------------------
+
+$deepest = 2;   #deepest recursive decent level
+$indent = 4;    #number of spaces to indent each level of tree
+$recursion_limit_key = 'RECURSION_LIMIT_REACHED';   
+$recursion_limit_key = lc($recursion_limit_key);
+$interface_key = 'INTERFACE:';   
+$recursive_call_key = 'RECURSIVE_CALL';   
+
+#--------------------------------------------
+# Define the possible command-line options
+#--------------------------------------------
+
+$noptions = 6;    
+#WARNING: do NOT change the order of these, olist[*][2] contains the flags 
+@olist = (["D","print Debug comments (alot of junk)"],
+	  ["l","Limit descent to [deepest_level], default is $deepest"],
+	  ["i","Indent tree display to [number_of_spaces], default is $indent"],
+	  ["c","descend also into routine Calls, use for looking at driver"],
+	  ["w","Warn when recursion limit has been reached"],
+	  ["T","Track/display route only to the first [specified_routine]"],
+	  [" ","empty"],
+);
+for($j=0;$j < $noptions;$j+=1) {
+  $olist[$j][2] = 0;
+}  
+
+if (!defined($ARGV[$0])) {
+  print"usage: tree [";
+  for($j=0;$j < $noptions;$j+=1) {
+    printf("%s",$olist[$j][0]);
+  }  
+  print"] [FILENAME]\nuse --help for more information\n";
+  exit(-1);
+}
+
+#-------------------------------------
+# Interpret command line options
+#-------------------------------------
+
+for($i=0;defined($ARGV[$i]);$i+=1) {
+#  print"$i: $ARGV[$i]\n";
+  $inp = $ARGV[$i];
+  if ($inp =~ /--/) {   
+    $inp =~ s/(--)(.*)/$2/;    
+    if ($inp eq 'help'){
+      printhelp();
+      exit(0);
+    }
+  }
+
+  if ($inp =~ /^-[a-zA-Z]/) {                 #process the commands
+    $found_command = 0;
+    $inp =~ s/(^-)(.*)/$2/;    
+    $length = length($inp);
+    for($k=0;$k < $length;$k+=1){
+      $com = substr($inp,$k,1);
+      for($j=0;$j < $noptions;$j+=1) {  
+	if($inp =~ /$olist[$j][0]/){   
+	  $found_command = 1;
+	  $olist[$j][2] = 1;  #turn option on
+	}
+      }
+    }
+
+    if($inp =~ /l/){            #get the deepest descent level
+      ($deepest = $inp) =~ s/(.*?l)(\d+)(.*)/$2/;
+      if($deepest !~ /\d/){die"must specify number immediately after 'l'\n"}
+    }
+    if($inp =~ /i/){            #get the tree indention
+      ($indent = $inp) =~ s/(.*?i)(\d+)(.*)/$2/;
+      if($indent !~ /\d/){die"must specify number immediately after 'i'\n"}
+      $one_indent = '';
+    }
+    if($inp =~ /T/){            #get the destination routine for path generation
+      $destination = $ARGV[$i+1];
+      if($destination =~ /^-/){die"must specify destination routine filename\n"}
+    }
+
+    if($found_command != '1'){die"could not interpret command: $inp\n"}
+
+  } else {                           #get the filename
+    $filespec = $inp;
+  }
+}
+
+for($j=1;$j<=$indent;$j+=1) {$one_indent = $one_indent.' '}
+#die "one: ($one_indent)\n";
+
+if(!defined($filespec)) {
+  die"You must specify a filename\n";
+  die"Try --help for information\n";
+}
+
+$basedir = `pwd`;
+chop($basedir);
+#print"base directory: $basedir\n";
+
+#-----------------------------------------------------
+# Process the file specification to get the filename
+#-----------------------------------------------------
+
+$filename = $filespec;
+$ending = '';
+if($filename =~ /\./) {($ending = $filename) =~ s/(^\S+)(\..*)/$2/} 
+if ($ending eq '.') {chop($filename); $ending = '';}
+if (($ending eq '')&&($filename !~ /_/)) {
+  $filename = $filename.'.f90';
+  $ending = '.f90';
+}
+if ($ending eq '') {
+  $only = $filename;
+  ($module = $filename) =~ s/(^.*?)(_.*)/$1/;  
+  $filename = $module.'.f90';
+  $caller = $only;
+  print"will descend through only $only in $filename\n";
+} elsif ($ending eq '.f90') {
+  $only = 'INITIAL_nocalls';
+  $caller = 'TOP('.$filename.')';
+  print"will descend through all routines in $filename\n";
+} else {
+  die"you will have no luck using this script on files with $ending endings\n";
+}
+
+if($olist[3][2]) {$only = 'INITIAL_all'}
+
+#-----------------------------------------------------
+# Search the routine(s) recursively
+#-----------------------------------------------------
+
+$depth = 0;
+$basehandle = 'filehandle';
+
+searchfile($filename,$caller,$only,$depth,$basehandle);
+
+if(!defined(${$caller})) {
+  print" found nothing in $filename, consider using -c option\n";
+  exit(0);
+}
+
+print"\nFinished creating tree\n";
+
+if ($olist[5][2]) { #T option, track to destination routine
+  $path = buildpath($caller,$destination,$path,0);
+  if ($path ne '') {
+    @fields = split(/\s/,$path);
+    for($i=0;defined($fields[$i]);$i+=1) {
+      $sp = '';
+      for($j=1;$j < $i;$j+=1) {$sp = $sp.$one_indent}
+      print"$sp $fields[$i]\n";
+    }
+  } else {
+    print"\nCould not find a path to '$destination'\n";
+    print"within $deepest levels from '$caller'\n\n";
+    print"Tree from $caller:\n";
+    dumptreeof($caller,0);
+  }
+} else {
+  print"\n$caller\n";
+  dumptreeof($caller,0);
+}
+
+if($olist[0][2]) {print"\nending, have a nice day\n"}
+print"\n";
+
+exit(0);
+
+##### does the actual searching
+##### (in a separate subroutine so I can call it recursively)
+sub searchfile {
+  local($filename, $caller, $only, $n, $handle) = @_;
+  local($entering,$leaving,$inname,$module,$new,$line,$sp,$interface);
+
+  ($module = $filename) =~ s/(^.*)(\.\S*)/$1/;  #the module we're in now
+  $sp = '';
+  for($j=1;$j <= $n;$j+=1) {$sp = $sp.'  '}
+
+  if($olist[0][2]) {print"\n$sp *searchfile called: $filename, $module, $only, $n\n"}
+
+  $handle = $handle.$n;      #create a unique filehandle
+
+  if($olist[0][2]) {print "$sp processing file: $filename, using handle: $handle\n"}
+  if (-e $filename) {
+    open($handle,$filename) || die "could not open $filename\n";
+  } else {
+    if ($only =~ /INITIAL/) {
+      die"$filename does not exist\n";
+    } else {
+      ${$only} = 'error_'.$filename.'_does_not_exist';
+      return(1);
+    }
+  }
+
+  $entering = 0;
+  $leaving = 0;
+  $inname = '';
+  $interface = 0;
+  while(<$handle>) {
+    
+    $line = $_;
+    chop($line);
+#    print"$sp processing: $line\n";
+    $lno += 1;
+
+    #------Skip comment and declaration lines
+    if ($line =~ /^\s*\!/) {next}
+    if ($line =~ /\:\:/) {next}  #ie it's a declaration
+
+    #------Look for terminations of subroutines or functions
+    if($line =~ /^\s+End\sSubroutine/i) {    
+      $leaving = 2;
+      ($endname = $line) =~ s/(.*?Subroutine\s+)([\w_]+)(\s*.*)/$2/i;
+    } elsif ($line =~ /^\s+End\sFunction/i) {    
+      $leaving = 2;
+      ($endname = $line) =~ s/(.*?Function\s+)([\w_]+)(\s*.*)/$2/i;
+    } elsif ($line =~ /^\s+End\sInterface/i) {    
+      $leaving = 2;
+      ($endname = $line) =~ s/(.*?Interface\s+)([\w_]+)(\s*.*)/$2/i;
+    }
+    if($leaving == 2) {
+      $leaving = 1;
+      if ($interface) {$endname = $inname}
+      $interface = 0;
+      if (uc($endname) ne uc($inname)) { die"exited $endname unexpectedly\n$line\n"}
+      if($olist[0][2]) {print"$sp leaving ($n) function, subroutine or interface:: $inname\n"}
+      if ($inname eq $only) {
+#	print"$sp skipping out\n";
+	last;
+      }
+      next;
+    }
+  
+    #------Look for declarations of subroutines, functions or interfaces
+    if($line =~ /.*\s+Subroutine/) {    
+      $entering = 3;
+      ($inname = $line) =~ s/(.*\s+Subroutine\s+)([\w_]+)(\s*.*)/$2/;
+    } elsif ($line =~ /.*[\s\)]+Function/) {    
+      $entering = 3;
+      ($inname = $line) =~ s/(.*[\s\)]+Function\s+)(.*?)(\s*\(.*)/$2/;
+    } elsif ($line =~ /^\s+Interface/) {    
+      $entering = 3;
+      $interface = 1;  #flags that it's an interface
+      ($inname = $line) =~ s/(^\s+Interface\s+)(.*?)/$2/;
+      if($olist[0][2]) {print"$sp found interface: $inname\n"}
+    }
+    if($entering == 3) {
+      $entering = 2;
+      if($olist[0][2]) {print"$sp entering ($n) function, subroutine or interface:: $inname\n"}
+    }
+
+    #------Skip to next line if appropriate
+#    if($olist[0][2]) {print"$sp making skip decision ($only)\n"}
+    $continue = 0;
+    if ($only eq 'INITIAL_nocalls') {      #evaluate routine tops only (not innards)
+      if ($entering == 2) {
+	$entering = 1;
+	$continue = 1;
+      }
+    } elsif ($only eq 'INITIAL_all') {     #evaluate both calls and tops
+      $entering = 1;
+      $continue = 1;
+    } elsif ($inname eq $only) {     #evaluate only the innards
+      if ($entering == 1) {
+	$continue = 1;
+      } elsif ($entering == 2) {
+        $entering = 1;
+      }
+    } 
+    if (!$continue) {next}
+
+    #------Look for Module procedure in interface declaration
+    if(($interface)&&($line =~ /\s+Module procedure.*?\w+_\w+/i )) {    
+      ($new = $line) =~ s/(\s*Module procedure\s*)(\w+_\w+)/$2/i;  #new routine name
+      if($olist[0][2]) {print"$sp found interface part:: $new\n"}      
+    }
+
+    #------Look for subroutine or function calls
+    if($line =~ /\w+_\w+\s*\(/ ) {    
+      ($new = $line) =~ s/(.*?)(\w+_\w+)(\s*\(.*)/$2/;  #name of new routine
+    }
+
+    #------Process the new name
+    if($new) {    
+      if($olist[0][2]) {printf("$sp found one: %s, containing: %s\n",$new,${$new})}
+
+      #------Determine appropriate place to store name
+      if ($only =~ /INITIAL/) {
+	$store = $caller;
+      } else {
+	$store = $only;
+      }
+
+      #------Store new name if appropriate
+      if (${$store} !~ /\s$new/i) {
+	if ((${$store} !~ /$interface_key/)&&($interface)) {
+	${$store} = ${$store}.' '.$interface_key;  
+	}
+	${$store} = ${$store}.' '.$new;  
+	if($olist[0][2]) {print"$sp added '$new' to list of '$store'\n"}
+      }
+      
+      #------Descend into new module:routine if not already explored
+      if(!defined(${$new})) {  
+	($newcore = $new) =~ s/(\w+?)(_\w+.*)/$1/;
+        $newfile = $newcore.'.f90';
+	if($olist[0][2]) {print"$sp descending into $newfile to look for: $new\n"}
+        if ($only =~ /INITIAL/) {
+	  $newcaller = $caller;
+	} else {
+	  $newcaller = $only;
+	}
+	if($n+2 <= $deepest) {
+	  searchfile($newfile,$newcaller,$new,$n+1,$handle);
+	} else {
+          ${$new} = $recursion_limit_key;
+	}
+	
+	if($olist[0][2]) {print"\n$sp back to level $n\n"}
+	if($olist[0][2]) {print"$sp '$new' now contains '${$new}'\n"}
+#        print"$sp current line is: $line\n";
+        next;
+      }
+      $new = 0;
+    }
+
+  }  #end of loop over file lines in $handle
+  close $handle;
+
+  #------check to see if we found the info we wanted
+  if(($only !~ /INITIAL/)&&($inname ne $only) ) { 
+  if($olist[0][2]) {print"WARNING: did not find $only in $filename\n"}
+    ${$only} = 'error_not_found_in_'.$filename;
+    $new = 'notfound';
+  }
+  if(($only !~ /INITIAL/)&&(!defined($new))) { 
+    ${$only} = 'nocalls';
+  }
+  if($olist[0][2]) {print"$sp returning from $filename \n"}
+#  if($only !~ /INITIAL/) {print"$sp ($only contains: ${$only})\n"}
+  return(0);
+}
+
+##### Dump the tree of a routine from a given starting point
+##### (in a separate subroutine so I can call it recursively)
+sub dumptreeof {
+  local($top,$level) = @_;
+  local($i,$j,@fields,$sp);
+
+  if($level > $deepest) {
+    print"WARNING: Algorithm fault: descended too many levels during dump\n";
+    return(0);
+  }
+
+#  print"dumptreeof called ($top,$level)\n";
+  
+  $sp = '';
+  for($j=1;$j <= $level;$j+=1) {$sp = $sp.$one_indent}
+
+  if(!defined(${$top})) {
+    print"$sp WARNING: variable '$top' not defined\n";
+    return(1);
+  }
+
+  ${$top} =~ s/^\s+//;  #remove leading spaces
+  @fields = split(/\s/,${$top});
+  for($i=0;defined($fields[$i]);$i+=1) {  
+    if($fields[$i] eq 'nocalls') {
+#      print"$sp $fields[$i]\n";
+    } elsif($fields[$i] =~ /$interface_key/) {
+      print"$sp $fields[$i]\n";
+    } elsif($fields[$i] =~ /$recursion_limit_key/) {
+      if($olist[4][2]) {print"$sp $fields[$i]\n"}
+    } elsif($fields[$i] =~ /error/) {
+      print"$sp $fields[$i]\n";
+    } elsif($fields[$i] eq $top) {  #check for recursive calls
+      print"$sp $fields[$i] $recursive_call_key\n";
+    } else {
+      print"$sp $fields[$i]\n";
+      dumptreeof($fields[$i],$level+1);
+    }
+  }
+
+  return(0);
+
+}
+
+##### seek along a particular branch of the tree until the "destination"
+##### is found.  Return a path (string of cat'ed routine names) to 
+##### this destination routine.  Note: leaves as soon as the first path is found
+sub buildpath {
+  local($start,$destination,$path,$level) = @_;
+  local($newpath,$i,@fields,$sp);
+
+  $newpath = $path.' '.$start;
+
+  $sp = '';
+  for($j=1;$j <= $level;$j+=1) {$sp = $sp.$one_indent}
+
+  if($olist[0][2]) {print"$sp in '$start' (${$start})\n"}
+  if($olist[0][2]) {print"$sp contains: $newpath\n"}
+
+  ($list = ${$start}) =~ s/^\s+//;
+  @fields = split(/\s+/,$list);
+  for($i=0;defined($fields[$i]);$i+=1) {  
+    if (lc($fields[$i]) eq lc($destination)) {  #then add to path
+      $newpath = $newpath.' '.$destination;
+      if($olist[0][2]) {print "$sp FOUND IT: $destination\n"}
+      last;
+    } elsif ($fields[$i] eq 'nocalls') {
+      next;
+    } elsif ($fields[$i] eq $interface_key) {
+      next;
+    } elsif ($fields[$i] eq $recursion_limit_key) {
+      next;
+    } else {  #descend into the new routine
+      if ($newpath =~ /$fields[$i]/) {next}  #avoid infinite loops
+      $newpath = buildpath($fields[$i],$destination,$newpath,$level+1);
+      if ($newpath =~ /$destination/i) {last}
+    }
+  }
+
+  if ($newpath =~ /$destination/i) {  #sucessful return, update path
+    $path = $newpath;
+    if($olist[0][2]) {print "$sp returning with path: $path\n"}
+  }
+  return($path);  
+}
+
+##### prints the help message
+sub printhelp {
+  print STDERR << "EOF";
+
+This script searches a given Fortran90 source code file
+for calls to other subroutines, functions or interfaces.
+It does this recursively and returns a very simple tree.
+
+If it is called with a filename that has a "." ending
+(e.g. md.f90) it will open that file and descend through
+all the routines.  On the other hand, if the filename
+does not have a "." ending, it will strip the name to
+the first "_", add a .f90 ending (md_init -> md.f90)
+and descend through only through the named routine.
+
+It can also be used to find a path (the first one) to a 
+specified routine.  For example:
+  tree -cl20T velverlet_integrate music
+will return the first path to "velverlet_integrate"
+
+Assumptions made:
+  1) All routines are contained within the filename corresponds by their name
+     e.g., md.f90 must contain md_init
+  2) Some other stuff that I've forgotten already
+EOF
+#  print"\nPress any key for commands:";
+#  $junk = getone();
+  print"\nCurrently understood commands are:\n";
+  for($j=0;$j < $noptions;$j+=1) {
+    printf(" -%s : %s\n",$olist[$j][0],$olist[$j][1]);
+  }  
+  print"\nFrom the laptop of Louis Clark\n";
+  return(0);
+}

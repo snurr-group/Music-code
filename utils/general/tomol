@@ -1,0 +1,395 @@
+#!/usr/bin/perl
+#-*- mode: cperl;-*-
+
+#convert miscellaneous file types to .mol files for MuSiC
+#----From the laptop of Louis Clark
+
+#--------------------------------------------
+# Define the possible command-line options
+#--------------------------------------------
+
+$noptions = 2;
+#WARNING: do NOT change the order of these, olist[*][2] contains the flags 
+@olist = (["T","specify a new base Title for output file"],
+	  ["h","just extract the Hydrocarbon atoms (H and C)"],
+);
+for($j=0;$j < $noptions;$j+=1) {
+  $olist[$j][2] = 0;
+}  
+
+if (!defined($ARGV[$0])) {
+  print"usage: tomol [";
+  for($j=0;$j < $noptions;$j+=1) {
+    printf("%s",$olist[$j][0]);
+  }  
+  print"] [FILENAME]\nuse --help for more information\n";
+  exit(-1);
+}
+
+#------------------------------------------------------------------
+# A list of atom name to symbol correspondence
+#------------------------------------------------------------------
+
+$nalist = 6;
+@alist = (["H","Hydrogen"],
+	  ["C","Carbon"],
+	  ["Si","Silicon"],
+	  ["Al","Aluminum"],
+	  ["N","Nitrogen"],
+	  ["O","Oxygen"],
+);
+
+#-------------------------------------
+# Interpret command line options
+#-------------------------------------
+
+for($i=0;defined($ARGV[$i]);$i+=1) {
+#  print"$i: $ARGV[$i]\n";
+  $inp = $ARGV[$i];
+  if ($inp =~ /--/) {   
+    $inp =~ s/(--)(.*)/$2/;    
+    if ($inp eq 'help'){
+      printhelp();
+      exit(0);
+    }
+  }
+
+  if ($inp =~ /^-/) {                 #process the commands
+    $found_command = 0;
+    $inp =~ s/(^-)(.*)/$2/;    
+    $length = length($inp);
+    for($k=0;$k < $length;$k+=1){
+      $com = substr($inp,$k,1);
+      for($j=0;$j < $noptions;$j+=1) {  
+	if($inp =~ /$olist[$j][0]/){   
+	  $found_command = 1;
+	  $olist[$j][2] = 1;  #turn option on
+	}
+      }
+    }
+
+    if($olist[0][2]){            #get the new base output filename
+      $outbase = $ARGV[$i+1];
+      if(($outbase =~ /^-/)||($outbase =~ /^\d/)) {
+	die"must specify normal archive filename\n";
+      }
+    }
+
+  } elsif ($inp =~ /^\d/) {          #get the atom numbers
+    $found_command = 1;
+    if ($inp =~ /[\,\-]/) {  #complex case
+      ($string = $inp) =~ s/\s+//g;
+#      print"frame spec: $string\n";
+      @fields = split(/,+/,$string);
+      for($j=0;defined($fields[$j]);$j+=1){
+	@nums = split(/-+/,$fields[$j]);
+	if(defined($nums[1])) {
+	  for($k=$nums[0];$k <= $nums[1];$k+=1) {
+	    $atoms[$k] = 1;
+	    $nwant += 1;  
+	  }
+          if($nums[1] > $biggest) {$biggest = $nums[1]}
+	} else {
+	  $atoms[$nums[0]] = 1;
+	  $nwant += 1;  
+          if($nums[0] > $biggest) {$biggest = $nums[0]}
+	}
+      }
+
+    } else {       #simple case (only one number)
+      $string = $inp;
+#      print"frame spec: $string\n";
+      $atoms[$inp] = 1;
+      $single_frame = $inp;
+      $nwant = 1;
+      $found_command = 1;
+      if ($inp == 0) {$nwant = -1}
+      $biggest = $inp;
+    }
+    $biggest += 1;
+
+    if($found_command != '1'){die"could not interpret command: $inp\n"}
+
+  } else {                           #get the filename
+    $inputfile = $inp;
+  }
+}
+
+if((!defined($inputfile))|($ARGV[$i-1] =~ /^-/)){
+  die"You must specify an input filename (last)\nTry --help for information\n";
+}
+
+#------------------------------------------------------------------
+# Analyze the file name
+#------------------------------------------------------------------
+($ending = $inputfile) =~ s/(\S+\.)//;
+if ($ending eq $inputfile) {$ending = ''}
+($basewpath = $inputfile) =~ s/(^.*)(\.\S*)/$1/;
+($pathonly = $inputfile) =~ s/(^.*\/)(.*)/$1/;
+($core = $inputfile) =~ s/(^.*[\/]??)(\b[\w_-]+)(\.\S*)/$2/;
+#die "core: $core  path: $pathonly  basewpath: $basewpath  ending:$ending\n";
+
+if ($olist[0][2]) {
+  $basic = $outbase;
+} else {
+  $basic = $core;
+}
+if ($ending eq 'xyz') {$basic = $basic.2}
+
+$basicplus = $pathonly.$basic;
+
+#------------------------------------------------------------------
+# Open an output file
+#------------------------------------------------------------------
+
+$outfile = "$basic.mol";
+print"\n";
+print"opening output file: $outfile\n";
+open(OUT,">$outfile") || die "could not create $outfile\n";
+
+if($nwant > 0) {
+  print"extracting $nwant atoms ($string)\n";
+}
+
+#------------------------------------------------------------------
+# Read the file and process it
+#------------------------------------------------------------------
+if (-e $inputfile) {
+   print"opening input file: $inputfile\n";
+   open(FILE,$inputfile) || die "could not open $file\n";
+} else {
+   die "$inputfile does not exist\n";
+}
+$natoms = 0;
+$coords = 0;
+while(<FILE>)
+{
+   $entry = 0;
+   chop($_);
+
+   #------------ skip lines that do not contain numbers or important labels
+   if ($_ !~ /([0-9\-\.E]\s+[0-9\-\.E]+){2}/) {
+     $continue = 0;
+     if ($_ =~ /ACL/) {$continue = 1}   
+     if ($_ =~ /COMPND/) {$continue = 1}   
+     if ($_ =~ /QMPOT/) {
+       ($comment = $_) =~ s/ITERATION//g;
+       $comment =~ s/\s{2,}/ /g;
+       $comment =~ s/(.*)\s([0-9\-\.E]+)/$1 Energy: $2/g;
+     }   
+     if (!$continue) {next}
+   }
+   if ($_ =~ /PBC/) {next}
+
+   #------------ process the line based on the file ending
+   if ($ending =~ /cor|car|arc|inp/) {  #eliminate element numbers and save
+     ($entry = $_) =~ s/(^\s*[a-zA-Z]+)(.*)((\s+[0-9\-\+\.E]+){3})(.*)/$1 $3/;
+     if ($ending =~ /car|arc/) {  #grab the fftype too
+       ($fftype = $_) =~ s/(([\-\+\.\w]+\s*){6})([\.\w]+)(.*)/$3/;
+#       print "$_ \n $fftype\n";
+     }
+
+   } elsif ($ending =~ /xyz/) {  #eliminate element numbers and save
+     ($entry = $_) =~ s/(^\s*[a-zA-Z]+)(.*?)((\s+[0-9\-\+\.E]+){3})(.*)/$1 $3/;
+
+   } elsif ($ending eq '') {  #eliminate element numbers and save
+     ($entry = $_) =~ s/(^\s*[a-zA-Z]+)(.*?)((\s+[0-9\-\+\.E]+){3})(.*)/$1 $3/;
+
+   } elsif ($ending =~ /gin/) {  #eliminate element numbers and save
+     ($entry = $_) =~ s/(^\s*[a-zA-Z]+)(\d*\s+)((\s+[0-9\-\+\.E]+){3})(.*)/$1 $3/;
+
+   } elsif ($ending =~ /mol/) {  #the MUSIC molecule file format
+     #yeah, it's a total mess, but it works, for some reason the {3} specification
+     #was creating an extra $ variable after the numbers
+     ($entry = $_) =~ s/(^\s*\d+\s+)([0-9\-\+\.E]+)\s+([0-9\-\+\.E]+)\s+([0-9\-\+\.E]+)(\s+)([a-zA-Z])(.*)/$6 $2 $3 $4/;
+     
+   } elsif ($ending =~ /pdb/) {  
+     if ($_ =~ /COMPND/) { #get comment
+       ($comment = $_) =~ s/(^COMPND\s+)(\w.*)/$2/;
+       chop($comment);
+     } elsif ($_ =~ /HETATM/) {
+       ($entry = $_) =~ s/(^HETATM\s+\d+\s+)(\w+)(\s+\d+\s)((\s+[0-9\-\+\.E]+){3})(.*)/$2 $4/;
+#       print"$entry\n";
+     }
+
+   } elsif ($ending =~ /msi/) {  
+     if ($_ =~ /ACL\s"/) { #get element type
+       ($element = $_) =~ s/(^.*?ACL\s"\d+\s)(\b[a-zA-Z]+)(.*)/$2/;
+     } elsif ($_ =~ /XYZ/) {  #get coordinates   
+       ($coords = $_) =~ s/(^.*[\s\(]+)([0-9\-\.E]+(\s+[0-9\-\+\.E]+){2})(.*)/$2/;
+#       print"$element: $coords\n";
+       if($element) {
+         $entry = sprintf("%s   %s",$element,$coords);
+	 $element = 0;
+       }
+     }
+
+   } else {
+     print"could not understand ending ($ending)\n";
+     print"will assume that it can processed as .xyz\n";
+     $ending = 'xyz';
+     ($entry = $_) =~ s/(^\s*[a-zA-Z]+)(.*?)((\s+[0-9\-\+\.E]+){3})(.*)/$1 $3/;
+   }
+
+   #------------ store in array
+   if ($entry) {
+     $natoms += 1;
+#     print"$natoms: $entry\n";
+     $fileline[$natoms] = $entry;
+     if (defined($fftype)) {
+       $fileline[$natoms] = $fileline[$natoms].$fftype;
+     }
+   }
+}
+
+#------------------------------------------------------------------
+# Set up the atoms list for just the hydrocarbons atoms if desired
+#------------------------------------------------------------------
+
+if ($olist[1][2]) {
+  $count = 0;
+  for($i=1;$i <= $natoms;$i+=1) {
+    $atoms[$i] = 0;
+    ($element = $fileline[$i]) =~ s/(^.*?)(\b[a-zA-Z]+)(.*)/$2/;
+    ($symbol = $element) =~ tr/[a-z]/[A-Z]/;
+    if (($symbol eq 'H')||($symbol eq 'C')) {
+      $count += 1;
+      $atoms[$i] = 1;
+    }
+  }  
+  $nwant = $count;
+
+#  (1) (2) 3 4 (5) 6 7 (8)
+  print"will extract only atom numbers: ";
+  $lastpresent = 0;
+  $count = 0;
+  $totalcount = 0;
+  for($i=1;$i <= $natoms;$i+=1) {
+    if(!$atoms[$i]) {
+      if(($count > 1)&&($lastpresent)) {  # previous atom was on list
+	printf("%d",$i-1);	
+      }
+      $lastpresent = 0;
+      $count = 0;
+      next;
+    }
+#    print"on list $i\n";
+    $count += 1;  # number of atoms in sub-series
+    $totalcount += 1;  # number of atoms in full series
+
+    if($lastpresent) {  # previous atom was on list
+      if ($count == 2) {print "-"}
+    } else {   # previous atom was NOT on list, new in series
+      if ($totalcount > 1) {print ","}
+      print "$i";
+    }
+    $lastpresent = 1;
+  }
+  if($lastpresent) {  # previous atom was on list
+    printf("%d",$i-1);	
+  }
+  print"\n";
+}
+
+
+makemol($natoms,@fileline);
+
+print"done processing file, it had $natoms entries";
+print"\n\n";
+
+exit(0);
+
+
+##### make the .mol file
+sub makemol
+{
+  local($natoms) = shift(@_);
+  my(@fileline) = @_;
+
+  print OUT "Molecule_Name: Unknown\n";
+  print OUT "\n";
+  print OUT "Coord_Info: Listed Cartesian Rigid\n";
+
+  if ($nwant > 0) {
+    printf OUT ("%6d   #number of atoms in molecule\n",$nwant);
+  } else {
+    printf OUT ("%6d   #number of atoms in molecule\n",$natoms);
+  }
+
+  $number = 0;
+  for($i=1;$i <= $natoms;$i+=1) {
+    ($coords = $fileline[$i]) =~ s/(^.*?\s+)([0-9\-\.E]+(\s+[0-9\-\.E]+){2})(.*)/$2/;
+    ($element = $fileline[$i]) =~ s/(^.*?)(\b[a-zA-Z]+)(.*)/$2/;
+    ($end = $fileline[$i]) =~ s/(^.*?\s+)([0-9\-\.E]+(\s+[0-9\-\.E]+){2})(.*)/$4/;
+    @fields = split(/ +/,$coords);
+    $newcoords = sprintf("%16.12f  %16.12f  %16.12f",@fields);
+    $name = aname($element);
+
+    if ($nwant > 0) {
+      if ($atoms[$i]) {
+	$number = $number + 1;
+      }
+    } else {
+      $number = $i;
+    }
+
+    $outline = sprintf("%5d %s %12s   0.00   0  0",$number,$newcoords,$name);
+#    print"$outline\n";
+
+    if ($nwant > 0) {
+      if ($atoms[$i]) {
+	print OUT "$outline\n";
+      }
+    } else {
+      print OUT "$outline\n";
+    }
+
+  }
+
+  return(0);
+}
+
+##### get the name for an atomic symbol
+sub aname
+{
+  local($symbol) = shift(@_);
+  local($j);
+
+  $symbol =~ tr/[a-z]/[A-Z]/;
+  for($j=0;$j <= $nalist;$j+=1) {
+    ($stored = $alist[$j][0]) =~ tr/[a-z]/[A-Z]/;
+#    print"$stored\n";
+    if($stored eq $symbol) {
+#      print"found it: $stored\n";
+      return($alist[$j][1]);
+    }
+  }
+  die"Unable to find '$symbol' in atom name list\n";
+
+}
+
+##### prints the help message
+sub printhelp {
+  print STDERR << "EOF";
+
+This script converts various file formats to .mol files for
+input into MuSiC. 
+
+It is possible to select just subset of the atoms in the file.
+
+Example: tomol -T newmolecule 1-5,10-20 input.car
+
+will extract atom numbers 1-5,10-20 from 'input.car' and
+put them into 'newmolecule.mol'
+
+EOF
+#  print"\nPress any key for commands:";
+#  $junk = getone();
+  print"\nCurrently understood commands are:\n";
+  for($j=0;$j < $noptions;$j+=1) {
+    printf(" -%s : %s\n",$olist[$j][0],$olist[$j][1]);
+  }  
+  print"\nFrom the laptop of Louis Clark\n";
+  return(0);
+}
+
