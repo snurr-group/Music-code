@@ -1,0 +1,25 @@
+Lattice Lattice NCOUL OFF
+Lattice Lattice  COUL   OFF
+Probe Lattice NCOUL OFF 
+Probe Lattice  COUL  SUM FAST FIXED EWALD SFACTOR KMAX@15 KAPPA@6.7 LOCUT@1e-10
+Probe Probe NCOUL OFF
+Probe Probe  COUL   OFF
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

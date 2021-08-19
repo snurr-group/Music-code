@@ -1,0 +1,29 @@
+#!/bin/csh
+
+echo 'setting environment variables'
+
+setenv EMAPDIR ./potentials/pmaps
+setenv PMAPDIR ./potentials/pmaps
+setenv SMAPDIR ./potentials/pmaps
+setenv ATOMSDIR ./potentials/atoms
+setenv MOLSDIR ./potentials/molecules
+
+rm -rf Lattice*map
+
+echo "-"
+echo "-"
+echo '---- REFERENCE OUTPUT ------------------------'
+
+grep -a -A 16 'Displaying the 5 points in the map NRG and Forces' output_reference
+grep -a 'Main Program   Time' output_reference
+
+echo '-'
+echo '-'
+echo '-'
+
+echo '---- CURRENT MUSIC OUTPUT --------------------'
+
+map.exe -VERBOSE test013.ctr >& out
+grep -a -A 16 'Displaying the 5 points in the map NRG and Forces' out
+grep -a 'Main Program   Time' out
+
