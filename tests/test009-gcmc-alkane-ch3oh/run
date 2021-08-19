@@ -1,0 +1,30 @@
+#!/bin/csh
+
+echo 'setting environment variables'
+
+setenv EMAPDIR ./potentials/pmaps
+setenv PMAPDIR ./potentials/pmaps
+setenv SMAPDIR ./potentials/pmaps
+setenv ATOMSDIR ./potentials/atoms
+setenv MOLSDIR ./potentials/molecules
+
+echo "-"
+echo "-"
+echo '---- REFERENCE OUTPUT ------------------------'
+tail -90 output_reference > .temp0
+grep -a -A 23 '  Macro-iteration number' .temp0
+grep -a 'Main Program   Time' .temp0
+
+echo '----------------------------'
+echo '----------------------------'
+echo '----------------------------'
+echo "-"
+echo "-"
+echo '---- CURRENT MUSIC OUTPUT --------------------'
+
+./gcmc.exe test009.ctr >& out
+tail -90 out > .temp0
+grep -a -A 23 '  Macro-iteration number' .temp0
+grep -a 'Main Program   Time' .temp0
+
+echo  "Use 'diff out output_reference' for a detialed comparison"

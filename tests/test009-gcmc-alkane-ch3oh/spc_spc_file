@@ -1,0 +1,28 @@
+n_Butane     sili   NCOUL  MAP@sili   FAST Methyl@PMAP@sili.Methyl.pmap Methylene@PMAP@sili.Methylene.pmap
+
+n_Hexane     sili   NCOUL  MAP@sili   FAST Methyl@PMAP@sili.Methyl.pmap Methylene@PMAP@sili.Methylene.pmap
+
+Methanol     sili         NCOUL  MAP@sili   FAST Carbon@PMAP@sili.MeOH_C.pmap Hydrogen@PMAP@sili.MeOH_H.pmap Oxygen@PMAP@sili.MeOH_O.pmap 
+
+n_Butane     n_Butane     NCOUL  BASIC LJ   FAST
+n_Hexane     n_Hexane     NCOUL  BASIC LJ   FAST
+Methanol     Methanol     NCOUL  BASIC LJ   FAST
+Methanol     n_Hexane     NCOUL  BASIC LJ   FAST
+Methanol     n_Butane     NCOUL  BASIC LJ   FAST
+n_Butane     n_Hexane     NCOUL  BASIC LJ   FAST
+
+sili         sili         NCOUL  OFF
+
+sili         Methanol     COUL  MAP FAST all@EMAP@sili.full.emap
+#Methanol     Methanol     COUL   OFF
+Methanol     Methanol     COUL   BASIC FAST WFCOUL 
+#COMCUT@13.0 
+sili         sili         COUL   OFF
+sili         n_Hexane     COUL   OFF
+n_Hexane     n_Hexane     COUL   OFF
+Methanol     n_Hexane     COUL   OFF
+sili         n_Butane     COUL   OFF
+n_Hexane     n_Butane     COUL   OFF
+Methanol     n_Butane     COUL   OFF
+n_Butane     n_Butane     COUL   OFF
+
