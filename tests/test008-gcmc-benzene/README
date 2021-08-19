@@ -1,0 +1,4 @@
+- This test is broken because benzpot very archaic (currently we dont
+have the ability to add two potentials for single atom-atom pair)
+
+- This test should be removed; and we shoul add a generic pair potential that can take all functional forms
