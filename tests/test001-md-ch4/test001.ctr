@@ -1,0 +1,90 @@
+# This section is necessary for MC, MD type of simulations
+------ General Information ----------------------- LINE:01
+my simulation  # file description                  LINE:02
+20000         # No. of MD/MCiterations            LINE:03
+100           # Steps between writes to stdout    LINE:04
+1000001        # Steps between writes to restart file LINE:05
+1000001         # Steps between writes to config. file LINE:06
+1           # Start numbering simulations from ... LINE:07
+22111971    # Iseed for random number generator    LINE:08
+1 # unused variable, reqd for backward compAtbilty LINE:09
+temp.res   # Name of Restart File                 LINE:10
+temp.con   # Name of config File                  LINE:11
+--------------------------------------------------------
+
+# This section lists all atomtypes for this simulation
+------ Atomic Types ------------------------------LINE:01
+  1       # number of atomic types                LINE:02
+
+       CH4     # Name of the atom            LINE:04
+       CH4.atm # Name of atom File           LINE:05
+-----------------------------------------------------
+
+# This section lists all molecules for this simulation
+------ Molecule Types ----------------------------LINE:01
+  1       # number of molecule types              LINE:02
+
+            CH4     # Name of the molecule        LINE:04
+            CH4.mol # Name of molecule file       LINE:05
+---------------------------------------------------
+
+
+--------  Main Datafile Information ----------------
+Energy # contents of datafile
+----------------------------------------------------
+
+--------  Forcefield Information    ----------------
+BASIC                # OBSOLETE in music-4
+SPC                  # OBSOLETE in music-4
+atom_atom_file       # atom-atom interaction file   
+mol_mol_file         #no_coul_file # 
+intramolecular_file  # intramolec interaction file  
+----------------------------------------------------
+
+------ Configuration Initialization ----------------
+            CH4     # Name of the molecule       LINE:01
+RESTARTFILE add.res.1     GCMC NULL # Source of configs          LINE:02
+----------------------------------------------------
+
+------ Simulation Cell Information ----            LINE:01
+NULL   # Filename with simulation cell info	    LINE:02
+  20.000  20.0000  20.0000 # unitcell dimensions LINE:03
+90.000    90.000    90.000 #   unit cell angles    LINE:04
+ 0.000     0.000     0.000 # origin of unit cell   LINE:05
+  20.000  20.0000  20.0000 # unitcell dimensions LINE:03
+1, 1, 1    # No of Unitcells in x,y,z directions   LINE:07
+1, 1, 1  # (1 = Periodic, 0=Not) in x, y, z        LINE:08
+--------------------------------------------------------
+# this is the section of the control file specific to
+# Molecular dynamics
+#
+------ MD Information -------------------------------------------- LINE:01
+1          # Number of MD Move types listed( usually 1)            LINE:02
+add.res.1 # Generate   #
+								   LINE:04
+INTEGRATE  # Type of move					   LINE:05
+1          # No. of MD steps within a move			   LINE:06
+0.0001      # Time step, ps					   LINE:07
+300.0      # Simulation temperature				   LINE:08
+1000       # Steps between writes to std IO                        LINE:09
+100000     # Steps between writes to datafile			   LINE:10
+NVE        # Ensemble to simulate in (NVT, NVE)			   LINE:11
+VelocityVerlet
+---------------------------------------------------------------------
+# IF    we gave ``Generate'' option above, we have to generate initial 
+#  velocities and equilibrate that. This section is responsible for that
+#
+#
+------ MD Equilibration Information ------------------------------------
+INTEGRATE                # Type of move                                    
+1000              # Maximum number of iterations
+0.001                # Time step, ps
+300.0                # Simulation temperature
+1000                 # Steps between writes to std IO
+1000                 # steps between writing to confile?
+NVT                  # Ensemble to simulate in (NVT, NVE)
+Gear6                # Integrator to use
+10                   # No. of steps between penalty calls
+NoseHoover           # Thermostat to use
+100                  # Q, kcal/mol ps^2 for Node-Hoover
+---------------------------------------------------------------------------
