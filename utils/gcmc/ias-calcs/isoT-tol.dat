@@ -1,0 +1,27 @@
+ %Molecule Name    : Toluene            #
+ %Description      : p-silicalite gcmc final run
+ %Temperature      : 300                 # K
+ %Max Loading/uc   : 8.00                # molecules/unitcell
+ %Number of Points : 16
+ %Type of file     : 1
+ %  Pressure     N           sigma
+ %  kpa          /uc         /uc
+  1.00e-6           0.0002
+  1.00e-5           0.0023
+  5.00e-5           0.0131
+  1.00e-4           0.0257
+  4.00e-4           0.1097
+  7.00e-4           0.1819
+  1.00e-3           0.2894
+  4.00e-3           1.2920
+  8.00e-3           4.2471
+  1.00e-2           5.4442
+  2.30e-2           7.0012
+  3.60e-2           7.4243
+  5.00e-2           7.6880
+  1.00e-1           7.8730
+  5.00e-1           7.9857
+  7.50e-1           7.9888
+
+
+

@@ -1,0 +1,22 @@
+ Toluene,   out-tol.dat     # sorb-1, isotherm file(see format in isotherm.F90
+ M-Xylene , out-mxyl.dat    # sorb-1, isotherm file(see format in isotherm.F90
+ binary.dat                 # output file	
+ 6                          # number of pressure points
+0.0454     1.2918
+0.4534	   1.1747
+1.8080	   0.7849
+2.7084	   0.5243
+4.0581	   0.1320
+4.4646	   0.0134
+
+#  Control file for generating binary isotherm (using previously made 
+#  sigma vs p curve
+#  format above should be preserved
+#
+#
+#
+
+
+
+
+

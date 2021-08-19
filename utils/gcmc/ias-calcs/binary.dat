@@ -1,0 +1,13 @@
+% Binary adsorption from IAS calcs
+% Molecule-1  : Toluene
+% Molecule-2  : M-Xylene
+% Temperature :  300.00000
+% Details     :   p-silicalite gcmc final run
+% Pressure-1 Pressure-2 Loading-1 Loading-2 
+% kpa        kpa        mol/uc    mol/uc    
+      0.04540   1.29180   0.48505   5.62060
+      0.45340   1.17470   3.59641   3.29746
+      1.80800   0.78490   6.92886   0.80336
+      2.70840   0.52430   7.53610   0.34793
+      4.05810   0.13200   7.92742   0.05443
+      4.46460   0.01340   7.99345   0.00492

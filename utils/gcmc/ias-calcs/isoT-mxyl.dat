@@ -1,0 +1,26 @@
+ %Molecule Name    : M-Xylene            #
+ %Description      : p-silicalite gcmc final run
+ %Temperature      : 300                 # K
+ %Max Loading/uc   : 6.00                # molecules/unitcell
+ %Number of Points : 16
+ %Type of file     : 1
+ %  Pressure     N           sigma
+ %  kpa          /uc         /uc
+  1.00e-6    0.000463  
+  1.00e-5    0.005287
+  5.00e-5    0.027240
+  1.00e-4    0.056987
+  3.00e-4    0.17694
+  5.00e-4    0.31760
+  7.00e-4    0.48370
+  1.00e-3    0.96200
+  4.00e-3    3.08276
+  7.00e-3    3.85363
+  1.00e-2    4.65191
+  5.00e-2    5.43840
+  1.00e-1    5.65847
+  5.00e-1    5.89052 
+  1.00       5.98011
+  5.00       5.99873
+
+
