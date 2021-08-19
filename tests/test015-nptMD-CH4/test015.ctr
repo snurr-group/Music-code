@@ -1,0 +1,102 @@
+# This section is necessary for MC, MD type of simulations
+------ General Information ----------------------- LINE:01
+my simulation  # file description                  LINE:02
+2000        # No. of MD/MCiterations            LINE:03
+500           # Steps between writes to stdout    LINE:04
+1000001        # Steps between writes to restart file LINE:05
+1000001         # Steps between writes to config. file LINE:06
+1           # Start numbering simulations from ... LINE:07
+22111971    # Iseed for random number generator    LINE:08
+1 # unused variable, reqd for backward compAtbilty LINE:09
+temp.res   # Name of Restart File                 LINE:10
+temp.con   # Name of config File                  LINE:11
+--------------------------------------------------------
+
+# This section lists all atomtypes for this simulation
+------ Atomic Types ------------------------------LINE:01
+  1       # number of atomic types                LINE:02
+
+       CH4     # Name of the atom            LINE:04
+       CH4.atm # Name of atom File           LINE:05
+-----------------------------------------------------
+
+# This section lists all molecules for this simulation
+------ Molecule Types ----------------------------LINE:01
+  1       # number of molecule types              LINE:02
+
+            CH4     # Name of the molecule        LINE:04
+            CH4.mol # Name of molecule file       LINE:05
+---------------------------------------------------
+
+
+--------  Main Datafile Information ----------------
+Energy # contents of datafile
+----------------------------------------------------
+
+--------  Forcefield Information    ----------------
+BASIC                # OBSOLETE in music-4
+SPC                  # OBSOLETE in music-4
+atom_atom_file       # atom-atom interaction file   
+mol_mol_file         #no_coul_file # 
+intramolecular_file  # intramolec interaction file  
+----------------------------------------------------
+
+------ Configuration Initialization ----------------
+            CH4     # Name of the molecule       LINE:01
+RESTARTFILE 150.res-300K     GCMC NULL # Source of configs          LINE:02
+----------------------------------------------------
+
+------ Simulation Cell Information ----            LINE:01
+NULL   # Filename with simulation cell info	    LINE:02
+  40.000  40.0000  40.0000 # unitcell dimensions LINE:03
+90.000    90.000    90.000 #   unit cell angles    LINE:04
+ 0.000     0.000     0.000 # origin of unit cell   LINE:05
+  40.000  40.0000  40.0000 # unitcell dimensions LINE:03
+1, 1, 1    # No of Unitcells in x,y,z directions   LINE:07
+1, 1, 1  # (1 = Periodic, 0=Not) in x, y, z        LINE:08
+
+------ Ideal Parameters -----------------------------------------------
+Ideal                # Equation of State                                 
+1                    # no. of sorbates                                   
+CH4 #              # Sorbate Name                                      
+-------- HYBRID GCMC Information ----------------------------------------
+1                        # number of iterations per call
+1                        # number os simulations
+Ideal Parameters         # Tag for eqn of state section
+10000                      # blocksize for any stats
+300.00                   # Temerature(s), could be filename too
+NO_GCMC_MOVES,0          # Gcmc_Moves_info, 1       # 
+Hybrid_Integration_Info, 1 # NO_HYBRIDMC_INTEGRATION # 
+NO_UPDATE                # section tag for library updates
+---------------- SECTION_TAG : Hybrid_Integration_Info --------------------------------
+ALLSORBS                 # sorbates name
+KEEP_VELOCITIES # BOLTZMANN   #  # type of HMC  
+INTEGRATE  # Type of move					   LINE:05
+1          # No. of MD steps within a move			   LINE:06
+0.0005      # Time step, ps					   LINE:07
+300.0      # Simulation temperature				   LINE:08
+1000       # Steps between writes to std IO                        LINE:09
+100000     # Steps between writes to datafile			   LINE:10
+NVE        # Ensemble to simulate in (NVT, NVE)			   LINE:11
+Leapfrog # VelocityVerlet
+
+Berendsen
+0.2  # ps
+1    # 3 update every N steps
+----
+---------------- SECTION_TAG : Volume_Change_Info ----------------------
+MONTE CARLO # an NPT volume move (other option: MANUAL)
+VOLCHANGE   # Type of Monte Carlo Move
+0.03    # DMAX; log(V1/V0) will vary between (1 +/- DMAX)
+2000.0      # pressure, kPa
+300      # Temp.
+--------------------
+---------------------------------------------------------------------------
+# Here is the section required for running neighborlist with MD
+# just add this to a normal MD ctrlfile
+---------- Neighborlist Information -------------------------------
+13.0            #  forcefield cutoff, Ang. 
+3.00   #shell thickness; all atoms within cutoff+thickness are nrighbors  
+0.05            #  ps, update time, how oftern an update is done
+150              #  maximum expected neighbors
+--------------------------------------------------------------------

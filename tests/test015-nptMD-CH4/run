@@ -1,0 +1,29 @@
+#!/bin/csh
+
+echo 'setting environment variables'
+
+setenv EMAPDIR ./potentials/pmaps
+setenv PMAPDIR ./potentials/pmaps
+setenv SMAPDIR ./potentials/pmaps
+setenv ATOMSDIR ./potentials/atoms
+setenv MOLSDIR ./potentials/molecules
+
+echo "-#### Testing NPT: (MD and Volumechange)   #######-"
+echo "-"
+echo '---- REFERENCE OUTPUT ------------------------'
+
+grep -a -A 27 'Iteration number' output_reference > .temp
+tail -28 .temp
+rm -f .temp
+grep -a 'Main Program   Time' output_reference
+echo '-'
+echo '-'
+echo '-'
+
+echo '---- CURRENT MUSIC OUTPUT --------------------'
+
+hgcmc.exe test015.ctr >& out
+grep -a -A 27 'Iteration number' out > .temp
+tail -28 .temp
+rm -f .temp
+grep -a 'Main Program   Time' out
