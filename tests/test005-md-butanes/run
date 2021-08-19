@@ -1,0 +1,30 @@
+#!/bin/csh
+
+echo 'setting environment variables'
+
+setenv EMAPDIR ./potentials/pmaps
+setenv PMAPDIR ./potentials/pmaps
+setenv SMAPDIR ./potentials/pmaps
+setenv ATOMSDIR ./potentials/atoms
+setenv MOLSDIR ./potentials/molecules
+
+echo "-"
+echo "-"
+echo '---- REFERENCE OUTPUT ------------------------'
+tail -125 output_reference > .temp0
+grep -a -A 23 'MD Step' .temp0
+grep -a 'Main Program   Time' .temp0
+
+echo '----------------------------'
+echo '----------------------------'
+echo '----------------------------'
+echo "-"
+echo "-"
+echo '---- CURRENT MUSIC OUTPUT --------------------'
+
+./md.exe test005.ctr >& out
+tail -125 out  > .temp0
+grep -a -A 23 'MD Step' .temp0
+grep -a 'Main Program   Time' .temp0
+
+echo  "Use 'diff out output_reference' for a detialed comparison"

@@ -1,0 +1,13 @@
+sili sili                NCOUL  OFF
+sili sili                COUL   OFF
+Butane Butane            NCOUL  BASIC LJ FAST
+Butane Butane            COUL   OFF
+ButaneCopy ButaneCopy    NCOUL  BASIC LJ FAST
+ButaneCopy ButaneCopy    COUL   OFF
+Butane ButaneCopy        NCOUL  BASIC LJ FAST
+Butane ButaneCopy        COUL   OFF
+Butane sili              NCOUL  MAP FAST ALL@PMAP@sili.Carbon.pmap 
+Butane sili              COUL   OFF
+ButaneCopy sili          NCOUL  MAP FAST ALL@PMAP@sili.Carbon.pmap 
+ButaneCopy sili          COUL   OFF
+
