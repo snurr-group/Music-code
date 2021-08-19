@@ -1,0 +1,7 @@
+sili      Butane       NCOUL  MAP FAST Methyl@PMAP@sili.Methyl.pmap Methylene@PMAP@sili.Carbon.pmap 
+Butane    Butane       NCOUL  BASIC LJ FAST
+sili      sili         NCOUL  OFF
+
+sili      Butane       COUL   OFF
+Butane    Butane       COUL   OFF
+sili      sili         COUL   OFF
