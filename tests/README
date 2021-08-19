@@ -1,5 +1,6 @@
 Zhao Li's note:
-From music-4.0.tar.gz
+From music-4.0.tar.gz<br/>
+Folder "music-3-1" contains the stuff from music-3-1.tar.gz on zeolite server
 
 1) To do a complete test:
 >> ./testall > testlog
