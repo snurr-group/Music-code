@@ -1,0 +1,16 @@
+##### Basic Atom Information
+
+Atom_Name: Silicon
+
+Atom_Symbol: Si
+
+Atom_SS_Charge: 1.8
+Atom_SZ_Charge: 1.8
+
+Atom_Mass: 28.086
+
+Atom_Valency: 4
+
+##### Old, unused information
+#Silicon, Silicon   0.0  0.0     0     0
+#Silicon, Oxygen    0.0  0.0     0     0

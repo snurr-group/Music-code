@@ -1,0 +1,34 @@
+#### 12 Center Benzene 
+
+Molecule_Name: Benzene
+
+Coord_Info: Listed Cartesian Rigid
+  12     #number of atoms in molecule
+   1     1.400   0.000   0.000   Carbon     -0.15  1   1
+   2     2.430   0.000   0.000   Hydrogen    0.15  1   2
+   3     0.700   1.212   0.000   Carbon     -0.15  1   2
+   4     1.215   2.104   0.000   Hydrogen    0.15  1   2
+   5    -0.700   1.212   0.000   Carbon     -0.15  1   1
+   6    -1.215   2.104   0.000   Hydrogen    0.15  1   2
+   7    -1.400   0.000   0.000   Carbon     -0.15  1   2
+   8    -2.430   0.000   0.000   Hydrogen    0.15  1   2
+   9    -0.700  -1.212   0.000   Carbon     -0.15  1   1
+  10    -1.215  -2.104   0.000   Hydrogen    0.15  1   2
+  11     0.700  -1.212   0.000   Carbon     -0.15  1   2
+  12     1.215  -2.104   0.000   Hydrogen    0.15  1   2
+
+Connect_Info: Generate
+    2    # number of connection types listed
+    Carbon    Hydrogen   1.03 0.1
+    Carbon    Carbon     1.40 0.1
+
+##### Intramolecular forces
+
+Intra: Benzene CONSTRAINT
+
+Bond_Constraints: Listed EvansMorriss Ciccotti Fast
+    3 #number of bond constraints 
+    1    5    CALCULATE
+    1    9    CALCULATE
+    5    9    CALCULATE
+

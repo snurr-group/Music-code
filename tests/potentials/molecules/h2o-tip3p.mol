@@ -1,0 +1,34 @@
+##### Basic Molecule Information
+##### TIP3P, params taken from papers by Voth et al.
+##### TIP3P, params taken from papers by Voth et al. Jorgensen et al.
+# taken from Jorgensen, Voth has a spelling mistake
+# HOH angle  : + 104.52 Deg.
+# OH distance: 0.9572 \AA
+# HH distance: 1.51390 \AA
+
+
+Molecule_Name: h2o-tip3p
+
+Coord_Info: Listed Cartesian Rigid 
+3 # Number of atoms 
+ 1   0.000000     0.000000  0.0000  O_TIP3P  -0.834  0   0 #x,y,z,name,set,type
+ 2  -0.957200     0.000000  0.0000  H_TIP3P   0.417  0   0 #x,y,z,name,set,type
+ 3   0.239987     0.926627  0.0000  H_TIP3P   0.417  0   0 #x,y,z,name,set,type
+# N,   x,        y,         z,         atom,  q,       set, type
+#-----------------------------------------------------------------------------
+
+Molecule_DOF: 6
+
+Connect_Info: Generate 
+    1    # number of connection types listed below 
+         O_TIP3P        H_TIP3P   1.000 0.100 
+
+##### Intramolecular forces 
+#Bond_Stretch: Generate Morse Fast 
+#    1 # number of bond types to generate 
+#         O_TIP3P        H_TIP3P   100 1.75 CALCULATE #
+#
+#Bond_Bending: Generate Harmonica Fast 
+#    1 # number of angle types to generate 
+#         O_TIP3P        H_TIP3P        H_TIP3P   100 1.75 CALCULATE 
+

@@ -1,0 +1,38 @@
+##### Basic Molecule Information
+##### SPCE-E water, params taken from website:"water structure and behavior"
+##### Also given in : Berendsen, Grigera, Straatsma, JPC 1987 pp:6269
+##### Ewald was not used, 9\AA cutoff was used in parametrizing
+##### sigma=3.166 \AA, EPS=0.650 kJ/mol, q_H=+0.4238, q_H=-0.8476
+##### Please Modify the forcefield information as appropriate
+
+Molecule_Name: h2o-spce-constr
+
+Coord_Info: Listed Cartesian None
+3 # Number of atoms 
+  1   -0.01676   0.00000   -0.01184    O_SPCE -0.8476  0    0    #..
+  2    0.02061   0.00000    0.98746    H_SPCE +0.4238  0    0    #..
+  3    0.91294   0.00000   -0.38016    H_SPCE +0.4238  0    0    #..
+# N,   x,        y,         z,         atom,  q,       set, type
+#-----------------------------------------------------------------------------
+
+#Molecule_DOF: 6
+
+Connect_Info: Generate 
+    1    # number of connection types listed below 
+         O_SPCE        H_SPCE   1.000 0.100 
+
+##### Intramolecular forces 
+Bond_Stretch: Generate Harmonic Fast 
+    1 # number of bond types to generate 
+         O_SPCE        H_SPCE   1000 CALCULATE #
+
+Bond_Bending: Generate Harmonica Fast 
+    1 # number of angle types to generate 
+         H_SPCE        O_SPCE        H_SPCE   100 CALCULATE 
+
+
+Bond_Constraints: Listed EvansMorriss Fast
+    2     #number of bond constraints  (0.0d0 bondlength ==> to be calculated from above)
+    1    2    1.0000
+    1    3    1.0000
+

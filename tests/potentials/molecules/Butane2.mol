@@ -1,0 +1,54 @@
+# Flexible butane
+#
+#
+##### Basic Molecule Information
+
+Molecule_Name: Butane 
+
+Coord_Info: Listed Cartesian Rigid   
+    4     # number of atoms in molecule
+    1  0.000000   0.000000  0.000000  Methyl    0.0  0   0 #x,y,z,name,set,type
+    2  1.268427  -0.855565  0.000000  Methylene 0.0  0   0 #x,y,z,name,set,type
+    3  2.536855   0.000000  0.000000  Methylene 0.0  0   0 #x,y,z,name,set,type
+    4  3.805282  -0.855565  0.000000  Methyl    0.0  0   0 #x,y,z,name,set,type
+
+Molecule_DOF: 12
+
+Connect_Info: Generate
+    2    # number of connection types listed
+    Methylene Methylene    1.530000 0.1
+    Methyl    Methylene    1.530000 0.1
+
+Bond_Constraints: Listed EvansMorriss Fast
+    3 #number of bond constraints 
+    1    2    CALCULATE
+    2    3    CALCULATE
+    3    4    CALCULATE
+
+
+
+Bond_Stretch: Generate Morse Fast
+    2 # number of bond types to generate
+    Methylene Methylene    83.94 1.841 1.530
+    Methyl    Methylene    83.94 1.841 1.530
+
+Bond_Bending: Listed Harmonica Fast
+    2 # number of bending centers (angle=0.0d0 => to be calculated from above)
+    1  2  3  124.200000  114.000000   #atoms, ktheta (kcal/mol), kthetaeq (deg)
+    2  3  4  124.200000  114.000000   #atoms, ktheta (kcal/mol), kthetaeq (deg)
+
+Bond_Torsion: Listed Cosexpansion Fast
+    1     # number of torsion angles
+ 1  2  3  4  2.00642   4.01084    0.27092   -6.28819   0.0000     0.000000  
+ 
+#  1  2  3  4  2.217500  2.905100  -3.135600  -0.731200  6.271200  -7.527100
+#
+#
+#
+# Previous torsion potentials
+#
+#    
+#
+
+
+

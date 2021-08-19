@@ -1,0 +1,7 @@
+foreach i (test0*)
+cd $i
+cvs add *
+cvs commit -m "added new test direcory"
+cd ../
+end
+

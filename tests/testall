@@ -1,0 +1,28 @@
+#!/bin/csh
+
+cd potentials/pmaps
+ln -sf sili.Carbon.pmap   sili.MeOH_C.pmap 
+ln -sf sili.Hydrogen.pmap sili.MeOH_H.pmap
+ln -sf sili.Carbon.pmap   sili.MeOH_O.pmap
+ln -sf sili.Hydrogen.pmap sili.Methylene.pmap 
+ln -sf sili.Carbon.pmap   sili.Methyl.pmap 
+cd ../../
+    
+    foreach i (test0*)
+	echo "------- Testing in Directory = " $i
+	cd $i
+	ln -sf ../../md.exe .
+	ln -sf ../../gcmc.exe .
+	ln -sf ../../hgcmc.exe .
+	ln -sf ../../map.exe .
+	run > ./temp
+	diff out output_reference
+	cd ../
+	echo "--"
+	echo "--"
+	echo "--"
+	echo "--"
+    
+    end
+
+    

@@ -1,0 +1,38 @@
+#### 12 Center Benzene using coordinates from 
+#### ~/asims/mc/Benzene/results/sili2kpa/potentials
+#### I used these previously to reproduce Randy's results
+
+Molecule_Name: Benzene
+
+Coord_Info: Listed Cartesian Rigid
+  12     #number of atoms in molecule
+  1   -1.212436    0.000000    0.000000   Carbon   -0.15 1   1
+  2    0.000000   -0.700000    0.000000   Carbon   -0.15 1   2
+  3    1.212436    0.000000    0.000000   Carbon   -0.15 1   2
+  4    1.212436    1.400000    0.000000   Carbon   -0.15 1   2
+  5    0.000000    2.100000    0.000000   Carbon   -0.15 1   1
+  6   -1.212436    1.400000    0.000000   Carbon   -0.15 1   2
+  7   -2.104442   -0.515000    0.000000   Hydrogen  0.15 1   2
+  8    0.000000   -1.730000    0.000000   Hydrogen  0.15 1   2
+  9    2.104442   -0.515000    0.000000   Hydrogen  0.15 1   1
+ 10    2.104442    1.915000    0.000000   Hydrogen  0.15 1   2
+ 11    0.000000    3.130000    0.000000   Hydrogen  0.15 1   2
+ 12   -2.104442    1.915000    0.000000   Hydrogen  0.15 1   2
+
+Molecule_DOF: 6
+
+Connect_Info: Generate
+    2    # number of connection types listed
+    Carbon    Hydrogen   1.03 0.1
+    Carbon    Carbon     1.40 0.1
+
+##### Intramolecular forces
+
+Intra: Benzene CONSTRAINT
+
+Bond_Constraints: Listed EvansMorriss Ciccotti Fast
+    3 #number of bond constraints 
+    1    5    CALCULATE
+    1    9    CALCULATE
+    5    9    CALCULATE
+
