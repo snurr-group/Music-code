@@ -1,0 +1,23 @@
+# control file for calculating sigma vs p plot from given isotherms
+# division into high/low pressure regions is arbitrary, Should be done 
+# somewhere near the maximum of n_p values
+#
+------- Sigma Calculation Section ------------
+2
+------ for each isotherm (sections separated by dashed lines)
+M-Xylene                  #        sorbname
+isoT-mxyl.dat                   #        input isotherm file
+out-mxyl.dat                #        ouput file
+0.00, 20.00                #        minimum and maximum pressure, kpa
+1.00e-2                   #        pressure for dividing into high/low regions
+2000                      #        number of divisions used for simpson int.
+------ for each isotherm (sections separated by dashed lines)
+Toluene                  #        sorbname
+isoT-tol.dat                   #        input isotherm file
+out-tol.dat                #        ouput file
+0.00, 20.00                #        minimum and maximum pressure, kpa
+2.00e-2                   #        pressure for dividing into high/low regions
+2000                      #        number of divisions used for simpson int.
+-------------------------------------------------------------------------
+
+

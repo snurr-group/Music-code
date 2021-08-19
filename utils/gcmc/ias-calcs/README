@@ -1,0 +1,35 @@
+Contains two things : 
+
+1) Program for calculating sigma for a single component from given
+Isotherm. ( Can also process a list of isotherms of differenent
+species)
+
+2) Program for getting binary adsorption isotherm from sigma-p plot of
+two compounds (obtained using previous program)
+
+---------------------------------------------------
+Note : 
+	All src code in directory ./src
+	driver for program.1 : ./drivers/music_sigma.F90
+	driver for program.2 : ./drivers/music_binary.F90
+
+---------------------------------------------------
+
+Files in this directory :
+sigma.exe 		: executable for program.1 (tol , mxyl )
+sigma.ctr 		: ctrlfile  for use with sigma.exe 
+isoT-mxyl.dat           : mxylene adsorption isotherm from a single comp 
+			  gcmc run. The format should be preserved
+isoT-tol.dat            : toluene adsorption isotherm from a single comp 
+			  gcmc run. The format should be preserved
+out-mxyl.dat            : output, contains p, n, sigma values
+out-tol.dat             : output, contains p, n, sigma values
+
+binary.exe 		: executable for program.2 (tol , mxyl )
+binary.ctr 		: ctrlfile  for use with binary.exe 
+binary.dat              : output, ias calculation results for the binay mixture
+( binary.exe uses out-mxyl.dat and out-tol.dat )
+
+npcheck.m, sigma.m      : some modifiable matlab scripts for plotting
+
+
