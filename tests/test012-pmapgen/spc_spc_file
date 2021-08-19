@@ -1,0 +1,25 @@
+Lattice Lattice NCOUL OFF
+Lattice Lattice  COUL   OFF
+Probe Lattice NCOUL BASIC LJ FAST
+Probe Lattice  COUL   OFF
+Probe Probe NCOUL OFF
+Probe Probe  COUL   OFF
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
