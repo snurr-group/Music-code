@@ -1,0 +1,438 @@
+#!/usr/bin/perl 
+#-*- mode: cperl;-*-
+################################################################
+# This program generates a Makefile for compiling on Digital
+# Unix using a DEC F90 compiler.  It is invoked by typing
+# makemake *.F90 *.F and dumps to 'Makefile'
+################################################################
+
+#@fortranfiles = @ARGV;
+my @f77files  = <*.F>;
+my @fileinfo;
+my $fileno = 0;
+my @sortedfiles;
+my @filelist;
+my @librarylist;
+
+# Get the list of relevant fortran files.  This list is generated
+# by looking at the "music.F90" file and then recusively, generating
+# a list of modules it uses
+push(@filelist, @f77files);
+push(@filelist, "music.F90");
+$nmods = getUseMods("music.F90", \@filelist, \@librarylist);
+
+# Get the modules used in each file contained in filelist.  This
+# could have been generated within "getUseMods" but I am recycling
+# code
+foreach $f (@filelist)
+{
+    unless(isListElem($f, \@librarylist))
+    {
+	get_modules($f,\@librarylist);
+    }
+}
+
+#sort the $fileno array based on the number of modules
+#each element has
+@sortedfiles = sort {$$a{modcount} <=> $$b{modcount}} @fileinfo;
+
+$cmd = getoldvalue('Makefile','CMD');
+if ($cmd eq '0'){
+  $cmd = 'music';
+}
+
+$compiler = getoldvalue('Makefile','FC');
+if ($compiler eq '0'){
+  $compiler = 'f90';
+}
+
+# Open the output file
+open(OUTFILE,'>Makefile') || die "could not open output file 'Makefile'\n";
+
+# Generate the makefile by first dumping the header and then
+# the dependency list
+dump_makefile_header(\@sortedfiles, $fileno, $compiler, $cmd);
+dump_dependency(\@sortedfiles, $fileno);
+
+#######################################################################
+#######################################################################
+
+#########################################################################
+# Gets the value of a variable from an existing file
+# Returns '0' if nothing is found
+#########################################################################
+sub getoldvalue
+{
+  my($filename) = shift(@_);
+  my($variable) = shift(@_);
+
+  $newname = '0';  #default
+
+  open(OLDFILE,$filename) || return($newname);
+  while(<OLDFILE>){
+    chop($_);    
+    if ($_ =~ /$variable\s=/ ){
+      ($newname = $_) =~ s/(^$variable\s=\s*)(.*)/$2/;
+      last;
+    }
+  }
+
+  return($newname);
+}
+
+
+#########################################################################
+# Prints the header of the makefile
+#########################################################################
+sub dump_makefile_header(\@$)
+{
+    my $sortedfiles = shift;
+    my $fileno = shift;  
+    my $compiler = shift;  
+    my $cmd = shift;  
+    my ($sourcefile, $objectfile, $f);
+
+    print OUTFILE "# Use this Makefile with gmake\n\n";
+    print OUTFILE "# Executable name \n";
+    print OUTFILE "CMD = $cmd\n\n";
+
+    print OUTFILE <<'EOF';
+# -------- description of DFLAGS --------------- 
+# DNAGCOMPILER - some nag ocmpiler specific parts especially for using
+# system calls
+# DSITE_HACK - some hacks in post code, which can be integrated to
+#regular code with some work
+# DBENT_GCMC - some special adjustments in rigidmoves for dealing with
+# molecules whose COM might fall outside the tabulated area. This code
+# is in test stage (2-12-03). Too dangerous to mix with regular code.
+# DIDEAL_GAS - to prevent molecules  flying away from origin during
+# ideal gas simulations
+
+
+# -------- Define environmental variable FORTRAN_COMPILER -----------
+# Make sure it is defined
+#          ifeq ($(strip$(FORTRAN_COMPILER)),)
+# Otherwise you can define it here also by uncommenting next line
+# FORTRAN_COMPILER= yourcompilername
+ifeq ($(FORTRAN_COMPILER),)
+ FC = defaultCompiler
+else
+ FC= $(FORTRAN_COMPILER)
+endif
+
+# commented out for now !!
+#define the general flags, used for all extension types
+#GEN_FLAGS = -g -static 
+#GEN_FLAGS =  -non_shared
+#define the F77 compiler flags
+F77FLAGS = 
+
+
+### ----------- define flags for default compiler --------------------- 
+###
+###
+ifeq ($(FC),defaultCompiler)
+ F90FLAGS = 
+ DEBUG_FLAGS = 
+ DFLAGS = 
+ OFLAGS =  
+ LINKERFLAGS = 
+endif
+
+
+### ------------ define flags for ifc, intel-linux-compiler by INTEL ---------
+###
+###
+ifeq ($(FC),ifc)
+F90FLAGS = 
+DEBUG_FLAGS = 
+OFLAGS = 
+#LINKERFLAGS = -unsharedf95 # for not using runtime libraries
+endif
+
+
+### ------------ define flags for nagf95, intel-linux compiler by NAG ---------
+###
+###
+ifeq ($(FC),nagf95)
+F90FLAGS = -w=unused #-useful for NAG compiler
+#DEBUG_FLAGS = -g -C -gline #debug flags for NAG compiler
+DFLAGS = -DNAGCOMPILER #-Define the cpp flags to be used
+OFLAGS =  -O4 # optimization
+#OFLAGS = -Wc,-mcpu=pentium -O4 # OR ,-mcpu=pentium4, athlon etc..
+#LINKERFLAGS = -L/usr/local/lib/NAGWare/ -lf96 # maybe needed for NAG compiler
+#LINKERFLAGS = -unsharedf95 # for not using runtime libraries
+endif
+
+
+### ----------- define flags for Old DEC/Compaq, alpha-linux ---------------
+###
+###
+ifeq ($(FC),f90)
+F90FLAGS = -u -std95  #-useful for DEC/Compaq compilers
+DEBUG_FLAGS = -g -C -ladebug -warn unused -check underflow -check overflow -align records -check bounds #-debugging flags
+#OFLAGS =  -fast # optimization
+endif
+
+
+
+### ---------- define flags for intel-linux lahey compiler -------------- 
+### This compiler does not work for music code
+###
+ifeq ($(FC),lf95)
+F90FLAGS = --f95 #-useful for the Lahey compiler
+DEBUG_FLAGS = -g --ap --chkglobal --lst --psa --sav --trace --info --xref #-useful for the Lahey compiler
+endif
+
+
+### ---------- define flags for Absoft compiler ------------------------ 
+###
+###
+ifeq ($(FC),AbSf95)
+#DEBUG_FLAGS = -g -Rb -Rc -Rp -Rs #for Absoft compiler  (-Rb doesn't work)
+DEBUG_FLAGS = -s -g -B111 -B80 -Rc -Rp -Rs #for Absoft compiler
+LINKERFLAGS = -lU77  #needed for Absoft compiler, accesses UNIX commands
+endif
+
+
+
+# Targets and rules
+#
+#
+#
+#
+# Implicit rules for handling src files
+#  ( uses static pattern rules, see info for make )
+%.o : %.F90 
+	$(FC) $(GEN_FLAGS) $(DEBUG_FLAGS) $(F90FLAGS) $(OFLAGS) $(DFLAGS) -c $<
+%.o : %.F
+	$(FC) $(GEN_FLAGS) $(DEBUG_FLAGS) $(F77FLAGS) $(OFLAGS) -c $<
+
+EOF
+
+    print OUTFILE "OBJECTS = ";
+    $totallength = 12;
+    for($f=0; $f<$fileno; $f++)
+    {
+	$objectfile = $$sortedfiles[$f]{filename};
+	$objectfile =~ s/(.*?\.)F90/$1o/i;
+	$objectfile =~ s/(.*?\.)F/$1o/;
+	$totallength = $totallength + length($objectfile);
+	if ($totallength > 70)
+	{
+	    print OUTFILE "\\\n";
+	    $totallength = 8;
+	}
+	print OUTFILE "$objectfile ";
+    }
+    print OUTFILE "\n\n";
+
+    print OUTFILE <<'EOF';
+$(CMD) : $(OBJECTS)
+	$(FC) $(DEBUG_FLAGS) $(OFLAGS) $(LINKERFLAGS) $(OBJECTS)  -o ../$(CMD)
+
+dec : $(OBJECTS)
+	$(FC) $(DEBUG_FLAGS) $(OFLAGS) $(OBJECTS) -o ../$(CMD)
+
+clean:
+	/bin/rm -f *.o *.i *.mod a.out make.log
+
+cleano:
+	rm -f *.o *.i 
+
+
+depend : 
+	makemake *.F90 *.F 
+
+EOF
+}
+			 
+####################################################################
+# Prints the dependecy list
+####################################################################
+sub dump_dependency(\@$)
+{
+    my $sortedfiles = shift;
+    my $fileno = shift;  
+    my ($sourcefile, $f);
+    
+    for($f=0; $f < $fileno; $f++)
+    {
+	$sourcefile = $$sortedfiles[$f]{filename};
+	$rootname   = (split(/\./,$sourcefile, 2))[0];
+	$objfile    = $rootname.".o";
+	printf OUTFILE ("%-25s :", $objfile);
+	for($i=0; $i<$$sortedfiles[$f]{modcount};$i++)
+	{
+	    print OUTFILE (" $$sortedfiles[$f]{modarray}[$i].o");
+	}
+	print OUTFILE ("\n");
+    }
+}
+
+
+########################################################################
+# Gets the modules used in a file
+########################################################################
+sub get_modules($\@)
+{
+    my $filename = shift;
+    my $librarymods = shift;
+    my $nmodules = 0;
+    my @modules;
+    my $modfile;
+
+    open(FILE, $filename) || 
+	return;
+
+    while(defined($nextline = get_nextline(*FILE)))
+    {
+	if ($nextline =~ /^\s*use (.*?)[,\s]/i)
+	{
+	    # Do not add the module if it is a library module
+	    $modfile = $1.".F90";
+	    next if (isListElem($modfile, $librarymods));
+		
+	    #Check for duplicates
+	    for($i=0; $i<$nmodules; $i++)
+	    {
+		last if ($modules[$i] eq $1);
+	    }
+
+	    # No duplicates found
+	    if ($i == $nmodules)
+	    {
+		$nmodules++;
+		push(@modules, $1);
+	    }
+	}
+    }
+    $fileinfo[$fileno] = {filename => $filename,
+			    modcount => $nmodules,
+			    modarray => \@modules};
+    $fileno++;
+}
+
+
+#######################################################
+# This takes a filename and generates an array of the
+# module usage for that file, recursively
+#######################################################
+sub getUseMods($\@\@)
+{
+    my ($filename)    = shift;
+    my ($usefilelist) = shift;
+    my ($libraryfile) = shift;
+    my ($nfiles, $line, $usedmod, $usedfile, $found);
+    my (@lines);
+    
+    # Open the file and read the lines
+    unless(open(FILE, $filename))
+    {
+	push(@$libraryfile, $filename);
+    }
+
+    @lines = <FILE>;
+
+    foreach $line (@lines)
+    {
+	# Check if the line is a "Use" line.  If so
+	# open the module being used and recusively
+	# get the modules it is using...
+	if (isUse($line))
+	{
+	    $line =~ /^\s*use\s+(\w*)/i;
+	    $usedmod = $1;
+	    $usedfile = $usedmod.".F90";
+
+	    unless (isListElem($usedfile, $usefilelist))
+	    {
+		push(@$usefilelist, $usedfile);
+		getUseMods($usedfile, $usefilelist, $libraryfile);
+	    }
+	}
+    }
+    close(FILE);
+    return(@$usefilelist);
+}
+
+
+#######################################################################
+# Checks to see if an element is present in the list
+#######################################################################
+sub isListElem($\@)
+{
+    my $element = shift;
+    my $list = shift;
+
+    foreach $f (@$list)
+    {
+	if ($element eq $f)
+	{
+	    return(1);
+	}
+    }
+    return(0);
+}
+
+
+########################################################################
+#Gets the next non-comment line
+########################################################################
+sub get_nextline(*)
+{
+    local(*FILE) = shift;
+    
+    $inputline = <FILE>;
+
+    while(defined($inputline) && isComment($inputline))
+    {
+	$inputline = <FILE>;
+    }
+    return($inputline);
+}
+
+
+##################################################################
+# Takes in a line and checks whether the line is a "USE" statement
+##################################################################
+sub isUse($)
+{
+    my($line) = shift;
+
+    if (isComment($line))
+    {
+	return(0);
+    }
+    if ($line =~ /^\s*use\s+\w+/i)
+    {
+	return(1);
+    }
+}
+
+
+########################################################################
+#Checks whether a line is a comment
+#Anything starting with a !, c or *
+#is a comment
+########################################################################
+sub isComment($)
+{
+    my($input) = shift;
+
+    if ($input =~ /(^[c!*\n])|(^\s*!)/i)
+    {
+	return(1);
+    }
+    return(0);
+}
+
+
+
+
+
+
+
+
+
+

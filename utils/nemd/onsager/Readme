@@ -1,0 +1,37 @@
+music_onsager.F90 : driver for calculating L from emd
+
+- when original music MD is run it has to be run with EMD option is ON.
+- then this code has to be run
+- assume emd out put of md is stored in binary file "emd.dat", assume the executable obtained with music_onsager.F90 is "onsager.exe", assume you are going to use "ctrlfile" with onsager.exe
+
+----------------------
+format of binary file emd.dat
+
+#########
+volume(real-dbl), Temperature(real-dbl)
+nsorbs(integer)
+spctype(integer), nmoles(integer), moelcule_name(char-48) 
+spctype(integer), nmoles(integer), moelcule_name(char-48)
+time(real-dbl), velocities (6 real-dbls for binary MD)
+time(real-dbl), velocities (6 real-dbls for binary MD)
+time(real-dbl), velocities (6 real-dbls for binary MD)
+time(real-dbl), velocities (6 real-dbls for binary MD)
+:
+:
+################
+----------------------------------------
+example of "ctrlfile"
+#############
+%Filename                        : emd.dat
+%maximum correlation time, ps    : 30.00
+#################
+-----------------------------------------------
+To use:
+----------
+a) compile code :>> ln -sf music_onsager.F90 music.F90
+                 >> make depend
+                 >> make 
+b) run code     :>> onsager.exe ctrlfile
+c) view distrib :>> gnuplot plot.g
+
+

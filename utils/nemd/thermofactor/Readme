@@ -1,0 +1,90 @@
+This code is done in two steps 
+
+1) In the first step a fitting of isotherm to this function
+
+  !----------------------------------------------------------------------------
+  ! This is the fitting function Toth Eqn, Heuchel , snurr and buss eqn-12
+  !----------------------------------------------------------------------------
+  Real(kind=RDbl) Function isotherm_function(p,K, Lmax, c, b)
+    Real(kind=RDbl) , Intent(in) :: p, K, Lmax, c,b
+    isotherm_function=(K*p) / ( one+ (((K/Lmax)*p/(1+b*P))**c) )**(one/c)
+  End Function isotherm_function
+
+2) In the second step interpolations and numerical differerntiaions
+are done suinga bove fit 
+
+-------------------------------------
+src contains 2 drivers music_fit.F90 and music_inter.exe
+-------------------------------------
+example of ctrlfile for fiting
+###################################################
+%Molecule Name        : CF4
+%output file          : CF4.fit
+%tolerance            : 1.0e-10
+%no of isotherms      : 11
+%filenames and gas phase compositon of this compound 
+0.cf4   :   0.0
+10.cf4  :  10.0
+20.cf4  :  20.0
+30.cf4  :  30.0
+40.cf4  :  40.0
+50.cf4  :  50.0
+60.cf4  :  60.0
+70.cf4  :  70.0
+80.cf4  :  80.0
+90.cf4  :  90.0
+100.cf4 : 100.0
+####################################################
+Example of isotherm file (one of the inputs for above ctrlfile)
+for example 40.cf4.
+
+All the files should have same number of points at same value of
+total-pressure values
+
+#######################################################
+ #------------OVERALL ISOTHERM-------------
+ # Molecule : CF4
+ #  Pressure                  loading      Total P 
+ #  kpa(1 st gcmc species)    (molec/uc)   kPa	   
+0.4000000000000             0.0297594	   1.000000
+0.7331900000000             0.0535703	   1.832980
+1.3439300000000             0.0999172	   3.359820
+2.4633900000000             0.1826313	   6.158480
+4.5153500000000             0.3354172	   11.28838
+8.2765500000000             0.6109031	   20.69138
+15.170760000000             1.1012766	   37.92690
+27.807710000000             1.9678234	   69.51928
+50.971000000000             3.4654469	   127.4275
+93.428860000000             5.8946266	   233.5721
+171.25330000000             9.3565297	   428.1332
+313.90399000000            13.4625594	   784.7599
+575.37996000000            17.4534000	   1438.449
+1054.6603600000            20.9509828	   2636.650
+1933.1721000000            22.6972391	   4832.930
+3543.4671600000            24.3397203	   8858.667
+6495.1069600000            24.3454906	   16237.76
+11905.405770000            23.4199453	   29763.51
+##########################################################
+
+-----------------------------------------------------------------
+ctrlfile for interpolation and calculation of thermodynamci factors
+we can specify N1 for species 1 and a range for N2 for species 2
+all thermofactors at each set of N1, N2 will be reported
+
+#########################################
+%Output filename                : Me40.dat
+%Name of species 1              : Methane
+%isotherm file for species 1    : Methane.fit
+% N for sepcies 1               : 40
+%Name of species 2              : CF4
+%isotherm file for species 2    : CF4.fit
+% min,max and incr for spc2     : 8,8, 4
+% deltaN for numerical diff     : 0.2
+% Number of Y divisions         : 50000 
+% tolerance for N               : 0.005
+######################################
+
+
+
+
+
