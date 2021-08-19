@@ -1,0 +1,407 @@
+#!/usr/bin/perl
+#-*- mode: cperl;-*-
+
+#This script processes MUSIC output files
+
+#--------------------------------------------
+# Define the possible command-line options
+#--------------------------------------------
+
+$noptions = 2;
+#WARNING: do NOT change the order of these, olist[*][2] contains the flags 
+@olist = (["g","make Gnuplot files"],       
+          ["s","Suppress output to Screen"],
+);
+for($j=0;$j < $noptions;$j+=1) {
+  $olist[$j][2] = 0;
+}  
+
+if (!defined($ARGV[$0])) {
+  print"usage: pmusic [";
+  for($j=0;$j < $noptions;$j+=1) {
+    printf("%s",$olist[$j][0]);
+  }  
+  print"] [FILENAME]\nuse --help for more information\n";
+  exit(-1);
+}
+
+#---------------------------------------------------------
+# Define the stuff to look for in the file
+# 0: name
+# 1: search_string
+# 2: storage_variable
+# 3: search_section
+# 4: first column in datafile
+# 5: last column in datafile
+#---------------------------------------------------------
+@slist = (["Sorbate Molecular Temperature","Tmole","tmole","1.1"],
+	  ["Sorbate Atomic Temperature","Tatom","tatom","1.1"],
+	  ["Sorbate Intra-atomic Energy","Intra Energy","intranrg","1.1"],
+	  ["Sorbate Kinetic Energy","Total Kin Nrg","mkinnrg","1.1"],
+	  ["Sorbate Constraint Energy","Cnstr Energy","connrg","1.1"],
+	  ["Total Potential Energy","Total Pot Nrg","tpotnrg","1.3"],
+	  ["Total Kinetic Energy","Total Kin Nrg","tkinnrg","1.3"],
+	  ["Total Energy","Total Energy","tnrg","1.3"],
+	  ["Center of Mass Velocity","COM Velocity","cvel","1.3"],
+);
+
+#add the min and max column in data file identifiers
+$n = 1;  #one before the starting column
+$cols[0] = 'Current';
+$cols[1] = 'CumulAvg';
+$cols[2] = 'Block';
+$cols[3] = 'Std';
+for($i=0;defined($slist[$i][0]);$i+=1) {
+  $slist[$i][4] = $n+1;
+  if($slist[$i][3] == 1.3) {
+    $slist[$i][5] = $n+2;  #2 columns
+    if($slist[$i][1] eq 'COM Velocity') {$slist[$i][5] = $n+1}
+  } else {
+    $slist[$i][5] = $n+3;  #3 columns
+  }
+  $n = $slist[$i][5];
+#  for($j=0;defined($slist[$i][$j]);$j+=1) {
+#    print"$slist[$i][$j]  ";
+#  }
+#  print"\n";
+}
+
+
+#-------------------------------------
+# Interpret command line options
+#-------------------------------------
+
+for($i=0;defined($ARGV[$i]);$i+=1) {
+#  print"$i: $ARGV[$i]\n";
+  $inp = $ARGV[$i];
+  if ($inp =~ /--/) {   
+    $inp =~ s/(--)(.*)/$2/;    
+    if ($inp eq 'help'){
+      printhelp();
+      exit(0);
+    }
+  }
+
+  if ($inp =~ /^-/) {                 #process the commands
+    $found_command = 0;
+    $inp =~ s/(^-)(.*)/$2/;    
+    $length = length($inp);
+    for($k=0;$k < $length;$k+=1){
+      $com = substr($inp,$k,1);
+      for($j=0;$j < $noptions;$j+=1) {  
+	if($inp =~ /$olist[$j][0]/){   
+	  $found_command = 1;
+	  $olist[$j][2] = 1;  #turn option on
+	}
+      }
+    }
+
+    if($found_command != '1'){die"could not interpret command: $inp\n"}
+
+  } else {                           #get the filename
+    $inputfile = $inp;
+  }
+}
+
+if((!defined($inputfile))|($ARGV[$i-1] =~ /^-/)){
+  die"You must specify an input filename (last)\nTry --help for information\n";
+}
+
+$eunits = 'kJ/mol';
+$lunits = 'Ang';
+$efactor = 1.0;  
+
+#for($j=0;$j < $noptions;$j+=1) {
+#  print "$j: $olist[$j][2], $olist[$j][0]: $olist[$j][1] \n";
+#}  
+#die"\n";
+
+#------------------------------------------------------------------
+# Analyze the file name
+#------------------------------------------------------------------
+($ending = $inputfile) =~ s/(\S+\.)//;
+if($ending = $inputfile) {$ending = ''}
+($basewpath = $inputfile) =~ s/(^.*)(\.\S*)/$1/;
+($pathonly = $inputfile) =~ s/(^.*\/)(.*)/$1/;
+if($pathonly = $inputfile) {$pathonly = ''}
+($core = $inputfile) =~ s/(^.*[\/]??)(\b[\w_-]+)(\.\S*)/$2/;
+#die "core: $core  path: $pathonly  basewpath: $basewpath  ending:$ending\n";
+
+#-----------------------------------------------------
+# Open the datafile for energy, evalues etc. output
+#-----------------------------------------------------
+
+$datafile = 'datafile';  #basic data file (energies, convergence info)
+$header = sprintf("#columns are: step number, ...");
+
+$file = $datafile;
+print "opening data file: $file\n";
+open(DATAFILE,">$file") || die "could not open $file\n";
+print DATAFILE "#Data taken from: $inputfile\n";
+print DATAFILE "$header\n";
+$file2 = $pathonly.$datafile;
+$second = 0;
+if ($file ne $file2) {
+  $second = 1;
+  print "opening data file: $file2\n";
+  open(DATAFILE2,">$file2") || die "could not open $file2\n";
+  print DATAFILE2 "#Data taken from: $inputfile\n";
+  print DATAFILE2 "$header";
+}
+
+#-----------------------------------------------------
+# Read the output file and process it
+#-----------------------------------------------------
+
+$file = $inputfile;
+print "processing file: $file\n";
+if (-e $file) {
+   open(FILE,$file) || die "could not open $file\n";
+} else {
+   die"$file does not exist\n";
+}
+
+$inmd = 0;
+
+$n = 0;
+$lno = 0;
+while(<FILE>)
+{
+  chop($_);
+  $lno += 1;
+
+  #------Look for output breaks (------) and respond
+  if($_ =~ /[\-]{10,}/) {
+    if(($inmd < 2)&&($inmd >= 1)) {
+      $inmd = 0;
+      dumpdata();
+    }
+    if($inmd == 3) {$inmd = 2}
+    next;
+  }
+
+  #------Look for MD header line and process information in it
+  if($_ =~ /MD Step/) {
+    $inmd = 3;
+    ($istep = $_) =~ s/(^.*Step\s+)(\d+)(.*)/$2/;
+    ($tstep = $_) =~ s/(^.*Time\s+)([\d\.]+)(.*)/$2/;
+#    print "$istep, $tstep\n";
+#    $n += 1;
+    $n = $istep;
+  }
+
+  #------Look for MD sub-heading
+  if(($inmd <= 2)&&($inmd > 1)) {
+    if($_ =~ /Information/) {$inmd = 1.1}
+    if($_ =~ /System Energy Totals/) {$inmd = 1.3}
+  }
+
+  #------Read the MD information for the sorbate
+  if(($inmd < 2)&&($inmd > 1)) {
+    for($i=0;defined($slist[$i][0]);$i+=1) {    
+      if($inmd != $slist[$i][3]) {next}
+      if($_ =~ /$slist[$i][1]/) {
+#        print"$n found match to $slist[$i][1]\n";
+#	print"$_\n";
+	stripnos($_,@nums);
+	${$slist[$i][2]}[$n][0] = $nums[0]; #current value
+      	${$slist[$i][2]}[$n][1] = $nums[1];     #cumulative average
+        if($slist[$i][3] != 1.3) {
+	  ${$slist[$i][2]}[$n][2] = $nums[2];   #block average
+          ${$slist[$i][2]}[$n][3] = $nums[3];   #standard deviation
+        } else {
+	  ${$slist[$i][2]}[$n][2] = 0.0;  
+          ${$slist[$i][2]}[$n][3] = 0.0;  
+        }
+#        print"@nums\n";
+      }
+    }
+  }
+
+}
+
+print"\nprocessed output from $n cycles\n";
+
+#-------------------------------------
+# Make gnuplot files
+#-------------------------------------
+
+if($olist[0][2]) {  #g-option
+  $ncolumns = 100;  #number of columns in data file
+
+  #dump a gnuplot file containing quantities as a function of step number
+  for($n=0;defined($slist[$n][0]);$n+=1) {
+    for($j=1;$j <= $ncolumns;$j+=1) {
+      $columns[$j] = '';
+      if(($j >= $slist[$n][4])&&($j <= $slist[$n][5])) {
+	$columns[$j] = $slist[$n][0].': '.$cols[($j - $slist[$n][4])];
+      }
+    }
+    $filename = $slist[$n][2].'.g';
+    $title = $slist[$n][0].' as a Function of Step Number';
+    makegpfile($filename,$datafile,'plot.ps',$title,'Step number',
+	       $slist[$n][0],'0','0','0','0','1','linespoints','OFF',
+	       'OFF',@columns);
+  }
+
+  #dump a gnuplot file containing energies as a function of step number
+  for($j=1;$j <= $ncolumns;$j+=1) {
+    $columns[$j] = '';
+    if ($j == $slist[5][4]) {
+      $columns[$j] = $slist[5][0].': '.$cols[($j - $slist[$n][4])];
+    } elsif ($j == $slist[6][4]) {
+      $columns[$j] = $slist[6][0].': '.$cols[($j - $slist[$n][4])];
+    } elsif ($j == $slist[7][4]) {
+      $columns[$j] = $slist[7][0].': '.$cols[($j - $slist[$n][4])];
+    }
+  }
+  $filename = 'nrgs.g';
+  $title = 'Total Energies as a Function of Step Number';
+  makegpfile($filename,$datafile,'plot.ps',$title,'Step number',
+	     $slist[$n][0],'0','0','0','0','1','linespoints','OFF',
+	     'OFF',@columns);
+}
+
+print "\n";
+exit(0);
+
+#------------------------------
+# Subroutines
+#------------------------------
+
+#strips numbers out of a space delimited input line
+sub stripnos { 
+  local($line) = shift(@_);
+  @nums = @_;
+
+  local(@fields,$n,$i);
+
+  $n = -1;
+  @fields = split(/\s+/,$line);
+  for($i=1;defined($fields[$i]);$i+=1){
+    if(($fields[$i] !~ /[a-zA-Z]/)&&($fields[$i] =~ /\d/)) {
+      $n += 1;
+      $nums[$n] = $fields[$i];
+    }
+  }    
+#  print"inside: @nums\n";
+
+}
+
+sub dumpdata { 
+
+  $line = sprintf("%3d",$n);
+
+  for($i=0;defined($slist[$i][0]);$i+=1) {
+    for($col=0;$col <= ($slist[$i][5] - $slist[$i][4]);$col+=1) {    
+      $line = sprintf("%s %12.5f",$line,${$slist[$i][2]}[$n][$col]);
+    }
+  }
+
+  printf DATAFILE ("%s\n",$line);
+  if($second) {printf DATAFILE2 ("%s\n",$line);}
+}
+
+
+#--------------------------------------------------------------------------------
+# Makes a gnuplot control file
+# Call: (gpfile,datafile,psfile,title,xtitle,ytitle,xlo,xhi,ylo,yhi,refcolumn,
+#       style,logx,logy,columns)
+# NOTE1: make refcolumn negative to flip the axes
+# NOTE2: columns is an array containing titles at the column index
+#--------------------------------------------------------------------------------
+sub makegpfile { 
+   my($filename) = shift(@_);
+   my($datafile) = shift(@_);
+   my($psfile) = shift(@_);
+   my($title) = shift(@_);
+   my($xtitle) = shift(@_);
+   my($ytitle) = shift(@_);
+   my($xlo) = shift(@_);
+   my($xhi) = shift(@_);
+   my($ylo) = shift(@_);
+   my($yhi) = shift(@_);
+   my($refcolumn) = shift(@_);
+   my($style) = shift(@_);
+   my($logx) = shift(@_);
+   my($logy) = shift(@_);
+   my(@columns) = @_;
+
+   print"creating gnuplot file: $filename\n";
+
+   $flipaxes = 0;
+   if($refcolumn < 0) {
+      $refcolumn = abs($refcolumn);
+      $flipaxes = 1;
+   }
+
+   open(GPFILE,">$filename") || die "could not open $filename\n";
+
+   print GPFILE "set data style $style\n";
+   print GPFILE "set title '$title'\n";
+   print GPFILE "set xlabel '$xtitle'\n";
+   print GPFILE "set ylabel '$ytitle'\n";
+   if(($xlo == 0)&&($xhi == 0)) {
+      print GPFILE "#set xrange [0:1]\n";
+   } else {
+      print GPFILE "set xrange [$xlo:$xhi]\n";
+   }
+   if(($ylo == 0)&&($yhi == 0)) {
+      print GPFILE "#set yrange [0:1]\n";
+   } else {
+      print GPFILE "set yrange [$ylo:$yhi]\n";
+   }
+   if ($logx eq 'ON') {
+      print GPFILE "set logscale x\n";
+   } else {
+      print GPFILE "#set logscale x\n";
+   }
+   if ($logy eq 'ON') {
+      print GPFILE "set logscale y\n";
+   } else {
+      print GPFILE "#set logscale y\n";
+   }
+
+   print GPFILE "\n";
+
+   $line = "plot ";
+   for($j=1;(defined($columns[$j]));$j+=1){
+      if($columns[$j] eq ''){next}
+      if($line ne "plot "){$line = $line.", "}
+      if($flipaxes == 0) {
+         $line = $line."'$datafile' using $refcolumn:$j title '$columns[$j]'";
+      } else {
+         $line = $line."'$datafile' using $j:$refcolumn title '$columns[$j]'";
+      }
+   }
+   print GPFILE "$line \n\n";
+
+   print GPFILE "pause -1 'Hit Return To Continue'\n";
+   print GPFILE "set terminal postscript landscape 18\n";
+   print GPFILE "set output '$psfile'\n\n";
+
+   print GPFILE "$line \n\n";
+
+   close(GPFILE);
+}
+
+
+
+
+
+##### prints the help message
+sub printhelp {
+  print STDERR << "EOF";
+
+This Perl script searches the given QM-Pot output file for 
+interesting information
+EOF
+#  print"\nPress any key for commands:";
+#  $junk = getone();
+  print"\nCurrently understood commands are:\n";
+  for($j=0;$j < $noptions;$j+=1) {
+    printf(" -%s : %s\n",$olist[$j][0],$olist[$j][1]);
+  }  
+  print"\n";
+  return(0);
+}
