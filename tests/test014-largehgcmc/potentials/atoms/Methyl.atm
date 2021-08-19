@@ -1,0 +1,12 @@
+##### Basic atom information
+
+Atom_Name: Methyl
+
+Atom_Symbol: Me
+
+Atom_SS_Charge: 0.0
+Atom_SZ_Charge: 0.0
+
+Atom_Mass: 15.0
+
+Atom_Valency: 2                # it can be CH3 or CH2

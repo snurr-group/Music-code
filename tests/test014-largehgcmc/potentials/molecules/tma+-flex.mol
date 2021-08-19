@@ -1,0 +1,95 @@
+##### Basic Molecule Information Nafion+benzyl-TMA
+
+Molecule_Name: tma+ CHARGED
+
+Coord_Info: Listed Cartesian Rigid
+25 # number of atoms in molecule # charge set type
+1     -5.89057629    0.99613409    0.12576738 CF         0.0 0  0
+2     -5.33296068    1.79516737    1.31920700 CF         0.0 0  0
+3     -3.79359692    1.74762116    1.29690824 CF         0.0 0  0
+4     -3.23859838    2.54322748    2.49499421 CF         0.0 0  0
+5     -1.69794493    2.50342842    2.47566105 CF         0.0 0  0
+6     -1.15259405    3.29171450    3.68302217 CF         0.0 0  0
+7      0.38687114    3.26865504    3.66714359 CF         0.0 0  0
+8      0.91779954    4.04864242    4.88299455 CF         0.0 0  0
+9      2.45551798    4.00499379    4.88436205 CF         0.0 0  0
+10     2.99188967    4.78754766    6.09676989 CF         0.0 0  0
+11     4.53024188    4.72392492    6.10805450 CF         0.0 0  0
+12     5.06390540    5.51200562    7.31815041 CF         0.0 0  0
+13     6.60091227    5.44136137    7.34251702 CF         0.0 0  0
+14     7.12603095    6.22273603    8.56053368 CF         0.0 0  0
+15     0.89108870    1.81576268    3.73431487 C2         0.0 0  0
+16     2.10321741    1.47991534    3.12021034 C2         0.0 0  0
+17     0.14691225    0.83264919    4.40337383 C2          0.0 0  0
+18     2.57488736    0.16299750    3.17190656 C2          0.0 0  0
+19     0.62040050   -0.48658930    4.45634228 C2          0.0 0  0
+20     1.83622448   -0.82015714    3.84205458 C2          0.0 0  0
+21     2.36108618   -2.26690237    3.90484751 Methyl      0.2 0  0
+22     1.84203283   -3.03323997    2.75895053 Nitrogen    0.2 0  0
+23     2.34875628   -4.41373082    2.82193599 Methyl      0.2 0  0
+24     0.37146410   -3.04501547    2.80382001 Methyl      0.2 0  0
+25     2.28507155   -2.40748085    1.50423482 Methyl      0.2 0  0
+###### charges are based on chelpg and lumping CH3 together
+###### 
+
+
+Connect_Info: Generate
+    5    # number of connection types listed
+    CF CF           1.65 0.25
+    CF C2           1.54 0.25
+    C2 C2           1.40 0.15
+    C2 Methyl       1.54 0.25
+    Methyl Nitrogen 1.60 0.25
+
+##### Intramolecular forces
+
+## the equilibrium bond length and angles from vishnyakov and dreiding
+## 
+Bond_Stretch: Generate Harmonic Fast
+    5 # number of bond types to generate
+    CF CF           700   1.65
+    CF C2           700   1.54
+    C2 C2           700   1.40
+    C2 Methyl       700   1.54
+    Methyl Nitrogen 700   1.60 
+
+
+Bond_Constraints: Generate RATTLE Fast
+    5    # number of connection types listed
+    CF CF           1.65 0.25
+    CF C2           1.54 0.25
+    C2 C2           1.40 0.15
+    C2 Methyl       1.54 0.25
+    Methyl Nitrogen 1.60 0.25
+
+Bond_Bending: Generate Harmonica Fast
+    7 # number of bending types
+    CF      CF      CF       112  109.6
+    CF      CF      C2       112  109.5
+    CF      C2      C2       100  120
+    C2      C2      C2       100  120
+    C2      C2      Methyl   100  120
+    C2      Methyl  Nitrogen 100  115.2
+    Methyl  Nitrogen Methyl  100  109.234
+
+
+# all based on CF-CF of Cui et al... approximation
+Intrapair_Info: Generate LJ Fast
+    6      # n_away
+    3      # number of intrapairs
+CF CF      LJ SIG@4.6   EPS@30.0   HICUT@11.5  LOCUT@0.5
+CF C2      LJ SIG@4.6   EPS@30.0   HICUT@11.5  LOCUT@0.5
+CF Methyl  LJ SIG@4.6   EPS@30.0   HICUT@11.5  LOCUT@0.5
+
+
+
+
+
+# we will not use bond torsion now
+#Bond_Torsion: Listed Cosexpansion Fast
+#    1     # number of torsion angles
+#    1  2  3  4  -1.84725 -2.569465 3.648829 -0.538172 0.060887
+
+
+
+

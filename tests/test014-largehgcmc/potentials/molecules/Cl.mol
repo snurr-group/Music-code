@@ -1,0 +1,13 @@
+##### Basic Molecule Information
+
+Molecule_Name: Cl CHARGED
+
+Coord_Info: Listed Cartesian Rigid
+    1     # number of atoms in molecule
+ 1  0.00  0.00  0.0000  Cl  -1  0   0 #x,y,z,name,set,type
+
+Molecule_DOF: 3
+
+Connect_Info: Generate
+    0    # number of connection types listed
+

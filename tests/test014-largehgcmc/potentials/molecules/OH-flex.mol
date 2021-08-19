@@ -1,0 +1,24 @@
+##### Basic Molecule Information
+
+Molecule_Name: OH
+
+Coord_Info: Listed Cartesian Rigid
+    2     # number of atoms in molecule
+ 1  -0.3082  0.5908  0.0000  Ooh  -1.42  0   0 #x,y,z,name,set,type
+ 2   0.6918  0.5908  0.0000  Hoh   0.42  0   0 #x,y,z,name,set,type
+
+#Molecule_DOF: 5
+
+Connect_Info: Generate
+    1    # number of connection types listed
+    Ooh Hoh 0.99 0.05
+
+##### Intramolecular forces
+
+Bond_Stretch: Generate Harmonic Fast
+    1 # number of bond types to generate
+    Ooh Hoh  1059.162   CALCULATE   # voth JCP 1999
+
+Bond_Constraints: Listed RATTLE Fast
+    1 #number of bond constraints (bondlen=0.0 => to be calculated from above)
+    1    2    CALC

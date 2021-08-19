@@ -1,0 +1,96 @@
+##### Basic Molecule Information NAFION UNITED ATOM
+
+Molecule_Name: nafion+ CHARGED
+
+Coord_Info: Listed Cartesian Rigid
+25 # number of atoms in molecule # charge set type
+1   -5.74438225    1.15168538    0.00000000  CF      0.0 0  0
+2   -5.23104003    1.87764165    1.25740497  CF      0.0 0  0
+3   -3.69104263    1.87518530    1.25881364  CF      0.0 0  0
+4   -3.17770015    2.60161061    2.51594759  CF      0.0 0  0
+5   -1.63770297    2.59905120    2.51741591  CF      0.0 0  0
+6   -1.12436046    3.32548723    3.77454365  CF      0.0 0  0
+7    0.41563671    3.32292561    3.77601325  CF      0.0 0  0
+8    0.92897921    4.04935943    5.03314227  CF      0.0 0  0
+9    2.46897638    4.04680000    5.03461060  CF      0.0 0  0
+10   2.98231888    4.77323164    6.29174089  CF      0.0 0  0
+11   4.52231606    4.77067441    6.29320794  CF      0.0 0  0
+12   5.03565855    5.49710385    7.55033949  CF      0.0 0  0
+13   6.57565574    5.49454882    7.55180528  CF      0.0 0  0
+14   7.08899823    6.22097609    8.80893809  CF      0.0 0  0
+15   0.89005878    1.97391850    3.77788798  Oc      0.0 0  0
+16   1.64333035    1.73117267    2.58685632  CF      0.0 0  0
+17   0.98420180    0.59312618    1.78560746  CF 0.0 0  0
+18   0.21923490    1.18519452    0.58732506  CF 0.0 0  0
+19   1.99316885   -0.30251234    1.31156407  Oc 0.0 0  0
+20   1.42382700   -1.59843804    1.10827500  CF 0.0 0  0
+21   2.55052368   -2.62652925    0.89571192  CF 0.0 0  0
+22   3.63927416   -2.05594072   -0.39170841  Sulfur +0.89 0 0
+23   4.49170893   -3.35013288   -1.01406009  Os -0.63 0 0
+24   2.74037738   -1.34545427   -1.60665432  Os -0.63 0 0
+25   4.70720384   -0.93690777    0.23772902  Os -0.63 0 0
+###### charges are based on vishnyakov nad neimark, 
+###### but we make SO3- have a charge of -1e
+
+
+
+
+Connect_Info: Generate
+    4    # number of connection types listed
+    CF CF       1.65 0.25
+    CF Oc       1.38 0.25
+    CF Sulfur   1.81 0.25
+    Sulfur Os   1.45 0.25
+
+##### Intramolecular forces
+
+## the equilibrium bond length and angles from vishnyakov
+## bond stretching from spohr et al, originally from dreiding??
+Bond_Stretch: Generate Harmonic Fast
+    4 # number of bond types to generate
+    CF CF       700 1.602
+    CF Oc       700 1.380
+    CF Sulfur   700 1.800
+    Sulfur Os   700 1.490
+
+## the equilibrium bond length and angles from vishnyakov
+## bond stretching from spohr et al, originally from dreiding??
+Bond_Constraints: Generate RATTLE Fast
+    4 # number of bond types to generate
+    CF CF       1.602 0.25
+    CF Oc       1.380 0.25
+    CF Sulfur   1.800 0.25
+    Sulfur Os   1.490 0.25
+
+
+Bond_Bending: Generate Harmonica Fast
+    6 # number of bending types
+    CF      CF      CF       112  109.6
+    CF      CF      Oc       112  109.5
+    CF      Oc      CF       112  109.5
+    CF      CF      Sulfur   117  112.6
+    CF      Sulfur  Os       109  106.75
+    Os      Sulfur  Os       122  115.0
+
+
+# all based on CF-CF of Cui et al... approximation
+Intrapair_Info: Generate LJ Fast
+    6      # n_away
+    4      # number of intrapairs
+CF CF      LJ SIG@4.6   EPS@30.0   HICUT@11.5  LOCUT@0.5
+CF Sulfur  LJ SIG@4.6   EPS@30.0   HICUT@11.5  LOCUT@0.5
+CF Os      LJ SIG@4.6   EPS@30.0   HICUT@11.5  LOCUT@0.5
+CF Oc      LJ SIG@4.6   EPS@30.0   HICUT@11.5  LOCUT@0.5
+
+
+
+
+
+# we will not use bond torsion now
+#Bond_Torsion: Listed Cosexpansion Fast
+#    1     # number of torsion angles
+#    1  2  3  4  -1.84725 -2.569465 3.648829 -0.538172 0.060887
+
+
+
+

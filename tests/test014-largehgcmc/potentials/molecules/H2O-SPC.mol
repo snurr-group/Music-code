@@ -1,0 +1,16 @@
+##### Basic Molecule Information
+
+Molecule_Name: H2O-SPC
+
+Coord_Info: Listed Cartesian Rigid
+    3     # number of atoms in molecule
+ 1  -0.3082  0.5908  0.0000  Oxygen -0.84  0   0 #x,y,z,name,set,type
+ 2   0.6918  0.5908  0.0000  H-SPC   0.42  0   0 #x,y,z,name,set,type
+ 3  -0.6420  1.5334  0.0000  H-SPC   0.42  0   0 #x,y,z,name,set,type
+
+Molecule_DOF: 6
+
+Connect_Info: Generate
+    1    # number of connection types listed
+    Oxygen H-SPC 0.99 0.05
+

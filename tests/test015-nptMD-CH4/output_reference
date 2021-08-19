@@ -1,0 +1,295 @@
+ Looking for Control file : test015.ctr
+Welcome to Music
+Reading from control file test015.ctr
+ Initializing General Parameters
+------------------------------------------------------------
+The ATOMS structure:
+  No. of atom types:     1
+    Atom Name           : CH4
+    Atom Symbol         : C
+    Atom File           : CH4.atm
+    Atom Mass           :    16.00
+    sscharge, szcharge  :   0.0000  0.0000
+    Required # of bonds :   0
+    Ion Type            : NONE 
+------------------------------------------------------------
+    Reading molecule information for CH4 from: ./potentials/molecules/CH4.mol
+ molecule.F90 : 1065
+  Molecule will be rotated so that the principle axes 
+   will coincide with coordinate system axes
+ Generating Connections for CH4                                             
+------------------------------------------------------------
+The MOLECULES structure:
+  No. of molecule types:     1
+------------------------------------------------------------
+  Molecule Name       : CH4
+  Molecule Mass       : 16.00
+  Molecule File       : CH4.mol
+  Degrees of freedom  : 3
+  DOF origin          : 3N_Calculation
+  body axes atom nos  :    0   0   0
+  Number of atoms     : 1
+  Net Charge          : 0.0
+  Dipole Moment(debye): 0.000000000
+  Translation xform   : 0.00000   0.00000   0.00000
+  Rotational xform    : 
+    1.00000   0.00000   0.00000
+    0.00000   1.00000   0.00000
+    0.00000   0.00000   1.00000
+      Atom Name           : CH4
+      Atom Type           :    1
+      Atom Position       :   0.0000  0.0000  0.0000
+      Equilibrium charge  :   0.0000
+      MD Set, type        :    0   0
+  Connection Information : 
+    Connection Information for CH4                                             
+    Atom     1: No connections
+------------------------------------------------------------
+  The SIMCELL structure:
+  nx, ny, nz            :    1   1   1
+  ncells                :    1
+  ORTHORHOMBIC
+  edge lengths (Ang)    :    40.0000   40.0000   40.0000
+  cell angles (degrees) :    90.0000   90.0000   90.0000
+  origin shift (Ang)    : 0.0000   0.0000   0.0000
+  cell vector a         : 40.0000   0.0000   0.0000
+  cell vector b         : 0.0000  40.0000   0.0000
+  cell vector c         : 0.0000   0.0000  40.0000
+  box width in (a,b,c)  :    40.0000   40.0000   40.0000
+  minimum width (Ang)   :    40.0000
+  volume (Angstroms^3)  : 64000.00
+------------------------------------------------------------
+Configuration Section 
+No. of species :      1
+  ----------------------------------------------------------
+  Species name : CH4                                             
+    No. of molecules :    150
+    No. of atoms     :    1
+    Initial Config. Source : RESTARTFILE
+    Source Filename: 150.res-300K
+    ----------------------------------------------------------
+Initializing intra molecular info from molecule file: ./potentials/molecules/CH4.mol
+ intramolecular.F90 :  165
+ intra filename passed isintramolecular_file                             xx
+ intramolecular.F90 :  171
+Initialized all intramolecular stuff for CH4
+ Finished Initializing Intramolecular interactions
+ reading neighbor list info from ctrlfile
+   13.00000    
+   3.000000    
+  5.0000001E-02
+         150
+ finished reading neighbor list info from ctrlfile
+ Allocating memory for neighbor list
+ Initializing Species-Species interactions....
+ Finished Initializing Species-Species interactions.
+ Finished Initializing Ff interactions.
+ Calling ff_initCal
+ Call to ff_initCalc successful 
+  ------------------------------------------------------------
+  The "BASIC" FF information:
+  ------------------------------------------------------------
+  NON-COULOMBIC SPECIES-SPECIES pair parameters:
+  Information taken from: mol_mol_file
+    ------------------------------------------------------------
+    (1,1)  CH4, CH4:                  BASIC
+      Input Line: NCOUL  BASIC  LJ  FAST  
+      Fast interaction?    T
+      COM-based cut-off?   F
+      COM-COM smoothing?   F
+      Atom-Atom PAIR PARAMETERS:
+        Information taken from: atom_atom_file
+      Overview by atomic pairs:
+      (1,1)  CH4, CH4:                  LJ
+          CH4-CH4 LJ parameters from SIGEPS
+            Sigma: 3.1660 Ang   Epsilon/k_Boltz: 78.150 K
+            A: 629996.7 kcal A^12/mol   B: 625.5655 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.300 Ang
+  ------------------------------------------------------------
+  COULOMBIC SPECIES-SPECIES pair parameters:
+  Information taken from: mol_mol_file
+    ------------------------------------------------------------
+    (1,1)  CH4, CH4:                  OFF
+  ------------------------------------------------------------
+  INTRAMOLECULAR information for each species 
+    ------------------------------------------------------------
+    Intramolecular information for CH4:
+      Bond Stretching   :  OFF
+      Bond Bending      :  OFF
+      Torsion Angles    :  OFF
+      Intra Pairwise Pot:  OFF
+      Intra Coulombic Pot:  OFF
+      Constraints       :  OFF
+------------------------------------------------------------
+ hybridmc.F90 :  144 intializing Hybrid GCMC section
+ hybridmc.F90 :  286
+ hybridmoves.F90 :  108
+ Initializing hybridmoves section
+ volmoves.F90 :   85
+ Initializing volmoves section
+ we will be doing MOnte Carlo Volume change move
+ vchange.F90 :   62
+  3.000000000000000E-002   2000.00000000000     
+ hybridmc.F90 :  411
+ hybridmc.F90 :  345
+ Energies at the beginning of HMC simulation: 
+   Species Name : CH4                                             
+   Species Type : 1
+   Pairwise Energies(noncoul, coul) in kJ/mol
+                  CH4   :   0.00000  0.00000
+   Intramolecular Energies (bs,bb,tor,ip,con,total) in kJ/mol
+      0.00000  0.00000  0.00000  0.00000  0.00000  0.00000  0.00000
+ 
+  ------------------------------------------------------------
+  The hybrid-GCMC Parameters Section:
+    No. of iterations   :      1
+    No. of simulations :      1
+    EOS Tag            : Ideal Parameters
+    stats blocksize    :  10000
+    Temp.  Range (K)   :      300.000     300.000
+      -- No gcmc moves will be used --
+    hybrid section tag : Hybrid_Integration_Info
+ hybridmc.F90 : 1214
+ need hybridmoves display code here
+      lib update      tag : NO_UPDATE
+ Finished initializing main simulation details
+ ************************ 
+ -- NO_UPDATE -- specified as the library updatetag 
+ The libraries used for hybridmcmc will not updated during the simulation
+ Please make sure that the libraries are large enough.  This will work only
+ when the sorbate-molecules are small and do not have many degrees of freedom
+  ------------------------------------------------------------
+  The HYBRID GCMC Simulation Parameters:
+    Simulation Number   :    1
+    Configuration file  : temp.con.1
+    Restart file        : temp.res.1
+   ADD MORE CODE HERE, for what?
+ Iteration number 500 of simulation 1
+ ------------------------------------------------------------
+ The HYBRID GCMC Stats:
+   --- No GCMC Types of moves ---
+     INTEGRATE (INTEGRATE)     Acc. Ratio: 1.000   (500 of 500)  
+     VOLCHANGE (VOLCHANGE)     Acc. Ratio: 0.812   (406 of 500)  
+ 
+ MD Step: 500    Time      0.250 ps  
+ --------------------------------------------------
+ CH4 Information
+           Variable        Current       CumulAvg          Block            Std
+   Tmole          :        299.774        299.582        299.582          0.226
+   Tatom          :        299.774        299.582        299.582          0.226
+   Intramolecular :       0.000000       0.000000       0.000000       0.000000
+   Kinetic Energy :       3.738487       3.736084       3.736084       0.002824
+ Energy for CH4-CH4
+   Noncoulombic   :      -0.022723      -0.076032      -0.076032       0.069814
+   Coulombic      :       0.000000       0.000000       0.000000       0.000000
+    Pressure (kpa):  0.1852E+04  0.3365E+04  0.3365E+04  0.1862E+04
+     Volume  (m^3):  0.1950E+00  0.1262E+00  0.1262E+00  0.4796E-01
+ System Energy Totals(per total moles)
+   Total Potential:      -0.022723      -0.076032
+   Total Kinetic  :       3.738487       3.736084
+   Total Energy   :       3.715764       3.660052
+   COM Velocity (for each species) : SPC-1: 0.6284524603,
+ Total # Moles          150
+ --------------------------------------------------
+ 
+ Iteration number 1000 of simulation 1
+ ------------------------------------------------------------
+ The HYBRID GCMC Stats:
+   --- No GCMC Types of moves ---
+     INTEGRATE (INTEGRATE)     Acc. Ratio: 1.000   (1000 of 1000)  
+     VOLCHANGE (VOLCHANGE)     Acc. Ratio: 0.869   (869 of 1000)  
+ 
+ MD Step: 1000    Time      0.500 ps  
+ --------------------------------------------------
+ CH4 Information
+           Variable        Current       CumulAvg          Block            Std
+   Tmole          :        300.795        299.967        299.967          0.470
+   Tatom          :        300.795        299.967        299.967          0.470
+   Intramolecular :       0.000000       0.000000       0.000000       0.000000
+   Kinetic Energy :       3.751211       3.740885       3.740885       0.005859
+ Energy for CH4-CH4
+   Noncoulombic   :      -0.036009      -0.054512      -0.054512       0.053942
+   Coulombic      :       0.000000       0.000000       0.000000       0.000000
+    Pressure (kpa):  0.1813E+04  0.2671E+04  0.2671E+04  0.1491E+04
+     Volume  (m^3):  0.2022E+00  0.1551E+00  0.1551E+00  0.4530E-01
+ System Energy Totals(per total moles)
+   Total Potential:      -0.036009      -0.054512
+   Total Kinetic  :       3.751211       3.740885
+   Total Energy   :       3.715202       3.686373
+   COM Velocity (for each species) : SPC-1: 0.6284524603,
+ Total # Moles          150
+ --------------------------------------------------
+ 
+ Iteration number 1500 of simulation 1
+ ------------------------------------------------------------
+ The HYBRID GCMC Stats:
+   --- No GCMC Types of moves ---
+     INTEGRATE (INTEGRATE)     Acc. Ratio: 1.000   (1500 of 1500)  
+     VOLCHANGE (VOLCHANGE)     Acc. Ratio: 0.897   (1346 of 1500)  
+ 
+ MD Step: 1500    Time      0.750 ps  
+ --------------------------------------------------
+ CH4 Information
+           Variable        Current       CumulAvg          Block            Std
+   Tmole          :        300.231        300.337        300.337          0.675
+   Tatom          :        300.231        300.337        300.337          0.675
+   Intramolecular :       0.000000       0.000000       0.000000       0.000000
+   Kinetic Energy :       3.744183       3.745505       3.745505       0.008413
+ Energy for CH4-CH4
+   Noncoulombic   :      -0.037014      -0.050470      -0.050470       0.044519
+   Coulombic      :       0.000000       0.000000       0.000000       0.000000
+    Pressure (kpa):  0.1891E+04  0.2432E+04  0.2432E+04  0.1266E+04
+     Volume  (m^3):  0.2030E+00  0.1673E+00  0.1673E+00  0.4131E-01
+ System Energy Totals(per total moles)
+   Total Potential:      -0.037014      -0.050470
+   Total Kinetic  :       3.744183       3.745505
+   Total Energy   :       3.707169       3.695035
+   COM Velocity (for each species) : SPC-1: 0.6284524603,
+ Total # Moles          150
+ --------------------------------------------------
+ 
+ Iteration number 2000 of simulation 1
+ ------------------------------------------------------------
+ The HYBRID GCMC Stats:
+   --- No GCMC Types of moves ---
+     INTEGRATE (INTEGRATE)     Acc. Ratio: 1.000   (2000 of 2000)  
+     VOLCHANGE (VOLCHANGE)     Acc. Ratio: 0.907   (1814 of 2000)  
+ 
+ MD Step: 2000    Time      1.000 ps  
+ --------------------------------------------------
+ CH4 Information
+           Variable        Current       CumulAvg          Block            Std
+   Tmole          :        301.145        300.221        300.221          0.852
+   Tatom          :        301.145        300.221        300.221          0.852
+   Intramolecular :       0.000000       0.000000       0.000000       0.000000
+   Kinetic Energy :       3.755578       3.744053       3.744053       0.010619
+ Energy for CH4-CH4
+   Noncoulombic   :      -0.053622      -0.047762      -0.047762       0.039925
+   Coulombic      :       0.000000       0.000000       0.000000       0.000000
+    Pressure (kpa):  0.1761E+04  0.2310E+04  0.2310E+04  0.1119E+04
+     Volume  (m^3):  0.1998E+00  0.1741E+00  0.1741E+00  0.3815E-01
+ System Energy Totals(per total moles)
+   Total Potential:      -0.053622      -0.047762
+   Total Kinetic  :       3.755578       3.744053
+   Total Energy   :       3.701957       3.696291
+   COM Velocity (for each species) : SPC-1: 0.6284524603,
+ Total # Moles          150
+ --------------------------------------------------
+ 
+ ________ ACTUAL ENERGIES    _____________
+    Energy:           -8.043
+     Coul:  0.000E+00
+    NCoul: -0.804E+01
+    Intramolecular:    bs       bb      tor       ip      con    total
+                      0.00000  0.00000  0.00000  0.00000  0.00000  0.00000  0.00000  0.00000
+ 
+ ________ STORED ENERGIES    _____________
+    Energy:           -8.043
+     Coul:  0.000E+00
+    NCoul: -0.804E+01
+    Intramolecular:    bs       bb      tor       ip      con    total
+                      0.00000  0.00000  0.00000  0.00000  0.00000  0.00000  0.00000  0.00000
+------------------------------------------------------------
+Ending H-GCMC simulation number 1    Nrg dev check: 0.000E+00
+------------------------------------------------------------
+Main Program   Time: 4.3463 sec   Number of calls: 1   Time per call: 4.3463 sec

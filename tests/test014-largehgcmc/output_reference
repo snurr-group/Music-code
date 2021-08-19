@@ -1,0 +1,1444 @@
+ Looking for Control file : test014.ctr
+Welcome to Music
+Reading from control file test014.ctr
+ Initializing General Parameters
+------------------------------------------------------------
+The ATOMS structure:
+  No. of atom types:     8
+    Atom Name           : CF
+    Atom Symbol         : C
+    Atom File           : CF.atm
+    Atom Mass           :    48.00
+    sscharge, szcharge  :   0.0000  0.0000
+    Required # of bonds :   3
+    Ion Type            : NONE 
+ 
+    Atom Name           : C2
+    Atom Symbol         : C2
+    Atom File           : C2.atm
+    Atom Mass           :    14.00
+    sscharge, szcharge  :  -1.0000 -1.0000
+    Required # of bonds :   3
+    Ion Type            : NONE 
+ 
+    Atom Name           : Nitrogen
+    Atom Symbol         : N
+    Atom File           : Nitrogen.atm
+    Atom Mass           :    14.00
+    sscharge, szcharge  :  -1.0000 -1.0000
+    Required # of bonds :   4
+    Ion Type            : NONE 
+ 
+    Atom Name           : C3
+    Atom Symbol         : C3
+    Atom File           : C3.atm
+    Atom Mass           :    12.00
+    sscharge, szcharge  :  -1.0000 -1.0000
+    Required # of bonds :   4
+    Ion Type            : NONE 
+ 
+    Atom Name           : Oxygen
+    Atom Symbol         : O
+    Atom File           : Oxygen.atm
+    Atom Mass           :    16.00
+    sscharge, szcharge  :  -1.0000 -1.0000
+    Required # of bonds :   2
+    Ion Type            : NONE 
+ 
+    Atom Name           : H-SPC
+    Atom Symbol         : H
+    Atom File           : H-SPC.atm
+    Atom Mass           :     1.00
+    sscharge, szcharge  :   0.0000  0.0000
+    Required # of bonds :   1
+    Ion Type            : NONE 
+ 
+    Atom Name           : Cl
+    Atom Symbol         : Cl
+    Atom File           : Cl.atm
+    Atom Mass           :    35.45
+    sscharge, szcharge  :  -1.0000 -1.0000
+    Required # of bonds :   0
+    Ion Type            : NONE 
+ 
+    Atom Name           : Hch
+    Atom Symbol         : H
+    Atom File           : Hch.atm
+    Atom Mass           :     1.00
+    sscharge, szcharge  :   0.0000  0.0000
+    Required # of bonds :   1
+    Ion Type            : NONE 
+------------------------------------------------------------
+    Reading molecule information for H2O-SPC from: ./potentials/molecules/H2O-SPC-flex.mol
+ molecule.F90 : 1065
+  Molecule will be rotated so that the principle axes 
+   will coincide with coordinate system axes
+ molecule.F90 :  896 WARNING: Molecule 'H2O-SPC' was not centered at origin, now shifted
+  Note that the NOTRANSFORM flag will prevent this shifting
+  Former center-of-mass:        -0.271189    0.643167    0.000000
+ molecule.F90 :  957 WARNING: Molecule 'H2O-SPC' has been realigned to place
+  the cartesian axes along the moments of inertia
+  Note that the NOROTATE or NOTRANSFORM flags will prevent this
+ Generating Connections for H2O-SPC                                         
+    Reading molecule information for fulltma from: ./potentials/molecules/fulltma-flex.mol
+ molecule.F90 : 1065
+  Molecule will be rotated so that the principle axes 
+   will coincide with coordinate system axes
+ molecule.F90 :  896 WARNING: Molecule 'fulltma' was not centered at origin, now shifted
+  Note that the NOTRANSFORM flag will prevent this shifting
+  Former center-of-mass:         0.805641    2.807219    4.133900
+ molecule.F90 :  957 WARNING: Molecule 'fulltma' has been realigned to place
+  the cartesian axes along the moments of inertia
+  Note that the NOROTATE or NOTRANSFORM flags will prevent this
+ Generating Connections for fulltma                                         
+ molecule.F90 :  605 WARNING: fulltma is not charge neutral (-0.8)
+    Reading molecule information for Cl from: ./potentials/molecules/Cl.mol
+ molecule.F90 : 1065
+  Molecule will be rotated so that the principle axes 
+   will coincide with coordinate system axes
+ Generating Connections for Cl                                              
+ molecule.F90 :  605 WARNING: Cl is not charge neutral (-1.0)
+------------------------------------------------------------
+The MOLECULES structure:
+  No. of molecule types:     3
+------------------------------------------------------------
+  Molecule Name       : H2O-SPC
+  Molecule Mass       : 18.00
+  Molecule File       : H2O-SPC-flex.mol
+  Degrees of freedom  : 9
+  DOF origin          : 3N_Calculation
+  body axes atom nos  :    1   2   0
+  Number of atoms     : 3
+  Net Charge          : 0.0
+  Dipole Moment(debye): 2.3293184735
+  Translation xform   : 0.27119  -0.64317   0.00000
+  Rotational xform    : 
+    0.81667  -0.57710   0.00000
+    0.57710   0.81667   0.00000
+    0.00000   0.00000   1.00000
+      Atom Name           : Oxygen
+      Atom Type           :    5
+      Atom Position       :   0.0000 -0.0641  0.0000
+      Equilibrium charge  :  -0.8400
+      MD Set, type        :    0   0
+      Atom Name           : H-SPC
+      Atom Type           :    6
+      Atom Position       :   0.8167  0.5130  0.0000
+      Equilibrium charge  :   0.4200
+      MD Set, type        :    0   0
+      Atom Name           : H-SPC
+      Atom Type           :    6
+      Atom Position       :  -0.8166  0.5130  0.0000
+      Equilibrium charge  :   0.4200
+      MD Set, type        :    0   0
+  Connection Information : 
+    Connection Information for H2O-SPC                                         
+    Atom     1:      2    3    1.000   1.000
+    Atom     2:      1    1.000
+    Atom     3:      1    1.000
+------------------------------------------------------------
+  Molecule Name       : fulltma
+  Molecule Mass       : 818.0
+  Molecule File       : fulltma-flex.mol
+  Degrees of freedom  : 75
+  DOF origin          : 3N_Calculation
+  body axes atom nos  :    1   2   0
+  Number of atoms     : 25
+  Net Charge          : -0.8
+  Dipole Moment(debye): 23.281919046
+  Translation xform   : -0.80564  -2.80722  -4.13390
+  Rotational xform    : 
+    0.79935   0.34844   0.48952
+   -0.44261   0.89243   0.08752
+    0.40636   0.28662  -0.86759
+  Atom list omitted (natoms > 10)
+  Connection Information : 
+    Connection Information for fulltma                                         
+    Atom     1:      2    1.541
+    Atom     2:      1    3    1.541   1.540
+    Atom     3:      2    4    1.540   1.542
+    Atom     4:      3    5    1.542   1.541
+    Atom     5:      4    6    1.541   1.542
+    Atom     6:      5    7    1.542   1.540
+    Atom     7:      6    8   15    1.540   1.539   1.539
+    Atom     8:      7    9    1.539   1.538
+    Atom     9:      8   10    1.538   1.539
+    Atom    10:      9   11    1.539   1.540
+    Atom    11:     10   12    1.540   1.540
+    Atom    12:     11   13    1.540   1.539
+    Atom    13:     12   14    1.539   1.539
+    Atom    14:     13    1.539
+    Atom    15:      7   16   17    1.539   1.400   1.403
+    Atom    16:     15   18    1.400   1.400
+    Atom    17:     15   19    1.403   1.403
+    Atom    18:     16   20    1.400   1.400
+    Atom    19:     17   20    1.403   1.402
+    Atom    20:     18   19   21    1.400   1.402   1.540
+    Atom    21:     20   22    1.540   1.473
+    Atom    22:     21   23   24   25    1.473   1.472   1.471   1.470
+    Atom    23:     22    1.472
+    Atom    24:     22    1.471
+    Atom    25:     22    1.470
+------------------------------------------------------------
+  Molecule Name       : Cl
+  Molecule Mass       : 35.45
+  Molecule File       : Cl.mol
+  Degrees of freedom  : 3
+  DOF origin          : Molecule_File
+  body axes atom nos  :    0   0   0
+  Number of atoms     : 1
+  Net Charge          : -1.0
+  Dipole Moment(debye): 0.000000000
+  Translation xform   : 0.00000   0.00000   0.00000
+  Rotational xform    : 
+    1.00000   0.00000   0.00000
+    0.00000   1.00000   0.00000
+    0.00000   0.00000   1.00000
+      Atom Name           : Cl
+      Atom Type           :    7
+      Atom Position       :   0.0000  0.0000  0.0000
+      Equilibrium charge  :  -1.0000
+      MD Set, type        :    0   0
+  Connection Information : 
+    Connection Information for Cl                                              
+    Atom     1: No connections
+------------------------------------------------------------
+  The SIMCELL structure:
+  nx, ny, nz            :    1   1   1
+  ncells                :    1
+  ORTHORHOMBIC
+  edge lengths (Ang)    :    30.0000   30.0000   30.0000
+  cell angles (degrees) :    90.0000   90.0000   90.0000
+  origin shift (Ang)    : 0.0000   0.0000   0.0000
+  cell vector a         : 30.0000   0.0000   0.0000
+  cell vector b         : 0.0000  30.0000   0.0000
+  cell vector c         : 0.0000   0.0000  30.0000
+  box width in (a,b,c)  :    30.0000   30.0000   30.0000
+  minimum width (Ang)   :    30.0000
+  volume (Angstroms^3)  : 27000.00
+------------------------------------------------------------
+Configuration Section 
+No. of species :      3
+  ----------------------------------------------------------
+  Species name : H2O-SPC                                         
+    No. of molecules :    460
+    No. of atoms     :    3
+    Initial Config. Source : RESTARTFILE
+    Source Filename: add.res.3
+    ----------------------------------------------------------
+  Species name : fulltma                                         
+    No. of molecules :      1
+    No. of atoms     :   25
+    Initial Config. Source : RESTARTFILE
+    Source Filename: add.res.3
+    ----------------------------------------------------------
+  Species name : Cl                                              
+    No. of molecules :      1
+    No. of atoms     :    1
+    Initial Config. Source : RESTARTFILE
+    Source Filename: add.res.3
+    ----------------------------------------------------------
+Initializing intra molecular info from molecule file: ./potentials/molecules/H2O-SPC-flex.mol
+ intramolecular.F90 :  165
+ intra filename passed isintramolecular_file                             xx
+ intramolecular.F90 :  171
+ Initializing constraints for H2O-SPC
+intramolecular.F90 Changed DOF H2O-SPC   6
+Initialized all intramolecular stuff for H2O-SPC
+Initializing intra molecular info from molecule file: ./potentials/molecules/fulltma-flex.mol
+ intramolecular.F90 :  165
+ intra filename passed isintramolecular_file                             xx
+ intramolecular.F90 :  171
+ Initilizing bending...
+ Initializing bond bending...
+ ... finished initializing bond bending
+ipmodel.F90:  216 WARNING: Has not been verified for other than 1 or 4 away
+ Initializing constraints for fulltma
+ Generating list of bond constraints..
+intramolecular.F90 Changed DOF fulltma  50
+Initialized all intramolecular stuff for fulltma
+Initializing intra molecular info from molecule file: ./potentials/molecules/Cl.mol
+ intramolecular.F90 :  165
+ intra filename passed isintramolecular_file                             xx
+ intramolecular.F90 :  171
+Initialized all intramolecular stuff for Cl
+ Finished Initializing Intramolecular interactions
+ Initializing Species-Species interactions....
+ Finished Initializing Species-Species interactions.
+ Finished Initializing Ff interactions.
+ Calling ff_initCal
+ Call to ff_initCalc successful 
+  ------------------------------------------------------------
+  The "BASIC" FF information:
+  ------------------------------------------------------------
+  NON-COULOMBIC SPECIES-SPECIES pair parameters:
+  Information taken from: spc_spc_file
+    ------------------------------------------------------------
+    (1,1)  H2O-SPC, H2O-SPC:          BASIC
+      Input Line: NCOUL  BASIC  LJ  FAST  
+      Fast interaction?    T
+      COM-based cut-off?   F
+      COM-COM smoothing?   F
+      Atom-Atom PAIR PARAMETERS:
+        Information taken from: atm_atm_file
+      Overview by atomic pairs:
+      (5,5)  Oxygen, Oxygen:            LJ  WFCOUL
+          Oxygen-Oxygen LJ parameters from SIGEPS
+            Sigma: 3.1700 Ang   Epsilon/k_Boltz: 78.200 K
+            A: 640024.0 kcal A^12/mol   B: 630.7259 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.005 Ang
+           Charges taken from configuration, Shielding const: 1.000 Alpha:   0.10
+           Cutoffs HICUT :    9.000 Ang   LOCUT :    0.001 Ang
+      (5,6)  Oxygen, H-SPC:             LJ  WFCOUL
+          H-SPC-Oxygen Interaction OFF
+           Charges taken from configuration, Shielding const: 1.000 Alpha:   0.10
+           Cutoffs HICUT :    9.000 Ang   LOCUT :    0.001 Ang
+      (6,6)  H-SPC, H-SPC:              LJ  WFCOUL
+          H-SPC-H-SPC Interaction OFF
+           Charges taken from configuration, Shielding const: 1.000 Alpha:   0.10
+           Cutoffs HICUT :    9.000 Ang   LOCUT :    0.001 Ang
+    ------------------------------------------------------------
+    (1,2)  H2O-SPC, fulltma:          BASIC
+      Input Line: NCOUL  BASIC  LJ  FAST  
+      Fast interaction?    T
+      COM-based cut-off?   F
+      COM-COM smoothing?   F
+      Atom-Atom PAIR PARAMETERS:
+        Information taken from: atm_atm_file
+      Overview by atomic pairs:
+      (1,1)  CF, CF:                    LJ
+          CF-CF LJ parameters from SIGEPS
+            Sigma: 4.6000 Ang   Epsilon/k_Boltz: 30.000 K
+            A: 0.21E+08 kcal A^12/mol   B: 2259.158 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.500 Ang
+      (1,2)  CF, C2:                  OFF
+      (1,3)  CF, Nitrogen:            OFF
+      (1,4)  CF, C3:                  OFF
+      (1,5)  CF, Oxygen:                LJ  WFCOUL
+          CF-Oxygen LJ parameters from MIXED
+            Sigma: 3.8850 Ang   Epsilon/k_Boltz: 48.436 K
+            A: 0.46E+07 kcal A^12/mol   B: 1323.697 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.500 Ang
+           OFF
+           Cutoffs Not Applicable
+      (1,6)  CF, H-SPC:                 LJ  WFCOUL
+          CF-H-SPC Interaction OFF
+           OFF
+           Cutoffs Not Applicable
+      (2,2)  C2, C2:                    LJ
+          C2-C2 LJ parameters from SIGEPS
+            Sigma: 4.2300 Ang   Epsilon/k_Boltz: 68.240 K
+            A: 0.18E+08 kcal A^12/mol   B: 3107.131 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.500 Ang
+      (2,3)  C2, Nitrogen:            OFF
+      (2,4)  C2, C3:                  OFF
+      (2,5)  C2, Oxygen:                LJ  WFCOUL
+          C2-Oxygen LJ parameters from MIXED
+            Sigma: 3.7000 Ang   Epsilon/k_Boltz: 73.050 K
+            A: 0.38E+07 kcal A^12/mol   B: 1489.744 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.500 Ang
+           OFF
+           Cutoffs Not Applicable
+      (2,6)  C2, H-SPC:                 LJ  WFCOUL
+          C2-H-SPC Interaction OFF
+           OFF
+           Cutoffs Not Applicable
+      (3,3)  Nitrogen, Nitrogen:        LJ
+          Nitrogen-Nitrogen LJ parameters from SIGEPS
+            Sigma: 3.3000 Ang   Epsilon/k_Boltz: 100.67 K
+            A: 0.13E+07 kcal A^12/mol   B: 1033.385 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.500 Ang
+      (3,4)  Nitrogen, C3:            OFF
+      (3,5)  Nitrogen, Oxygen:          LJ  WFCOUL
+          Nitrogen-Oxygen LJ parameters from MIXED
+            Sigma: 3.2350 Ang   Epsilon/k_Boltz: 88.727 K
+            A: 926452.5 kcal A^12/mol   B: 808.3091 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.500 Ang
+           Charges taken from configuration, Shielding const: 1.000 Alpha:   0.10
+           Cutoffs HICUT :    9.000 Ang   LOCUT :    0.001 Ang
+      (3,6)  Nitrogen, H-SPC:           LJ  WFCOUL
+          Nitrogen-H-SPC Interaction OFF
+           Charges taken from configuration, Shielding const: 1.000 Alpha:   0.10
+           Cutoffs HICUT :    9.000 Ang   LOCUT :    0.001 Ang
+      (4,4)  C3, C3:                    LJ
+          C3-C3 LJ parameters from SIGEPS
+            Sigma: 3.6700 Ang   Epsilon/k_Boltz: 40.290 K
+            A: 0.19E+07 kcal A^12/mol   B: 782.4777 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.001 Ang
+      (4,5)  C3, Oxygen:                LJ  WFCOUL
+          C3-Oxygen LJ parameters from MIXED
+            Sigma: 3.4200 Ang   Epsilon/k_Boltz: 56.131 K
+            A: 0.11E+07 kcal A^12/mol   B: 713.8993 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.500 Ang
+           Charges taken from configuration, Shielding const: 1.000 Alpha:   0.10
+           Cutoffs HICUT :    9.000 Ang   LOCUT :    0.001 Ang
+      (4,6)  C3, H-SPC:                 LJ  WFCOUL
+          C3-H-SPC Interaction OFF
+           Charges taken from configuration, Shielding const: 1.000 Alpha:   0.10
+           Cutoffs HICUT :    9.000 Ang   LOCUT :    0.001 Ang
+      (5,5)  Oxygen, Oxygen:            LJ
+          Oxygen-Oxygen LJ parameters from SIGEPS
+            Sigma: 3.1700 Ang   Epsilon/k_Boltz: 78.200 K
+            A: 640024.0 kcal A^12/mol   B: 630.7259 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.005 Ang
+      (5,6)  Oxygen, H-SPC:           OFF
+      (6,6)  H-SPC, H-SPC:            OFF
+    ------------------------------------------------------------
+    (1,3)  H2O-SPC, Cl:               BASIC
+      Input Line: NCOUL  BASIC  LJ  FAST  
+      Fast interaction?    T
+      COM-based cut-off?   F
+      COM-COM smoothing?   F
+      Atom-Atom PAIR PARAMETERS:
+        Information taken from: atm_atm_file
+      Overview by atomic pairs:
+      (5,5)  Oxygen, Oxygen:            LJ
+          Oxygen-Oxygen LJ parameters from SIGEPS
+            Sigma: 3.1700 Ang   Epsilon/k_Boltz: 78.200 K
+            A: 640024.0 kcal A^12/mol   B: 630.7259 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.005 Ang
+      (5,6)  Oxygen, H-SPC:           OFF
+      (5,7)  Oxygen, Cl:                LJ  WFCOUL
+          Oxygen-Cl LJ parameters from MIXED
+            Sigma: 3.6100 Ang   Epsilon/k_Boltz: 76.858 K
+            A: 0.30E+07 kcal A^12/mol   B: 1352.114 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.500 Ang
+           Charges taken from configuration, Shielding const: 1.000 Alpha:   0.10
+           Cutoffs HICUT :    9.000 Ang   LOCUT :    0.001 Ang
+      (6,6)  H-SPC, H-SPC:            OFF
+      (6,7)  H-SPC, Cl:                 LJ  WFCOUL
+          H-SPC-Cl Interaction OFF
+           Charges taken from configuration, Shielding const: 1.000 Alpha:   0.10
+           Cutoffs HICUT :    9.000 Ang   LOCUT :    0.001 Ang
+      (7,7)  Cl, Cl:                    LJ
+          Cl-Cl LJ parameters from SIGEPS
+            Sigma: 4.0500 Ang   Epsilon/k_Boltz: 75.540 K
+            A: 0.12E+08 kcal A^12/mol   B: 2649.631 kcal A^6/mol
+            high cutoff: 12.49 Ang   low cutoff: 0.500 Ang
+    ------------------------------------------------------------
+    (2,2)  fulltma, fulltma:          BASIC
+      Input Line: NCOUL  BASIC  LJ  FAST  
+      Fast interaction?    T
+      COM-based cut-off?   F
+      COM-COM smoothing?   F
+      Atom-Atom PAIR PARAMETERS:
+        Information taken from: atm_atm_file
+      Overview by atomic pairs:
+      (1,1)  CF, CF:                    LJ  WFCOUL
+          CF-CF LJ parameters from SIGEPS
+            Sigma: 4.6000 Ang   Epsilon/k_Boltz: 30.000 K
+            A: 0.21E+08 kcal A^12/mol   B: 2259.158 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.500 Ang
+           OFF
+           Cutoffs Not Applicable
+      (1,2)  CF, C2:                    LJ  WFCOUL
+          CF-C2 LJ parameters from MIXED
+            Sigma: 4.4150 Ang   Epsilon/k_Boltz: 45.246 K
+            A: 0.20E+08 kcal A^12/mol   B: 2663.439 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.500 Ang
+           OFF
+           Cutoffs Not Applicable
+      (1,3)  CF, Nitrogen:              LJ  WFCOUL
+          CF-Nitrogen LJ parameters from MIXED
+            Sigma: 3.9500 Ang   Epsilon/k_Boltz: 54.955 K
+            A: 0.63E+07 kcal A^12/mol   B: 1659.096 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.500 Ang
+           OFF
+           Cutoffs Not Applicable
+      (1,4)  CF, C3:                    LJ  WFCOUL
+          CF-C3 LJ parameters from MIXED
+            Sigma: 4.1350 Ang   Epsilon/k_Boltz: 34.766 K
+            A: 0.69E+07 kcal A^12/mol   B: 1381.308 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.500 Ang
+           OFF
+           Cutoffs Not Applicable
+      (2,2)  C2, C2:                    LJ  WFCOUL
+          C2-C2 LJ parameters from SIGEPS
+            Sigma: 4.2300 Ang   Epsilon/k_Boltz: 68.240 K
+            A: 0.18E+08 kcal A^12/mol   B: 3107.131 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.500 Ang
+           OFF
+           Cutoffs Not Applicable
+      (2,3)  C2, Nitrogen:              LJ  WFCOUL
+          C2-Nitrogen LJ parameters from MIXED
+            Sigma: 3.7650 Ang   Epsilon/k_Boltz: 82.884 K
+            A: 0.53E+07 kcal A^12/mol   B: 1876.453 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.500 Ang
+           OFF
+           Cutoffs Not Applicable
+      (2,4)  C2, C3:                    LJ  WFCOUL
+          C2-C3 LJ parameters from MIXED
+            Sigma: 3.9500 Ang   Epsilon/k_Boltz: 52.435 K
+            A: 0.60E+07 kcal A^12/mol   B: 1582.993 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.500 Ang
+           OFF
+           Cutoffs Not Applicable
+      (3,3)  Nitrogen, Nitrogen:        LJ  WFCOUL
+          Nitrogen-Nitrogen LJ parameters from SIGEPS
+            Sigma: 3.3000 Ang   Epsilon/k_Boltz: 100.67 K
+            A: 0.13E+07 kcal A^12/mol   B: 1033.385 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.500 Ang
+           Charges taken from configuration, Shielding const: 1.000 Alpha:   0.10
+           Cutoffs HICUT :    9.000 Ang   LOCUT :    0.001 Ang
+      (3,4)  Nitrogen, C3:              LJ  WFCOUL
+          C3-Nitrogen LJ parameters from MIXED
+            Sigma: 3.4850 Ang   Epsilon/k_Boltz: 63.687 K
+            A: 0.16E+07 kcal A^12/mol   B: 906.8672 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.500 Ang
+           Charges taken from configuration, Shielding const: 1.000 Alpha:   0.10
+           Cutoffs HICUT :    9.000 Ang   LOCUT :    0.001 Ang
+      (4,4)  C3, C3:                    LJ  WFCOUL
+          C3-C3 LJ parameters from SIGEPS
+            Sigma: 3.6700 Ang   Epsilon/k_Boltz: 40.290 K
+            A: 0.19E+07 kcal A^12/mol   B: 782.4777 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.001 Ang
+           Charges taken from configuration, Shielding const: 1.000 Alpha:   0.10
+           Cutoffs HICUT :    9.000 Ang   LOCUT :    0.001 Ang
+    ------------------------------------------------------------
+    (2,3)  fulltma, Cl:               BASIC
+      Input Line: NCOUL  BASIC  LJ  FAST  
+      Fast interaction?    T
+      COM-based cut-off?   F
+      COM-COM smoothing?   F
+      Atom-Atom PAIR PARAMETERS:
+        Information taken from: atm_atm_file
+      Overview by atomic pairs:
+      (1,1)  CF, CF:                    LJ
+          CF-CF LJ parameters from SIGEPS
+            Sigma: 4.6000 Ang   Epsilon/k_Boltz: 30.000 K
+            A: 0.21E+08 kcal A^12/mol   B: 2259.158 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.500 Ang
+      (1,2)  CF, C2:                  OFF
+      (1,3)  CF, Nitrogen:            OFF
+      (1,4)  CF, C3:                  OFF
+      (1,7)  CF, Cl:                    LJ  WFCOUL
+          CF-Cl LJ parameters from MIXED
+            Sigma: 4.3250 Ang   Epsilon/k_Boltz: 47.605 K
+            A: 0.16E+08 kcal A^12/mol   B: 2476.533 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.500 Ang
+           OFF
+           Cutoffs Not Applicable
+      (2,2)  C2, C2:                    LJ
+          C2-C2 LJ parameters from SIGEPS
+            Sigma: 4.2300 Ang   Epsilon/k_Boltz: 68.240 K
+            A: 0.18E+08 kcal A^12/mol   B: 3107.131 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.500 Ang
+      (2,3)  C2, Nitrogen:            OFF
+      (2,4)  C2, C3:                  OFF
+      (2,7)  C2, Cl:                    LJ  WFCOUL
+          C2-Cl LJ parameters from MIXED
+            Sigma: 4.1400 Ang   Epsilon/k_Boltz: 71.797 K
+            A: 0.14E+08 kcal A^12/mol   B: 2873.349 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.500 Ang
+           OFF
+           Cutoffs Not Applicable
+      (3,3)  Nitrogen, Nitrogen:        LJ
+          Nitrogen-Nitrogen LJ parameters from SIGEPS
+            Sigma: 3.3000 Ang   Epsilon/k_Boltz: 100.67 K
+            A: 0.13E+07 kcal A^12/mol   B: 1033.385 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.500 Ang
+      (3,4)  Nitrogen, C3:            OFF
+      (3,7)  Nitrogen, Cl:              LJ  WFCOUL
+          Nitrogen-Cl LJ parameters from MIXED
+            Sigma: 3.6750 Ang   Epsilon/k_Boltz: 87.204 K
+            A: 0.42E+07 kcal A^12/mol   B: 1707.501 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.500 Ang
+           Charges taken from configuration, Shielding const: 1.000 Alpha:   0.10
+           Cutoffs HICUT :    9.000 Ang   LOCUT :    0.001 Ang
+      (4,4)  C3, C3:                    LJ
+          C3-C3 LJ parameters from SIGEPS
+            Sigma: 3.6700 Ang   Epsilon/k_Boltz: 40.290 K
+            A: 0.19E+07 kcal A^12/mol   B: 782.4777 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.001 Ang
+      (4,7)  C3, Cl:                    LJ  WFCOUL
+          C3-Cl LJ parameters from MIXED
+            Sigma: 3.8600 Ang   Epsilon/k_Boltz: 55.168 K
+            A: 0.48E+07 kcal A^12/mol   B: 1450.405 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.500 Ang
+           Charges taken from configuration, Shielding const: 1.000 Alpha:   0.10
+           Cutoffs HICUT :    9.000 Ang   LOCUT :    0.001 Ang
+      (7,7)  Cl, Cl:                    LJ
+          Cl-Cl LJ parameters from SIGEPS
+            Sigma: 4.0500 Ang   Epsilon/k_Boltz: 75.540 K
+            A: 0.12E+08 kcal A^12/mol   B: 2649.631 kcal A^6/mol
+            high cutoff: 12.49 Ang   low cutoff: 0.500 Ang
+    ------------------------------------------------------------
+    (3,3)  Cl, Cl:                    BASIC
+      Input Line: NCOUL  BASIC  LJ  FAST  
+      Fast interaction?    T
+      COM-based cut-off?   F
+      COM-COM smoothing?   F
+      Atom-Atom PAIR PARAMETERS:
+        Information taken from: atm_atm_file
+      Overview by atomic pairs:
+      (7,7)  Cl, Cl:                    LJ  WFCOUL
+          Cl-Cl LJ parameters from SIGEPS
+            Sigma: 4.0500 Ang   Epsilon/k_Boltz: 75.540 K
+            A: 0.12E+08 kcal A^12/mol   B: 2649.631 kcal A^6/mol
+            high cutoff: 12.49 Ang   low cutoff: 0.500 Ang
+           Charges taken from configuration, Shielding const: 1.000 Alpha:   0.10
+           Cutoffs HICUT :    9.000 Ang   LOCUT :    0.001 Ang
+  ------------------------------------------------------------
+  COULOMBIC SPECIES-SPECIES pair parameters:
+  Information taken from: spc_spc_file
+    ------------------------------------------------------------
+    (1,1)  H2O-SPC, H2O-SPC:          BASIC
+      Input Line: COUL  BASIC  WFCOUL  FAST  
+      Fast interaction?    T
+      COM-based cut-off?   F
+      COM-COM smoothing?   F
+      Atom-Atom PAIR PARAMETERS:
+        Information taken from: atm_atm_file
+      Overview by atomic pairs:
+      (5,5)  Oxygen, Oxygen:            LJ  WFCOUL
+          Oxygen-Oxygen LJ parameters from SIGEPS
+            Sigma: 3.1700 Ang   Epsilon/k_Boltz: 78.200 K
+            A: 640024.0 kcal A^12/mol   B: 630.7259 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.005 Ang
+           Charges taken from configuration, Shielding const: 1.000 Alpha:   0.10
+           Cutoffs HICUT :    9.000 Ang   LOCUT :    0.001 Ang
+      (5,6)  Oxygen, H-SPC:             LJ  WFCOUL
+          H-SPC-Oxygen Interaction OFF
+           Charges taken from configuration, Shielding const: 1.000 Alpha:   0.10
+           Cutoffs HICUT :    9.000 Ang   LOCUT :    0.001 Ang
+      (6,6)  H-SPC, H-SPC:              LJ  WFCOUL
+          H-SPC-H-SPC Interaction OFF
+           Charges taken from configuration, Shielding const: 1.000 Alpha:   0.10
+           Cutoffs HICUT :    9.000 Ang   LOCUT :    0.001 Ang
+    ------------------------------------------------------------
+    (1,2)  H2O-SPC, fulltma:          BASIC
+      Input Line: COUL  BASIC  WFCOUL  FAST  
+      Fast interaction?    T
+      COM-based cut-off?   F
+      COM-COM smoothing?   F
+      Atom-Atom PAIR PARAMETERS:
+        Information taken from: atm_atm_file
+      Overview by atomic pairs:
+      (1,1)  CF, CF:                    LJ
+          CF-CF LJ parameters from SIGEPS
+            Sigma: 4.6000 Ang   Epsilon/k_Boltz: 30.000 K
+            A: 0.21E+08 kcal A^12/mol   B: 2259.158 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.500 Ang
+      (1,2)  CF, C2:                  OFF
+      (1,3)  CF, Nitrogen:            OFF
+      (1,4)  CF, C3:                  OFF
+      (1,5)  CF, Oxygen:                LJ  WFCOUL
+          CF-Oxygen LJ parameters from MIXED
+            Sigma: 3.8850 Ang   Epsilon/k_Boltz: 48.436 K
+            A: 0.46E+07 kcal A^12/mol   B: 1323.697 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.500 Ang
+           OFF
+           Cutoffs Not Applicable
+      (1,6)  CF, H-SPC:                 LJ  WFCOUL
+          CF-H-SPC Interaction OFF
+           OFF
+           Cutoffs Not Applicable
+      (2,2)  C2, C2:                    LJ
+          C2-C2 LJ parameters from SIGEPS
+            Sigma: 4.2300 Ang   Epsilon/k_Boltz: 68.240 K
+            A: 0.18E+08 kcal A^12/mol   B: 3107.131 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.500 Ang
+      (2,3)  C2, Nitrogen:            OFF
+      (2,4)  C2, C3:                  OFF
+      (2,5)  C2, Oxygen:                LJ  WFCOUL
+          C2-Oxygen LJ parameters from MIXED
+            Sigma: 3.7000 Ang   Epsilon/k_Boltz: 73.050 K
+            A: 0.38E+07 kcal A^12/mol   B: 1489.744 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.500 Ang
+           OFF
+           Cutoffs Not Applicable
+      (2,6)  C2, H-SPC:                 LJ  WFCOUL
+          C2-H-SPC Interaction OFF
+           OFF
+           Cutoffs Not Applicable
+      (3,3)  Nitrogen, Nitrogen:        LJ
+          Nitrogen-Nitrogen LJ parameters from SIGEPS
+            Sigma: 3.3000 Ang   Epsilon/k_Boltz: 100.67 K
+            A: 0.13E+07 kcal A^12/mol   B: 1033.385 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.500 Ang
+      (3,4)  Nitrogen, C3:            OFF
+      (3,5)  Nitrogen, Oxygen:          LJ  WFCOUL
+          Nitrogen-Oxygen LJ parameters from MIXED
+            Sigma: 3.2350 Ang   Epsilon/k_Boltz: 88.727 K
+            A: 926452.5 kcal A^12/mol   B: 808.3091 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.500 Ang
+           Charges taken from configuration, Shielding const: 1.000 Alpha:   0.10
+           Cutoffs HICUT :    9.000 Ang   LOCUT :    0.001 Ang
+      (3,6)  Nitrogen, H-SPC:           LJ  WFCOUL
+          Nitrogen-H-SPC Interaction OFF
+           Charges taken from configuration, Shielding const: 1.000 Alpha:   0.10
+           Cutoffs HICUT :    9.000 Ang   LOCUT :    0.001 Ang
+      (4,4)  C3, C3:                    LJ
+          C3-C3 LJ parameters from SIGEPS
+            Sigma: 3.6700 Ang   Epsilon/k_Boltz: 40.290 K
+            A: 0.19E+07 kcal A^12/mol   B: 782.4777 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.001 Ang
+      (4,5)  C3, Oxygen:                LJ  WFCOUL
+          C3-Oxygen LJ parameters from MIXED
+            Sigma: 3.4200 Ang   Epsilon/k_Boltz: 56.131 K
+            A: 0.11E+07 kcal A^12/mol   B: 713.8993 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.500 Ang
+           Charges taken from configuration, Shielding const: 1.000 Alpha:   0.10
+           Cutoffs HICUT :    9.000 Ang   LOCUT :    0.001 Ang
+      (4,6)  C3, H-SPC:                 LJ  WFCOUL
+          C3-H-SPC Interaction OFF
+           Charges taken from configuration, Shielding const: 1.000 Alpha:   0.10
+           Cutoffs HICUT :    9.000 Ang   LOCUT :    0.001 Ang
+      (5,5)  Oxygen, Oxygen:            LJ
+          Oxygen-Oxygen LJ parameters from SIGEPS
+            Sigma: 3.1700 Ang   Epsilon/k_Boltz: 78.200 K
+            A: 640024.0 kcal A^12/mol   B: 630.7259 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.005 Ang
+      (5,6)  Oxygen, H-SPC:           OFF
+      (6,6)  H-SPC, H-SPC:            OFF
+    ------------------------------------------------------------
+    (1,3)  H2O-SPC, Cl:               BASIC
+      Input Line: COUL  BASIC  WFCOUL  FAST  
+      Fast interaction?    T
+      COM-based cut-off?   F
+      COM-COM smoothing?   F
+      Atom-Atom PAIR PARAMETERS:
+        Information taken from: atm_atm_file
+      Overview by atomic pairs:
+      (5,5)  Oxygen, Oxygen:            LJ
+          Oxygen-Oxygen LJ parameters from SIGEPS
+            Sigma: 3.1700 Ang   Epsilon/k_Boltz: 78.200 K
+            A: 640024.0 kcal A^12/mol   B: 630.7259 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.005 Ang
+      (5,6)  Oxygen, H-SPC:           OFF
+      (5,7)  Oxygen, Cl:                LJ  WFCOUL
+          Oxygen-Cl LJ parameters from MIXED
+            Sigma: 3.6100 Ang   Epsilon/k_Boltz: 76.858 K
+            A: 0.30E+07 kcal A^12/mol   B: 1352.114 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.500 Ang
+           Charges taken from configuration, Shielding const: 1.000 Alpha:   0.10
+           Cutoffs HICUT :    9.000 Ang   LOCUT :    0.001 Ang
+      (6,6)  H-SPC, H-SPC:            OFF
+      (6,7)  H-SPC, Cl:                 LJ  WFCOUL
+          H-SPC-Cl Interaction OFF
+           Charges taken from configuration, Shielding const: 1.000 Alpha:   0.10
+           Cutoffs HICUT :    9.000 Ang   LOCUT :    0.001 Ang
+      (7,7)  Cl, Cl:                    LJ
+          Cl-Cl LJ parameters from SIGEPS
+            Sigma: 4.0500 Ang   Epsilon/k_Boltz: 75.540 K
+            A: 0.12E+08 kcal A^12/mol   B: 2649.631 kcal A^6/mol
+            high cutoff: 12.49 Ang   low cutoff: 0.500 Ang
+    ------------------------------------------------------------
+    (2,2)  fulltma, fulltma:          BASIC
+      Input Line: COUL  BASIC  WFCOUL  FAST  
+      Fast interaction?    T
+      COM-based cut-off?   F
+      COM-COM smoothing?   F
+      Atom-Atom PAIR PARAMETERS:
+        Information taken from: atm_atm_file
+      Overview by atomic pairs:
+      (1,1)  CF, CF:                    LJ  WFCOUL
+          CF-CF LJ parameters from SIGEPS
+            Sigma: 4.6000 Ang   Epsilon/k_Boltz: 30.000 K
+            A: 0.21E+08 kcal A^12/mol   B: 2259.158 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.500 Ang
+           OFF
+           Cutoffs Not Applicable
+      (1,2)  CF, C2:                    LJ  WFCOUL
+          CF-C2 LJ parameters from MIXED
+            Sigma: 4.4150 Ang   Epsilon/k_Boltz: 45.246 K
+            A: 0.20E+08 kcal A^12/mol   B: 2663.439 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.500 Ang
+           OFF
+           Cutoffs Not Applicable
+      (1,3)  CF, Nitrogen:              LJ  WFCOUL
+          CF-Nitrogen LJ parameters from MIXED
+            Sigma: 3.9500 Ang   Epsilon/k_Boltz: 54.955 K
+            A: 0.63E+07 kcal A^12/mol   B: 1659.096 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.500 Ang
+           OFF
+           Cutoffs Not Applicable
+      (1,4)  CF, C3:                    LJ  WFCOUL
+          CF-C3 LJ parameters from MIXED
+            Sigma: 4.1350 Ang   Epsilon/k_Boltz: 34.766 K
+            A: 0.69E+07 kcal A^12/mol   B: 1381.308 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.500 Ang
+           OFF
+           Cutoffs Not Applicable
+      (2,2)  C2, C2:                    LJ  WFCOUL
+          C2-C2 LJ parameters from SIGEPS
+            Sigma: 4.2300 Ang   Epsilon/k_Boltz: 68.240 K
+            A: 0.18E+08 kcal A^12/mol   B: 3107.131 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.500 Ang
+           OFF
+           Cutoffs Not Applicable
+      (2,3)  C2, Nitrogen:              LJ  WFCOUL
+          C2-Nitrogen LJ parameters from MIXED
+            Sigma: 3.7650 Ang   Epsilon/k_Boltz: 82.884 K
+            A: 0.53E+07 kcal A^12/mol   B: 1876.453 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.500 Ang
+           OFF
+           Cutoffs Not Applicable
+      (2,4)  C2, C3:                    LJ  WFCOUL
+          C2-C3 LJ parameters from MIXED
+            Sigma: 3.9500 Ang   Epsilon/k_Boltz: 52.435 K
+            A: 0.60E+07 kcal A^12/mol   B: 1582.993 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.500 Ang
+           OFF
+           Cutoffs Not Applicable
+      (3,3)  Nitrogen, Nitrogen:        LJ  WFCOUL
+          Nitrogen-Nitrogen LJ parameters from SIGEPS
+            Sigma: 3.3000 Ang   Epsilon/k_Boltz: 100.67 K
+            A: 0.13E+07 kcal A^12/mol   B: 1033.385 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.500 Ang
+           Charges taken from configuration, Shielding const: 1.000 Alpha:   0.10
+           Cutoffs HICUT :    9.000 Ang   LOCUT :    0.001 Ang
+      (3,4)  Nitrogen, C3:              LJ  WFCOUL
+          C3-Nitrogen LJ parameters from MIXED
+            Sigma: 3.4850 Ang   Epsilon/k_Boltz: 63.687 K
+            A: 0.16E+07 kcal A^12/mol   B: 906.8672 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.500 Ang
+           Charges taken from configuration, Shielding const: 1.000 Alpha:   0.10
+           Cutoffs HICUT :    9.000 Ang   LOCUT :    0.001 Ang
+      (4,4)  C3, C3:                    LJ  WFCOUL
+          C3-C3 LJ parameters from SIGEPS
+            Sigma: 3.6700 Ang   Epsilon/k_Boltz: 40.290 K
+            A: 0.19E+07 kcal A^12/mol   B: 782.4777 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.001 Ang
+           Charges taken from configuration, Shielding const: 1.000 Alpha:   0.10
+           Cutoffs HICUT :    9.000 Ang   LOCUT :    0.001 Ang
+    ------------------------------------------------------------
+    (2,3)  fulltma, Cl:               BASIC
+      Input Line: COUL  BASIC  WFCOUL  FAST  
+      Fast interaction?    T
+      COM-based cut-off?   F
+      COM-COM smoothing?   F
+      Atom-Atom PAIR PARAMETERS:
+        Information taken from: atm_atm_file
+      Overview by atomic pairs:
+      (1,1)  CF, CF:                    LJ
+          CF-CF LJ parameters from SIGEPS
+            Sigma: 4.6000 Ang   Epsilon/k_Boltz: 30.000 K
+            A: 0.21E+08 kcal A^12/mol   B: 2259.158 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.500 Ang
+      (1,2)  CF, C2:                  OFF
+      (1,3)  CF, Nitrogen:            OFF
+      (1,4)  CF, C3:                  OFF
+      (1,7)  CF, Cl:                    LJ  WFCOUL
+          CF-Cl LJ parameters from MIXED
+            Sigma: 4.3250 Ang   Epsilon/k_Boltz: 47.605 K
+            A: 0.16E+08 kcal A^12/mol   B: 2476.533 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.500 Ang
+           OFF
+           Cutoffs Not Applicable
+      (2,2)  C2, C2:                    LJ
+          C2-C2 LJ parameters from SIGEPS
+            Sigma: 4.2300 Ang   Epsilon/k_Boltz: 68.240 K
+            A: 0.18E+08 kcal A^12/mol   B: 3107.131 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.500 Ang
+      (2,3)  C2, Nitrogen:            OFF
+      (2,4)  C2, C3:                  OFF
+      (2,7)  C2, Cl:                    LJ  WFCOUL
+          C2-Cl LJ parameters from MIXED
+            Sigma: 4.1400 Ang   Epsilon/k_Boltz: 71.797 K
+            A: 0.14E+08 kcal A^12/mol   B: 2873.349 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.500 Ang
+           OFF
+           Cutoffs Not Applicable
+      (3,3)  Nitrogen, Nitrogen:        LJ
+          Nitrogen-Nitrogen LJ parameters from SIGEPS
+            Sigma: 3.3000 Ang   Epsilon/k_Boltz: 100.67 K
+            A: 0.13E+07 kcal A^12/mol   B: 1033.385 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.500 Ang
+      (3,4)  Nitrogen, C3:            OFF
+      (3,7)  Nitrogen, Cl:              LJ  WFCOUL
+          Nitrogen-Cl LJ parameters from MIXED
+            Sigma: 3.6750 Ang   Epsilon/k_Boltz: 87.204 K
+            A: 0.42E+07 kcal A^12/mol   B: 1707.501 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.500 Ang
+           Charges taken from configuration, Shielding const: 1.000 Alpha:   0.10
+           Cutoffs HICUT :    9.000 Ang   LOCUT :    0.001 Ang
+      (4,4)  C3, C3:                    LJ
+          C3-C3 LJ parameters from SIGEPS
+            Sigma: 3.6700 Ang   Epsilon/k_Boltz: 40.290 K
+            A: 0.19E+07 kcal A^12/mol   B: 782.4777 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.001 Ang
+      (4,7)  C3, Cl:                    LJ  WFCOUL
+          C3-Cl LJ parameters from MIXED
+            Sigma: 3.8600 Ang   Epsilon/k_Boltz: 55.168 K
+            A: 0.48E+07 kcal A^12/mol   B: 1450.405 kcal A^6/mol
+            high cutoff: 9.000 Ang   low cutoff: 0.500 Ang
+           Charges taken from configuration, Shielding const: 1.000 Alpha:   0.10
+           Cutoffs HICUT :    9.000 Ang   LOCUT :    0.001 Ang
+      (7,7)  Cl, Cl:                    LJ
+          Cl-Cl LJ parameters from SIGEPS
+            Sigma: 4.0500 Ang   Epsilon/k_Boltz: 75.540 K
+            A: 0.12E+08 kcal A^12/mol   B: 2649.631 kcal A^6/mol
+            high cutoff: 12.49 Ang   low cutoff: 0.500 Ang
+    ------------------------------------------------------------
+    (3,3)  Cl, Cl:                    BASIC
+      Input Line: COUL  BASIC  WFCOUL  FAST  
+      Fast interaction?    T
+      COM-based cut-off?   F
+      COM-COM smoothing?   F
+      Atom-Atom PAIR PARAMETERS:
+        Information taken from: atm_atm_file
+      Overview by atomic pairs:
+      (7,7)  Cl, Cl:                    LJ  WFCOUL
+          Cl-Cl LJ parameters from SIGEPS
+            Sigma: 4.0500 Ang   Epsilon/k_Boltz: 75.540 K
+            A: 0.12E+08 kcal A^12/mol   B: 2649.631 kcal A^6/mol
+            high cutoff: 12.49 Ang   low cutoff: 0.500 Ang
+           Charges taken from configuration, Shielding const: 1.000 Alpha:   0.10
+           Cutoffs HICUT :    9.000 Ang   LOCUT :    0.001 Ang
+  ------------------------------------------------------------
+  INTRAMOLECULAR information for each species 
+    ------------------------------------------------------------
+    Intramolecular information for H2O-SPC:
+      Bond Stretching   :  OFF
+      Bond Bending      :  OFF
+      Torsion Angles    :  OFF
+      Intra Pairwise Pot:  OFF
+      Intra Coulombic Pot:  OFF
+      Bond Length Constr: T
+        Constraint information for H2O-SPC
+          Model name :  RATTLE                                         
+            Atom pair and constr distance :    1   2     1.000
+            Atom pair and constr distance :    1   3     1.000
+            Atom pair and constr distance :    2   3     1.633
+    ------------------------------------------------------------
+    Intramolecular information for fulltma:
+      Bond Stretching   :  OFF
+      Bond Bending      :  On Harmonica Fast   31 bending triplets
+        Bond Bending Information for fulltma
+          Fast Interaction
+          Bond bending groups :  1  2 3
+            Model and Params: Harmonica   0.1120E+03  109.600
+          Bond bending groups :  2  3 4
+            Model and Params: Harmonica   0.1120E+03  109.600
+          Bond bending groups :  3  4 5
+            Model and Params: Harmonica   0.1120E+03  109.600
+          Bond bending groups :  4  5 6
+            Model and Params: Harmonica   0.1120E+03  109.600
+          Bond bending groups :  5  6 7
+            Model and Params: Harmonica   0.1120E+03  109.600
+          Bond bending groups :  6  7 8
+            Model and Params: Harmonica   0.1120E+03  109.600
+          Bond bending groups :  7  8 9
+            Model and Params: Harmonica   0.1120E+03  109.600
+          Bond bending groups :  8  9 10
+            Model and Params: Harmonica   0.1120E+03  109.600
+          Bond bending groups :  9 10 11
+            Model and Params: Harmonica   0.1120E+03  109.600
+          Bond bending groups : 10 11 12
+            Model and Params: Harmonica   0.1120E+03  109.600
+          Bond bending groups : 11 12 13
+            Model and Params: Harmonica   0.1120E+03  109.600
+          Bond bending groups : 12 13 14
+            Model and Params: Harmonica   0.1120E+03  109.600
+          Bond bending groups :  6  7 15
+            Model and Params: Harmonica   0.1120E+03  109.500
+          Bond bending groups :  8  7 15
+            Model and Params: Harmonica   0.1120E+03  109.500
+          Bond bending groups :  7 15 16
+            Model and Params: Harmonica   0.1000E+03  120.000
+          Bond bending groups :  7 15 17
+            Model and Params: Harmonica   0.1000E+03  120.000
+          Bond bending groups : 15 16 18
+            Model and Params: Harmonica   0.1000E+03  120.000
+          Bond bending groups : 15 17 19
+            Model and Params: Harmonica   0.1000E+03  120.000
+          Bond bending groups : 16 15 17
+            Model and Params: Harmonica   0.1000E+03  120.000
+          Bond bending groups : 16 18 20
+            Model and Params: Harmonica   0.1000E+03  120.000
+          Bond bending groups : 17 19 20
+            Model and Params: Harmonica   0.1000E+03  120.000
+          Bond bending groups : 18 20 19
+            Model and Params: Harmonica   0.1000E+03  120.000
+          Bond bending groups : 18 20 21
+            Model and Params: Harmonica   0.1000E+03  120.000
+          Bond bending groups : 19 20 21
+            Model and Params: Harmonica   0.1000E+03  120.000
+          Bond bending groups : 20 21 22
+            Model and Params: Harmonica   0.1000E+03  115.200
+          Bond bending groups : 21 22 23
+            Model and Params: Harmonica   0.1000E+03  109.234
+          Bond bending groups : 21 22 24
+            Model and Params: Harmonica   0.1000E+03  109.234
+          Bond bending groups : 21 22 25
+            Model and Params: Harmonica   0.1000E+03  109.234
+          Bond bending groups : 23 22 24
+            Model and Params: Harmonica   0.1000E+03  109.234
+          Bond bending groups : 23 22 25
+            Model and Params: Harmonica   0.1000E+03  109.234
+          Bond bending groups : 24 22 25
+            Model and Params: Harmonica   0.1000E+03  109.234
+      Torsion Angles    :  OFF
+      Intra Pairwise Pot:  On LJ Fast    139 intra pairs
+        CF  CF  LJ   4.600  30.00
+            Cutoffs : high cutoff: 11.50 Ang   low cutoff: 0.500 Ang
+        CF  C2  LJ   4.600  30.00
+            Cutoffs : high cutoff: 11.50 Ang   low cutoff: 0.500 Ang
+        CF  C3  LJ   4.600  30.00
+            Cutoffs : high cutoff: 11.50 Ang   low cutoff: 0.500 Ang
+        List of individual pairs (atom1,atom2,info)
+             1:   1   7    LJ   4.600  30.00
+             2:   1   8    LJ   4.600  30.00
+             3:   1   9    LJ   4.600  30.00
+             4:   1  10    LJ   4.600  30.00
+             5:   1  11    LJ   4.600  30.00
+             6:   1  12    LJ   4.600  30.00
+             7:   1  13    LJ   4.600  30.00
+             8:   1  14    LJ   4.600  30.00
+             9:   1  15    LJ   4.600  30.00
+            10:   1  16    LJ   4.600  30.00
+            11:   1  17    LJ   4.600  30.00
+            12:   1  18    LJ   4.600  30.00
+            13:   1  19    LJ   4.600  30.00
+            14:   1  20    LJ   4.600  30.00
+            15:   1  21    LJ   4.600  30.00
+            16:   1  23    LJ   4.600  30.00
+            17:   1  24    LJ   4.600  30.00
+            18:   1  25    LJ   4.600  30.00
+            19:   2   8    LJ   4.600  30.00
+            20:   2   9    LJ   4.600  30.00
+            21:   2  10    LJ   4.600  30.00
+            22:   2  11    LJ   4.600  30.00
+            23:   2  12    LJ   4.600  30.00
+            24:   2  13    LJ   4.600  30.00
+            25:   2  14    LJ   4.600  30.00
+            26:   2  15    LJ   4.600  30.00
+            27:   2  16    LJ   4.600  30.00
+            28:   2  17    LJ   4.600  30.00
+            29:   2  18    LJ   4.600  30.00
+            30:   2  19    LJ   4.600  30.00
+            31:   2  20    LJ   4.600  30.00
+            32:   2  21    LJ   4.600  30.00
+            33:   2  23    LJ   4.600  30.00
+            34:   2  24    LJ   4.600  30.00
+            35:   2  25    LJ   4.600  30.00
+            36:   3   9    LJ   4.600  30.00
+            37:   3  10    LJ   4.600  30.00
+            38:   3  11    LJ   4.600  30.00
+            39:   3  12    LJ   4.600  30.00
+            40:   3  13    LJ   4.600  30.00
+            41:   3  14    LJ   4.600  30.00
+            42:   3  16    LJ   4.600  30.00
+            43:   3  17    LJ   4.600  30.00
+            44:   3  18    LJ   4.600  30.00
+            45:   3  19    LJ   4.600  30.00
+            46:   3  20    LJ   4.600  30.00
+            47:   3  21    LJ   4.600  30.00
+            48:   3  23    LJ   4.600  30.00
+            49:   3  24    LJ   4.600  30.00
+            50:   3  25    LJ   4.600  30.00
+            51:   4  10    LJ   4.600  30.00
+            52:   4  11    LJ   4.600  30.00
+            53:   4  12    LJ   4.600  30.00
+            54:   4  13    LJ   4.600  30.00
+            55:   4  14    LJ   4.600  30.00
+            56:   4  18    LJ   4.600  30.00
+            57:   4  19    LJ   4.600  30.00
+            58:   4  20    LJ   4.600  30.00
+            59:   4  21    LJ   4.600  30.00
+            60:   4  23    LJ   4.600  30.00
+            61:   4  24    LJ   4.600  30.00
+            62:   4  25    LJ   4.600  30.00
+            63:   5  11    LJ   4.600  30.00
+            64:   5  12    LJ   4.600  30.00
+            65:   5  13    LJ   4.600  30.00
+            66:   5  14    LJ   4.600  30.00
+            67:   5  20    LJ   4.600  30.00
+            68:   5  21    LJ   4.600  30.00
+            69:   5  23    LJ   4.600  30.00
+            70:   5  24    LJ   4.600  30.00
+            71:   5  25    LJ   4.600  30.00
+            72:   6  12    LJ   4.600  30.00
+            73:   6  13    LJ   4.600  30.00
+            74:   6  14    LJ   4.600  30.00
+            75:   6  21    LJ   4.600  30.00
+            76:   6  23    LJ   4.600  30.00
+            77:   6  24    LJ   4.600  30.00
+            78:   6  25    LJ   4.600  30.00
+            79:   7  13    LJ   4.600  30.00
+            80:   7  14    LJ   4.600  30.00
+            81:   7  23    LJ   4.600  30.00
+            82:   7  24    LJ   4.600  30.00
+            83:   7  25    LJ   4.600  30.00
+            84:   8  14    LJ   4.600  30.00
+            85:   8  21    LJ   4.600  30.00
+            86:   8  23    LJ   4.600  30.00
+            87:   8  24    LJ   4.600  30.00
+            88:   8  25    LJ   4.600  30.00
+            89:   9  20    LJ   4.600  30.00
+            90:   9  21    LJ   4.600  30.00
+            91:   9  23    LJ   4.600  30.00
+            92:   9  24    LJ   4.600  30.00
+            93:   9  25    LJ   4.600  30.00
+            94:  10  18    LJ   4.600  30.00
+            95:  10  19    LJ   4.600  30.00
+            96:  10  20    LJ   4.600  30.00
+            97:  10  21    LJ   4.600  30.00
+            98:  10  23    LJ   4.600  30.00
+            99:  10  24    LJ   4.600  30.00
+           100:  10  25    LJ   4.600  30.00
+           101:  11  16    LJ   4.600  30.00
+           102:  11  17    LJ   4.600  30.00
+           103:  11  18    LJ   4.600  30.00
+           104:  11  19    LJ   4.600  30.00
+           105:  11  20    LJ   4.600  30.00
+           106:  11  21    LJ   4.600  30.00
+           107:  11  23    LJ   4.600  30.00
+           108:  11  24    LJ   4.600  30.00
+           109:  11  25    LJ   4.600  30.00
+           110:  12  15    LJ   4.600  30.00
+           111:  12  16    LJ   4.600  30.00
+           112:  12  17    LJ   4.600  30.00
+           113:  12  18    LJ   4.600  30.00
+           114:  12  19    LJ   4.600  30.00
+           115:  12  20    LJ   4.600  30.00
+           116:  12  21    LJ   4.600  30.00
+           117:  12  23    LJ   4.600  30.00
+           118:  12  24    LJ   4.600  30.00
+           119:  12  25    LJ   4.600  30.00
+           120:  13  15    LJ   4.600  30.00
+           121:  13  16    LJ   4.600  30.00
+           122:  13  17    LJ   4.600  30.00
+           123:  13  18    LJ   4.600  30.00
+           124:  13  19    LJ   4.600  30.00
+           125:  13  20    LJ   4.600  30.00
+           126:  13  21    LJ   4.600  30.00
+           127:  13  23    LJ   4.600  30.00
+           128:  13  24    LJ   4.600  30.00
+           129:  13  25    LJ   4.600  30.00
+           130:  14  15    LJ   4.600  30.00
+           131:  14  16    LJ   4.600  30.00
+           132:  14  17    LJ   4.600  30.00
+           133:  14  18    LJ   4.600  30.00
+           134:  14  19    LJ   4.600  30.00
+           135:  14  20    LJ   4.600  30.00
+           136:  14  21    LJ   4.600  30.00
+           137:  14  23    LJ   4.600  30.00
+           138:  14  24    LJ   4.600  30.00
+           139:  14  25    LJ   4.600  30.00
+      Intra Coulombic Pot:  OFF
+      Bond Length Constr: T
+        Constraint information for fulltma
+          Model name :  RATTLE                                         
+            Atom pair and constr distance :    1   2     1.541
+            Atom pair and constr distance :    2   3     1.540
+            Atom pair and constr distance :    3   4     1.542
+            Atom pair and constr distance :    4   5     1.541
+            Atom pair and constr distance :    5   6     1.542
+            Atom pair and constr distance :    6   7     1.540
+            Atom pair and constr distance :    7   8     1.539
+            Atom pair and constr distance :    7  15     1.539
+            Atom pair and constr distance :    8   9     1.538
+            Atom pair and constr distance :    9  10     1.539
+            Atom pair and constr distance :   10  11     1.540
+            Atom pair and constr distance :   11  12     1.540
+            Atom pair and constr distance :   12  13     1.539
+            Atom pair and constr distance :   13  14     1.539
+            Atom pair and constr distance :   15  16     1.400
+            Atom pair and constr distance :   15  17     1.403
+            Atom pair and constr distance :   16  18     1.400
+            Atom pair and constr distance :   17  19     1.403
+            Atom pair and constr distance :   18  20     1.400
+            Atom pair and constr distance :   19  20     1.402
+            Atom pair and constr distance :   20  21     1.540
+            Atom pair and constr distance :   21  22     1.473
+            Atom pair and constr distance :   22  23     1.472
+            Atom pair and constr distance :   22  24     1.471
+            Atom pair and constr distance :   22  25     1.470
+    ------------------------------------------------------------
+    Intramolecular information for Cl:
+      Bond Stretching   :  OFF
+      Bond Bending      :  OFF
+      Torsion Angles    :  OFF
+      Intra Pairwise Pot:  OFF
+      Intra Coulombic Pot:  OFF
+      Constraints       :  OFF
+------------------------------------------------------------
+      Movie Information
+        Movie output file : movie-hmc.xyz
+        Starting step     : 0
+        Ending step       : 20000
+        Steps btwn frames : 200
+        Dumping zeolite   : F
+ hybridmc.F90 :  144 intializing Hybrid GCMC section
+Initializing GCMC moves for: H2O-SPC                                         
+ gcmcmoves.F90 :  187 Move set for H2O-SPC must contain an INSERT move
+ gcmcmoves.F90 :  194 Move set for H2O-SPC must contain a DELETE move
+ WARNING :--------------------------------------------
+ This Routine should not have been called in the -
+ absence of insertion and deletion moves. Check whether -
+ move_tags are set. Also check that there are only one -
+  deletion and insertion movetype each
+ found_ins =  F ; found_del =  F ;
+ Setting ins_del_ratio=1
+ WARNING :--------------------------------------------
+ mcmoveset.F90 :  419
+Initializing GCMC moves for: fulltma                                         
+ gcmcmoves.F90 :  187 Move set for fulltma must contain an INSERT move
+ gcmcmoves.F90 :  194 Move set for fulltma must contain a DELETE move
+ WARNING :--------------------------------------------
+ This Routine should not have been called in the -
+ absence of insertion and deletion moves. Check whether -
+ move_tags are set. Also check that there are only one -
+  deletion and insertion movetype each
+ found_ins =  F ; found_del =  F ;
+ Setting ins_del_ratio=1
+ WARNING :--------------------------------------------
+ mcmoveset.F90 :  419
+Initializing GCMC moves for: Cl                                              
+ gcmcmoves.F90 :  187 Move set for Cl must contain an INSERT move
+ gcmcmoves.F90 :  194 Move set for Cl must contain a DELETE move
+ WARNING :--------------------------------------------
+ This Routine should not have been called in the -
+ absence of insertion and deletion moves. Check whether -
+ move_tags are set. Also check that there are only one -
+  deletion and insertion movetype each
+ found_ins =  F ; found_del =  F ;
+ Setting ins_del_ratio=1
+ WARNING :--------------------------------------------
+ mcmoveset.F90 :  419
+ hybridmc.F90 :  286
+ hybridmoves.F90 :  108
+ Initializing hybridmoves section
+ COULD NOT FIND NPT MOVES SECTION, this will be NVT
+ hybridmc.F90 :  411
+ hybridmc.F90 :  345
+ Energies at the beginning of HMC simulation: 
+   Species Name : H2O-SPC                                         
+   Species Type : 1
+   Pairwise Energies(noncoul, coul) in kJ/mol
+              H2O-SPC   :   0.00000  0.00000
+              fulltma   :   0.00000  0.00000
+                   Cl   :   0.00000  0.00000
+   Intramolecular Energies (bs,bb,tor,ip,con,total) in kJ/mol
+      0.00000  0.00000  0.00000  0.00000  0.00000  0.00000  0.00000
+ 
+   Species Name : fulltma                                         
+   Species Type : 2
+   Pairwise Energies(noncoul, coul) in kJ/mol
+              H2O-SPC   :   0.00000  0.00000
+              fulltma   :   0.00000  0.00000
+                   Cl   :   0.00000  0.00000
+   Intramolecular Energies (bs,bb,tor,ip,con,total) in kJ/mol
+      0.00000  0.00000  0.00000  0.00000  0.00000  0.00000  0.00000
+ 
+   Species Name : Cl                                              
+   Species Type : 3
+   Pairwise Energies(noncoul, coul) in kJ/mol
+              H2O-SPC   :   0.00000  0.00000
+              fulltma   :   0.00000  0.00000
+                   Cl   :   0.00000  0.00000
+   Intramolecular Energies (bs,bb,tor,ip,con,total) in kJ/mol
+      0.00000  0.00000  0.00000  0.00000  0.00000  0.00000  0.00000
+ 
+  ------------------------------------------------------------
+  The hybrid-GCMC Parameters Section:
+    No. of iterations   :      1
+    No. of simulations :      1
+    EOS Tag            : Ideal Parameters
+    stats blocksize    :  10000
+    Temp.  Range (K)   :      350.000     350.000
+    No. of gcmc-sorbs  :      3
+    ------------------------------------------------------------
+    GCMC Moves Parameters:
+    ------------------------------------------------------------
+    Species Name: H2O-SPC
+      Thermophysical simulation points:
+      Pressure  Fugacity     murti  B(Adams)
+     0.100E+01 0.100E+01   -19.934    -5.187
+      Allowed Move Types and Parameters:
+        Basic Move type:    TRANSLATE
+        Specific Move type: RTRANSLATE
+          Rigid Molecule Random-Translation Parameters :
+          Scaling of Translation length not allowed.
+          Initial translation length:      0.20000
+          Maximum allowed energy: 0.10E+11 kcal/mol
+        ------------------------------------------------------------
+        Basic Move type:    ROTATE
+        Specific Move type: RROTATE
+          Rigid Molecule Random-Rotation Parameters :
+          Scaling of Rotation increment not allowed.
+          Initial rotation-delta:      0.20000
+          Maximum allowed energy: 0.10E+11 kcal/mol
+        ------------------------------------------------------------
+    ------------------------------------------------------------
+    ------------------------------------------------------------
+    Species Name: fulltma
+      Thermophysical simulation points:
+      Pressure  Fugacity     murti  B(Adams)
+     0.100E+01 0.100E+01   -25.658    -5.187
+      Allowed Move Types and Parameters:
+        Basic Move type:    TRANSLATE
+        Specific Move type: RTRANSLATE
+          Rigid Molecule Random-Translation Parameters :
+          Scaling of Translation length not allowed.
+          Initial translation length:      0.20000
+          Maximum allowed energy: 0.10E+11 kcal/mol
+        ------------------------------------------------------------
+        Basic Move type:    ROTATE
+        Specific Move type: RROTATE
+          Rigid Molecule Random-Rotation Parameters :
+          Scaling of Rotation increment not allowed.
+          Initial rotation-delta:      0.01000
+          Maximum allowed energy: 0.10E+11 kcal/mol
+        ------------------------------------------------------------
+    ------------------------------------------------------------
+    ------------------------------------------------------------
+    Species Name: Cl
+      Thermophysical simulation points:
+      Pressure  Fugacity     murti  B(Adams)
+     0.100E+01 0.100E+01   -20.951    -5.187
+      Allowed Move Types and Parameters:
+        Basic Move type:    TRANSLATE
+        Specific Move type: RTRANSLATE
+          Rigid Molecule Random-Translation Parameters :
+          Scaling of Translation length not allowed.
+          Initial translation length:      0.20000
+          Maximum allowed energy: 0.10E+11 kcal/mol
+        ------------------------------------------------------------
+    hybrid section tag : Hybrid_Integration_Info
+ hybridmc.F90 : 1214
+ need hybridmoves display code here
+      lib update      tag : NO_UPDATE
+ Finished initializing main simulation details
+ ************************ 
+ -- NO_UPDATE -- specified as the library updatetag 
+ The libraries used for hybridmcmc will not updated during the simulation
+ Please make sure that the libraries are large enough.  This will work only
+ when the sorbate-molecules are small and do not have many degrees of freedom
+  ------------------------------------------------------------
+  The HYBRID GCMC Simulation Parameters:
+    Simulation Number   :    1
+    Configuration file  : hmc.con.1
+    Restart file        : hmc.res.1
+   ADD MORE CODE HERE, for what?
+    ------------------------------------------------------------
+    GCMC Species Parameters:
+      ----------------------------------------------------------
+      Species Name: H2O-SPC
+        Press.(kPa)   Fugacity      murti   B(Adams)
+              1.000      1.000    -19.934     -5.187
+      ----------------------------------------------------------
+      Species Name: fulltma
+        Press.(kPa)   Fugacity      murti   B(Adams)
+              1.000      1.000    -25.658     -5.187
+      ----------------------------------------------------------
+      Species Name: Cl
+        Press.(kPa)   Fugacity      murti   B(Adams)
+              1.000      1.000    -20.951     -5.187
+      ----------------------------------------------------------
+ Iteration number 10 of simulation 1
+ ------------------------------------------------------------
+ The HYBRID GCMC Stats:
+   Species Name: H2O-SPC    Pressure: 1.0000 kPa
+     TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.650   (13 of 20)  Max disp:  0.200
+     ROTATE (RROTATE)          Acc. Ratio: 0.600   (6 of 10)  Max disp:  0.200
+     Number of Molecules (ins, blk, cum, stdd) 460.00 460.00 460.00   0.00
+   Species Name: fulltma    Pressure: 1.0000 kPa
+     TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.600   (12 of 20)  Max disp:  0.200
+     ROTATE (RROTATE)          Acc. Ratio: 0.938   (15 of 16)  Max disp:  0.010
+     Number of Molecules (ins, blk, cum, stdd)   1.00   1.00   1.00   0.00
+   Species Name: Cl    Pressure: 1.0000 kPa
+     TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.206   (7 of 34)  Max disp:  0.200
+     Number of Molecules (ins, blk, cum, stdd)   1.00   1.00   1.00   0.00
+     INTEGRATE (INTEGRATE)     Acc. Ratio: 1.000   (10 of 10)  
+ 
+ MD Step: 10    Time     30.000 fs  
+ --------------------------------------------------
+ H2O-SPC Information
+           Variable        Current       CumulAvg          Block            Std
+   Tmole          :         24.086         14.949         14.949          7.351
+   Tatom          :         87.552         59.708         59.708         23.527
+   Intramolecular :       0.000000       0.000000       0.000000       0.000000
+   Kinetic Energy :       2.183711       1.489228       1.489228       0.586809
+   Constraint PE  :       0.000000       0.000000       0.000000       0.000000
+ fulltma Information
+           Variable        Current       CumulAvg          Block            Std
+   Tmole          :          0.043          0.098          0.098          0.150
+   Tatom          :          0.206          0.418          0.418          0.313
+   Intramolecular :      -5.214588      -5.244995      -5.244995       0.036070
+   Kinetic Energy :       0.042867       0.086786       0.086786       0.065091
+   Constraint PE  :       0.000000       0.000000       0.000000       0.000000
+   Bending PE     :       2.066732       2.036355       2.036355       0.036131
+   Intramolec Pair:      -7.281319      -7.281350      -7.281350       0.000239
+ Cl Information
+           Variable        Current       CumulAvg          Block            Std
+   Tmole          :         28.624         17.035         17.035          8.387
+   Tatom          :         28.624         17.035         17.035          8.387
+   Intramolecular :       0.000000       0.000000       0.000000       0.000000
+   Kinetic Energy :       0.356966       0.212449       0.212449       0.104598
+ Energy for H2O-SPC-H2O-SPC
+   Noncoulombic   :       3.409598       3.542180       3.542180       0.104882
+   Coulombic      :     -31.416196     -30.702876     -30.702876       0.555119
+ Energy for H2O-SPC-fulltma
+   Noncoulombic   :      -0.119763      -0.111488      -0.111488       0.007842
+   Coulombic      :      -0.098230      -0.093406      -0.093406       0.004844
+ Energy for H2O-SPC-Cl
+   Noncoulombic   :       0.102657       0.108466       0.108466       0.004863
+   Coulombic      :      -1.048109      -1.019835      -1.019835       0.018955
+ Energy for fulltma-fulltma
+   Noncoulombic   :       0.000000       0.000000       0.000000       0.000000
+   Coulombic      :       0.000000       0.000000       0.000000       0.000000
+ Energy for fulltma-Cl
+   Noncoulombic   :       0.000000       0.000000       0.000000       0.000000
+   Coulombic      :       0.000000       0.000000       0.000000       0.000000
+ Energy for Cl-Cl
+   Noncoulombic   :       0.000000       0.000000       0.000000       0.000000
+   Coulombic      :       0.000000       0.000000       0.000000       0.000000
+    Pressure (kpa):  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00
+     Volume  (m^3):  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00
+ System Energy Totals(per total moles)
+   Total Potential:     -29.059617     -28.170290
+   Total Kinetic  :       2.175123       1.483429
+   Total Energy   :     -26.884494     -26.686860
+   COM Velocity (for each species) : SPC-1: 0.0540132732,SPC-2: 0.0114872032,SPC-3: 1.4190633505,
+ Total # Moles          462
+ --------------------------------------------------
+ 
+ ________ ACTUAL ENERGIES    _____________
+    Energy:       -13420.329
+     Coul: -0.145E+05-0.453E+02-0.484E+03
+    NCoul:  0.157E+04-0.552E+02 0.474E+02
+    Intramolecular:    bs       bb      tor       ip      con    total
+                      0.00000  0.00000  0.00000  0.00000  0.00000  0.00000  0.00000  0.00000
+ 
+ ________ STORED ENERGIES    _____________
+    Energy:       -13420.329
+     Coul: -0.145E+05-0.453E+02-0.484E+03
+    NCoul:  0.157E+04-0.552E+02 0.474E+02
+    Intramolecular:    bs       bb      tor       ip      con    total
+                      0.00000  0.00000  0.00000  0.00000  0.00000  0.00000  0.00000  0.00000
+ ________ ACTUAL ENERGIES    _____________
+    Energy:         -105.709
+     Coul: -0.453E+02 0.000E+00 0.000E+00
+    NCoul: -0.552E+02 0.000E+00 0.000E+00
+    Intramolecular:    bs       bb      tor       ip      con    total
+                      0.00000 2.066732  0.00000  0.00000 -7.28132  0.00000  0.00000 -5.21459
+ 
+ ________ STORED ENERGIES    _____________
+    Energy:         -105.709
+     Coul: -0.453E+02 0.000E+00 0.000E+00
+    NCoul: -0.552E+02 0.000E+00 0.000E+00
+    Intramolecular:    bs       bb      tor       ip      con    total
+                      0.00000 2.066732  0.00000  0.00000 -7.28132  0.00000  0.00000 -5.21459
+ ________ ACTUAL ENERGIES    _____________
+    Energy:         -436.799
+     Coul: -0.484E+03 0.000E+00 0.000E+00
+    NCoul:  0.474E+02 0.000E+00 0.000E+00
+    Intramolecular:    bs       bb      tor       ip      con    total
+                      0.00000  0.00000  0.00000  0.00000  0.00000  0.00000  0.00000  0.00000
+ 
+ ________ STORED ENERGIES    _____________
+    Energy:         -436.799
+     Coul: -0.484E+03 0.000E+00 0.000E+00
+    NCoul:  0.474E+02 0.000E+00 0.000E+00
+    Intramolecular:    bs       bb      tor       ip      con    total
+                      0.00000  0.00000  0.00000  0.00000  0.00000  0.00000  0.00000  0.00000
+------------------------------------------------------------
+Ending H-GCMC simulation number 1    Nrg dev check: 0.000E+00
+  H2O-SPC:  P (kPa): 1.000    loading (molec/uc): 460.0
+  fulltma:  P (kPa): 1.000    loading (molec/uc): 1.000
+  Cl:  P (kPa): 1.000    loading (molec/uc): 1.000
+------------------------------------------------------------
+Main Program   Time: 5.9121 sec   Number of calls: 1   Time per call: 5.9121 sec

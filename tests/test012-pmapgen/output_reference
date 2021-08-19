@@ -1,0 +1,306 @@
+ Looking for Control file : test012.ctr
+ Initializing General Parameters
+------------------------------------------------------------
+The ATOMS structure:
+  No. of atom types:     3
+    Atom Name           : Patom
+    Atom Symbol         : P
+    Atom File           : Patom.atm
+    Atom Mass           :    16.00
+    sscharge, szcharge  :   0.0000  0.0000
+    Required # of bonds :   0
+    Ion Type            : NONE 
+ 
+    Atom Name           : Latom
+    Atom Symbol         : L
+    Atom File           : Latom.atm
+    Atom Mass           :    16.00
+    sscharge, szcharge  :   0.0000  0.0000
+    Required # of bonds :   0
+    Ion Type            : NONE 
+ 
+    Atom Name           : Latom2
+    Atom Symbol         : L2
+    Atom File           : Latom2.atm
+    Atom Mass           :    16.00
+    sscharge, szcharge  :   0.0000  0.0000
+    Required # of bonds :   0
+    Ion Type            : NONE 
+------------------------------------------------------------
+    Reading molecule information for Probe from: ./potentials/molecules/Probe.mol
+ molecule.F90 : 1065
+  Molecule will be rotated so that the principle axes 
+   will coincide with coordinate system axes
+ molecule.F90        1224  Generating connections
+   1.00000000000000        1.00000000000000                1
+ molecule.F90 :  605 WARNING: Probe is not charge neutral (1.00)
+ avg_charge:    1.00000000000000     
+    Reading molecule information for Lattice from: ./potentials/molecules/Lattice.mol
+ molecule.F90        1224  Generating connections
+  0.000000000000000E+000  0.000000000000000E+000          32
+  The SIMCELL structure:
+  nx, ny, nz            :    1   1   2
+  ncells                :    2
+  ORTHORHOMBIC
+  edge lengths (Ang)    :    20.0000   20.0000   24.0000
+  cell angles (degrees) :    90.0000   90.0000   90.0000
+  origin shift (Ang)    : 0.0000   0.0000   0.0000
+  cell vector a         : 20.0000   0.0000   0.0000
+  cell vector b         : 0.0000  20.0000   0.0000
+  cell vector c         : 0.0000   0.0000  24.0000
+  box width in (a,b,c)  :    20.0000   20.0000   24.0000
+  minimum width (Ang)   :    20.0000
+  volume (Angstroms^3)  : 9600.000
+------------------------------------------------------------
+The MOLECULES structure:
+  No. of molecule types:     2
+------------------------------------------------------------
+  Molecule Name       : Probe
+  Molecule Mass       : 16.00
+  Molecule File       : Probe.mol
+  Degrees of freedom  : 3
+  DOF origin          : Molecule_File
+  body axes atom nos  :    0   0   0
+  Number of atoms     : 1
+  Net Charge          : 1.00
+  Dipole Moment(debye): 4.1610831571
+  Translation xform   : 0.00000   0.00000   0.00000
+  Rotational xform    : 
+    1.00000   0.00000   0.00000
+    0.00000   1.00000   0.00000
+    0.00000   0.00000   1.00000
+      Atom Name           : Patom
+      Atom Type           :    1
+      Atom Position       :   0.5000  0.5000  0.5000
+      Equilibrium charge  :   1.0000
+      MD Set, type        :    0   0
+  Connection Information : 
+    No connectivity information for Probe
+------------------------------------------------------------
+  Molecule Name       : Lattice
+  Molecule Mass       : 1024.0
+  Molecule File       : Lattice.mol
+  Degrees of freedom  : 12
+  DOF origin          : Molecule_File
+  body axes atom nos  :    1   2   0
+  Number of atoms     : 64
+  Net Charge          : 0.0
+  Dipole Moment(debye): 768.76879388
+  Translation xform   : 0.00000   0.00000   0.00000
+  Rotational xform    : 
+    1.00000   0.00000   0.00000
+    0.00000   1.00000   0.00000
+    0.00000   0.00000   1.00000
+  Atom list omitted (natoms > 10)
+  Connection Information : 
+    No connectivity information for Lattice
+------------------------------------------------------------
+config.F90: 667 MOLECULE config type is not yet complete. Please check.
+Initializing intra molecular info from molecule file: ./potentials/molecules/Probe.mol
+ intramolecular.F90 :  165
+ intra filename passed isintramolecular_file                             xx
+ intramolecular.F90 :  171
+Initialized all intramolecular stuff for Probe
+Initializing intra molecular info from molecule file: ./potentials/molecules/Lattice.mol
+ intramolecular.F90 :  165
+ intra filename passed isintramolecular_file                             xx
+ intramolecular.F90 :  171
+Initialized all intramolecular stuff for Lattice
+ Finished Initializing Intramolecular interactions
+ Initializing Species-Species interactions....
+ Finished Initializing Species-Species interactions.
+ Finished Initializing Ff interactions.
+ Calling ff_initCal
+ Call to ff_initCalc successful 
+  ------------------------------------------------------------
+  The "BASIC" FF information:
+  ------------------------------------------------------------
+  NON-COULOMBIC SPECIES-SPECIES pair parameters:
+  Information taken from: spc_spc_file
+    ------------------------------------------------------------
+    (1,1)  Probe, Probe:              OFF
+    ------------------------------------------------------------
+    (1,2)  Probe, Lattice:            BASIC
+      Input Line: NCOUL  BASIC  LJ  FAST  
+      Fast interaction?    T
+      COM-based cut-off?   F
+      COM-COM smoothing?   F
+      Atom-Atom PAIR PARAMETERS:
+        Information taken from: atom_atom_file
+      Overview by atomic pairs:
+      (1,1)  Patom, Patom:            OFF
+      (1,2)  Patom, Latom:              LJ
+          Latom-Patom LJ parameters from SIGEPS
+            Sigma: 3.6994 Ang   Epsilon/k_Boltz: 125.81 K
+            A: 0.66E+07 kcal A^12/mol   B: 2563.017 kcal A^6/mol
+            high cutoff: 5.900 Ang   low cutoff: 0.100 Ang
+      (2,2)  Latom, Latom:            OFF
+    ------------------------------------------------------------
+    (2,2)  Lattice, Lattice:          OFF
+  ------------------------------------------------------------
+  COULOMBIC SPECIES-SPECIES pair parameters:
+  Information taken from: spc_spc_file
+    ------------------------------------------------------------
+    (1,1)  Probe, Probe:              OFF
+    ------------------------------------------------------------
+    (1,2)  Probe, Lattice:            OFF
+    ------------------------------------------------------------
+    (2,2)  Lattice, Lattice:          OFF
+  ------------------------------------------------------------
+  INTRAMOLECULAR information for each species 
+    ------------------------------------------------------------
+    Intramolecular information for Probe:
+      Bond Stretching   :  OFF
+      Bond Bending      :  OFF
+      Torsion Angles    :  OFF
+      Intra Pairwise Pot:  OFF
+      Intra Coulombic Pot:  OFF
+      Constraints       :  OFF
+    ------------------------------------------------------------
+    Intramolecular information for Lattice:
+      Bond Stretching   :  OFF
+      Bond Bending      :  OFF
+      Torsion Angles    :  OFF
+      Intra Pairwise Pot:  OFF
+      Intra Coulombic Pot:  OFF
+      Constraints       :  OFF
+------------------------------------------------------------
+ Reading map            1
+  pmap generated will have name : Lattice.LJ.map
+ Checking for existing pmap file with same name :- 
+ It already exists, Please change the pmap-file name  in ctrlfile
+Creating grid for Lattice-Probe map interaction
+ All coordinates generated!
+mapmaker.F90: 294 WARNING: the number of UCs required has not been checked
+------------------------------------------------------------
+Map Maker Information
+Number of maps :    1
+------------------------------------------------------------
+ 
+Map    1
+Map sorbate     : (  2) Lattice
+Probe sorbate   : (  1) Probe
+Interaction     :  NCOUL                                           
+Forcefield Model: LJ                                              
+No. pnts x,y,z  :    50  50  30
+Grid spacing    :       0.400
+Potential cutoff:     100.000 kJ/mol
+Filename        :  Lattice.LJ.map
+------------------------------------------------------------
+------------------------------------------------------------
+Configuration Section 
+No. of species :      2
+  ----------------------------------------------------------
+  Species name : Probe                                           
+    No. of molecules :      1
+    No. of atoms     :    1
+    Initial Config. Source : Molecule
+    Source Filename: NULL
+    ----------------------------------------------------------
+  Species name : Lattice                                         
+    No. of molecules :      1
+    No. of atoms     :   64
+    Initial Config. Source : Fixed
+    Source Filename: NULL
+    ----------------------------------------------------------
+Making map for Lattice-Probe map interaction
+WARNING: fast flag is not currently passed to makemap
+           2 Latom                    
+Map progress:      1000 points calculated  1.33% of total
+Map progress:      2000 points calculated  2.67% of total
+Map progress:      3000 points calculated  4.00% of total
+Map progress:      4000 points calculated  5.33% of total
+Map progress:      5000 points calculated  6.67% of total
+Map progress:      6000 points calculated  8.00% of total
+Map progress:      7000 points calculated  9.33% of total
+Map progress:      8000 points calculated 10.67% of total
+Map progress:      9000 points calculated 12.00% of total
+Map progress:     10000 points calculated 13.33% of total
+Map progress:     11000 points calculated 14.67% of total
+Map progress:     12000 points calculated 16.00% of total
+Map progress:     13000 points calculated 17.33% of total
+Map progress:     14000 points calculated 18.67% of total
+Map progress:     15000 points calculated 20.00% of total
+Map progress:     16000 points calculated 21.33% of total
+Map progress:     17000 points calculated 22.67% of total
+Map progress:     18000 points calculated 24.00% of total
+Map progress:     19000 points calculated 25.33% of total
+Map progress:     20000 points calculated 26.67% of total
+Map progress:     21000 points calculated 28.00% of total
+Map progress:     22000 points calculated 29.33% of total
+Map progress:     23000 points calculated 30.67% of total
+Map progress:     24000 points calculated 32.00% of total
+Map progress:     25000 points calculated 33.33% of total
+Map progress:     26000 points calculated 34.67% of total
+Map progress:     27000 points calculated 36.00% of total
+Map progress:     28000 points calculated 37.33% of total
+Map progress:     29000 points calculated 38.67% of total
+Map progress:     30000 points calculated 40.00% of total
+Map progress:     31000 points calculated 41.33% of total
+Map progress:     32000 points calculated 42.67% of total
+Map progress:     33000 points calculated 44.00% of total
+Map progress:     34000 points calculated 45.33% of total
+Map progress:     35000 points calculated 46.67% of total
+Map progress:     36000 points calculated 48.00% of total
+Map progress:     37000 points calculated 49.33% of total
+Map progress:     38000 points calculated 50.67% of total
+Map progress:     39000 points calculated 52.00% of total
+Map progress:     40000 points calculated 53.33% of total
+Map progress:     41000 points calculated 54.67% of total
+Map progress:     42000 points calculated 56.00% of total
+Map progress:     43000 points calculated 57.33% of total
+Map progress:     44000 points calculated 58.67% of total
+Map progress:     45000 points calculated 60.00% of total
+Map progress:     46000 points calculated 61.33% of total
+Map progress:     47000 points calculated 62.67% of total
+Map progress:     48000 points calculated 64.00% of total
+Map progress:     49000 points calculated 65.33% of total
+Map progress:     50000 points calculated 66.67% of total
+Map progress:     51000 points calculated 68.00% of total
+Map progress:     52000 points calculated 69.33% of total
+Map progress:     53000 points calculated 70.67% of total
+Map progress:     54000 points calculated 72.00% of total
+Map progress:     55000 points calculated 73.33% of total
+Map progress:     56000 points calculated 74.67% of total
+Map progress:     57000 points calculated 76.00% of total
+Map progress:     58000 points calculated 77.33% of total
+Map progress:     59000 points calculated 78.67% of total
+Map progress:     60000 points calculated 80.00% of total
+Map progress:     61000 points calculated 81.33% of total
+Map progress:     62000 points calculated 82.67% of total
+Map progress:     63000 points calculated 84.00% of total
+Map progress:     64000 points calculated 85.33% of total
+Map progress:     65000 points calculated 86.67% of total
+Map progress:     66000 points calculated 88.00% of total
+Map progress:     67000 points calculated 89.33% of total
+Map progress:     68000 points calculated 90.67% of total
+Map progress:     69000 points calculated 92.00% of total
+Map progress:     70000 points calculated 93.33% of total
+Map progress:     71000 points calculated 94.67% of total
+Map progress:     72000 points calculated 96.00% of total
+Map progress:     73000 points calculated 97.33% of total
+Map progress:     74000 points calculated 98.67% of total
+Map progress:     75000 points calculated100.00% of total
+ mapmaker.F90         549 total points :        75000   100.000000000000     
+ pmap.F90         662  Accepted ( < cutoff) :        28904
+ pmap.F90         663  Accepted ( neighbor) :        20544
+ pmap.F90         664  Accepted (  total  ) :        49448
+ pmap.F90         665  Rejected ( > cutoff) :        29627
+ mapmaker.F90         556 compact points :        49448
+           2 Latom                    
+  Displaying the 5 points in the map NRG and Forces
+     Index         NRG        F(x)        F(x)        F(z)
+      9889  0.1041E+03  0.2833E+03  0.3265E+03  0.3093E+03
+     19779  0.7168E+01  0.1980E+02  0.1307E+01  0.2582E+02
+     29668  0.2081E+03 -0.8503E+03 -0.5712E+03  0.3860E+03
+     39558  0.4997E+03 -0.1170E+04 -0.9102E+03 -0.2372E+04
+     49448  0.1937E+02 -0.6656E-05 -0.6656E-05  0.4275E+02
+ 
+  Displaying the 5 points in the map 2nd and 3rd derivs
+     Index         Vxy         Vxz         Vyz        Vxyz
+      9889  0.9981E+03  0.9455E+03  0.1090E+04  0.3771E+04
+     19779  0.3394E+01  0.6819E+02  0.4190E+01  0.1281E+02
+     29668  0.2667E+04 -0.1803E+04 -0.1207E+04  0.6409E+04
+     39558  0.2450E+04  0.6388E+04  0.4968E+04 -0.1521E+05
+     49448  0.3259E-11 -0.3388E-04 -0.3388E-04  0.1846E-10
+Map creation time   Time: 0.6579 sec   Number of calls: 1   Time per call: 0.6579 sec

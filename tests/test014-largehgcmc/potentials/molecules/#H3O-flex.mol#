@@ -1,0 +1,36 @@
+##### Basic Molecule Information
+# force fiedl from Schmitt and Voth JCP, 111, 9361
+#
+
+Molecule_Name: H3O
+
+Coord_Info: Listed Cartesian Rigid
+    4     # number of atoms in molecule
+ 1    0.015601   0.026983   0.011034  Ohyd  -0.50  0   0 #x,y,z,name,set,type
+ 2   -0.011425  -0.019722   0.991386  Hhyd   0.50  0   0 #x,y,z,name,set,type
+ 3    0.930876  -0.019718  -0.341235  Hhyd   0.50  0   0 #x,y,z,name,set,type
+ 4   -0.482503   0.796294  -0.341185  Hhyd   0.50  0   0 #x,y,z,name,set,type
+
+# we need separate atom types for LJ interactions
+# For now we will be lazy and use the same as SPC-E
+#
+
+#Molecule_DOF: 6
+
+Connect_Info: Generate
+    1    # number of connection types listed
+    Ohyd Hhyd 0.99 0.05
+
+Bond_Stretch: Generate Morse Fast
+    1 # number of bond types to generate
+    Ohyd Hhyd 266.3 1.285  CALC #0.98
+
+Bond_Bending: Generate Harmonica Fast
+    1 # number of bending types
+    Hhyd Ohyd Hhyd  73.27 CALCULATE # 116.0 is used by voth
+
+Bond_Constraints: Listed RATTLE Fast
+    3 #number of bond constraints (bondlen=0.0 => to be calculated from above)
+    1    2    CALC
+    1    3    CALC
+    1    4    CALC

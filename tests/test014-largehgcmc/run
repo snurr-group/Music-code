@@ -1,0 +1,30 @@
+#!/bin/csh
+
+echo 'setting environment variables'
+
+setenv EMAPDIR ./potentials/pmaps
+setenv PMAPDIR ./potentials/pmaps
+setenv SMAPDIR ./potentials/pmaps
+setenv ATOMSDIR ./potentials/atoms
+setenv MOLSDIR ./potentials/molecules
+
+echo "-"
+echo "-"
+echo '---- REFERENCE OUTPUT ------------------------'
+
+grep -a -A 21 'Iteration number' output_reference
+grep -a 'Main Program   Time' output_reference
+echo '-'
+echo '-'
+echo '-'
+
+echo '---- CURRENT MUSIC OUTPUT --------------------'
+
+hgcmc.exe test014.ctr >& out
+grep -a -A 21 'Iteration number' out
+grep -a 'Main Program   Time' out
+
+
+
+
+

@@ -1,0 +1,15 @@
+##### Basic Molecule Information
+
+Molecule_Name: OH
+
+Coord_Info: Listed Cartesian Rigid
+    2     # number of atoms in molecule
+ 1  -0.3082  0.5908  0.0000  Ooh  -1.42  0   0 #x,y,z,name,set,type
+ 2   0.6918  0.5908  0.0000  Hoh   0.42  0   0 #x,y,z,name,set,type
+
+Molecule_DOF: 5
+
+Connect_Info: Generate
+    1    # number of connection types listed
+    Ooh Hoh 0.99 0.05
+

@@ -1,0 +1,137 @@
+------ General Information ------------------------------------------
+Nafion+water GCMC
+10             # No. of iterations
+10            # No. of steps between writes to output/log file
+200             # No. of steps between writes to crash file
+21            # No. of steps between writes to config. file(5000 configs)
+1                # Start numbering simulations from a.
+221119           # Iseeed
+3                # specifies contents of config file, 3=Nrgs,Posns,Loading
+temp.res         # Restart File to write to ( base name )
+temp.con         # Configuration File ( base name )
+--------  Main Datafile Information -------------------------------------
+Energy, position, pair_energy # contents of datafile
+------ Atomic Types --------------------------------------------------
+8                     # number of atomic types
+
+CF
+CF.atm
+ 
+C2                    # atom type
+C2.atm                # basic atom info file
+
+Nitrogen                    # atom type
+Nitrogen.atm                # basic atom info file
+
+C3                # atom type
+C3.atm            # basic atom info file
+
+Oxygen
+Oxygen.atm
+
+H-SPC
+H-SPC.atm
+
+Cl
+Cl.atm
+
+Hch
+Hch.atm
+------ Molecule Types -------------------------------------------------
+3                     # number of species types
+
+H2O-SPC             # species name
+H2O-SPC-flex.mol          # species details file
+
+fulltma              # species name
+fulltma-flex.mol          # species details file
+
+Cl             # species name
+Cl.mol          # species details file
+
+# 25 Nafion and 625 H2O --> approx volume (34.5 Ang.)^3
+#
+------ Simulation Cell Information ----                           LINE:01
+NULL                 # Filename with simulation cell info	  LINE:02
+30.00000      30.00000      30.00000   # unit cell edge lengths	  LINE:03
+90.00000      90.00000      90.00000   # unit cell angles	  LINE:04
+0.00000       0.00000       0.00000    # origin of unit cell	  LINE:05
+30.00000      30.00000      30.00000   # effective bound box size LINE:06
+1, 1, 1    # No. of unit cells in x, y, z direction		  LINE:07
+1, 1, 1    # (1 = Periodic) in x, y, z, (0=non-periodic)	  LINE:08
+------ Ideal Parameters -----------------------------------------------
+Ideal                            # Equation of State
+3                                # no. of speciess
+H2O-SPC                          # Species Name, Z/Omega, Depends on temp
+fulltma                          # Species Name, Z/Omega, Depends on temp
+Cl                          # Species Name, Z/Omega, Depends on temp
+-------- HYBRID GCMC Information ----------------------------------------
+1                        # number of iterations per call
+1                       # number of simulations
+Ideal Parameters         # Tag for eqn of state section
+10000                      # blocksize for any stats
+350.00                   # Temerature(s), could be filename too
+Gcmc_Moves_info, 3       # NO_GCMC_MOVES,0          # 
+Hybrid_Integration_Info, 10 # NO_HYBRIDMC_INTEGRATION # 
+NO_UPDATE                # section tag for library updates
+---------------- SECTION_TAG : Hybrid_Integration_Info --------------------------------
+ALLSORBS                 # sorbates name
+KEEP_VELOCITIES   #BOLTZMANN                # 
+INTEGRATE                # Type of move                                    
+3                        # No. of moves                                    
+0.001                   # Time step, ps                                   
+300.0                    # Simulation temperature                          
+10000                    # Steps between writes to std IO      
+10000                    # Steps between writes to std RESTARTFILE ? 
+NVE                      # Ensemble to simulate in (NVT, NVE)              
+VelocityVerlet           # GEAR6  # Integretor #  10 # penalty function calls
+---------------- SECTION_TAG : Gcmc_Moves_Info --------------------
+H2O-SPC            # Name of species
+1.0 #, 10               # Pressure kpa
+Null               # sitemap name
+2                  # no of movetypes
+1.0, 1.0 #, 4.0, 4.0#, 1.0     # Their weights
+RTRANSLATE         # move type -name
+0.2, 0             # Translation amount ( Ang.) , 1= scale, 0=don't scale
+RROTATE
+0.2, 0             # species number to change to
+       ---------------------------
+fulltma            # Name of species
+1.0 #, 10               # Pressure kpa
+Null               # sitemap name
+2                  # no of movetypes
+1.0, 1.0#, 4.0, 4.0#, 1.0     # Their weights
+RTRANSLATE         # move type -name
+0.2, 0             # Translation amount ( Ang.) , 1= scale, 0=don't scale
+RROTATE
+0.01, 0             # species number to change to
+-----------------
+Cl            # Name of species
+1.0 #, 10               # Pressure kpa
+Null               # sitemap name
+1                  # no of movetypes
+1.0 #, 1.0 #, 4.0, 4.0#, 1.0     # Their weights
+RTRANSLATE         # move type -name
+0.2, 0             # Translation amount ( Ang.) , 1= scale, 0=don't scale
+       ---------------------------
+------ Configuration Initialization -------------------------------------
+H2O-SPC            # Species_Type
+RESTARTFILE add.res.3 # GCMC NULL          # 
+fulltma            # Species_Type
+RESTARTFILE add.res.3 # GCMC NULL          # 
+Cl            # Species_Type
+RESTARTFILE add.res.3 # GCMC NULL          # 
+------ Forcefield Information -------------------------------------------
+BASIC                # forcefield identifier
+SPC # MOL                  # detail level of interactions storage
+atm_atm_file         # atom-atom interaction file
+spc_spc_file         # species-species interaction file
+intramolecular_file  # intramolecular interaction file/specification
+-----------------------------------
+------ Movie Information ----------------------------------------------
+movie-hmc.xyz            # Movie filename                      
+0, 20000            # Starting step, ending step                        
+200                    # Steps between frames                              
+No                   # Include zeolite in movie                          
+1,1,1              # Number of unit cells to dump in x, y, z directions
+-----------------------------------------------------------

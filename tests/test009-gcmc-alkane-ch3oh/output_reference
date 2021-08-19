@@ -1,0 +1,1270 @@
+ Looking for Control file : test009.ctr
+Welcome to MuSiC (GCMC implementation)
+Reading from control file test009.ctr
+ Initializing General Parameters
+------------------------------------------------------------
+The ATOMS structure:
+  No. of atom types:     6
+    Atom Name           : Methyl
+    Atom Symbol         : C
+    Atom File           : Methyl.atm
+    Atom Mass           :    15.00
+    sscharge, szcharge  :   0.0000  0.0000
+    Required # of bonds :   1
+    Ion Type            : NONE 
+ 
+    Atom Name           : Methylene
+    Atom Symbol         : C
+    Atom File           : Methylene.atm
+    Atom Mass           :    14.00
+    sscharge, szcharge  :   0.0000  0.0000
+    Required # of bonds :   2
+    Ion Type            : NONE 
+ 
+    Atom Name           : Silicon
+    Atom Symbol         : Si
+    Atom File           : Silicon.atm
+    Atom Mass           :    28.09
+    sscharge, szcharge  :   1.8000  1.8000
+    Required # of bonds :   4
+    Ion Type            : NONE 
+ 
+    Atom Name           : Oxygen
+    Atom Symbol         : O
+    Atom File           : Oxygen.atm
+    Atom Mass           :    16.00
+    sscharge, szcharge  :  -1.0000 -1.0000
+    Required # of bonds :   2
+    Ion Type            : NONE 
+ 
+    Atom Name           : Carbon
+    Atom Symbol         : C
+    Atom File           : Carbon.atm
+    Atom Mass           :    12.00
+    sscharge, szcharge  :   0.4000  0.4000
+    Required # of bonds :   4
+    Ion Type            : NONE 
+ 
+    Atom Name           : Hydrogen
+    Atom Symbol         : H
+    Atom File           : Hydrogen.atm
+    Atom Mass           :     1.00
+    sscharge, szcharge  :   0.4000  0.4000
+    Required # of bonds :   1
+    Ion Type            : NONE 
+------------------------------------------------------------
+    Reading molecule information for n_Butane from: ./potentials/molecules/n_Butane.mol
+ molecule.F90 : 1065
+  Molecule will be rotated so that the principle axes 
+   will coincide with coordinate system axes
+    Reading molecule information for n_Hexane from: ./potentials/molecules/n_Hexane.mol
+ molecule.F90 : 1065
+  Molecule will be rotated so that the principle axes 
+   will coincide with coordinate system axes
+    Reading molecule information for Methanol from: ./potentials/molecules/Methanol.mol
+ molecule.F90 : 1065
+  Molecule will be rotated so that the principle axes 
+   will coincide with coordinate system axes
+ molecule.F90 :  896 WARNING: Molecule 'Methanol' was not centered at origin, now shifted
+  Note that the NOTRANSFORM flag will prevent this shifting
+  Former center-of-mass:        -0.080844    0.236313   -0.116094
+ molecule.F90 :  957 WARNING: Molecule 'Methanol' has been realigned to place
+  the cartesian axes along the moments of inertia
+  Note that the NOROTATE or NOTRANSFORM flags will prevent this
+ Generating Connections for Methanol                                        
+    Reading molecule information for sili from: ./potentials/molecules/sili.mol
+ molecule.F90 : 1065
+  Molecule will be rotated so that the principle axes 
+   will coincide with coordinate system axes
+------------------------------------------------------------
+The MOLECULES structure:
+  No. of molecule types:     4
+------------------------------------------------------------
+  Molecule Name       : n_Butane
+  Molecule Mass       : 58.00
+  Molecule File       : n_Butane.mol
+  Degrees of freedom  : 12
+  DOF origin          : 3N_Calculation
+  Number of atoms     : 4
+  Net Charge          : 0.0
+  Dipole Moment(debye): 0.000000000
+  Translation xform   : 0.00000   0.00000   0.00000
+  Rotational xform    : 
+    1.00000   0.00000   0.00000
+    0.00000   1.00000   0.00000
+    0.00000   0.00000   1.00000
+      Atom Name           : Methyl
+      Atom Type           :    1
+      Atom Position       :   0.0000  0.0000  0.0000
+      Equilibrium charge  :   0.0000
+      MD Set, type        :    0   0
+      Atom Name           : Methylene
+      Atom Type           :    2
+      Atom Position       :   0.8556  1.2684  0.0000
+      Equilibrium charge  :   0.0000
+      MD Set, type        :    0   0
+      Atom Name           : Methylene
+      Atom Type           :    2
+      Atom Position       :   0.0000  2.5368  0.0000
+      Equilibrium charge  :   0.0000
+      MD Set, type        :    0   0
+      Atom Name           : Methyl
+      Atom Type           :    1
+      Atom Position       :   0.8556  3.8053  0.0000
+      Equilibrium charge  :   0.0000
+      MD Set, type        :    0   0
+  Connection Information : 
+    Connection Information for n_Butane                                        
+    Atom     1:      2    1.540
+    Atom     2:      1    3    1.540   1.540
+    Atom     3:      2    4    1.540   1.540
+    Atom     4:      3    1.540
+------------------------------------------------------------
+  Molecule Name       : n_Hexane
+  Molecule Mass       : 86.00
+  Molecule File       : n_Hexane.mol
+  Degrees of freedom  : 18
+  DOF origin          : 3N_Calculation
+  Number of atoms     : 6
+  Net Charge          : 0.0
+  Dipole Moment(debye): 0.000000000
+  Translation xform   : 0.00000   0.00000   0.00000
+  Rotational xform    : 
+    1.00000   0.00000   0.00000
+    0.00000   1.00000   0.00000
+    0.00000   0.00000   1.00000
+      Atom Name           : Methyl
+      Atom Type           :    1
+      Atom Position       :   0.0000  0.0000  0.0000
+      Equilibrium charge  :   0.0000
+      MD Set, type        :    0   0
+      Atom Name           : Methylene
+      Atom Type           :    2
+      Atom Position       :   0.8556  1.2684  0.0000
+      Equilibrium charge  :   0.0000
+      MD Set, type        :    0   0
+      Atom Name           : Methylene
+      Atom Type           :    2
+      Atom Position       :   0.0000  2.5368  0.0000
+      Equilibrium charge  :   0.0000
+      MD Set, type        :    0   0
+      Atom Name           : Methylene
+      Atom Type           :    2
+      Atom Position       :   0.8556  3.8053  0.0000
+      Equilibrium charge  :   0.0000
+      MD Set, type        :    0   0
+      Atom Name           : Methylene
+      Atom Type           :    2
+      Atom Position       :   0.0000  5.0737  0.0000
+      Equilibrium charge  :   0.0000
+      MD Set, type        :    0   0
+      Atom Name           : Methyl
+      Atom Type           :    1
+      Atom Position       :   0.8556  6.3422  0.0000
+      Equilibrium charge  :   0.0000
+      MD Set, type        :    0   0
+  Connection Information : 
+    Connection Information for n_Hexane                                        
+    Atom     1:      2    1.540
+    Atom     2:      1    3    1.540   1.540
+    Atom     3:      2    4    1.540   1.540
+    Atom     4:      3    5    1.540   1.540
+    Atom     5:      4    6    1.540   1.540
+    Atom     6:      5    1.540
+------------------------------------------------------------
+  Molecule Name       : Methanol
+  Molecule Mass       : 32.00
+  Molecule File       : Methanol.mol
+  Degrees of freedom  : 6
+  DOF origin          : Molecule_File
+  body axes atom nos  :    1   2   0
+  Number of atoms     : 6
+  Net Charge          : -.6E-16
+  Dipole Moment(debye): 2.3446853612
+  Translation xform   : 0.08084  -0.23631   0.11609
+  Rotational xform    : 
+    0.91307   0.36509  -0.18168
+    0.23497  -0.83515  -0.49731
+    0.33329  -0.41139   0.84834
+      Atom Name           : Carbon
+      Atom Type           :    5
+      Atom Position       :  -0.7264 -0.0166 -0.0001
+      Equilibrium charge  :  -0.4690
+      MD Set, type        :    0   0
+      Atom Name           : Oxygen
+      Atom Type           :    4
+      Atom Position       :   0.6798  0.0772  0.0000
+      Equilibrium charge  :  -0.5370
+      MD Set, type        :    0   0
+      Atom Name           : Hydrogen
+      Atom Type           :    6
+      Atom Position       :  -1.1242  0.4716 -0.8895
+      Equilibrium charge  :   0.2020
+      MD Set, type        :    0   0
+      Atom Name           : Hydrogen
+      Atom Type           :    6
+      Atom Position       :  -1.0205 -1.0662  0.0005
+      Equilibrium charge  :   0.2020
+      MD Set, type        :    0   0
+      Atom Name           : Hydrogen
+      Atom Type           :    6
+      Atom Position       :  -1.1234  0.4715  0.8906
+      Equilibrium charge  :   0.2020
+      MD Set, type        :    0   0
+      Atom Name           : Hydrogen
+      Atom Type           :    6
+      Atom Position       :   1.1079 -0.9138 -0.0001
+      Equilibrium charge  :   0.4000
+      MD Set, type        :    0   0
+  Connection Information : 
+    Connection Information for Methanol                                        
+    Atom     1:      2    3    4    5    1.409   1.090   1.090   1.090
+    Atom     2:      1    1.409
+    Atom     3:      1    1.090
+    Atom     4:      1    1.090
+    Atom     5:      1    1.090
+    Atom     6: No connections
+------------------------------------------------------------
+  Molecule Name       : sili
+  Molecule Mass       : 5768.3
+  Molecule File       : sili.mol
+  Degrees of freedom  : 864
+  DOF origin          : 3N_Calculation
+  Number of atoms     : 288
+  Net Charge          : 0.0
+  Dipole Moment(debye): 0.9E-11
+  Translation xform   : 0.00000   0.00000   0.00000
+  Rotational xform    : 
+    1.00000   0.00000   0.00000
+    0.00000   1.00000   0.00000
+    0.00000   0.00000   1.00000
+  Atom list omitted (natoms > 10)
+  Connection Information : 
+    No connectivity information for sili
+------------------------------------------------------------
+      The SIMCELL structure:
+      nx, ny, nz            :    2   2   2
+      ncells                :    8
+      ORTHORHOMBIC
+      edge lengths (Ang)    :    40.1400   39.8400   26.8400
+      cell angles (degrees) :    90.0000   90.0000   90.0000
+      origin shift (Ang)    : 0.0000   0.0000   0.0000
+      cell vector a         : 40.1400   0.0000   0.0000
+      cell vector b         : 0.0000  39.8400   0.0000
+      cell vector c         : 0.0000   0.0000  26.8400
+      box width in (a,b,c)  :    40.1400   39.8400   26.8400
+      minimum width (Ang)   :    26.8400
+      volume (Angstroms^3)  : 42921.93
+------------------------------------------------------------
+Configuration Section 
+No. of species :      4
+  ----------------------------------------------------------
+  Species name : n_Butane                                        
+    No. of molecules :      0
+    No. of atoms     :    4
+    Initial Config. Source : GCMC
+    Source Filename: NULL
+    ----------------------------------------------------------
+  Species name : n_Hexane                                        
+    No. of molecules :      0
+    No. of atoms     :    6
+    Initial Config. Source : GCMC
+    Source Filename: NULL
+    ----------------------------------------------------------
+  Species name : Methanol                                        
+    No. of molecules :      0
+    No. of atoms     :    6
+    Initial Config. Source : GCMC
+    Source Filename: NULL
+    ----------------------------------------------------------
+  Species name : sili                                            
+    No. of molecules :      1
+    No. of atoms     : 2304
+    Initial Config. Source : FIXED
+    Source Filename: NULL
+    ----------------------------------------------------------
+Initializing intra molecular info from molecule file: ./potentials/molecules/n_Butane.mol
+ intramolecular.F90 :  165
+ intra filename passed isintramolecular_file                             xx
+ intramolecular.F90 :  171
+ Initilizing bending...
+ Initializing bond bending...
+ ... finished initializing bond bending
+Initializing torsions ..
+.. finished initializing torsions
+Initialized all intramolecular stuff for n_Butane
+Initializing intra molecular info from molecule file: ./potentials/molecules/n_Hexane.mol
+ intramolecular.F90 :  165
+ intra filename passed isintramolecular_file                             xx
+ intramolecular.F90 :  171
+ Initilizing bending...
+ Initializing bond bending...
+ ... finished initializing bond bending
+Initializing torsions ..
+.. finished initializing torsions
+Initializing torsions ..
+.. finished initializing torsions
+Initializing torsions ..
+.. finished initializing torsions
+ipmodel.F90:  216 WARNING: Has not been verified for other than 1 or 4 away
+lj.F90: 192 WARNING: Use of the label TRUNC has been depreciated in favor of HICUT
+lj.F90: 205 WARNING: Use of the label LOWCUT has been depreciated in favor of LOCUT
+lj.F90: 192 WARNING: Use of the label TRUNC has been depreciated in favor of HICUT
+lj.F90: 205 WARNING: Use of the label LOWCUT has been depreciated in favor of LOCUT
+lj.F90: 192 WARNING: Use of the label TRUNC has been depreciated in favor of HICUT
+lj.F90: 205 WARNING: Use of the label LOWCUT has been depreciated in favor of LOCUT
+lj.F90: 192 WARNING: Use of the label TRUNC has been depreciated in favor of HICUT
+lj.F90: 205 WARNING: Use of the label LOWCUT has been depreciated in favor of LOCUT
+Initialized all intramolecular stuff for n_Hexane
+Initializing intra molecular info from molecule file: ./potentials/molecules/Methanol.mol
+ intramolecular.F90 :  165
+ intra filename passed isintramolecular_file                             xx
+ intramolecular.F90 :  171
+Initialized all intramolecular stuff for Methanol
+Initializing intra molecular info from molecule file: ./potentials/molecules/sili.mol
+ intramolecular.F90 :  165
+ intra filename passed isintramolecular_file                             xx
+ intramolecular.F90 :  171
+Initialized all intramolecular stuff for sili
+ Finished Initializing Intramolecular interactions
+ Initializing Species-Species interactions....
+ssmap.F90 :  141
+ atom name,type: Methyl             1
+pmap.F90 :  348
+ Reading potential map: ./potentials/pmaps/sili.Methyl.pmap
+   ------------------------------------------------------------
+   Pmap Header Section:
+     No. of tabulated pts.:   197404
+     Edge Lengths         :   20.070  19.920  13.420
+     Grid size (x, y, z)  :   101  100   68
+     Grid spacing         :    0.201   0.201   0.200
+     Potential Cutoff(kJ) :        100.000
+     No. of types of atoms:     4
+       Atom: Oxygen
+       Symbol    : O
+       Charge    :  -0.7100
+       Parameters:   319195.00000     431.95999       0.00000       0.00000
+       Atom: Silicon
+       Symbol    : Si
+       Charge    :   1.4200
+       Parameters:        0.00000       0.00000       0.00000       0.00000
+       Atom: Aluminum
+       Symbol    : Al
+       Charge    :   0.0000
+       Parameters:        0.00000       0.00000       0.00000       0.00000
+       Atom: Hydrogen
+       Symbol    : H
+       Charge    :   0.0000
+       Parameters:        0.00000       0.00000       0.00000       0.00000
+ Warning: charges are taken from molecule file and are not displayed here!
+ ssmap.F90 :  157
+ssmap.F90 :  141
+ atom name,type: Methylene             2
+pmap.F90 :  348
+ Reading potential map: ./potentials/pmaps/sili.Methylene.pmap
+   ------------------------------------------------------------
+   Pmap Header Section:
+     No. of tabulated pts.:   325080
+     Edge Lengths         :   20.070  19.920  13.420
+     Grid size (x, y, z)  :   101  100   68
+     Grid spacing         :    0.201   0.201   0.200
+     Potential Cutoff(kJ) :        100.000
+     No. of types of atoms:     3
+       Atom: Oxygen
+       Symbol    : O
+       Charge    :  -1.0000
+       Parameters:    38217.01172     122.09000       0.00000       0.00000
+       Atom: Silicon
+       Symbol    : Si
+       Charge    :   2.0000
+       Parameters:        0.00000       0.00000       0.00000       0.00000
+       Atom: Aluminum
+       Symbol    : Al
+       Charge    :   0.0000
+       Parameters:        0.00000       0.00000       0.00000       0.00000
+ Warning: charges are taken from molecule file and are not displayed here!
+ ssmap.F90 :  157
+ssmap.F90 :  141
+ atom name,type: Methyl             1
+ ssmap.F90 :  157
+ssmap.F90 :  141
+ atom name,type: Methylene             2
+ ssmap.F90 :  157
+ssmap.F90 :  141
+ atom name,type: Carbon             5
+pmap.F90 :  348
+ Reading potential map: ./potentials/pmaps/sili.MeOH_C.pmap
+   ------------------------------------------------------------
+   Pmap Header Section:
+     No. of tabulated pts.:   197404
+     Edge Lengths         :   20.070  19.920  13.420
+     Grid size (x, y, z)  :   101  100   68
+     Grid spacing         :    0.201   0.201   0.200
+     Potential Cutoff(kJ) :        100.000
+     No. of types of atoms:     4
+       Atom: Oxygen
+       Symbol    : O
+       Charge    :  -0.7100
+       Parameters:   319195.00000     431.95999       0.00000       0.00000
+       Atom: Silicon
+       Symbol    : Si
+       Charge    :   1.4200
+       Parameters:        0.00000       0.00000       0.00000       0.00000
+       Atom: Aluminum
+       Symbol    : Al
+       Charge    :   0.0000
+       Parameters:        0.00000       0.00000       0.00000       0.00000
+       Atom: Hydrogen
+       Symbol    : H
+       Charge    :   0.0000
+       Parameters:        0.00000       0.00000       0.00000       0.00000
+ Warning: charges are taken from molecule file and are not displayed here!
+ ssmap.F90 :  157
+ssmap.F90 :  141
+ atom name,type: Hydrogen             6
+pmap.F90 :  348
+ Reading potential map: ./potentials/pmaps/sili.MeOH_H.pmap
+   ------------------------------------------------------------
+   Pmap Header Section:
+     No. of tabulated pts.:   325080
+     Edge Lengths         :   20.070  19.920  13.420
+     Grid size (x, y, z)  :   101  100   68
+     Grid spacing         :    0.201   0.201   0.200
+     Potential Cutoff(kJ) :        100.000
+     No. of types of atoms:     3
+       Atom: Oxygen
+       Symbol    : O
+       Charge    :  -1.0000
+       Parameters:    38217.01172     122.09000       0.00000       0.00000
+       Atom: Silicon
+       Symbol    : Si
+       Charge    :   2.0000
+       Parameters:        0.00000       0.00000       0.00000       0.00000
+       Atom: Aluminum
+       Symbol    : Al
+       Charge    :   0.0000
+       Parameters:        0.00000       0.00000       0.00000       0.00000
+ Warning: charges are taken from molecule file and are not displayed here!
+ ssmap.F90 :  157
+ssmap.F90 :  141
+ atom name,type: Oxygen             4
+pmap.F90 :  348
+ Reading potential map: ./potentials/pmaps/sili.MeOH_O.pmap
+   ------------------------------------------------------------
+   Pmap Header Section:
+     No. of tabulated pts.:   197404
+     Edge Lengths         :   20.070  19.920  13.420
+     Grid size (x, y, z)  :   101  100   68
+     Grid spacing         :    0.201   0.201   0.200
+     Potential Cutoff(kJ) :        100.000
+     No. of types of atoms:     4
+       Atom: Oxygen
+       Symbol    : O
+       Charge    :  -0.7100
+       Parameters:   319195.00000     431.95999       0.00000       0.00000
+       Atom: Silicon
+       Symbol    : Si
+       Charge    :   1.4200
+       Parameters:        0.00000       0.00000       0.00000       0.00000
+       Atom: Aluminum
+       Symbol    : Al
+       Charge    :   0.0000
+       Parameters:        0.00000       0.00000       0.00000       0.00000
+       Atom: Hydrogen
+       Symbol    : H
+       Charge    :   0.0000
+       Parameters:        0.00000       0.00000       0.00000       0.00000
+ Warning: charges are taken from molecule file and are not displayed here!
+ ssmap.F90 :  157
+ssdriver.F90:  160 WARNING: map species name should be specified like: MAP@species_name
+  Will assume that map species is: "sili"
+pmap.F90 :  348
+ Reading potential map: ./potentials/pmaps/sili.full.emap
+   ------------------------------------------------------------
+   Pmap Header Section:
+     No. of tabulated pts.:   327562
+     Edge Lengths         :   20.070  19.920  13.420
+     Grid size (x, y, z)  :   101  100   68
+     Grid spacing         :    0.201   0.201   0.200
+     Potential Cutoff(kJ) :        100.000
+     No. of types of atoms:     4
+       Atom: Oxygen
+       Symbol    : O
+       Charge    :  -1.0000
+       Parameters:    35541.00000     101.90000       0.00000       0.00000
+       Atom: Silicon
+       Symbol    : Si
+       Charge    :   2.0000
+       Parameters:        0.00000       0.00000       0.00000       0.00000
+       Atom: Aluminum
+       Symbol    : Al
+       Charge    :   0.0000
+       Parameters:        0.00000       0.00000       0.00000       0.00000
+       Atom: Hydrogen
+       Symbol    : H
+       Charge    :   0.0000
+       Parameters:        0.00000       0.00000       0.00000       0.00000
+ Warning: charges are taken from molecule file and are not displayed here!
+ Finished Initializing Species-Species interactions.
+ Finished Initializing Ff interactions.
+ Calling ff_initCal
+ Call to ff_initCalc successful 
+  ------------------------------------------------------------
+  The "BASIC" FF information:
+  ------------------------------------------------------------
+  NON-COULOMBIC SPECIES-SPECIES pair parameters:
+  Information taken from: spc_spc_file
+    ------------------------------------------------------------
+    (1,1)  n_Butane, n_Butane:        BASIC
+      Input Line: NCOUL  BASIC  LJ  FAST  
+      Fast interaction?    T
+      COM-based cut-off?   F
+      COM-COM smoothing?   F
+      Atom-Atom PAIR PARAMETERS:
+        Information taken from: atm_atm_file
+      Overview by atomic pairs:
+      (1,1)  Methyl, Methyl:            LJ
+          Methyl-Methyl LJ parameters from SIGEPS
+            Sigma: 3.7700 Ang   Epsilon/k_Boltz: 98.100 K
+            A: 0.64E+07 kcal A^12/mol   B: 2238.698 kcal A^6/mol
+            high cutoff: 13.00 Ang   low cutoff: 0.500 Ang
+      (1,2)  Methyl, Methylene:         LJ
+          Methyl-Methylene LJ parameters from SIGEPS
+            Sigma: 3.8400 Ang   Epsilon/k_Boltz: 67.900 K
+            A: 0.55E+07 kcal A^12/mol   B: 1730.356 kcal A^6/mol
+            high cutoff: 13.00 Ang   low cutoff: 0.500 Ang
+      (2,2)  Methylene, Methylene:      LJ
+          Methylene-Methylene LJ parameters from SIGEPS
+            Sigma: 3.9300 Ang   Epsilon/k_Boltz: 47.000 K
+            A: 0.51E+07 kcal A^12/mol   B: 1376.358 kcal A^6/mol
+            high cutoff: 13.00 Ang   low cutoff: 0.500 Ang
+    ------------------------------------------------------------
+    (1,2)  n_Butane, n_Hexane:        BASIC
+      Input Line: NCOUL  BASIC  LJ  FAST  
+      Fast interaction?    T
+      COM-based cut-off?   F
+      COM-COM smoothing?   F
+      Atom-Atom PAIR PARAMETERS:
+        Information taken from: atm_atm_file
+      Overview by atomic pairs:
+      (1,1)  Methyl, Methyl:            LJ
+          Methyl-Methyl LJ parameters from SIGEPS
+            Sigma: 3.7700 Ang   Epsilon/k_Boltz: 98.100 K
+            A: 0.64E+07 kcal A^12/mol   B: 2238.698 kcal A^6/mol
+            high cutoff: 13.00 Ang   low cutoff: 0.500 Ang
+      (1,2)  Methyl, Methylene:         LJ
+          Methyl-Methylene LJ parameters from SIGEPS
+            Sigma: 3.8400 Ang   Epsilon/k_Boltz: 67.900 K
+            A: 0.55E+07 kcal A^12/mol   B: 1730.356 kcal A^6/mol
+            high cutoff: 13.00 Ang   low cutoff: 0.500 Ang
+      (2,2)  Methylene, Methylene:      LJ
+          Methylene-Methylene LJ parameters from SIGEPS
+            Sigma: 3.9300 Ang   Epsilon/k_Boltz: 47.000 K
+            A: 0.51E+07 kcal A^12/mol   B: 1376.358 kcal A^6/mol
+            high cutoff: 13.00 Ang   low cutoff: 0.500 Ang
+    ------------------------------------------------------------
+    (1,3)  n_Butane, Methanol:        BASIC
+      Input Line: NCOUL  BASIC  LJ  FAST  
+      Fast interaction?    T
+      COM-based cut-off?   F
+      COM-COM smoothing?   F
+      Atom-Atom PAIR PARAMETERS:
+        Information taken from: atm_atm_file
+      Overview by atomic pairs:
+      (1,1)  Methyl, Methyl:            LJ
+          Methyl-Methyl LJ parameters from SIGEPS
+            Sigma: 3.7700 Ang   Epsilon/k_Boltz: 98.100 K
+            A: 0.64E+07 kcal A^12/mol   B: 2238.698 kcal A^6/mol
+            high cutoff: 13.00 Ang   low cutoff: 0.500 Ang
+      (1,2)  Methyl, Methylene:       OFF
+      (1,4)  Methyl, Oxygen:            LJ
+          Oxygen-Methyl LJ parameters from MIXED
+            Sigma: 3.4450 Ang   Epsilon/k_Boltz: 91.626 K
+            A: 0.20E+07 kcal A^12/mol   B: 1217.403 kcal A^6/mol
+            high cutoff: 13.00 Ang   low cutoff: 0.500 Ang
+      (1,5)  Methyl, Carbon:            LJ
+          Carbon-Methyl LJ parameters from MIXED
+            Sigma: 3.6350 Ang   Epsilon/k_Boltz: 57.087 K
+            A: 0.24E+07 kcal A^12/mol   B: 1046.741 kcal A^6/mol
+            high cutoff: 13.00 Ang   low cutoff: 0.500 Ang
+      (1,6)  Methyl, Hydrogen:          LJ
+          Hydrogen-Methyl LJ parameters from MIXED
+            Sigma: 3.1350 Ang   Epsilon/k_Boltz: 38.360 K
+            A: 274795.1 kcal A^12/mol   B: 289.4568 kcal A^6/mol
+            high cutoff: 13.00 Ang   low cutoff: 0.500 Ang
+      (2,2)  Methylene, Methylene:      LJ
+          Methylene-Methylene LJ parameters from SIGEPS
+            Sigma: 3.9300 Ang   Epsilon/k_Boltz: 47.000 K
+            A: 0.51E+07 kcal A^12/mol   B: 1376.358 kcal A^6/mol
+            high cutoff: 13.00 Ang   low cutoff: 0.500 Ang
+      (2,4)  Methylene, Oxygen:         LJ
+          Oxygen-Methylene LJ parameters from MIXED
+            Sigma: 3.5250 Ang   Epsilon/k_Boltz: 63.421 K
+            A: 0.19E+07 kcal A^12/mol   B: 967.0928 kcal A^6/mol
+            high cutoff: 13.00 Ang   low cutoff: 0.500 Ang
+      (2,5)  Methylene, Carbon:         LJ
+          Carbon-Methylene LJ parameters from MIXED
+            Sigma: 3.7150 Ang   Epsilon/k_Boltz: 39.514 K
+            A: 0.22E+07 kcal A^12/mol   B: 825.6196 kcal A^6/mol
+            high cutoff: 13.00 Ang   low cutoff: 0.500 Ang
+      (2,6)  Methylene, Hydrogen:       LJ
+          Hydrogen-Methylene LJ parameters from MIXED
+            Sigma: 3.2150 Ang   Epsilon/k_Boltz: 26.552 K
+            A: 257362.1 kcal A^12/mol   B: 233.0552 kcal A^6/mol
+            high cutoff: 13.00 Ang   low cutoff: 0.500 Ang
+      (4,4)  Oxygen, Oxygen:            LJ
+          Oxygen-Oxygen LJ parameters from SIGEPS
+            Sigma: 3.1200 Ang   Epsilon/k_Boltz: 85.580 K
+            A: 578769.6 kcal A^12/mol   B: 627.4486 kcal A^6/mol
+            high cutoff: 13.00 Ang   low cutoff: 0.500 Ang
+      (4,5)  Oxygen, Carbon:          OFF
+      (4,6)  Oxygen, Hydrogen:        OFF
+      (5,5)  Carbon, Carbon:            LJ
+          Carbon-Carbon LJ parameters from SIGEPS
+            Sigma: 3.5000 Ang   Epsilon/k_Boltz: 33.220 K
+            A: 892266.3 kcal A^12/mol   B: 485.3849 kcal A^6/mol
+            high cutoff: 13.00 Ang   low cutoff: 0.500 Ang
+      (5,6)  Carbon, Hydrogen:        OFF
+      (6,6)  Hydrogen, Hydrogen:        LJ
+          Hydrogen-Hydrogen LJ parameters from SIGEPS
+            Sigma: 2.5000 Ang   Epsilon/k_Boltz: 15.000 K
+            A: 7106.401 kcal A^12/mol   B: 29.10782 kcal A^6/mol
+            high cutoff: 13.00 Ang   low cutoff: 0.500 Ang
+    ------------------------------------------------------------
+    (1,4)  n_Butane, sili:            MAP
+      n_Butane     sili   NCOUL  MAP@sili   FAST Methyl@PMAP@sili.Methyl.pmap Methylene@PMAP@sili.Meth
+      Methyl(1):       PMAP map from: sili.Methyl.pmap   tabulated points: 197404
+      Methylene(2):    PMAP map from: sili.Methylene.pmap   tabulated points: 325080
+      Silicon(3):      OFF
+      Oxygen(4):       OFF
+      Carbon(5):       OFF
+      Hydrogen(6):     OFF
+    ------------------------------------------------------------
+    (2,2)  n_Hexane, n_Hexane:        BASIC
+      Input Line: NCOUL  BASIC  LJ  FAST  
+      Fast interaction?    T
+      COM-based cut-off?   F
+      COM-COM smoothing?   F
+      Atom-Atom PAIR PARAMETERS:
+        Information taken from: atm_atm_file
+      Overview by atomic pairs:
+      (1,1)  Methyl, Methyl:            LJ
+          Methyl-Methyl LJ parameters from SIGEPS
+            Sigma: 3.7700 Ang   Epsilon/k_Boltz: 98.100 K
+            A: 0.64E+07 kcal A^12/mol   B: 2238.698 kcal A^6/mol
+            high cutoff: 13.00 Ang   low cutoff: 0.500 Ang
+      (1,2)  Methyl, Methylene:         LJ
+          Methyl-Methylene LJ parameters from SIGEPS
+            Sigma: 3.8400 Ang   Epsilon/k_Boltz: 67.900 K
+            A: 0.55E+07 kcal A^12/mol   B: 1730.356 kcal A^6/mol
+            high cutoff: 13.00 Ang   low cutoff: 0.500 Ang
+      (2,2)  Methylene, Methylene:      LJ
+          Methylene-Methylene LJ parameters from SIGEPS
+            Sigma: 3.9300 Ang   Epsilon/k_Boltz: 47.000 K
+            A: 0.51E+07 kcal A^12/mol   B: 1376.358 kcal A^6/mol
+            high cutoff: 13.00 Ang   low cutoff: 0.500 Ang
+    ------------------------------------------------------------
+    (2,3)  n_Hexane, Methanol:        BASIC
+      Input Line: NCOUL  BASIC  LJ  FAST  
+      Fast interaction?    T
+      COM-based cut-off?   F
+      COM-COM smoothing?   F
+      Atom-Atom PAIR PARAMETERS:
+        Information taken from: atm_atm_file
+      Overview by atomic pairs:
+      (1,1)  Methyl, Methyl:            LJ
+          Methyl-Methyl LJ parameters from SIGEPS
+            Sigma: 3.7700 Ang   Epsilon/k_Boltz: 98.100 K
+            A: 0.64E+07 kcal A^12/mol   B: 2238.698 kcal A^6/mol
+            high cutoff: 13.00 Ang   low cutoff: 0.500 Ang
+      (1,2)  Methyl, Methylene:       OFF
+      (1,4)  Methyl, Oxygen:            LJ
+          Oxygen-Methyl LJ parameters from MIXED
+            Sigma: 3.4450 Ang   Epsilon/k_Boltz: 91.626 K
+            A: 0.20E+07 kcal A^12/mol   B: 1217.403 kcal A^6/mol
+            high cutoff: 13.00 Ang   low cutoff: 0.500 Ang
+      (1,5)  Methyl, Carbon:            LJ
+          Carbon-Methyl LJ parameters from MIXED
+            Sigma: 3.6350 Ang   Epsilon/k_Boltz: 57.087 K
+            A: 0.24E+07 kcal A^12/mol   B: 1046.741 kcal A^6/mol
+            high cutoff: 13.00 Ang   low cutoff: 0.500 Ang
+      (1,6)  Methyl, Hydrogen:          LJ
+          Hydrogen-Methyl LJ parameters from MIXED
+            Sigma: 3.1350 Ang   Epsilon/k_Boltz: 38.360 K
+            A: 274795.1 kcal A^12/mol   B: 289.4568 kcal A^6/mol
+            high cutoff: 13.00 Ang   low cutoff: 0.500 Ang
+      (2,2)  Methylene, Methylene:      LJ
+          Methylene-Methylene LJ parameters from SIGEPS
+            Sigma: 3.9300 Ang   Epsilon/k_Boltz: 47.000 K
+            A: 0.51E+07 kcal A^12/mol   B: 1376.358 kcal A^6/mol
+            high cutoff: 13.00 Ang   low cutoff: 0.500 Ang
+      (2,4)  Methylene, Oxygen:         LJ
+          Oxygen-Methylene LJ parameters from MIXED
+            Sigma: 3.5250 Ang   Epsilon/k_Boltz: 63.421 K
+            A: 0.19E+07 kcal A^12/mol   B: 967.0928 kcal A^6/mol
+            high cutoff: 13.00 Ang   low cutoff: 0.500 Ang
+      (2,5)  Methylene, Carbon:         LJ
+          Carbon-Methylene LJ parameters from MIXED
+            Sigma: 3.7150 Ang   Epsilon/k_Boltz: 39.514 K
+            A: 0.22E+07 kcal A^12/mol   B: 825.6196 kcal A^6/mol
+            high cutoff: 13.00 Ang   low cutoff: 0.500 Ang
+      (2,6)  Methylene, Hydrogen:       LJ
+          Hydrogen-Methylene LJ parameters from MIXED
+            Sigma: 3.2150 Ang   Epsilon/k_Boltz: 26.552 K
+            A: 257362.1 kcal A^12/mol   B: 233.0552 kcal A^6/mol
+            high cutoff: 13.00 Ang   low cutoff: 0.500 Ang
+      (4,4)  Oxygen, Oxygen:            LJ
+          Oxygen-Oxygen LJ parameters from SIGEPS
+            Sigma: 3.1200 Ang   Epsilon/k_Boltz: 85.580 K
+            A: 578769.6 kcal A^12/mol   B: 627.4486 kcal A^6/mol
+            high cutoff: 13.00 Ang   low cutoff: 0.500 Ang
+      (4,5)  Oxygen, Carbon:          OFF
+      (4,6)  Oxygen, Hydrogen:        OFF
+      (5,5)  Carbon, Carbon:            LJ
+          Carbon-Carbon LJ parameters from SIGEPS
+            Sigma: 3.5000 Ang   Epsilon/k_Boltz: 33.220 K
+            A: 892266.3 kcal A^12/mol   B: 485.3849 kcal A^6/mol
+            high cutoff: 13.00 Ang   low cutoff: 0.500 Ang
+      (5,6)  Carbon, Hydrogen:        OFF
+      (6,6)  Hydrogen, Hydrogen:        LJ
+          Hydrogen-Hydrogen LJ parameters from SIGEPS
+            Sigma: 2.5000 Ang   Epsilon/k_Boltz: 15.000 K
+            A: 7106.401 kcal A^12/mol   B: 29.10782 kcal A^6/mol
+            high cutoff: 13.00 Ang   low cutoff: 0.500 Ang
+    ------------------------------------------------------------
+    (2,4)  n_Hexane, sili:            MAP
+      n_Hexane     sili   NCOUL  MAP@sili   FAST Methyl@PMAP@sili.Methyl.pmap Methylene@PMAP@sili.Meth
+      Methyl(1):       PMAP map from: sili.Methyl.pmap   tabulated points: 197404
+      Methylene(2):    PMAP map from: sili.Methylene.pmap   tabulated points: 325080
+      Silicon(3):      OFF
+      Oxygen(4):       OFF
+      Carbon(5):       OFF
+      Hydrogen(6):     OFF
+    ------------------------------------------------------------
+    (3,3)  Methanol, Methanol:        BASIC
+      Input Line: NCOUL  BASIC  LJ  FAST  
+      Fast interaction?    T
+      COM-based cut-off?   F
+      COM-COM smoothing?   F
+      Atom-Atom PAIR PARAMETERS:
+        Information taken from: atm_atm_file
+      Overview by atomic pairs:
+      (4,4)  Oxygen, Oxygen:            LJ  WFCOUL
+          Oxygen-Oxygen LJ parameters from SIGEPS
+            Sigma: 3.1200 Ang   Epsilon/k_Boltz: 85.580 K
+            A: 578769.6 kcal A^12/mol   B: 627.4486 kcal A^6/mol
+            high cutoff: 13.00 Ang   low cutoff: 0.500 Ang
+           Charges taken from configuration, Shielding const: 1.000 Alpha:   0.10
+           Cutoffs HICUT :   13.000 Ang   LOCUT :    0.001 Ang
+      (4,5)  Oxygen, Carbon:            LJ  WFCOUL
+          Carbon-Oxygen LJ parameters from MIXED
+            Sigma: 3.3100 Ang   Epsilon/k_Boltz: 53.319 K
+            A: 732993.7 kcal A^12/mol   B: 557.3555 kcal A^6/mol
+            high cutoff: 13.00 Ang   low cutoff: 0.500 Ang
+           Charges taken from configuration, Shielding const: 1.000 Alpha:   0.10
+           Cutoffs HICUT :   13.000 Ang   LOCUT :    0.001 Ang
+      (4,6)  Oxygen, Hydrogen:          LJ  WFCOUL
+          Hydrogen-Oxygen LJ parameters from MIXED
+            Sigma: 2.8100 Ang   Epsilon/k_Boltz: 35.829 K
+            A: 69021.75 kcal A^12/mol   B: 140.2000 kcal A^6/mol
+            high cutoff: 13.00 Ang   low cutoff: 0.500 Ang
+           Charges taken from configuration, Shielding const: 1.000 Alpha:   0.10
+           Cutoffs HICUT :   13.000 Ang   LOCUT :    0.001 Ang
+      (5,5)  Carbon, Carbon:            LJ  WFCOUL
+          Carbon-Carbon LJ parameters from SIGEPS
+            Sigma: 3.5000 Ang   Epsilon/k_Boltz: 33.220 K
+            A: 892266.3 kcal A^12/mol   B: 485.3849 kcal A^6/mol
+            high cutoff: 13.00 Ang   low cutoff: 0.500 Ang
+           Charges taken from configuration, Shielding const: 1.000 Alpha:   0.10
+           Cutoffs HICUT :   13.000 Ang   LOCUT :    0.001 Ang
+      (5,6)  Carbon, Hydrogen:          LJ  WFCOUL
+          Hydrogen-Carbon LJ parameters from MIXED
+            Sigma: 3.0000 Ang   Epsilon/k_Boltz: 22.323 K
+            A: 94292.87 kcal A^12/mol   B: 129.3455 kcal A^6/mol
+            high cutoff: 13.00 Ang   low cutoff: 0.500 Ang
+           Charges taken from configuration, Shielding const: 1.000 Alpha:   0.10
+           Cutoffs HICUT :   13.000 Ang   LOCUT :    0.001 Ang
+      (6,6)  Hydrogen, Hydrogen:        LJ  WFCOUL
+          Hydrogen-Hydrogen LJ parameters from SIGEPS
+            Sigma: 2.5000 Ang   Epsilon/k_Boltz: 15.000 K
+            A: 7106.401 kcal A^12/mol   B: 29.10782 kcal A^6/mol
+            high cutoff: 13.00 Ang   low cutoff: 0.500 Ang
+           Charges taken from configuration, Shielding const: 1.000 Alpha:   0.10
+           Cutoffs HICUT :   13.000 Ang   LOCUT :    0.001 Ang
+    ------------------------------------------------------------
+    (3,4)  Methanol, sili:            MAP
+      Methanol     sili         NCOUL  MAP@sili   FAST Carbon@PMAP@sili.MeOH_C.pmap Hydrogen@PMAP@sili
+      Methyl(1):       OFF
+      Methylene(2):    OFF
+      Silicon(3):      OFF
+      Oxygen(4):       PMAP map from: sili.MeOH_O.pmap   tabulated points: 197404
+      Carbon(5):       PMAP map from: sili.MeOH_C.pmap   tabulated points: 197404
+      Hydrogen(6):     PMAP map from: sili.MeOH_H.pmap   tabulated points: 325080
+    ------------------------------------------------------------
+    (4,4)  sili, sili:                OFF
+  ------------------------------------------------------------
+  COULOMBIC SPECIES-SPECIES pair parameters:
+  Information taken from: spc_spc_file
+    ------------------------------------------------------------
+    (1,1)  n_Butane, n_Butane:        OFF
+    ------------------------------------------------------------
+    (1,2)  n_Butane, n_Hexane:        OFF
+    ------------------------------------------------------------
+    (1,3)  n_Butane, Methanol:        OFF
+    ------------------------------------------------------------
+    (1,4)  n_Butane, sili:            OFF
+    ------------------------------------------------------------
+    (2,2)  n_Hexane, n_Hexane:        OFF
+    ------------------------------------------------------------
+    (2,3)  n_Hexane, Methanol:        OFF
+    ------------------------------------------------------------
+    (2,4)  n_Hexane, sili:            OFF
+    ------------------------------------------------------------
+    (3,3)  Methanol, Methanol:        BASIC
+      Input Line: COUL  BASIC  FAST  WFCOUL  
+      Fast interaction?    T
+      COM-based cut-off?   F
+      COM-COM smoothing?   F
+      Atom-Atom PAIR PARAMETERS:
+        Information taken from: atm_atm_file
+      Overview by atomic pairs:
+      (4,4)  Oxygen, Oxygen:            LJ  WFCOUL
+          Oxygen-Oxygen LJ parameters from SIGEPS
+            Sigma: 3.1200 Ang   Epsilon/k_Boltz: 85.580 K
+            A: 578769.6 kcal A^12/mol   B: 627.4486 kcal A^6/mol
+            high cutoff: 13.00 Ang   low cutoff: 0.500 Ang
+           Charges taken from configuration, Shielding const: 1.000 Alpha:   0.10
+           Cutoffs HICUT :   13.000 Ang   LOCUT :    0.001 Ang
+      (4,5)  Oxygen, Carbon:            LJ  WFCOUL
+          Carbon-Oxygen LJ parameters from MIXED
+            Sigma: 3.3100 Ang   Epsilon/k_Boltz: 53.319 K
+            A: 732993.7 kcal A^12/mol   B: 557.3555 kcal A^6/mol
+            high cutoff: 13.00 Ang   low cutoff: 0.500 Ang
+           Charges taken from configuration, Shielding const: 1.000 Alpha:   0.10
+           Cutoffs HICUT :   13.000 Ang   LOCUT :    0.001 Ang
+      (4,6)  Oxygen, Hydrogen:          LJ  WFCOUL
+          Hydrogen-Oxygen LJ parameters from MIXED
+            Sigma: 2.8100 Ang   Epsilon/k_Boltz: 35.829 K
+            A: 69021.75 kcal A^12/mol   B: 140.2000 kcal A^6/mol
+            high cutoff: 13.00 Ang   low cutoff: 0.500 Ang
+           Charges taken from configuration, Shielding const: 1.000 Alpha:   0.10
+           Cutoffs HICUT :   13.000 Ang   LOCUT :    0.001 Ang
+      (5,5)  Carbon, Carbon:            LJ  WFCOUL
+          Carbon-Carbon LJ parameters from SIGEPS
+            Sigma: 3.5000 Ang   Epsilon/k_Boltz: 33.220 K
+            A: 892266.3 kcal A^12/mol   B: 485.3849 kcal A^6/mol
+            high cutoff: 13.00 Ang   low cutoff: 0.500 Ang
+           Charges taken from configuration, Shielding const: 1.000 Alpha:   0.10
+           Cutoffs HICUT :   13.000 Ang   LOCUT :    0.001 Ang
+      (5,6)  Carbon, Hydrogen:          LJ  WFCOUL
+          Hydrogen-Carbon LJ parameters from MIXED
+            Sigma: 3.0000 Ang   Epsilon/k_Boltz: 22.323 K
+            A: 94292.87 kcal A^12/mol   B: 129.3455 kcal A^6/mol
+            high cutoff: 13.00 Ang   low cutoff: 0.500 Ang
+           Charges taken from configuration, Shielding const: 1.000 Alpha:   0.10
+           Cutoffs HICUT :   13.000 Ang   LOCUT :    0.001 Ang
+      (6,6)  Hydrogen, Hydrogen:        LJ  WFCOUL
+          Hydrogen-Hydrogen LJ parameters from SIGEPS
+            Sigma: 2.5000 Ang   Epsilon/k_Boltz: 15.000 K
+            A: 7106.401 kcal A^12/mol   B: 29.10782 kcal A^6/mol
+            high cutoff: 13.00 Ang   low cutoff: 0.500 Ang
+           Charges taken from configuration, Shielding const: 1.000 Alpha:   0.10
+           Cutoffs HICUT :   13.000 Ang   LOCUT :    0.001 Ang
+    ------------------------------------------------------------
+    (3,4)  Methanol, sili:            MAP
+      sili         Methanol     COUL  MAP FAST all@EMAP@sili.full.emap
+      Methyl(1):       OFF
+      Methylene(2):    OFF
+      Silicon(3):      OFF
+      Oxygen(4):       EMAP map from: sili.full.emap   tabulated points: 327562
+      Carbon(5):       EMAP map from: sili.full.emap   tabulated points: 327562
+      Hydrogen(6):     EMAP map from: sili.full.emap   tabulated points: 327562
+    ------------------------------------------------------------
+    (4,4)  sili, sili:                OFF
+  ------------------------------------------------------------
+  INTRAMOLECULAR information for each species 
+    ------------------------------------------------------------
+    Intramolecular information for n_Butane:
+      Bond Stretching   :  OFF
+      Bond Bending      :  On Harmonica Fast    2 bending triplets
+        Bond Bending Information for n_Butane
+          Fast Interaction
+          Bond bending groups :  1  2 3
+            Model and Params: Harmonica   0.1242E+03  114.000
+          Bond bending groups :  2  3 4
+            Model and Params: Harmonica   0.1242E+03  114.000
+      Four-Body Interactions:  On Fast    1 four-body atom sets
+        Four-Body Forcefield Information for "n_Butane"
+          Fast Interaction
+          Atom set:  1  2  3  4
+            Model and Params: Cosexpansion   2.006  4.011  0.271 -6.288  0.000  0.000
+      Intra Pairwise Pot:  OFF
+      Intra Coulombic Pot:  OFF
+      Constraints       :  OFF
+    ------------------------------------------------------------
+    Intramolecular information for n_Hexane:
+      Bond Stretching   :  OFF
+      Bond Bending      :  On Harmonica Fast    4 bending triplets
+        Bond Bending Information for n_Hexane
+          Fast Interaction
+          Bond bending groups :  1  2 3
+            Model and Params: Harmonica   0.1242E+03  114.000
+          Bond bending groups :  2  3 4
+            Model and Params: Harmonica   0.1242E+03  114.000
+          Bond bending groups :  3  4 5
+            Model and Params: Harmonica   0.1242E+03  114.000
+          Bond bending groups :  4  5 6
+            Model and Params: Harmonica   0.1242E+03  114.000
+      Four-Body Interactions:  On Fast    3 four-body atom sets
+        Four-Body Forcefield Information for "n_Hexane"
+          Fast Interaction
+          Atom set:  1  2  3  4
+            Model and Params: Cosexpansion   2.006  4.011  0.271 -6.288  0.000  0.000
+          Atom set:  2  3  4  5
+            Model and Params: Cosexpansion   2.006  4.011  0.271 -6.288  0.000  0.000
+          Atom set:  3  4  5  6
+            Model and Params: Cosexpansion   2.006  4.011  0.271 -6.288  0.000  0.000
+      Intra Pairwise Pot:  On LJ Fast      3 intra pairs
+        Methyl  Methyl  LJ   3.770  98.10
+            Cutoffs : high cutoff: 13.00 Ang   low cutoff: 0.001 Ang
+        Methyl  Methylene  LJ   3.840  67.90
+            Cutoffs : high cutoff: 13.00 Ang   low cutoff: 0.001 Ang
+        List of individual pairs (atom1,atom2,info)
+             1:   1   5    LJ   3.840  67.90
+             2:   1   6    LJ   3.770  98.10
+             3:   2   6    LJ   3.840  67.90
+      Intra Coulombic Pot:  OFF
+      Constraints       :  OFF
+    ------------------------------------------------------------
+    Intramolecular information for Methanol:
+      Bond Stretching   :  OFF
+      Bond Bending      :  OFF
+      Torsion Angles    :  OFF
+      Intra Pairwise Pot:  OFF
+      Intra Coulombic Pot:  OFF
+      Constraints       :  OFF
+    ------------------------------------------------------------
+    Intramolecular information for sili:
+      Bond Stretching   :  OFF
+      Bond Bending      :  OFF
+      Torsion Angles    :  OFF
+      Intra Pairwise Pot:  OFF
+      Intra Coulombic Pot:  OFF
+      Constraints       :  OFF
+------------------------------------------------------------
+Initializing GCMC moves for: n_Butane                                        
+ --------------- WARNING during bmap_cubeinit ---------------
+ bmap.F90 :  290
+ Automatically adjusting bmap energies here
+ maxnrgval :  9.128297734723986E-002
+ For biasing purposes all energies above this  will be converted to this value
+ --------------- END WARNING --------------------------------
+ F
+ idflipregrow.F90 :   80
+Initializing GCMC moves for: n_Hexane                                        
+ F
+ idflipregrow.F90 :   80
+Initializing GCMC moves for: Methanol                                        
+ Initializing biasing details : cavity, bmap etc 
+ ideal.F90 :   70
+ config integral for molecule n_Butane is  8.173020000000000E-004
+ ideal.F90 :   70
+ config integral for molecule n_Hexane is  1.174210000000000E-007
+ ideal.F90 :   70
+ config integral for molecule Methanol is   1.00000000000000     
+ Energies at the beginning of GCMC simulation: 
+   Species Name : n_Butane                                        
+   Species Type : 1
+   Pairwise Energies(noncoul, coul) in kJ/mol
+             n_Butane   :   0.00000  0.00000
+             n_Hexane   :   0.00000  0.00000
+             Methanol   :   0.00000  0.00000
+                 sili   :   0.00000  0.00000
+   Intramolecular Energies (bs,bb,tor,ip,con,total) in kJ/mol
+      0.00000  0.00000  0.00000  0.00000  0.00000  0.00000  0.00000
+ 
+   Species Name : n_Hexane                                        
+   Species Type : 2
+   Pairwise Energies(noncoul, coul) in kJ/mol
+             n_Butane   :   0.00000  0.00000
+             n_Hexane   :   0.00000  0.00000
+             Methanol   :   0.00000  0.00000
+                 sili   :   0.00000  0.00000
+   Intramolecular Energies (bs,bb,tor,ip,con,total) in kJ/mol
+      0.00000  0.00000  0.00000  0.00000  0.00000  0.00000  0.00000
+ 
+   Species Name : Methanol                                        
+   Species Type : 3
+   Pairwise Energies(noncoul, coul) in kJ/mol
+             n_Butane   :   0.00000  0.00000
+             n_Hexane   :   0.00000  0.00000
+             Methanol   :   0.00000  0.00000
+                 sili   :   0.00000  0.00000
+   Intramolecular Energies (bs,bb,tor,ip,con,total) in kJ/mol
+      0.00000  0.00000  0.00000  0.00000  0.00000  0.00000  0.00000
+ 
+   Species Name : sili                                            
+   Species Type : 4
+   Pairwise Energies(noncoul, coul) in kJ/mol
+             n_Butane   :   0.00000  0.00000
+             n_Hexane   :   0.00000  0.00000
+             Methanol   :   0.00000  0.00000
+                 sili   :   0.00000  0.00000
+   Intramolecular Energies (bs,bb,tor,ip,con,total) in kJ/mol
+      0.00000  0.00000  0.00000  0.00000  0.00000  0.00000  0.00000
+ 
+------------------------------------------------------------
+The GCMC Parameters Section:
+  No. of iterations  :      1
+  No. of simulations :      1
+  Temperature(K)     :  300.000
+  No. of species     :      3
+  ------------------------------------------------------------
+  GCMC Moves Parameters:
+  ------------------------------------------------------------
+  Species Name: n_Butane
+    Thermophysical simulation points:
+    Pressure  Fugacity     murti  B(Adams)
+   0.100E+02 0.100E+02   -11.891     4.843
+    Allowed Move Types and Parameters:
+      Basic Move type:    INSERT
+      Specific Move type: CBINSERT
+       Branched Molecule Biased-Insertion Parameters :
+       Bias map file    :sili.Methyl.pmap
+ 
+      ------------------------------------------------------------
+      Basic Move type:    DELETE
+      Specific Move type: CBDELETE
+       Branched Molecule Deletion Parameters :
+       Bias map file    :sili.Methyl.pmap
+ 
+      ------------------------------------------------------------
+      Basic Move type:    TRANSFORM
+      Specific Move type: CUT_REGROW
+       Branched Moxlecule Biased-Insertion Parameters : 
+       Bias map file    : sili.Methyl.pmap
+ 
+      ------------------------------------------------------------
+      Basic Move type:    TRANSLATE
+      Specific Move type: RTRANSLATE
+        Branched Molecule Rondom-Translation Parameters :
+         Scaling of Translation length not allowed.
+         Initial translation length :      0.20000
+ 
+      ------------------------------------------------------------
+      Basic Move type:    IDCHANGE
+      Specific Move type: IDFLIPREGROW
+        Identity Flip Regrow Move Parameters :
+        Species 1 ->  2
+        Regrow move information:
+          Branched Molecule IDFlip Parameters :
+          Bias map file    :sili.Methyl.pmap
+      ------------------------------------------------------------
+  ------------------------------------------------------------
+  ------------------------------------------------------------
+  Species Name: n_Hexane
+    Thermophysical simulation points:
+    Pressure  Fugacity     murti  B(Adams)
+   0.100E+02 0.100E+02    -3.634    13.691
+    Allowed Move Types and Parameters:
+      Basic Move type:    INSERT
+      Specific Move type: CBINSERT
+       Branched Molecule Biased-Insertion Parameters :
+       Bias map file    :sili.Methyl.pmap
+ 
+      ------------------------------------------------------------
+      Basic Move type:    DELETE
+      Specific Move type: CBDELETE
+       Branched Molecule Deletion Parameters :
+       Bias map file    :sili.Methyl.pmap
+ 
+      ------------------------------------------------------------
+      Basic Move type:    TRANSFORM
+      Specific Move type: CUT_REGROW
+       Branched Moxlecule Biased-Insertion Parameters : 
+       Bias map file    : sili.Methyl.pmap
+ 
+      ------------------------------------------------------------
+      Basic Move type:    TRANSLATE
+      Specific Move type: RTRANSLATE
+        Branched Molecule Rondom-Translation Parameters :
+         Scaling of Translation length not allowed.
+         Initial translation length :      0.20000
+ 
+      ------------------------------------------------------------
+      Basic Move type:    IDCHANGE
+      Specific Move type: IDFLIPREGROW
+        Identity Flip Regrow Move Parameters :
+        Species 2 ->  1
+        Regrow move information:
+          Branched Molecule IDFlip Parameters :
+          Bias map file    :sili.Methyl.pmap
+      ------------------------------------------------------------
+  ------------------------------------------------------------
+  ------------------------------------------------------------
+  Species Name: Methanol
+    Thermophysical simulation points:
+    Pressure  Fugacity     murti  B(Adams)
+   0.100E+02 0.100E+02   -18.109    -2.267
+    Allowed Move Types and Parameters:
+      Basic Move type:    INSERT
+      Specific Move type: BINSERT
+        Rigid Molecule Biased-Insertion Parameters :
+          Type of bias: MAP_BIAS
+          Details of Bias for insertion: 
+          Bias map file: sili.Methyl.pmap
+          Bias Temperature, K:  300.000
+          Bias map details: 
+              Bias map filename: sili.Methyl.pmap
+              Cumulative Wt:  910780.38    
+              No. of tabulated cubelets:   150144
+              Cutoff Potential(kcal):     30.00000
+          Maximum allowed energy: 0.10E+11 kcal/mol
+      ------------------------------------------------------------
+      Basic Move type:    DELETE
+      Specific Move type: BDELETE
+        Rigid Molecule Deletion Parameters :
+          Type of bias: MAP_BIAS
+          Details of Bias for insertion: 
+          Bias map file: sili.Methyl.pmap
+          Bias Temperature, K:  300.000
+          Bias map details: 
+              Bias map filename: sili.Methyl.pmap
+              Cumulative Wt:  910780.38    
+              No. of tabulated cubelets:   150144
+              Cutoff Potential(kcal):     30.00000
+          Maximum allowed energy: 0.10E+11 kcal/mol
+      ------------------------------------------------------------
+      Basic Move type:    TRANSLATE
+      Specific Move type: RTRANSLATE
+        Rigid Molecule Random-Translation Parameters :
+        Scaling of Translation length not allowed.
+        Initial translation length:      0.20000
+        Maximum allowed energy: 0.10E+11 kcal/mol
+      ------------------------------------------------------------
+      Basic Move type:    ROTATE
+      Specific Move type: RROTATE
+        Rigid Molecule Random-Rotation Parameters :
+        Scaling of Rotation increment not allowed.
+        Initial rotation-delta:      0.20000
+        Maximum allowed energy: 0.10E+11 kcal/mol
+      ------------------------------------------------------------
+ 
+ 
+------------------------------------------------------------
+Beginning GCMC simulation number 1 of 1   (2000 steps)
+------------------------------------------------------------
+The GCMC Simulation Parameters:
+  Simulation Number :    1
+  Configuration file: test.con.1
+  Restart file      : test.res.1
+  ------------------------------------------------------------
+  GCMC Species Parameters:
+    ----------------------------------------------------------
+    Species Name: n_Butane
+      Press.(kPa)   Fugacity      murti   B(Adams)
+           10.000     10.000    -11.891      4.843
+    ----------------------------------------------------------
+    Species Name: n_Hexane
+      Press.(kPa)   Fugacity      murti   B(Adams)
+           10.000     10.000     -3.634     13.691
+    ----------------------------------------------------------
+    Species Name: Methanol
+      Press.(kPa)   Fugacity      murti   B(Adams)
+           10.000     10.000    -18.109     -2.267
+    ----------------------------------------------------------
+
+
+          brmoves.F90 :  390
+          CBGCMC needs some arrays to be initialized during 
+          the first time a move is called, That is being done now
+          Looking for CBGMC section in ctrlfile : test009.ctr
+          Actual number of sphere sampling points used :     49
+          Initialising The SSTrialArr 
+          Initializing The angle trial values 
+          Finished initalizing libraries for cbgcmc for sorb:   2
+          Finished initalizing libraries for cbgcmc for sorb:   1
+  Macro-iteration number 2000 (2000 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: n_Butane    Pressure: 10.000 kPa
+      INSERT (CBINSERT)         Acc. Ratio: 0.345   (19 of 55)  
+      DELETE (CBDELETE)         Acc. Ratio: 0.526   (20 of 38)  
+      TRANSFORM (CUT_REGROW)    Acc. Ratio: 0.500   (60 of 120)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.812   (104 of 128)  
+      IDCHANGE (IDFLIPREGROW)   Acc. Ratio: 0.412   (14 of 34)  
+      Number of Molecules (ins, blk, cum, stdd)   1.00   0.82   0.82   1.01
+    Species Name: n_Hexane    Pressure: 10.000 kPa
+      INSERT (CBINSERT)         Acc. Ratio: 0.204   (11 of 54)  
+      DELETE (CBDELETE)         Acc. Ratio: 0.281   (9 of 32)  
+      TRANSFORM (CUT_REGROW)    Acc. Ratio: 0.435   (67 of 154)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.799   (119 of 149)  
+      IDCHANGE (IDFLIPREGROW)   Acc. Ratio: 0.296   (16 of 54)  
+      Number of Molecules (ins, blk, cum, stdd)   0.00   0.86   0.86   0.79
+    Species Name: Methanol    Pressure: 10.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.333   (22 of 66)  
+      DELETE (BDELETE)          Acc. Ratio: 0.044   (3 of 68)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.720   (198 of 275)  Max disp:  0.200
+      ROTATE (RROTATE)          Acc. Ratio: 0.633   (190 of 300)  Max disp:  0.200
+      Number of Molecules (ins, blk, cum, stdd)  19.00  11.68  11.68   5.50
+ 
+ ________ ACTUAL ENERGIES    _____________
+    Energy:          -14.352
+     Coul:  0.000E+00 0.000E+00 0.000E+00 0.000E+00
+    NCoul:  0.000E+00 0.000E+00-0.553E+00-0.161E+02
+    Intramolecular:    bs       bb      tor       ip      con    total
+                      0.00000 1.696266 0.564603  0.00000  0.00000  0.00000  0.00000 2.260869
+ 
+ ________ STORED ENERGIES    _____________
+    Energy:          -14.352
+     Coul:  0.000E+00 0.000E+00 0.000E+00 0.000E+00
+    NCoul: -0.347E-17-0.444E-15-0.553E+00-0.161E+02
+    Intramolecular:    bs       bb      tor       ip      con    total
+                      0.00000 1.696266 0.564603  0.00000  0.00000  0.00000  0.00000 2.260869
+ ________ ACTUAL ENERGIES    _____________
+    Energy:            0.000
+     Coul:  0.000E+00 0.000E+00 0.000E+00 0.000E+00
+    NCoul:  0.000E+00 0.000E+00 0.000E+00 0.000E+00
+    Intramolecular:    bs       bb      tor       ip      con    total
+                      0.00000  0.00000  0.00000  0.00000  0.00000  0.00000  0.00000  0.00000
+ 
+ ________ STORED ENERGIES    _____________
+    Energy:            0.000
+     Coul:  0.000E+00 0.000E+00 0.000E+00 0.000E+00
+    NCoul: -0.444E-15 0.888E-15 0.167E-14 0.426E-13
+    Intramolecular:    bs       bb      tor       ip      con    total
+                      0.00000  0.00000  -.4E-14  0.00000  -.2E-15  0.00000  0.00000  -.4E-14
+ ________ ACTUAL ENERGIES    _____________
+    Energy:         -622.191
+     Coul:  0.000E+00 0.000E+00 0.125E+01-0.220E+03
+    NCoul: -0.553E+00 0.000E+00-0.422E+01-0.399E+03
+    Intramolecular:    bs       bb      tor       ip      con    total
+                      0.00000  0.00000  0.00000  0.00000  0.00000  0.00000  0.00000  0.00000
+ 
+ ________ STORED ENERGIES    _____________
+    Energy:         -622.191
+     Coul:  0.000E+00 0.000E+00 0.125E+01-0.220E+03
+    NCoul: -0.553E+00 0.167E-14-0.422E+01-0.399E+03
+    Intramolecular:    bs       bb      tor       ip      con    total
+                      0.00000  0.00000  0.00000  0.00000  0.00000  0.00000  0.00000  0.00000
+ ________ ACTUAL ENERGIES    _____________
+    Energy:         -634.736
+     Coul:  0.000E+00 0.000E+00-0.220E+03 0.000E+00
+    NCoul: -0.161E+02 0.000E+00-0.399E+03 0.000E+00
+    Intramolecular:    bs       bb      tor       ip      con    total
+                      0.00000  0.00000  0.00000  0.00000  0.00000  0.00000  0.00000  0.00000
+ 
+ ________ STORED ENERGIES    _____________
+    Energy:         -634.736
+     Coul:  0.000E+00 0.000E+00-0.220E+03 0.000E+00
+    NCoul: -0.161E+02 0.426E-13-0.399E+03 0.000E+00
+    Intramolecular:    bs       bb      tor       ip      con    total
+                      0.00000  0.00000  0.00000  0.00000  0.00000  0.00000  0.00000  0.00000
+------------------------------------------------------------
+Ending GCMC simulation number 1    Nrg dev check: 0.577E-12
+  n_Butane:  P (kPa): 10.00    loading (molec/uc): 0.103
+  n_Hexane:  P (kPa): 10.00    loading (molec/uc): 0.108
+  Methanol:  P (kPa): 10.00    loading (molec/uc): 1.460
+------------------------------------------------------------
+ music.F90 :  297
+Main Program   Time: 0.8539 sec   Number of calls: 1   Time per call: 0.8539 sec

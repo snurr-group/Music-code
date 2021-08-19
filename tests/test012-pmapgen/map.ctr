@@ -1,0 +1,87 @@
+------ General Information ------------------------------------------
+Probe in Lattice
+1               # No. of iterations
+1               # No. of steps between writes to output/log file
+1               # No. of steps between writes to crash file
+1               # No. of steps between writes to config. file
+2                    # Start numbering simulations from .
+1892134              # Iseeed
+4                    # specifies contents of config file,
+Probe.res           # Restart File to write to
+Probe.con           # Configuration File
+------ Atomic Types --------------------------------------------------
+3                    # number of atomic types
+
+Patom
+Patom.atm
+
+Latom
+Latom.atm
+
+Latom2
+Latom2.atm
+------ Molecule Types -------------------------------------------------
+2                    # number of sorbate types
+
+Probe               # sorbate
+Probe.mol           # sorbate coordinates file
+
+Lattice                 # sorbate
+Lattice.mol           # sorbate coordinates file
+------ Simulation Cell Information --------------------------------------
+Lattice                   # Fundamental cell type
+1, 1, 2                 # No. of unit cells in x, y, z direction
+1, 1, 1                 # (1 = Periodic) in x, y, z
+------ Forcefield Information -------------------------------------------
+BASIC
+MOL
+atom_atom_file       # atom-atom interaction file
+spc_spc_file       # sorbate-sorbate interaction file
+intramolecular_file  # intramolecular interaction file/specification
+------ Mapmaker Information --------------------------------------------
+1              # Number of maps to make
+
+Lattice           # Sorbate to map
+Probe             # Sorbate to probe map with
+NCOUL LJ          # Interaction type to map
+0.4001           # Approximate grid spacing (Ang)
+100.0          # High end potential cutoff (kJ/mol)
+AUTO           # Map filename or AUTO
+------ Configuration Initialization -------------------------------------
+Probe                             # Sorbate_Type  
+Molecule NULL                              # Source Filename
+Lattice                              # Sorbate_Type
+Fixed NULL                     # Source Filename
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
