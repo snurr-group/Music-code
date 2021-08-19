@@ -1,0 +1,18 @@
+Zhao Li's note:
+From music-4.0.tar.gz
+
+1) To do a complete test:
+>> ./testall > testlog
+
+This will make sure all executable are linked, and then perform
+individual tests. After finishing inspect 'testlog'. Also look at
+individual 'temp' file in each directory
+
+2) To do an individual test
+>> cd test001-md-H2O
+>> run
+
+Make sure that md.exe is linked to currect executable
+
+KNOWN PROBLEMS:
+1) currently test008 is broken
