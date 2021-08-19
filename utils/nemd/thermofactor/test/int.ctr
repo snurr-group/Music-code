@@ -1,0 +1,12 @@
+%Output filename                : Me40.dat
+%Name of species 1              : Methane
+%isotherm file for species 1    : Methane.fit
+% N for sepcies 1               : 40
+%Name of species 2              : CF4
+%isotherm file for species 2    : CF4.fit
+% min,max and incr for spc2     : 8,8, 4
+% deltaN for numerical diff     : 0.2
+% Number of Y divisions         : 50000 
+% tolerance for N               : 0.005
+
+

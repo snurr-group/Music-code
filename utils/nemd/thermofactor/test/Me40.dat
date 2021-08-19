@@ -1,0 +1,4 @@
+# Sorbates : MethaneCF4
+# f1/c2 actually refers to dlnf1/ dlnc1 
+# N1   N2    P       y    f1       f2        f1/c1   f1/c2   f2/c2   f2/c1
+ 40.0  8.0 0.56E+04 0.84 0.47E+04 0.89E+03   2.514   0.493   1.882   2.589

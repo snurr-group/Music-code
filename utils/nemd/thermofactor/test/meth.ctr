@@ -1,0 +1,16 @@
+%Molecule Name        : Methane
+%output file          : Methane.fit
+%tolerance            : 1.0e-10
+%no of isotherms      : 11
+%filenames and gas phase compositon of this compound 
+0.me   :   0.0
+10.me  :  10.0
+20.me  :  20.0
+30.me  :  30.0
+40.me  :  40.0
+50.me  :  50.0
+60.me  :  60.0
+70.me  :  70.0
+80.me  :  80.0
+90.me  :  90.0
+100.me : 100.0

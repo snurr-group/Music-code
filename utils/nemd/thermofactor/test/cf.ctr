@@ -1,0 +1,16 @@
+%Molecule Name        : CF4
+%output file          : CF4.fit
+%tolerance            : 1.0e-10
+%no of isotherms      : 11
+%filenames and gas phase compositon of this compound 
+0.cf4   :   0.0
+10.cf4  :  10.0
+20.cf4  :  20.0
+30.cf4  :  30.0
+40.cf4  :  40.0
+50.cf4  :  50.0
+60.cf4  :  60.0
+70.cf4  :  70.0
+80.cf4  :  80.0
+90.cf4  :  90.0
+100.cf4 : 100.0
