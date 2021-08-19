@@ -1,0 +1,79 @@
+------ General Information ------------------------------------------  
+Benzene molecule in silicalite, test for repeatability
+1000                  # No. of iterations                               
+1000                  # No. of steps between writes to output/log file  
+100                  # No. of steps between writes to crash file       
+500                  # No. of steps between writes to config. file     
+1                    # Start numbering simulations from .              
+91283                # Iseed                                           
+1                    # specifies contents of config file,              
+benzene.res          # Restart File to write to                        
+benzene.con          # Configuration File                              
+------ Atomic Types -------------------------------------------------- 
+4                    # number of atomic types            
+
+Hydrogen             # atom type                         
+Hydrogen.atm         # basic atom info file              
+                                                         
+Carbon               # atom type                         
+Carbon.atm           # basic atom info file              
+
+Silicon              # atom type
+Silicon.atm          # basic atom info file
+		     
+Oxygen               # atom type
+Oxygen.atm           # basic atom info file
+------ Molecule Types -------------------------------------------------
+2                    # number of sorbate types                      
+                                                                    
+Benzene               # sorbate                                      
+Benzene.mol           # sorbate coordinates file                     
+
+sili                 # sorbate 
+sili.mol             # sorbate coordinates file
+------ Simulation Cell Information ------------------------------------
+sili                 # Fundamental cell fill                         
+2, 2, 4              # No. of unit cells in x, y, z direction        
+1, 1, 1              # (1 = Periodic) in x, y, z                     
+------ Forcefield Information -------------------------------------------
+BASIC                # forcefield identifier
+MOL                  # storage level
+atm_atm_file         # atom-atom interaction file 
+spc_spc_file         # sorbate-sorbate interaction file 
+intramolecular_file  # intramolecular interaction file/specification
+------ Ideal Parameters -----------------------------------------------
+Ideal                # Equation of State                                 
+1                    # no. of sorbates                                   
+Benzene              # Sorbate Name                                      
+
+------ NVTMC Information -----------------------------------------------
+1                  # No. of iterations
+2                  # No. of simulation points
+300.0, 400              # temperature
+Ideal Parameters   # Tag for the equation of state (NULL = Ideal Gas)
+100                # Block size for statistics
+1                  # no. of sorbates
+          -------------------------
+Benzene            # Sorbate Name
+Null               # sitemap filename (Null = no sitemap)
+2                  # no of gcmc movetypes
+1.0, 1.0 # move type weights
+RROTATE            # type of move
+0.2, 0             # Delta Rotate, adjust delta option (0=NO, 1=YES)
+RTRANSLATE         # type of move
+0.2, 0             # Delta Translate, adjust delta option (0=NO, 1=YES)
+------ Configuration Initialization -------------------------------------
+Benzene                          # Sorbate_Type  
+RESTARTFILE restartfile # GCMC               # source
+sili                             # Sorbate_Type
+FIXED NULL                       # Source Filename
+--------  Main Datafile Information -------------------------------------
+Energy, position, Velocity, pair_energy # contents of datafile
+------ Movie Information ------------------------------------------------
+movie.xyz            # Movie filename                                    
+0, 100000            # Starting step, ending step                        
+1000                 # Steps between frames                              
+No                   # Include zeolite in movie                          
+1, 1, 1              # Number of unit cells to dump in x, y, z directions
+
+

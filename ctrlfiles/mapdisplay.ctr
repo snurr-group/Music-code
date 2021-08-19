@@ -1,0 +1,19 @@
+# generates a display of a pmap
+# reads the pmap and generates a rasmol-plottable xyz file
+#
+---------- Simulation Cell Information ----------------                     
+sili.mol      # Fundamental cell type info (filename or zeolite)
+1,1,1         # Number of unit cells in x,y,z
+1,1,1            # Simcell Boundaries, 0=Closed, 1=Periodic, 2=Open
+-------------------------------------------------------
+--- bmap to XYZ info --- 
+50,50,40                      # nx, ny and nz for the new grid
+ARITHMETIC                    # -  type of scaling
+0, 100                        # what percentage do you want start%, end%
+silimap.xyz                   # name of xyz file
+mysilimolec                   # 2nd line for xyz file, just a description
+Ne                            # Name of atom in xyz file, Ne, He, AR, Kr
+sili.Methyl.pmap              # name of pmap
+300                           # biasing temperature
+
+

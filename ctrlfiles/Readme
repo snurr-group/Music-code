@@ -1,0 +1,17 @@
+***************************************************************
+** All the files in this directory are ctrl-files files which start 
+** direct  different types of programs
+** SEE ../fast_tests directory for most uptodate versions of some of these
+***************************************************************
+
+FileName                :   Function
+__________________	    __________________	
+ alk_confinteg_m22.ctr  : alkane config integral
+ cbgcmc.mix             : a  complicated mixture
+ gcmc.benzene           : gcmc
+ hgcmc.ctr              : hgcmc
+ mapdisplay.ctr         : display a pmap
+ md.butane              : md
+ music.makemap          : make a map
+ neb_example            : neb
+ post.ctr               : post code

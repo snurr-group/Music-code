@@ -1,0 +1,94 @@
+## This section can be inserted to track various quantities
+## The format is: idkey, update frequency, write to file frequency, filename, options
+## SCREENDUMP requests an update to the screen every time the simulation
+## normally writes to stdio
+## BLOCKSIZE@[size] sets the blocksize for averaging
+## SPC@[number] specifies that the quantity is only for that species number
+## PERMOLEC specifies that the energy output be on a per molecule basis
+## TOTAL_NRG, NONCOUL_NRG, COUL_NRG, INTRA_NRG are accepted energy idkeys
+## MOLFRC SPC@[number] can be used to track a mole fraction
+
+--------- Tracking Information ----------------------------------------
+SCREENDUMP
+TOTAL_NRG     10 100  data_totnrg BLOCKSIZE@1000
+NONCOUL_NRG   10 100  data_noncoulnrg BLOCKSIZE@1000
+TOTAL_NRG     10 100  data_totnrg BLOCKSIZE@1000 SPC@1 PERMOLEC
+NONCOUL_NRG   10 100  data_noncoulnrg BLOCKSIZE@1000 SPC@1 PERMOLEC
+TOTAL_NRG     10 100  data_totnrg BLOCKSIZE@1000 SPC@2 PERMOLEC
+NONCOUL_NRG   10 100  data_noncoulnrg BLOCKSIZE@1000 SPC@2 PERMOLEC
+te frequency, write to file frequency, filename, o\ptions
+## SCREENDUMP requests an update to the screen every time the simulation
+## normally writes to stdio
+## BLOCKSIZE@[size] sets the blocksize for averaging
+## SPC@[number] specifies that the quantity is only for that species number
+## PERMOLEC specifies that the energy output be on a per molecule basis
+## TOTAL_NRG, NONCOUL_NRG, COUL_NRG, INTRA_NRG are accepted energy idkeys
+## MOLFRC SPC@[number] can be used to track a mole fraction
+## DENSITY_MAP generates position density maps using atomic coordinates
+## if the ATM number is 0, it will use the COM, if it is greater than
+## the number of atoms in the molecule, it will use all of the atoms.
+
+--------- Tracking Information ----------------------------------------
+SCREENDUMP
+TOTAL_NRG     10 100  data_totnrg BLOCKSIZE@1000
+NONCOUL_NRG   10 100  data_noncoulnrg BLOCKSIZE@1000
+TOTAL_NRG     10 100  data_totnrg BLOCKSIZE@1000 SPC@1 PERMOLEC
+NONCOUL_NRG   10 100  data_noncoulnrg BLOCKSIZE@1000 SPC@1 PERMOLEC
+TOTAL_NRG     10 100  data_totnrg BLOCKSIZE@1000 SPC@2 PERMOLEC
+NONCOUL_NRG   10 100  data_noncoulnrg BLOCKSIZE@1000 SPC@2 PERMOLEC
+DENSITY_MAP   10 1000  atm8.dmap SPC@1 ATM@8
+
+## Here's an example of the movie-making control file section
+
+------ Movie Information ----------------------------------------------
+movie.xyz            # Movie filename                                    
+0, 100000            # Starting step, ending step                        
+1                    # Steps between frames                              
+No                   # Include zeolite in movie                          
+2, 2, 4              # Number of unit cells to dump in x, y, z directions
+
+
+# Here is the section required for running neighborlist with MD
+# just add this to a normal MD ctrlfile
+---------- Neighborlist Information -------------------------------
+13.0            #  forcefield cutoff, Ang. 
+2.00   #shell thickness; all atoms within cutoff+thickness are nrighbors  
+0.05            #  ps, update time, how oftern an update is done
+50              #  maximum expected neighbors
+
+
+# This section is needed for stopping a simulation when required number 
+# of particles are in the system. Currently only number based stopping is 
+# implemented. Somebody can implement energy based stopping too
+# just add to a GCMC ctrlfile
+# great for creating a restartfile with rqd number of particles
+# last keyword can be "EQ" or "LE" or "GE"
+----------- Stop Criteria -------------------
+Nmolecs, Methane, 64, EQ # stop simulation if Nmolecs of Methane is EQUAL to 64
+-------------------------------------------- # this empty line is needed
+
+
+# Here is the section required for running a color field NEMD simulation
+# see chempath et al JCP-B 2004
+# V is the potential at any point in the simcell in kcal/mol
+# color charge can be either COM based or separately specified for each atom 
+# Butane, COM, 1.0  # means force applied on COM
+# Butane, 0.2, 0.3, 0.4, 0.1 # means these charges on atoms 1 to 4 
+---------- NEMD Details ----------------------------------------------
+-6.0e-2, 0.000, 0.000     #  Field coeffs a,b,c; V(x,y,z)=ax+by+cz
+Butane, COM, 1.0          # Color charge , mono-atomic now
+-----------------------------------------------------------------------
+
+#Here is the section required for storing extra EMD information
+#during a regular MD run. This can be used to evaluate L_ij 
+#the onsager coeffs (see chemapth et al 2003, and also utils/nemd/onsager)
+---------------------------- EMD Details ----------------------
+emd-Butane-NUM1.dat   #name for binary output file where velocity r stored
+0.1                   #time interval at which velocity are written
+---------------------------------------------------------------
+
+#Here is a section required for keepping one of the sorbates fixed during MD
+------- Fixed Sorbate MD -----------------------------------
+Methane # Name of sorbate to be kept fixed
+-----------------------------------------------------------
+

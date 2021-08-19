@@ -1,0 +1,36 @@
+#  calculates the configuration integral of linear alkanes
+#  needs music-2-2 code with patches
+#  
+------ Configuration Integration Info ---------------------------------
+n_Decane in Ideal gas
+n_Decane            # Ideal chain molecule
+5000000             # Number of configurations used for integration
+1                   # Number of temperatures
+300,300             # Temperature Range
+conf_decane         # Name of output file
+87543832            # Random seed
+124.2, 114.0, 300.00    # bias values : k,theta_eq,bias temperature in deg.K
+------ Atomic Types --------------------------------------------------
+2                                    # number of atomic types
+           
+Methyl                             # atom type
+Methyl.atm                         # basic atom info file
+
+Methylene                            # atom type
+Methylene.atm                         # basic atom info file
+------ Molecule Types -------------------------------------------------
+1                       # number of sorbate types
+
+n_Decane                   # sorbate 
+n_Decane.mol                   # sorbate coordinates file 
+------ Simulation Cell Information --------------------------------------
+sili.mol                 # Filename having fundcell info
+2, 2, 2                  # No. of unit cells in x, y, z direction
+1, 1, 1                  # (1 = Periodic) in x, y, z
+------ Configuration Initialization -------------------------------------
+n_Decane                      # Sorbate_Type  
+GCMC NULL 
+--------- Forcefield Information --------------------------
+atom_atom_file          # atom-atom interaction file 
+sorb_sorb_file          # sorbate-sorbate interaction file (optional) 
+intramolecular_file     #

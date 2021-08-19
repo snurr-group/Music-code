@@ -1,0 +1,137 @@
+# this section is required for working with any post code
+#
+#
+------------------------------------------------------------
+   ### Required section ######
+-- Post Processor Information ------------
+MD                            # Type of simulation GCMC, NVTMC , MD ....
+butane.con                    # basename for config files
+3, 3                          # first and last file numbers
+new.but                       # name for new ctrlfile that will regenerated
+but.pp                        # Base name for output files 
+10, 0                         # Percentages of data to skipped at start and end 
+
+
+# The sections below are necessary only if you want the corresponding 
+# analysis performed
+# ---------------- ALL OF THEM ARE OPTINAL ------------------------
+
+
+##### Needed for working with music-2-2 datafiles
+------------ Age of datafile -----------------
+OLD_DATAFILE # other option : NEW_DATAFILE
+
+
+####    This section is reqd for energy averages in your post code output files
+####    as of now only total enrgies vs sim. step
+------ Post : Energy Average Info -----------------------------------
+20       # Number of blocks into which data should be divided for stats
+
+####    This section is reqd for Loading averages in your post code outputfiles
+####    as of now only species loading vs sim. step (for all species)
+------ Post : Loading Average Info -----------------------------------
+20       # Number of blocks into which data should be divided for stats
+
+####    This section is reqd for sitiing averages in your post code outputfiles
+####    species loading vs sim. step (for each species, at each site)
+#### For atom based avgs, same atom will be used for all sorbs
+#### If so many atoms are not there in a sorb, then COM will be used for 
+#### that sorb
+------ Post : Siting Average Info ----------------------
+5                    # Number of blocks for stats
+sili.Methane.sitemap # Name of sitemap
+0,1,2,3              # Indices of sites, comma seperated
+1                 # atombased or com, options : 1,2,3.. or COM
+NULL ## displays as xyz file, option=NULL, DISPLAY_SMAP
+
+####    This section is reqd for calculating nrg averages from a post code
+####    as of now there is no display of the averages
+------ Post : Interaction Info -------------------------------------------
+DEFAULT
+BASIC
+---------  Forcefield Information -----------
+BASIC
+SPC                  # MOL
+atom_atom_file       # atom-atom interaction file
+sorb_sorb_file       # sorbate-sorbate interaction file
+intramolecular_file  # intramolecular interaction file/specification
+
+
+# this gives you a density map in rasmol plotable format
+# it calculates the porb. density of given sorbate in each grid point,
+# assume maximum value of prob. density is pmax,
+# suppose you specify 3 as no. of. contours. Then it will give you 3 rasmol 
+# files. The 3 files will show all points between 
+# 0..pmax, pmax/3..pmax and 2*pmax/3 .. pmax 
+# we can also make the scaling of pmax logarithmic
+------ Post : Pore Map Info  -----------------------------------
+1                       # number of maps to be made
+90,90,60                # no of divisions in x,y,z directions 
+1,1,1                   # number of unitcells 
+butane                  # Name of sorbate
+bpy.but.poremap         # base name of poremaps
+3                       # number of contors
+1.0                     # scaling factor ( to scale the picture)
+COM                 # based on what? -> 'COM' or 'ALLATOMS' or '1,2-3,9'
+ARITHMETIC          # contours based on  'ARITHMETIC' or 'LOGARITHMIC' scaling
+DUMP_DMAP_YES       # do you want 'DUMP_DMAP_YES' or 'DUMP_DMAP_NO'
+
+# for plotting histogram of velocity
+#
+#
+------ Post : Velocity Histogram  -----------------------------------
+Butane               # sorb name
+1,2                    # atom numbers for which histogram is to be displayed
+-25.00, 25.00        # minimum Vel, maximum Vel
+100                  # number of divisions in the histogram
+
+# gives histograms of angles, bondlengths or torsion angles
+# bondlength refers to any atom-atom distance( not necessarily bonded)
+# all these are intramolecular values
+------ Post : Structure Averages Info -----------------------------------
+4                               # number of analysis types
+ANGLES, Butane, 90, 160, 100    # Type, sorbname, min, max, number of divisions
+1-2-3                           # atom list
+BONDLENGTHS, Butane, 0.4, 5.0, 50 # Type, sorbname, min, max, number of div.
+1-2                               # atom list
+TORSIONANGLE, Butane, 0, 180, 100 # Type, sorbname, min, max, number of div.
+1-2-3-4                           # atom list
+BONDLENGTHS, Butane, 0.4, 5.0, 50 # Type, sorbname, min, max, number of div.
+1-4                               # atom list
+
+
+#  the below sections are reqd for MD diffusivity 
+#
+#
+-------------"MD Post Code Information"----------------------------
+2                      # number of actions
+MD Post Diffusivities  # The tag for the diffusivites section heading.
+MD Radial Profile      # The tag for the radial profile section heading
+------ MD Post Diffusivities --------------------------------------
+1
+Butane         # Names of sorbates
+10             # number of time values for diffusivity
+100, 1800      # higest and lowest time values, (picoseconds)
+0, 0           # initial and final data to be skipped in picoseconds
+1              # time skipped bewteen calculations of displ.(ps)
+------MD Radial Profile --------------------------------------------
+1              # number of sorbates
+Butane         # Name of sorbates 
+200.00         # pore radius (A)
+216.5,216.5    # Xcenter, Ycenter of the pore
+100, 2900      # highest and lowest time values (ps)
+100            # time intervals  (ps)
+60             # bins to divide the radius in 
+50             # dZ to divide the pore in Z and determine flux profile (A)
+
+
+# calculates rad dist functions between 2 atoms specified
+# divides the given range into number of bins and writes the value of
+# g(r) for each bin to the main output file.
+------ Post : Radial Distribution Info -----------------------------------
+1.0, 13.0                       # min and max distance for the bins
+50                              # Number of bins
+n_C14, 7                        # sorbate-1, atom-number or COM
+n_Octane, 4                     # sorbate-2, atom-number or COM
+
+

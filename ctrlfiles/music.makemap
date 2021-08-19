@@ -1,0 +1,57 @@
+------ General Information ------------------------------------------
+Methane in silicalite
+1               # No. of iterations
+1               # No. of steps between writes to output/log file
+1               # No. of steps between writes to crash file
+1               # No. of steps between writes to config. file
+2                    # Start numbering simulations from .
+1892134              # Iseeed
+4                    # specifies contents of config file,
+Methane.res           # Restart File to write to
+Methane.con           # Configuration File
+------ Atomic Types --------------------------------------------------
+3                                  # number of atomic types
+           
+Methane                             # atom type
+Methane.atm                         # basic atom info file
+
+Silicon                            # atom type
+Silicon.atm                        # basic atom info file
+
+Oxygen                             # atom type
+Oxygen.atm                         # basic atom info file
+------ Molecule Types -------------------------------------------------
+2                       # number of sorbate types
+
+Methane                   # sorbate 
+Methane.mol               # sorbate coordinates file
+
+sili                    # sorbate 
+sili.mol                # sorbate coordinates file
+------ Simulation Cell Information --------------------------------------
+sili                    # Fundamental cell type
+2, 2, 3                 # No. of unit cells in x, y, z direction
+1, 1, 1                 # (1 = Periodic) in x, y, z
+------ Forcefield Information -------------------------------------------
+BASIC
+MOL
+aa.interactions         # atom-atom interaction file 
+mm.interactions         # sorbate-sorbate interaction file (optional)
+intra.interactions      # intramolecular interactions
+------ Mapmaker Information --------------------------------------------
+1              # Number of maps to make
+
+sili           # Sorbate to map
+Methane        # Sorbate to probe map with
+NCOUL LJ       # Interaction type to map
+0.2            # Approximate grid spacing (Ang)
+100.0          # High end potential cutoff (kJ/mol)
+AUTO           # Map filename or AUTO
+------ Configuration Initialization -------------------------------------
+Methane                             # Sorbate_Type  
+Molecule NULL                              # Source Filename
+sili                              # Sorbate_Type
+Fixed NULL                     # Source Filename
+
+
+

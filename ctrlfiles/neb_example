@@ -1,0 +1,81 @@
+------ General Information ------------------------------------------   
+Carbenium to Alkoxy NEB trial						
+20                   # No. of iterations                               
+1                    # No. of steps between writes to output/log file  
+1                    # No. of steps between writes to crash file       
+500                  # No. of steps between writes to config. file     
+1                    # Start numbering simulations from 
+91283                # Iseed                                           
+1                    # specifies contents of config file,              
+nebtest.res          # Restart File to write to                        
+nebtest.con          # Configuration File                              
+------ Atomic Types -------------------------------------------------- 	
+7                    # number of atomic types            		
+									
+Hydrogen             # atom type                         		
+Hydrogen.atm         # basic atom info file              		
+                                                         		
+Carbon               # atom type                         		
+Carbon.atm           # basic atom info file              		
+
+MethyleneC           # atom type                         		
+MethyleneC.atm       # basic atom info file              		
+									
+Silicon              # atom type					
+Silicon.atm          # basic atom info file				
+									
+Aluminum             # atom type					
+Aluminum.atm         # basic atom info file				
+		     							
+Oxygen               # atom type					
+Oxygen.atm           # basic atom info file				
+
+Oxygen2              # atom type					
+Oxygen2.atm          # basic atom info file				
+------ Molecule Types -------------------------------------------------	
+2                    # number of species types				
+									
+hydrocarbon          # species 						
+hydrocarbon.mol      # species coordinates file				
+
+zeolite              # species 						
+zeolite.mol          # species coordinates file				
+------ Simulation Cell Information -------------------------------------
+zeolite              # Fundamental cell fill				
+1, 1, 1              # No. of unit cells in x, y, z direction		
+1, 1, 1              # (1 = Periodic) in x, y, z			
+------ Forcefield Information ------------------------------------------
+BASIC                # forcefield identifier				
+MOL                  # storage level					
+atm_atm_file         # atom-atom interaction file 			
+spc_spc_file         # species-species interaction file 		
+intramolecular_file  # intramolecular interaction file/specification	
+------ NEB Information -------------------------------------------------
+5                    # Number of images between end-points
+2                    # species numbers to freeze
+0                    # number of pre-optimization steps
+0.01                 # Harmonic spring constant between image atoms
+100.0                # Maximum allowed one-step increase in energy (kJ/mol)
+NO                   # Project out intra-image interactions along tangent (YES/NO)
+MOD_VELOCITY_VERLET  # Primary step type identifier
+Start_Configuration  # control file tag for starting configuration
+READ                 # READ or INTERPOLATE intermediate configurations
+End_Configuration    # control file tag for ending configuration
+------ Start_Configuration -------------------------------------
+hydrocarbon                     # Species_Type  
+RESTARTFILE  alkoxy_hc.res      # source
+zeolite                         # Species_Type  
+RESTARTFILE  alkoxy_zeo.res     # source
+------ End_Configuration -------------------------------------
+hydrocarbon                     # Species_Type  
+RESTARTFILE  carbenium_hc.res   # source
+zeolite                         # Species_Type  
+RESTARTFILE  carbenium_zeo.res  # source
+------ Movie Information -----------------------------------------------
+movie.xyz          # Movie filename					
+0, 1000            # Starting step, ending step				
+10                 # Steps between frames				
+No                 # Include zeolite in movie				
+1, 1, 1            # Number of unit cells to dump in x, y, z directions 
+
+

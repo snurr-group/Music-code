@@ -1,0 +1,96 @@
+##
+# Not yet complete, does i=only hmc part not gcmc part
+##
+
+------ General Information ------------------------------------------  
+Chiral-3c in Ideal gas
+13            # No. of iterations                               
+1             # No. of steps between writes to output/log file  
+5000                 # No. of steps between writes to crash file       
+10000                 # No. of steps between writes to config. file     
+1                    # Start numbering simulations from .              
+11283                # Iseed                                           
+1                    # specifies contents of config file,              
+hgcmc.res          # Restart File to write to                        
+hgcmc.con          # Configuration File                              
+------ Atomic Types -------------------------------------------------- 
+6                    # number of atomic types            
+
+Hydrogen             # atom type                         
+Hydrogen.atm         # basic atom info file              
+                                                         
+Carbon               # atom type                         
+Carbon.atm           # basic atom info file              
+
+Carbon2               # atom type                         
+Carbon2.atm           # basic atom info file              
+
+Carbon3               # atom type                         
+Carbon3.atm           # basic atom info file              
+
+Oxygen                # atom type                         
+Oxygen.atm           # basic atom info file              
+
+Silicon               # atom type                         
+Silicon.atm           # basic atom info file              
+------ Molecule Types -------------------------------------------------
+2                    # number of sorbate types                      
+                                                                    
+Chiral-3c               # sorbate                                      
+Chiral-3c7.mol #test.mol #Chiral-3c4.mol # sorbate coordinates file 
+
+beta                # sorbate                                      
+beta.mol           # sorbate coordinates file                     
+------ Simulation Cell Information ------------------------------------
+beta.mol                 # Fundamental cell fill                         
+3, 3, 3              # No. of unit cells in x, y, z direction        
+1, 1, 1              # (1 = Periodic) in x, y, z                     
+------ Forcefield Information -------------------------------------------
+BASIC
+MOL
+atom_atom_file       # atom-atom interaction file 
+sorb_sorb_file       # sorbate-sorbate interaction file 
+intramolecular_file  # intramolecular interaction file/specification
+------ Ideal Parameters -----------------------------------------------
+Ideal                # Equation of State                                 
+1                    # no. of sorbates                                   
+Chiral-3c              # Sorbate Name                                      
+-------- HYBRID GCMC Information ----------------------------------------
+1                 # number of iterations per call
+1                 # number os simulations
+Ideal Parameters  # Tag for eqn of state section
+100               # blocksize for any stats
+300.00            # Temerature(s), could be filename too
+NO_GCMC_MOVES     # gcmc section tag or "NO_GCMC_MOVES" keyword
+Hybrid Integration info, 10 # hybrid mc section tag OR "NO_HYBRIDMC_INTEGRATION", and a comma seprated integer for frequency of hmc integration
+NO_UPDATE         # section tag for library updates
+-------------------------------------------------------------------------
+---------------- Hybrid Integration Info --------------------------------
+ALLSORBS                 # sorbates name
+KEEP_VELOCITIES          # type of HMC  
+INTEGRATE            # Type of move                                    
+1                    # No. of moves                                    
+0.0001                # Time step, ps                                   
+300.0                # Simulation temperature                          
+10                   # Steps between writes to std IO      
+100                  # Steps between writes to std RESTARTFILE ? 
+NVT                  # Ensemble to simulate in (NVT, NVE)              
+GEAR6                # Integretor
+10                    # steps between penalty function calls
+NoseHoover
+50
+------ Configuration Initialization -----------------------------------
+Chiral-3c                   # Sorbate_Type                                    
+RESTARTFILE chiral3cgcmc.res.0
+beta                    # Sorbate_Type                                    
+FIXED NULL 
+------ Movie Information ----------------------------------------------
+movie.xyz            # Movie filename                                    
+100000 , 200000            # Starting step, ending step                        
+50                   # Steps between frames                              
+No                   # Include zeolite in movie                          
+1, 1, 1              # Number of unit cells to dump in x, y, z directions
+--------- Main Datafile Information ---------------------------
+position, energy, time, pair_energy, velocity
+
+
