@@ -1,0 +1,6 @@
+Benzene Benzene   NCOUL  BASIC  BENZPOT LJ FAST
+Benzene Benzene   COUL   OFF
+Benzene sili      NCOUL  MAP FAST hydrogen@PMAP@sili.Hydrogen.pmap Carbon@PMAP@sili.Carbon.pmap
+Benzene sili      COUL   MAP FAST all@EMAP@sili.full.emap 
+sili sili         NCOUL  OFF
+sili sili         COUL   OFF
