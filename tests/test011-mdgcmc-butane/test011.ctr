@@ -1,0 +1,108 @@
+# hgcmc of butane test
+# uses a library called test.lib.0 in this directory
+#
+------ General Information ------------------------------------------  
+Butane molecule in silicalite, test for repeatability
+15            # No. of iterations                               
+15                # No. of steps between writes to output/log file  
+21                 # No. of steps between writes to crash file       
+21                  # No. of steps between writes to config. file     
+1                    # Start numbering simulations from .              
+91283                # Iseed                                           
+1                    # specifies contents of config file,              
+temp.res          # Restart File to write to                        
+temp.con          # Configuration File                              
+------ Atomic Types -------------------------------------------------- 
+4                    # number of atomic types            
+
+Methyl                # atom type                         
+Methyl.atm         # basic atom info file              
+
+Methylene                # atom type                         
+Methylene.atm         # basic atom info file              
+                                                         
+Silicon              # atom type
+Silicon.atm          # basic atom info file
+
+Oxygen               # atom type
+Oxygen.atm           # basic atom info file
+------ Molecule Types -------------------------------------------------
+2                    # number of sorbate types                      
+                                                                    
+Butane               # sorbate                                      
+Butane2.mol           # sorbate coordinates file                     
+
+sili                 # sorbate 
+sili.mol             # sorbate coordinates file
+------ Simulation Cell Information ------------------------------------
+sili                 # Fundamental cell fill                         
+2, 2, 2              # No. of unit cells in x, y, z direction        
+1, 1, 1              # (1 = Periodic) in x, y, z                     
+------ Forcefield Information -------------------------------------------
+BASIC                # forcefield identifier
+MOL                  # storage level
+atom_atom_file         # atom-atom interaction file 
+spc_spc_file         # sorbate-sorbate interaction file 
+intramolecular_file  # intramolecular interaction file/specification
+------ Ideal Parameters -----------------------------------------------
+Ideal                # Equation of State                                 
+1                    # no. of sorbates                                   
+Butane              # Sorbate Name                                      
+-------- HYBRID GCMC Information ----------------------------------------
+1                        # number of iterations per call
+1                        # number os simulations
+Ideal Parameters         # Tag for eqn of state section
+10000                      # blocksize for any stats
+300.00                   # Temerature(s), could be filename too
+Gcmc_Moves_info, 1       # NO_GCMC_MOVES,0          # 
+Hybrid_Integration_Info, 50 # NO_HYBRIDMC_INTEGRATION # 
+NO_UPDATE                # section tag for library updates
+---------------- SECTION_TAG : Hybrid_Integration_Info --------------------------------
+ALLSORBS                 # sorbates name
+KEEP_VELOCITIES          # type of HMC  
+INTEGRATE                # Type of move                                    
+50                       # No. of moves                                    
+0.0001                   # Time step, ps                                   
+300.0                    # Simulation temperature                          
+10000                    # Steps between writes to std IO      
+10000                    # Steps between writes to std RESTARTFILE ? 
+NVE                      # Ensemble to simulate in (NVT, NVE)              
+GEAR6                    # Integretor
+10                       # steps between penalty function calls
+---------------- SECTION_TAG : Gcmc_Moves_Info --------------------
+Butane             # Sorbate Name
+50.00               # Fugacity (kPa)(Range)
+Null               # sitemap filename (Null = no sitemap)
+4                  # no of gcmc movetypes
+1.0, 1.0, 1.0, 1.0 # move type weights
+LINSERT            # type of move
+sili.Methyl.pmap   # Bias Potential File
+300                # Bias temperature
+test.lib.0       # library file, its just another *.con.* file 
+BDELETE            # type of move
+RROTATE            # type of move
+0.2, 0             # Delta Rotate, adjust delta option (0=NO, 1=YES)
+RTRANSLATE         # type of move
+0.2, 0             # Delta Translate, adjust delta option (0=NO, 1=YES)
+
+------ Configuration Initialization -------------------------------------
+Butane                           # Sorbate_Type  
+GCMC NULL                        # RESTARTFILE but.res.1 # 
+sili                             # Sorbate_Type
+FIXED NULL                       # Source Filename
+--------  Main Datafile Information -------------------------------------
+Energy, position, Velocity, pair_energy # contents of datafile
+
+
+
+#------ Movie XXX Information ------------------------------------------------
+#movie.xyz            # Movie filename                                    
+#0, 200            # Starting step, ending step                        
+#1                # Steps between frames                              
+#No                   # Include zeolite in movie                          
+#1, 1, 1              # Number of unit cells to dump in x, y, z directions
+
+
+
+
+
