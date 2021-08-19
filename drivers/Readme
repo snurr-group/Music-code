@@ -1,0 +1,22 @@
+***************************************************************
+** All the files in this directory are driver files which start 
+** a different type of program
+***************************************************************
+
+FileName                :   Function
+ music_baker.f90        :   OLD CODE for energy minimization
+ music_confinteg.f90    :   M22 driver for alkane config integ
+ music_gcmc.F90         :   GCMC, CBGCMC
+ music_hess.F90         :   calculates the hessian of a given molecule 
+ music_hgcmc.F90        :   HYBRID GCMC (NVT, MuVT; MD-GCMC, H-GCMC)
+ music_mapdisplay.F90   :   diplay a pmap
+ music_mapmaker.F90     :   make a pmap
+ music_md.F90           :   MD
+ music_neb.F90          :   Nudeged Elastic Band 
+ music_nrg.F90          :   reports nrg of xyz (movie) file
+ music_nvtmc.F90        :   NVT Monte Carlo
+ music_opt.F90          :   reads in xyz configs/nrgs and optimizes intra FF
+ music_phess.F90        :
+ music_post.F90         :   All of Post Code
+ music_restart.f90      :
+ music_snip.F90         :
