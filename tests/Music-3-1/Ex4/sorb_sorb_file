@@ -1,0 +1,6 @@
+Methane Methane   NCOUL  BASIC  LJ  FAST
+Methane Methane   COUL   OFF
+Methane sili      NCOUL  MAP FAST Methane@PMAP@sili.Methane.pmap 
+Methane sili      COUL   OFF           
+sili sili         NCOUL  OFF
+sili sili         COUL   OFF

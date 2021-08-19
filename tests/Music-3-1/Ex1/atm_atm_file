@@ -1,0 +1,6 @@
+Silicon   Silicon   OFF
+Silicon   Oxygen    OFF
+Oxygen    Oxygen    OFF
+Methylene Methylene LJ SIG@3.923  EPS@72.048  HICUT@13.0 LOCUT@0.0001
+Methyl    Methylene LJ SIG@3.923  EPS@72.048  HICUT@13.0 LOCUT@0.0001
+Methyl    Methyl    LJ SIG@3.775  EPS@104.282  HICUT@13.0 LOCUT@0.0001

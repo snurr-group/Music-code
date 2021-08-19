@@ -1,0 +1,25 @@
+#### 6 Center Methanol using coordinates from 
+#### http://www.ag.uiuc.edu/~fs401/50PDBs--molecule.html, by woodcock
+# The charges given here are optimized for zeo-meth interactions
+# taken from Louis Thesis
+Molecule_Name: Methanol
+
+Coord_Info: Listed Cartesian Rigid   #   charge,  group,  type
+  6     #number of atoms in molecule
+ 1  -0.748  -0.015   0.024  Carbon       -0.469   0       0
+ 2   0.558   0.420  -0.278  Oxygen       -0.537   0       0  
+ 3  -1.293  -0.202  -0.901  Hydrogen      0.202   0       0
+ 4  -1.263   0.754   0.600  Hydrogen      0.202   0       0
+ 5  -0.699  -0.934   0.609  Hydrogen      0.202   0       0
+ 6   0.716   1.404   0.137  Hydrogen      0.400   0       0
+
+Molecule_DOF: 6
+
+Connect_Info: Generate
+    2    # number of connection types listed
+    Carbon    Hydrogen   1.060 0.1
+    Carbon    Oxygen     1.410 0.1
+    Hydrogen    Oxygen   0.945 0.1
+
+
+##### Intramolecular forces

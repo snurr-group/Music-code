@@ -1,0 +1,3328 @@
+molecule.F90:  992 WARNING: number of atoms in molecule exceeds MAX_ATOMS
+ change default if you encounter problems
+ natoms =  288
+ MAX_ATOMS =   40
+ssdriver.F90:  143 WARNING: map species name should be specified like: MAP@species_name
+  Will assume that map species is: "sili"
+ Looking for Control file : long.ctr
+Welcome to MuSiC (GCMC implementation)
+Reading from control file long.ctr
+ Initializing General Parameters
+------------------------------------------------------------
+The ATOMS structure:
+  No. of atom types:     3
+    Atom Name           : Methane
+    Atom Symbol         : C4
+    Atom File           : Methane.atm
+    Atom Mass           :    16.00
+    sscharge, szcharge  :   0.0000  0.0000
+    Required # of bonds :   0
+    Ion Type            : NONE 
+
+    Atom Name           : Silicon
+    Atom Symbol         : Si
+    Atom File           : Silicon.atm
+    Atom Mass           :    28.09
+    sscharge, szcharge  :   1.8000  1.8000
+    Required # of bonds :   4
+    Ion Type            : NONE 
+
+    Atom Name           : Oxygen
+    Atom Symbol         : O
+    Atom File           : Oxygen.atm
+    Atom Mass           :    16.00
+    sscharge, szcharge  :  -1.0000 -1.0000
+    Required # of bonds :   2
+    Ion Type            : NONE 
+------------------------------------------------------------
+    Reading molecule information for Methane from: ./potentials/Methane.mol
+ molecule.F90 :  980
+  Molecule will be rotated so that the principle axes 
+   will coincide with coordinate system axes
+ molecule.F90 1138  Generating connections
+    Reading molecule information for sili from: ./potentials/sili.mol
+ molecule.F90 1138  Generating connections
+ Generating Connections for sili                                            
+------------------------------------------------------------
+The MOLECULES structure:
+  No. of molecule types:     2
+------------------------------------------------------------
+  Molecule Name       : Methane
+  Molecule Mass       : 16.00
+  Molecule File       : Methane.mol
+  Degrees of freedom  : 3
+  DOF origin          : 3N_Calculation
+  body axes atom nos  :    0   0   0
+  Number of atoms     : 1
+  Net Charge          : 0.0
+  Translation xform   : 0.00000   0.00000   0.00000
+  Rotational xform    : 
+    1.00000   0.00000   0.00000
+    0.00000   1.00000   0.00000
+    0.00000   0.00000   1.00000
+      Atom Name           : Methane
+      Atom Type           :    1
+      Atom Position       :   0.0000  0.0000  0.0000
+      Equilibrium charge  :   0.0000
+      MD Set, type        :    0   0
+  Connection Information : 
+    No connectivity information for Methane
+------------------------------------------------------------
+  Molecule Name       : sili
+  Molecule Mass       : 5768.3
+  Molecule File       : sili.mol
+  Degrees of freedom  : 864
+  DOF origin          : 3N_Calculation
+  body axes atom nos  :    0   0   0
+  Number of atoms     : 288
+  Net Charge          : 0.0
+  Translation xform   : 0.00000   0.00000   0.00000
+  Rotational xform    : 
+    1.00000   0.00000   0.00000
+    0.00000   1.00000   0.00000
+    0.00000   0.00000   1.00000
+  Atom list omitted (natoms > 10)
+  Connection Information : 
+    Connection Information for sili                                            
+    More than 50 atoms, connection information will not be displayed
+------------------------------------------------------------
+      The SIMCELL structure:
+      nx, ny, nz            :    2   2   2
+      ncells                :    8
+      ORTHORHOMBIC
+      edge lengths (Ang)    :    40.1400   39.8400   26.8400
+      cell angles (degrees) :    90.0000   90.0000   90.0000
+      origin shift (Ang)    : 0.0000   0.0000   0.0000
+      cell vector a         : 40.1400   0.0000   0.0000
+      cell vector b         : -0.0000  39.8400   0.0000
+      cell vector c         : -0.0000  -0.0000  26.8400
+      box width in (a,b,c)  :    40.1400   39.8400   26.8400
+      minimum width (Ang)   :    26.8400
+      volume (Angstroms^3)  : 42921.93
+------------------------------------------------------------
+Configuration Section 
+No. of species :      2
+  ----------------------------------------------------------
+  Species name : Methane                                         
+    No. of molecules :     94
+    No. of atoms     :    1
+    Initial Config. Source : RESTARTFILE
+    Source Filename: short.res.1
+    ----------------------------------------------------------
+  Species name : sili                                            
+    No. of molecules :      1
+    No. of atoms     : 2304
+    Initial Config. Source : FIXED
+    Source Filename: NULL
+    ----------------------------------------------------------
+Initializing intra molecular info from molecule file: ./potentials/Methane.mol
+Initializing intra molecular info from molecule file: ./potentials/sili.mol
+pmap.F90 :  255
+ Reading potential map: ./potentials/sili.Methane.pmap
+   ------------------------------------------------------------
+   Pmap Header Section:
+     No. of tabulated pts.:   147394
+     Edge Lengths         :   20.070  19.920  13.420
+     Grid size (x, y, z)  :   101  100   68
+     Grid spacing         :    0.201   0.201   0.200
+     Potential Cutoff(kJ) :        100.000
+     No. of types of atoms:     3
+       Atom: Oxygen
+       Symbol    : O
+       Charge    :  -1.0000
+       Parameters:  1287337.00000    1167.83997       0.00000       0.00000
+       Atom: Silicon
+       Symbol    : Si
+       Charge    :   2.0000
+       Parameters:        0.00000       0.00000       0.00000       0.00000
+       Atom: Aluminum
+       Symbol    : Al
+       Charge    :   0.0000
+       Parameters:        0.00000       0.00000       0.00000       0.00000
+ Warning: charges are taken from molecule file and are not displayed here!
+  ------------------------------------------------------------
+  INTERACTION MODEL Information:
+    number of derivatives: 0
+    number of forcefields: 1
+    boosting:  F
+    umbrella sampling:  F
+  ------------------------------------------------------------
+  The "BASIC" FORCEFIELD information:
+  ------------------------------------------------------------
+  NON-COULOMBIC SPECIES-SPECIES pair parameters:
+  Information taken from: sorb_sorb_file
+    ------------------------------------------------------------
+    (1,1)  Methane, Methane:          BASIC
+      Input Line: NCOUL  BASIC  LJ  FAST  
+      Fast interaction?    T
+      Use neighbor-list?   F
+      COM-based cut-off?   F
+      COM-COM smoothing?   F
+      Atom-Atom PAIR PARAMETERS:
+        Information taken from: atom_atom_file
+      Overview by atomic pairs:
+      (1,1)  Methane, Methane:          LJ
+          Methane-Methane LJ parameters from SIGEPS
+            Sigma: 3.7300 Ang   Epsilon/k_Boltz: 148.01 K
+            A: 0.85E+07 kcal A^12/mol   B: 3168.336 kcal A^6/mol
+            high cutoff: 13.00 Ang   low cutoff: 1.000 Ang
+    ------------------------------------------------------------
+    (1,2)  Methane, sili:             MAP
+      Methane sili      NCOUL  MAP FAST Methane@PMAP@sili.Methane.pmap
+      Methane(1):      PMAP map from: sili.Methane.pmap   tabulated points: 147394
+      Silicon(2):      No map associated
+      Oxygen(3):       No map associated
+    ------------------------------------------------------------
+    (2,2)  sili, sili:                OFF
+  ------------------------------------------------------------
+  COULOMBIC SPECIES-SPECIES pair parameters:
+  Information taken from: sorb_sorb_file
+    ------------------------------------------------------------
+    (1,1)  Methane, Methane:          OFF
+    ------------------------------------------------------------
+    (1,2)  Methane, sili:             OFF
+    ------------------------------------------------------------
+    (2,2)  sili, sili:                OFF
+  ------------------------------------------------------------
+  INTRAMOLECULAR information for each species 
+    ------------------------------------------------------------
+    Intramolecular information for Methane:
+      Bond Stretching   :  OFF
+      Bond Bending      :  OFF
+      Torsion Angles    :  OFF
+      Intra Pairwise Pot:  OFF
+      Intra Coulombic Pot:  OFF
+      Constraints       :  OFF
+    ------------------------------------------------------------
+    Intramolecular information for sili:
+      Bond Stretching   :  OFF
+      Bond Bending      :  OFF
+      Torsion Angles    :  OFF
+      Intra Pairwise Pot:  OFF
+      Intra Coulombic Pot:  OFF
+      Constraints       :  OFF
+------------------------------------------------------------
+Initializing GCMC moves for: Methane                                         
+ Initializing biasing details : cavity, bmap etc 
+ --------------- WARNING during bmap_cubeinit ---------------
+ bmap.F90 :  253
+ Automatically adjusting bmap energies here
+ maxnrgval :  -1.8110057239355577
+ For biasing purposes all energies above this  will be converted to this value
+ --------------- END WARNING --------------------------------
+ Energies at the beginning of GCMC simulation: 
+   Species Name : Methane                                         
+   Species Type : 1
+   Pairwise Energies(noncoul, coul) in kJ/mol
+              Methane   :   -64.3267  0.00000
+                 sili   :   -1453.73  0.00000
+   Intramolecular Energies (bs,bb,tor,ip,con,total) in kJ/mol
+      0.00000  0.00000  0.00000  0.00000  0.00000  0.00000  0.00000
+
+   Species Name : sili                                            
+   Species Type : 2
+   Pairwise Energies(noncoul, coul) in kJ/mol
+              Methane   :   -1453.73  0.00000
+                 sili   :   0.00000  0.00000
+   Intramolecular Energies (bs,bb,tor,ip,con,total) in kJ/mol
+      0.00000  0.00000  0.00000  0.00000  0.00000  0.00000  0.00000
+
+------------------------------------------------------------
+The GCMC Parameters Section:
+  No. of iterations  :      1
+  No. of simulations :      8
+  Temperature(K)     :  300.000
+  No. of species     :      1
+  ------------------------------------------------------------
+  GCMC Moves Parameters:
+  ------------------------------------------------------------
+  Species Name: Methane
+    Thermophysical simulation points:
+    Pressure  Fugacity     murti  B(Adams)
+   0.100E+02 0.100E+02   -17.070    -2.267
+   0.500E+02 0.500E+02   -15.460    -0.657
+   0.100E+03 0.100E+03   -14.767     0.036
+   0.200E+03 0.200E+03   -14.074     0.729
+   0.400E+03 0.400E+03   -13.381     1.422
+   0.600E+03 0.600E+03   -12.975     1.827
+   0.800E+03 0.800E+03   -12.688     2.115
+   0.100E+04 0.100E+04   -12.464     2.338
+    Allowed Move Types and Parameters:
+      Basic Move type:    INSERT
+      Specific Move type: BINSERT
+        Rigid Molecule Biased-Insertion Parameters :
+          Type of bias: MAP_BIAS
+          Details of Bias for insertion: 
+          Bias map file: sili.Methane.pmap
+          Bias Temperature, K:  300.000
+          Bias map details: 
+              Bias map filename: sili.Methane.pmap
+              Cumulative Wt:  21939334.    
+              No. of tabulated cubelets:   111841
+              Cutoff Potential(kcal):     30.00000
+          Maximum allowed energy: 0.10E+11 kcal/mol
+      ------------------------------------------------------------
+      Basic Move type:    DELETE
+      Specific Move type: BDELETE
+        Rigid Molecule Deletion Parameters :
+          Type of bias: MAP_BIAS
+          Details of Bias for insertion: 
+          Bias map file: sili.Methane.pmap
+          Bias Temperature, K:  300.000
+          Bias map details: 
+              Bias map filename: sili.Methane.pmap
+              Cumulative Wt:  21939334.    
+              No. of tabulated cubelets:   111841
+              Cutoff Potential(kcal):     30.00000
+          Maximum allowed energy: 0.10E+11 kcal/mol
+      ------------------------------------------------------------
+      Basic Move type:    TRANSLATE
+      Specific Move type: RTRANSLATE
+        Rigid Molecule Random-Translation Parameters :
+        Scaling of Translation length allowed.
+        Initial translation length:      0.20000
+        Maximum allowed energy: 0.10E+11 kcal/mol
+      ------------------------------------------------------------
+
+
+------------------------------------------------------------
+Beginning GCMC simulation number 1 of 8   (200000 steps)
+------------------------------------------------------------
+The GCMC Simulation Parameters:
+  Simulation Number :    1
+  Configuration file: long.con.1
+  Restart file      : long.res.1
+  ------------------------------------------------------------
+  GCMC Species Parameters:
+    ----------------------------------------------------------
+    Species Name: Methane
+      Press.(kPa)   Fugacity      murti   B(Adams)
+           10.000     10.000    -17.070     -2.267
+    ----------------------------------------------------------
+
+
+  Macro-iteration number 5000 (5000 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 10.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.685   (1150 of 1680)  
+      DELETE (BDELETE)          Acc. Ratio: 0.768   (1242 of 1618)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.497   (782 of 1572)  Max disp:  1.567
+      Number of Molecules (ins, blk, cum, stdd)   2.00   2.46   5.40  11.15
+
+  Macro-iteration number 10000 (10000 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 10.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.698   (2318 of 3321)  
+      DELETE (BDELETE)          Acc. Ratio: 0.743   (2408 of 3240)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.505   (1605 of 3179)  Max disp:  0.615
+      Number of Molecules (ins, blk, cum, stdd)   4.00   3.79   4.30   8.06
+
+  Macro-iteration number 15000 (15000 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 10.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.700   (3513 of 5018)  
+      DELETE (BDELETE)          Acc. Ratio: 0.746   (3604 of 4833)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.494   (2365 of 4787)  Max disp:  1.272
+      Number of Molecules (ins, blk, cum, stdd)   3.00   3.61   3.98   6.68
+
+  Macro-iteration number 20000 (20000 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 10.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.701   (4694 of 6695)  
+      DELETE (BDELETE)          Acc. Ratio: 0.745   (4783 of 6420)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.507   (3241 of 6395)  Max disp:  0.615
+      Number of Molecules (ins, blk, cum, stdd)   5.00   2.00   3.82   5.88
+
+  Macro-iteration number 25000 (25000 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 10.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.701   (5869 of 8369)  
+      DELETE (BDELETE)          Acc. Ratio: 0.744   (5960 of 8016)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.507   (4046 of 7984)  Max disp:  0.615
+      Number of Molecules (ins, blk, cum, stdd)   3.00   3.51   3.71   5.33
+
+  Macro-iteration number 30000 (30000 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 10.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.706   (7040 of 9972)  
+      DELETE (BDELETE)          Acc. Ratio: 0.742   (7129 of 9608)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.504   (4847 of 9624)  Max disp:  0.717
+      Number of Molecules (ins, blk, cum, stdd)   5.00   3.85   3.61   4.92
+
+  Macro-iteration number 35000 (35000 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 10.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.704   (8183 of 11623)  
+      DELETE (BDELETE)          Acc. Ratio: 0.739   (8276 of 11199)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.495   (5542 of 11206)  Max disp:  1.565
+      Number of Molecules (ins, blk, cum, stdd)   1.00   3.63   3.54   4.61
+
+  Macro-iteration number 40000 (40000 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 10.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.701   (9372 of 13363)  
+      DELETE (BDELETE)          Acc. Ratio: 0.740   (9463 of 12782)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.501   (6420 of 12812)  Max disp:  1.853
+      Number of Molecules (ins, blk, cum, stdd)   3.00   4.02   3.53   4.36
+
+  Macro-iteration number 45000 (45000 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 10.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.705   (10540 of 14955)  
+      DELETE (BDELETE)          Acc. Ratio: 0.737   (10628 of 14429)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.507   (7320 of 14446)  Max disp:  0.514
+      Number of Molecules (ins, blk, cum, stdd)   6.00   3.22   3.47   4.15
+
+  Macro-iteration number 50000 (50000 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 10.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.705   (11733 of 16653)  
+      DELETE (BDELETE)          Acc. Ratio: 0.737   (11825 of 16038)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.497   (7960 of 16030)  Max disp:  0.285
+      Number of Molecules (ins, blk, cum, stdd)   2.00   2.28   3.46   3.98
+
+  Macro-iteration number 55000 (55000 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 10.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.704   (12928 of 18357)  
+      DELETE (BDELETE)          Acc. Ratio: 0.739   (13017 of 17614)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.494   (8717 of 17638)  Max disp:  2.000
+      Number of Molecules (ins, blk, cum, stdd)   5.00   4.49   3.47   3.83
+
+  Macro-iteration number 60000 (60000 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 10.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.706   (14115 of 19985)  
+      DELETE (BDELETE)          Acc. Ratio: 0.738   (14205 of 19247)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.510   (9807 of 19223)  Max disp:  1.591
+      Number of Molecules (ins, blk, cum, stdd)   4.00   2.08   3.42   3.71
+
+  Macro-iteration number 65000 (65000 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 10.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.707   (15311 of 21642)  
+      DELETE (BDELETE)          Acc. Ratio: 0.738   (15398 of 20852)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.493   (10285 of 20861)  Max disp:  0.332
+      Number of Molecules (ins, blk, cum, stdd)   7.00   3.95   3.40   3.60
+
+  Macro-iteration number 70000 (70000 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 10.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.707   (16455 of 23278)  
+      DELETE (BDELETE)          Acc. Ratio: 0.737   (16545 of 22464)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.505   (11346 of 22466)  Max disp:  2.000
+      Number of Molecules (ins, blk, cum, stdd)   4.00   2.33   3.39   3.50
+
+  Macro-iteration number 75000 (75000 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 10.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.707   (17635 of 24949)  
+      DELETE (BDELETE)          Acc. Ratio: 0.737   (17728 of 24061)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.494   (11905 of 24080)  Max disp:  0.476
+      Number of Molecules (ins, blk, cum, stdd)   1.00   2.48   3.39   3.42
+
+  Macro-iteration number 80000 (80000 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 10.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.705   (18815 of 26673)  
+      DELETE (BDELETE)          Acc. Ratio: 0.738   (18906 of 25621)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.509   (13077 of 25686)  Max disp:  0.476
+      Number of Molecules (ins, blk, cum, stdd)   3.00   1.80   3.39   3.34
+
+  Macro-iteration number 85000 (85000 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 10.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.705   (20000 of 28388)  
+      DELETE (BDELETE)          Acc. Ratio: 0.738   (20093 of 27209)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.495   (13496 of 27269)  Max disp:  2.000
+      Number of Molecules (ins, blk, cum, stdd)   1.00   2.64   3.38   3.27
+
+  Macro-iteration number 90000 (90000 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 10.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.704   (21172 of 30087)  
+      DELETE (BDELETE)          Acc. Ratio: 0.739   (21261 of 28774)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.500   (14458 of 28907)  Max disp:  0.387
+      Number of Molecules (ins, blk, cum, stdd)   5.00   3.54   3.37   3.20
+
+  Macro-iteration number 95000 (95000 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 10.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.705   (22361 of 31728)  
+      DELETE (BDELETE)          Acc. Ratio: 0.738   (22455 of 30410)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.506   (15402 of 30460)  Max disp:  2.000
+      Number of Molecules (ins, blk, cum, stdd)   0.00   1.89   3.35   3.14
+
+  Macro-iteration number 100000 (100000 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 10.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.705   (23541 of 33394)  
+      DELETE (BDELETE)          Acc. Ratio: 0.739   (23631 of 31978)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.490   (15752 of 32122)  Max disp:  2.000
+      Number of Molecules (ins, blk, cum, stdd)   4.00   3.70   3.35   3.09
+
+  Macro-iteration number 105000 (105000 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 10.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.705   (24704 of 35037)  
+      DELETE (BDELETE)          Acc. Ratio: 0.738   (24794 of 33577)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.505   (17032 of 33745)  Max disp:  0.316
+      Number of Molecules (ins, blk, cum, stdd)   4.00   2.36   3.34   3.04
+
+  Macro-iteration number 110000 (110000 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 10.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.705   (25879 of 36712)  
+      DELETE (BDELETE)          Acc. Ratio: 0.738   (25970 of 35180)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.502   (17734 of 35292)  Max disp:  2.000
+      Number of Molecules (ins, blk, cum, stdd)   3.00   2.87   3.34   2.99
+
+  Macro-iteration number 115000 (115000 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 10.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.706   (27086 of 38366)  
+      DELETE (BDELETE)          Acc. Ratio: 0.738   (27178 of 36816)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.490   (18082 of 36894)  Max disp:  2.000
+      Number of Molecules (ins, blk, cum, stdd)   2.00   2.62   3.32   2.95
+
+  Macro-iteration number 120000 (120000 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 10.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.706   (28262 of 40021)  
+      DELETE (BDELETE)          Acc. Ratio: 0.738   (28351 of 38404)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.502   (19318 of 38479)  Max disp:  0.350
+      Number of Molecules (ins, blk, cum, stdd)   5.00   2.70   3.32   2.91
+
+  Macro-iteration number 125000 (125000 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 10.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.707   (29451 of 41648)  
+      DELETE (BDELETE)          Acc. Ratio: 0.738   (29540 of 40020)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.506   (20307 of 40108)  Max disp:  2.000
+      Number of Molecules (ins, blk, cum, stdd)   5.00   3.22   3.32   2.87
+
+  Macro-iteration number 130000 (130000 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 10.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.707   (30635 of 43333)  
+      DELETE (BDELETE)          Acc. Ratio: 0.739   (30724 of 41603)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.495   (20642 of 41700)  Max disp:  2.000
+      Number of Molecules (ins, blk, cum, stdd)   5.00   3.16   3.32   2.84
+
+  Macro-iteration number 135000 (135000 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 10.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.707   (31819 of 45013)  
+      DELETE (BDELETE)          Acc. Ratio: 0.739   (31908 of 43177)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.492   (21318 of 43294)  Max disp:  0.755
+      Number of Molecules (ins, blk, cum, stdd)   5.00   3.66   3.31   2.81
+
+  Macro-iteration number 140000 (140000 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 10.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.706   (33024 of 46750)  
+      DELETE (BDELETE)          Acc. Ratio: 0.740   (33115 of 44756)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.497   (22296 of 44890)  Max disp:  0.755
+      Number of Molecules (ins, blk, cum, stdd)   3.00   2.88   3.32   2.78
+
+  Macro-iteration number 145000 (145000 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 10.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.706   (34205 of 48427)  
+      DELETE (BDELETE)          Acc. Ratio: 0.740   (34297 of 46355)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.500   (23242 of 46484)  Max disp:  0.755
+      Number of Molecules (ins, blk, cum, stdd)   2.00   3.04   3.32   2.75
+
+  Macro-iteration number 150000 (150000 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 10.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.707   (35397 of 50086)  
+      DELETE (BDELETE)          Acc. Ratio: 0.740   (35488 of 47974)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.503   (24144 of 48035)  Max disp:  0.755
+      Number of Molecules (ins, blk, cum, stdd)   3.00   4.32   3.31   2.73
+
+  Macro-iteration number 155000 (155000 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 10.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.707   (36588 of 51750)  
+      DELETE (BDELETE)          Acc. Ratio: 0.740   (36681 of 49574)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.506   (25117 of 49619)  Max disp:  0.755
+      Number of Molecules (ins, blk, cum, stdd)   1.00   3.02   3.31   2.70
+
+  Macro-iteration number 160000 (160000 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 10.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.707   (37773 of 53406)  
+      DELETE (BDELETE)          Acc. Ratio: 0.740   (37866 of 51192)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.509   (26048 of 51222)  Max disp:  0.755
+      Number of Molecules (ins, blk, cum, stdd)   1.00   4.24   3.30   2.68
+
+  Macro-iteration number 165000 (165000 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 10.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.708   (38988 of 55060)  
+      DELETE (BDELETE)          Acc. Ratio: 0.740   (39079 of 52787)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.509   (26923 of 52869)  Max disp:  1.171
+      Number of Molecules (ins, blk, cum, stdd)   3.00   3.82   3.30   2.66
+
+  Macro-iteration number 170000 (170000 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 10.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.708   (40195 of 56747)  
+      DELETE (BDELETE)          Acc. Ratio: 0.741   (40287 of 54384)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.507   (27620 of 54509)  Max disp:  1.171
+      Number of Molecules (ins, blk, cum, stdd)   2.00   2.58   3.31   2.64
+
+  Macro-iteration number 175000 (175000 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 10.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.708   (41401 of 58464)  
+      DELETE (BDELETE)          Acc. Ratio: 0.741   (41492 of 55978)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.505   (28309 of 56055)  Max disp:  1.171
+      Number of Molecules (ins, blk, cum, stdd)   3.00   2.53   3.31   2.61
+
+  Macro-iteration number 180000 (180000 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 10.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.708   (42585 of 60115)  
+      DELETE (BDELETE)          Acc. Ratio: 0.741   (42676 of 57621)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.503   (29041 of 57682)  Max disp:  1.171
+      Number of Molecules (ins, blk, cum, stdd)   3.00   1.87   3.30   2.59
+
+  Macro-iteration number 185000 (185000 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 10.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.709   (43772 of 61744)  
+      DELETE (BDELETE)          Acc. Ratio: 0.740   (43865 of 59242)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.501   (29742 of 59336)  Max disp:  1.171
+      Number of Molecules (ins, blk, cum, stdd)   1.00   4.22   3.30   2.58
+
+  Macro-iteration number 190000 (190000 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 10.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.708   (44956 of 63464)  
+      DELETE (BDELETE)          Acc. Ratio: 0.741   (45045 of 60786)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.500   (30430 of 60899)  Max disp:  1.171
+      Number of Molecules (ins, blk, cum, stdd)   5.00   3.13   3.30   2.56
+
+  Macro-iteration number 195000 (195000 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 10.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.708   (46114 of 65102)  
+      DELETE (BDELETE)          Acc. Ratio: 0.741   (46203 of 62363)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.498   (31163 of 62518)  Max disp:  1.171
+      Number of Molecules (ins, blk, cum, stdd)   5.00   1.72   3.30   2.54
+
+  Macro-iteration number 200000 (200000 micro) of simulation 1
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 10.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.708   (47292 of 66765)  
+      DELETE (BDELETE)          Acc. Ratio: 0.741   (47382 of 63952)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.497   (31883 of 64121)  Max disp:  1.171
+      Number of Molecules (ins, blk, cum, stdd)   4.00   4.00   3.30   2.53
+
+------------------------------------------------------------
+Ending GCMC simulation number 1    Nrg dev check: 0.269E-11
+  Methane:  P (kPa): 10.00    loading (molec/uc): 0.412
+------------------------------------------------------------
+------------------------------------------------------------
+Beginning GCMC simulation number 2 of 8   (200000 steps)
+------------------------------------------------------------
+The GCMC Simulation Parameters:
+  Simulation Number :    2
+  Configuration file: long.con.2
+  Restart file      : long.res.2
+  ------------------------------------------------------------
+  GCMC Species Parameters:
+    ----------------------------------------------------------
+    Species Name: Methane
+      Press.(kPa)   Fugacity      murti   B(Adams)
+           50.000     50.000    -15.460     -0.657
+    ----------------------------------------------------------
+
+
+  Macro-iteration number 5000 (5000 micro) of simulation 2
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 50.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.705   (1189 of 1687)  
+      DELETE (BDELETE)          Acc. Ratio: 0.711   (1181 of 1660)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.502   (830 of 1653)  Max disp:  1.432
+      Number of Molecules (ins, blk, cum, stdd)  12.00  13.47  14.64   3.80
+
+  Macro-iteration number 10000 (10000 micro) of simulation 2
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 50.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.712   (2392 of 3361)  
+      DELETE (BDELETE)          Acc. Ratio: 0.706   (2381 of 3371)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.500   (1633 of 3268)  Max disp:  0.584
+      Number of Molecules (ins, blk, cum, stdd)  15.00  16.69  14.40   3.64
+
+  Macro-iteration number 15000 (15000 micro) of simulation 2
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 50.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.715   (3615 of 5057)  
+      DELETE (BDELETE)          Acc. Ratio: 0.718   (3604 of 5021)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.504   (2480 of 4922)  Max disp:  1.115
+      Number of Molecules (ins, blk, cum, stdd)  15.00  19.60  14.65   3.54
+
+  Macro-iteration number 20000 (20000 micro) of simulation 2
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 50.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.723   (4829 of 6683)  
+      DELETE (BDELETE)          Acc. Ratio: 0.716   (4814 of 6727)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.496   (3266 of 6590)  Max disp:  0.779
+      Number of Molecules (ins, blk, cum, stdd)  19.00  12.92  14.60   3.48
+
+  Macro-iteration number 25000 (25000 micro) of simulation 2
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 50.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.725   (6029 of 8312)  
+      DELETE (BDELETE)          Acc. Ratio: 0.717   (6013 of 8386)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.506   (4202 of 8302)  Max disp:  1.268
+      Number of Molecules (ins, blk, cum, stdd)  20.00  12.29  14.55   3.52
+
+  Macro-iteration number 30000 (30000 micro) of simulation 2
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 50.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.726   (7218 of 9943)  
+      DELETE (BDELETE)          Acc. Ratio: 0.719   (7202 of 10022)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.503   (5049 of 10035)  Max disp:  0.410
+      Number of Molecules (ins, blk, cum, stdd)  20.00  13.57  14.56   3.46
+
+  Macro-iteration number 35000 (35000 micro) of simulation 2
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 50.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.726   (8449 of 11642)  
+      DELETE (BDELETE)          Acc. Ratio: 0.721   (8434 of 11693)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.505   (5891 of 11665)  Max disp:  0.350
+      Number of Molecules (ins, blk, cum, stdd)  19.00  15.09  14.65   3.50
+
+  Macro-iteration number 40000 (40000 micro) of simulation 2
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 50.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.725   (9669 of 13335)  
+      DELETE (BDELETE)          Acc. Ratio: 0.722   (9658 of 13383)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.503   (6683 of 13282)  Max disp:  0.316
+      Number of Molecules (ins, blk, cum, stdd)  15.00  18.14  14.71   3.55
+
+  Macro-iteration number 45000 (45000 micro) of simulation 2
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 50.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.724   (10873 of 15008)  
+      DELETE (BDELETE)          Acc. Ratio: 0.723   (10861 of 15022)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.494   (7402 of 14970)  Max disp:  0.647
+      Number of Molecules (ins, blk, cum, stdd)  16.00  14.49  14.73   3.54
+
+  Macro-iteration number 50000 (50000 micro) of simulation 2
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 50.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.722   (12045 of 16678)  
+      DELETE (BDELETE)          Acc. Ratio: 0.722   (12032 of 16660)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.510   (8495 of 16662)  Max disp:  0.647
+      Number of Molecules (ins, blk, cum, stdd)  17.00  12.05  14.70   3.53
+
+  Macro-iteration number 55000 (55000 micro) of simulation 2
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 50.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.721   (13239 of 18365)  
+      DELETE (BDELETE)          Acc. Ratio: 0.724   (13231 of 18280)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.490   (8992 of 18355)  Max disp:  0.839
+      Number of Molecules (ins, blk, cum, stdd)  12.00  12.33  14.76   3.52
+
+  Macro-iteration number 60000 (60000 micro) of simulation 2
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 50.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.720   (14429 of 20031)  
+      DELETE (BDELETE)          Acc. Ratio: 0.722   (14414 of 19967)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.509   (10186 of 20002)  Max disp:  0.503
+      Number of Molecules (ins, blk, cum, stdd)  19.00  14.65  14.77   3.54
+
+  Macro-iteration number 65000 (65000 micro) of simulation 2
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 50.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.719   (15630 of 21750)  
+      DELETE (BDELETE)          Acc. Ratio: 0.723   (15615 of 21598)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.493   (10664 of 21652)  Max disp:  0.257
+      Number of Molecules (ins, blk, cum, stdd)  19.00  16.74  14.84   3.54
+
+  Macro-iteration number 70000 (70000 micro) of simulation 2
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 50.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.720   (16838 of 23382)  
+      DELETE (BDELETE)          Acc. Ratio: 0.721   (16827 of 23338)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.504   (11734 of 23280)  Max disp:  2.000
+      Number of Molecules (ins, blk, cum, stdd)  15.00  14.07  14.79   3.53
+
+  Macro-iteration number 75000 (75000 micro) of simulation 2
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 50.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.721   (18032 of 24997)  
+      DELETE (BDELETE)          Acc. Ratio: 0.720   (18023 of 25037)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.494   (12343 of 24966)  Max disp:  0.476
+      Number of Molecules (ins, blk, cum, stdd)  13.00  19.79  14.75   3.54
+
+  Macro-iteration number 80000 (80000 micro) of simulation 2
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 50.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.721   (19247 of 26698)  
+      DELETE (BDELETE)          Acc. Ratio: 0.721   (19235 of 26687)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.510   (13567 of 26615)  Max disp:  0.476
+      Number of Molecules (ins, blk, cum, stdd)  16.00  13.52  14.78   3.57
+
+  Macro-iteration number 85000 (85000 micro) of simulation 2
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 50.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.722   (20446 of 28325)  
+      DELETE (BDELETE)          Acc. Ratio: 0.720   (20432 of 28397)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.506   (14298 of 28278)  Max disp:  1.090
+      Number of Molecules (ins, blk, cum, stdd)  18.00  17.74  14.72   3.59
+
+  Macro-iteration number 90000 (90000 micro) of simulation 2
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 50.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.721   (21618 of 29971)  
+      DELETE (BDELETE)          Acc. Ratio: 0.718   (21604 of 30076)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.502   (15025 of 29953)  Max disp:  1.090
+      Number of Molecules (ins, blk, cum, stdd)  18.00  17.18  14.68   3.61
+
+  Macro-iteration number 95000 (95000 micro) of simulation 2
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 50.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.722   (22808 of 31604)  
+      DELETE (BDELETE)          Acc. Ratio: 0.718   (22793 of 31729)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.499   (15810 of 31667)  Max disp:  1.090
+      Number of Molecules (ins, blk, cum, stdd)  19.00  19.40  14.72   3.63
+
+  Macro-iteration number 100000 (100000 micro) of simulation 2
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 50.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.721   (23990 of 33272)  
+      DELETE (BDELETE)          Acc. Ratio: 0.719   (23972 of 33334)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.498   (16624 of 33394)  Max disp:  1.090
+      Number of Molecules (ins, blk, cum, stdd)  22.00  14.05  14.73   3.65
+
+  Macro-iteration number 105000 (105000 micro) of simulation 2
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 50.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.721   (25175 of 34907)  
+      DELETE (BDELETE)          Acc. Ratio: 0.719   (25169 of 35009)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.496   (17406 of 35084)  Max disp:  1.090
+      Number of Molecules (ins, blk, cum, stdd)  10.00  14.77  14.71   3.65
+
+  Macro-iteration number 110000 (110000 micro) of simulation 2
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 50.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.722   (26402 of 36574)  
+      DELETE (BDELETE)          Acc. Ratio: 0.720   (26397 of 36682)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.495   (18185 of 36744)  Max disp:  1.090
+      Number of Molecules (ins, blk, cum, stdd)   9.00  12.66  14.71   3.64
+
+  Macro-iteration number 115000 (115000 micro) of simulation 2
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 50.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.721   (27614 of 38278)  
+      DELETE (BDELETE)          Acc. Ratio: 0.721   (27609 of 38310)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.493   (18939 of 38412)  Max disp:  1.090
+      Number of Molecules (ins, blk, cum, stdd)   9.00  10.55  14.72   3.65
+
+  Macro-iteration number 120000 (120000 micro) of simulation 2
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 50.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.722   (28860 of 39995)  
+      DELETE (BDELETE)          Acc. Ratio: 0.722   (28846 of 39964)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.491   (19657 of 40041)  Max disp:  1.090
+      Number of Molecules (ins, blk, cum, stdd)  18.00  14.62  14.75   3.64
+
+  Macro-iteration number 125000 (125000 micro) of simulation 2
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 50.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.722   (30076 of 41679)  
+      DELETE (BDELETE)          Acc. Ratio: 0.723   (30070 of 41618)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.493   (20543 of 41703)  Max disp:  0.456
+      Number of Molecules (ins, blk, cum, stdd)  10.00  12.16  14.79   3.64
+
+  Macro-iteration number 130000 (130000 micro) of simulation 2
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 50.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.723   (31331 of 43346)  
+      DELETE (BDELETE)          Acc. Ratio: 0.723   (31324 of 43338)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.502   (21726 of 43316)  Max disp:  0.456
+      Number of Molecules (ins, blk, cum, stdd)  11.00  15.27  14.77   3.64
+
+  Macro-iteration number 135000 (135000 micro) of simulation 2
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 50.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.723   (32536 of 44989)  
+      DELETE (BDELETE)          Acc. Ratio: 0.723   (32519 of 44989)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.510   (22950 of 45022)  Max disp:  1.876
+      Number of Molecules (ins, blk, cum, stdd)  21.00  14.82  14.74   3.63
+
+  Macro-iteration number 140000 (140000 micro) of simulation 2
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 50.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.724   (33786 of 46677)  
+      DELETE (BDELETE)          Acc. Ratio: 0.723   (33778 of 46696)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.500   (23311 of 46627)  Max disp:  1.876
+      Number of Molecules (ins, blk, cum, stdd)  12.00   9.54  14.73   3.63
+
+  Macro-iteration number 145000 (145000 micro) of simulation 2
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 50.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.724   (35016 of 48368)  
+      DELETE (BDELETE)          Acc. Ratio: 0.724   (35005 of 48356)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.490   (23678 of 48276)  Max disp:  1.876
+      Number of Molecules (ins, blk, cum, stdd)  15.00  15.36  14.75   3.63
+
+  Macro-iteration number 150000 (150000 micro) of simulation 2
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 50.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.724   (36227 of 50007)  
+      DELETE (BDELETE)          Acc. Ratio: 0.724   (36220 of 50056)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.500   (24974 of 49937)  Max disp:  0.296
+      Number of Molecules (ins, blk, cum, stdd)  11.00  11.70  14.75   3.64
+
+  Macro-iteration number 155000 (155000 micro) of simulation 2
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 50.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.724   (37415 of 51686)  
+      DELETE (BDELETE)          Acc. Ratio: 0.724   (37400 of 51684)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.510   (26308 of 51630)  Max disp:  2.000
+      Number of Molecules (ins, blk, cum, stdd)  19.00  17.94  14.76   3.63
+
+  Macro-iteration number 160000 (160000 micro) of simulation 2
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 50.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.724   (38613 of 53332)  
+      DELETE (BDELETE)          Acc. Ratio: 0.723   (38597 of 53395)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.500   (26655 of 53273)  Max disp:  2.000
+      Number of Molecules (ins, blk, cum, stdd)  20.00  14.76  14.73   3.63
+
+  Macro-iteration number 165000 (165000 micro) of simulation 2
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 50.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.723   (39824 of 55044)  
+      DELETE (BDELETE)          Acc. Ratio: 0.724   (39817 of 55030)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.492   (27000 of 54926)  Max disp:  2.000
+      Number of Molecules (ins, blk, cum, stdd)  11.00  14.69  14.77   3.64
+
+  Macro-iteration number 170000 (170000 micro) of simulation 2
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 50.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.724   (40998 of 56645)  
+      DELETE (BDELETE)          Acc. Ratio: 0.723   (40989 of 56728)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.498   (28198 of 56627)  Max disp:  0.285
+      Number of Molecules (ins, blk, cum, stdd)  13.00  11.25  14.76   3.64
+
+  Macro-iteration number 175000 (175000 micro) of simulation 2
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 50.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.724   (42165 of 58269)  
+      DELETE (BDELETE)          Acc. Ratio: 0.722   (42159 of 58422)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.507   (29576 of 58309)  Max disp:  0.285
+      Number of Molecules (ins, blk, cum, stdd)  10.00   9.57  14.73   3.65
+
+  Macro-iteration number 180000 (180000 micro) of simulation 2
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 50.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.723   (43365 of 59972)  
+      DELETE (BDELETE)          Acc. Ratio: 0.722   (43354 of 60049)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.506   (30347 of 59979)  Max disp:  1.649
+      Number of Molecules (ins, blk, cum, stdd)  15.00  14.00  14.75   3.65
+
+  Macro-iteration number 185000 (185000 micro) of simulation 2
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 50.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.723   (44572 of 61619)  
+      DELETE (BDELETE)          Acc. Ratio: 0.722   (44566 of 61745)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.500   (30827 of 61636)  Max disp:  1.649
+      Number of Molecules (ins, blk, cum, stdd)  10.00  13.61  14.74   3.64
+
+  Macro-iteration number 190000 (190000 micro) of simulation 2
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 50.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.724   (45793 of 63271)  
+      DELETE (BDELETE)          Acc. Ratio: 0.722   (45788 of 63450)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.495   (31302 of 63279)  Max disp:  1.649
+      Number of Molecules (ins, blk, cum, stdd)   9.00  14.28  14.71   3.64
+
+  Macro-iteration number 195000 (195000 micro) of simulation 2
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 50.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.724   (46962 of 64867)  
+      DELETE (BDELETE)          Acc. Ratio: 0.721   (46953 of 65095)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.491   (31927 of 65038)  Max disp:  0.534
+      Number of Molecules (ins, blk, cum, stdd)  13.00  14.71  14.70   3.64
+
+  Macro-iteration number 200000 (200000 micro) of simulation 2
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 50.000 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.724   (48181 of 66560)  
+      DELETE (BDELETE)          Acc. Ratio: 0.722   (48173 of 66726)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.496   (33086 of 66714)  Max disp:  0.534
+      Number of Molecules (ins, blk, cum, stdd)  12.00  15.71  14.72   3.65
+
+------------------------------------------------------------
+Ending GCMC simulation number 2    Nrg dev check: 0.375E-11
+  Methane:  P (kPa): 50.00    loading (molec/uc): 1.840
+------------------------------------------------------------
+------------------------------------------------------------
+Beginning GCMC simulation number 3 of 8   (200000 steps)
+------------------------------------------------------------
+The GCMC Simulation Parameters:
+  Simulation Number :    3
+  Configuration file: long.con.3
+  Restart file      : long.res.3
+  ------------------------------------------------------------
+  GCMC Species Parameters:
+    ----------------------------------------------------------
+    Species Name: Methane
+      Press.(kPa)   Fugacity      murti   B(Adams)
+          100.000    100.000    -14.767      0.036
+    ----------------------------------------------------------
+
+
+  Macro-iteration number 5000 (5000 micro) of simulation 3
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 100.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.627   (1049 of 1673)  
+      DELETE (BDELETE)          Acc. Ratio: 0.620   (1036 of 1671)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.488   (808 of 1656)  Max disp:  0.420
+      Number of Molecules (ins, blk, cum, stdd)  25.00  28.83  26.25   5.57
+
+  Macro-iteration number 10000 (10000 micro) of simulation 3
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 100.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.627   (2121 of 3384)  
+      DELETE (BDELETE)          Acc. Ratio: 0.631   (2109 of 3340)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.499   (1634 of 3276)  Max disp:  1.968
+      Number of Molecules (ins, blk, cum, stdd)  24.00  24.89  26.74   5.21
+
+  Macro-iteration number 15000 (15000 micro) of simulation 3
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 100.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.629   (3201 of 5089)  
+      DELETE (BDELETE)          Acc. Ratio: 0.639   (3186 of 4986)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.504   (2484 of 4925)  Max disp:  0.300
+      Number of Molecules (ins, blk, cum, stdd)  27.00  27.77  26.92   5.05
+
+  Macro-iteration number 20000 (20000 micro) of simulation 3
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 100.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.631   (4285 of 6786)  
+      DELETE (BDELETE)          Acc. Ratio: 0.643   (4272 of 6644)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.506   (3327 of 6570)  Max disp:  1.631
+      Number of Molecules (ins, blk, cum, stdd)  25.00  26.89  26.69   4.82
+
+  Macro-iteration number 25000 (25000 micro) of simulation 3
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 100.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.637   (5396 of 8476)  
+      DELETE (BDELETE)          Acc. Ratio: 0.647   (5373 of 8300)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.509   (4182 of 8224)  Max disp:  0.648
+      Number of Molecules (ins, blk, cum, stdd)  35.00  32.26  26.67   4.81
+
+  Macro-iteration number 30000 (30000 micro) of simulation 3
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 100.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.638   (6442 of 10094)  
+      DELETE (BDELETE)          Acc. Ratio: 0.642   (6424 of 10008)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.500   (4946 of 9898)  Max disp:  0.480
+      Number of Molecules (ins, blk, cum, stdd)  30.00  27.25  26.46   4.79
+
+  Macro-iteration number 35000 (35000 micro) of simulation 3
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 100.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.637   (7520 of 11814)  
+      DELETE (BDELETE)          Acc. Ratio: 0.645   (7508 of 11643)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.494   (5697 of 11543)  Max disp:  0.608
+      Number of Molecules (ins, blk, cum, stdd)  24.00  26.68  26.66   4.72
+
+  Macro-iteration number 40000 (40000 micro) of simulation 3
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 100.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.638   (8566 of 13424)  
+      DELETE (BDELETE)          Acc. Ratio: 0.641   (8557 of 13358)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.502   (6633 of 13218)  Max disp:  1.778
+      Number of Molecules (ins, blk, cum, stdd)  21.00  23.98  26.63   4.65
+
+  Macro-iteration number 45000 (45000 micro) of simulation 3
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 100.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.640   (9664 of 15095)  
+      DELETE (BDELETE)          Acc. Ratio: 0.642   (9657 of 15045)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.508   (7555 of 14860)  Max disp:  0.363
+      Number of Molecules (ins, blk, cum, stdd)  19.00  26.59  26.69   4.65
+
+  Macro-iteration number 50000 (50000 micro) of simulation 3
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 100.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.640   (10742 of 16783)  
+      DELETE (BDELETE)          Acc. Ratio: 0.640   (10721 of 16744)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.496   (8176 of 16473)  Max disp:  0.332
+      Number of Molecules (ins, blk, cum, stdd)  33.00  28.28  26.74   4.68
+
+  Macro-iteration number 55000 (55000 micro) of simulation 3
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 100.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.640   (11800 of 18447)  
+      DELETE (BDELETE)          Acc. Ratio: 0.641   (11788 of 18377)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.500   (9097 of 18176)  Max disp:  1.507
+      Number of Molecules (ins, blk, cum, stdd)  24.00  23.14  26.83   4.64
+
+  Macro-iteration number 60000 (60000 micro) of simulation 3
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 100.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.637   (12831 of 20138)  
+      DELETE (BDELETE)          Acc. Ratio: 0.641   (12817 of 20007)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.494   (9805 of 19855)  Max disp:  0.698
+      Number of Molecules (ins, blk, cum, stdd)  26.00  25.42  26.89   4.57
+
+  Macro-iteration number 65000 (65000 micro) of simulation 3
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 100.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.638   (13884 of 21750)  
+      DELETE (BDELETE)          Acc. Ratio: 0.640   (13873 of 21661)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.503   (10854 of 21589)  Max disp:  0.698
+      Number of Molecules (ins, blk, cum, stdd)  23.00  19.59  26.87   4.51
+
+  Macro-iteration number 70000 (70000 micro) of simulation 3
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 100.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.638   (14938 of 23406)  
+      DELETE (BDELETE)          Acc. Ratio: 0.640   (14918 of 23313)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.508   (11838 of 23281)  Max disp:  1.452
+      Number of Molecules (ins, blk, cum, stdd)  32.00  29.07  26.94   4.53
+
+  Macro-iteration number 75000 (75000 micro) of simulation 3
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 100.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.639   (16014 of 25065)  
+      DELETE (BDELETE)          Acc. Ratio: 0.639   (15993 of 25028)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.497   (12367 of 24907)  Max disp:  1.452
+      Number of Molecules (ins, blk, cum, stdd)  33.00  34.71  26.99   4.59
+
+  Macro-iteration number 80000 (80000 micro) of simulation 3
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 100.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.639   (17085 of 26750)  
+      DELETE (BDELETE)          Acc. Ratio: 0.639   (17071 of 26697)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.491   (13031 of 26553)  Max disp:  0.963
+      Number of Molecules (ins, blk, cum, stdd)  26.00  25.84  27.00   4.61
+
+  Macro-iteration number 85000 (85000 micro) of simulation 3
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 100.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.640   (18175 of 28388)  
+      DELETE (BDELETE)          Acc. Ratio: 0.639   (18154 of 28408)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.490   (13831 of 28204)  Max disp:  0.963
+      Number of Molecules (ins, blk, cum, stdd)  33.00  31.53  26.96   4.60
+
+  Macro-iteration number 90000 (90000 micro) of simulation 3
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 100.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.640   (19227 of 30051)  
+      DELETE (BDELETE)          Acc. Ratio: 0.639   (19203 of 30064)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.503   (15030 of 29885)  Max disp:  0.446
+      Number of Molecules (ins, blk, cum, stdd)  36.00  31.03  26.94   4.63
+
+  Macro-iteration number 95000 (95000 micro) of simulation 3
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 100.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.640   (20286 of 31698)  
+      DELETE (BDELETE)          Acc. Ratio: 0.639   (20277 of 31743)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.506   (15978 of 31559)  Max disp:  1.371
+      Number of Molecules (ins, blk, cum, stdd)  21.00  25.81  26.94   4.66
+
+  Macro-iteration number 100000 (100000 micro) of simulation 3
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 100.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.639   (21354 of 33397)  
+      DELETE (BDELETE)          Acc. Ratio: 0.639   (21339 of 33369)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.498   (16555 of 33234)  Max disp:  1.371
+      Number of Molecules (ins, blk, cum, stdd)  27.00  26.05  26.91   4.64
+
+  Macro-iteration number 105000 (105000 micro) of simulation 3
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 100.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.640   (22390 of 35010)  
+      DELETE (BDELETE)          Acc. Ratio: 0.639   (22383 of 35055)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.491   (17168 of 34935)  Max disp:  1.371
+      Number of Molecules (ins, blk, cum, stdd)  19.00  20.39  26.89   4.63
+
+  Macro-iteration number 110000 (110000 micro) of simulation 3
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 100.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.639   (23419 of 36663)  
+      DELETE (BDELETE)          Acc. Ratio: 0.638   (23405 of 36693)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.501   (18343 of 36644)  Max disp:  0.421
+      Number of Molecules (ins, blk, cum, stdd)  26.00  28.44  26.90   4.62
+
+  Macro-iteration number 115000 (115000 micro) of simulation 3
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 100.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.639   (24460 of 38304)  
+      DELETE (BDELETE)          Acc. Ratio: 0.638   (24447 of 38330)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.507   (19468 of 38366)  Max disp:  2.000
+      Number of Molecules (ins, blk, cum, stdd)  25.00  31.08  26.91   4.60
+
+  Macro-iteration number 120000 (120000 micro) of simulation 3
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 100.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.639   (25538 of 39976)  
+      DELETE (BDELETE)          Acc. Ratio: 0.638   (25520 of 40006)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.495   (19821 of 40018)  Max disp:  2.000
+      Number of Molecules (ins, blk, cum, stdd)  30.00  25.29  26.95   4.60
+
+  Macro-iteration number 125000 (125000 micro) of simulation 3
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 100.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.639   (26620 of 41664)  
+      DELETE (BDELETE)          Acc. Ratio: 0.638   (26606 of 41722)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.498   (20714 of 41614)  Max disp:  0.232
+      Number of Molecules (ins, blk, cum, stdd)  26.00  23.76  26.90   4.57
+
+  Macro-iteration number 130000 (130000 micro) of simulation 3
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 100.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.639   (27696 of 43367)  
+      DELETE (BDELETE)          Acc. Ratio: 0.638   (27675 of 43406)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.510   (22030 of 43227)  Max disp:  2.000
+      Number of Molecules (ins, blk, cum, stdd)  33.00  34.47  26.85   4.59
+
+  Macro-iteration number 135000 (135000 micro) of simulation 3
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 100.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.638   (28739 of 45049)  
+      DELETE (BDELETE)          Acc. Ratio: 0.637   (28725 of 45069)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.498   (22367 of 44882)  Max disp:  2.000
+      Number of Molecules (ins, blk, cum, stdd)  26.00  25.46  26.87   4.60
+
+  Macro-iteration number 140000 (140000 micro) of simulation 3
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 100.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.638   (29781 of 46705)  
+      DELETE (BDELETE)          Acc. Ratio: 0.637   (29754 of 46732)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.491   (22852 of 46563)  Max disp:  0.681
+      Number of Molecules (ins, blk, cum, stdd)  39.00  37.72  26.89   4.60
+
+  Macro-iteration number 145000 (145000 micro) of simulation 3
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 100.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.637   (30862 of 48415)  
+      DELETE (BDELETE)          Acc. Ratio: 0.637   (30846 of 48423)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.495   (23845 of 48162)  Max disp:  0.681
+      Number of Molecules (ins, blk, cum, stdd)  28.00  25.80  26.91   4.59
+
+  Macro-iteration number 150000 (150000 micro) of simulation 3
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 100.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.638   (31925 of 50070)  
+      DELETE (BDELETE)          Acc. Ratio: 0.637   (31911 of 50133)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.499   (24836 of 49797)  Max disp:  0.681
+      Number of Molecules (ins, blk, cum, stdd)  26.00  20.80  26.91   4.57
+
+  Macro-iteration number 155000 (155000 micro) of simulation 3
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 100.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.638   (33011 of 51718)  
+      DELETE (BDELETE)          Acc. Ratio: 0.637   (32999 of 51808)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.502   (25850 of 51474)  Max disp:  0.681
+      Number of Molecules (ins, blk, cum, stdd)  24.00  21.83  26.92   4.58
+
+  Macro-iteration number 160000 (160000 micro) of simulation 3
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 100.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.639   (34134 of 53425)  
+      DELETE (BDELETE)          Acc. Ratio: 0.638   (34111 of 53489)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.506   (26877 of 53086)  Max disp:  0.681
+      Number of Molecules (ins, blk, cum, stdd)  35.00  34.48  26.92   4.55
+
+  Macro-iteration number 165000 (165000 micro) of simulation 3
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 100.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.638   (35182 of 55109)  
+      DELETE (BDELETE)          Acc. Ratio: 0.638   (35166 of 55116)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.510   (27933 of 54775)  Max disp:  1.165
+      Number of Molecules (ins, blk, cum, stdd)  28.00  27.16  26.92   4.53
+
+  Macro-iteration number 170000 (170000 micro) of simulation 3
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 100.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.638   (36232 of 56795)  
+      DELETE (BDELETE)          Acc. Ratio: 0.638   (36220 of 56757)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.508   (28662 of 56448)  Max disp:  1.165
+      Number of Molecules (ins, blk, cum, stdd)  24.00  27.12  26.94   4.52
+
+  Macro-iteration number 175000 (175000 micro) of simulation 3
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 100.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.638   (37276 of 58451)  
+      DELETE (BDELETE)          Acc. Ratio: 0.638   (37263 of 58438)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.505   (29370 of 58111)  Max disp:  1.165
+      Number of Molecules (ins, blk, cum, stdd)  25.00  26.19  26.98   4.54
+
+  Macro-iteration number 180000 (180000 micro) of simulation 3
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 100.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.638   (38325 of 60077)  
+      DELETE (BDELETE)          Acc. Ratio: 0.637   (38311 of 60131)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.503   (30052 of 59792)  Max disp:  1.165
+      Number of Molecules (ins, blk, cum, stdd)  26.00  25.57  26.97   4.52
+
+  Macro-iteration number 185000 (185000 micro) of simulation 3
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 100.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.638   (39363 of 61720)  
+      DELETE (BDELETE)          Acc. Ratio: 0.637   (39345 of 61752)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.500   (30760 of 61528)  Max disp:  1.165
+      Number of Molecules (ins, blk, cum, stdd)  30.00  27.01  26.96   4.51
+
+  Macro-iteration number 190000 (190000 micro) of simulation 3
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 100.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.638   (40436 of 63419)  
+      DELETE (BDELETE)          Acc. Ratio: 0.638   (40421 of 63380)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.498   (31445 of 63201)  Max disp:  1.165
+      Number of Molecules (ins, blk, cum, stdd)  27.00  29.15  26.96   4.48
+
+  Macro-iteration number 195000 (195000 micro) of simulation 3
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 100.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.637   (41462 of 65047)  
+      DELETE (BDELETE)          Acc. Ratio: 0.637   (41457 of 65058)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.496   (32169 of 64895)  Max disp:  1.165
+      Number of Molecules (ins, blk, cum, stdd)  17.00  19.92  26.91   4.51
+
+  Macro-iteration number 200000 (200000 micro) of simulation 3
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 100.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.637   (42500 of 66712)  
+      DELETE (BDELETE)          Acc. Ratio: 0.637   (42483 of 66689)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.493   (32850 of 66599)  Max disp:  1.165
+      Number of Molecules (ins, blk, cum, stdd)  29.00  25.19  26.91   4.51
+
+------------------------------------------------------------
+Ending GCMC simulation number 3    Nrg dev check: 0.506E-11
+  Methane:  P (kPa): 100.0    loading (molec/uc): 3.364
+------------------------------------------------------------
+------------------------------------------------------------
+Beginning GCMC simulation number 4 of 8   (200000 steps)
+------------------------------------------------------------
+The GCMC Simulation Parameters:
+  Simulation Number :    4
+  Configuration file: long.con.4
+  Restart file      : long.res.4
+  ------------------------------------------------------------
+  GCMC Species Parameters:
+    ----------------------------------------------------------
+    Species Name: Methane
+      Press.(kPa)   Fugacity      murti   B(Adams)
+          200.000    200.000    -14.074      0.729
+    ----------------------------------------------------------
+
+
+  Macro-iteration number 5000 (5000 micro) of simulation 4
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 200.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.508   (846 of 1664)  
+      DELETE (BDELETE)          Acc. Ratio: 0.492   (835 of 1696)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.496   (814 of 1640)  Max disp:  1.187
+      Number of Molecules (ins, blk, cum, stdd)  40.00  44.18  42.56   4.78
+
+  Macro-iteration number 10000 (10000 micro) of simulation 4
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 200.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.498   (1641 of 3292)  
+      DELETE (BDELETE)          Acc. Ratio: 0.487   (1625 of 3340)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.498   (1677 of 3368)  Max disp:  1.390
+      Number of Molecules (ins, blk, cum, stdd)  45.00  43.29  42.36   4.63
+
+  Macro-iteration number 15000 (15000 micro) of simulation 4
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 200.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.501   (2448 of 4888)  
+      DELETE (BDELETE)          Acc. Ratio: 0.488   (2438 of 4998)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.498   (2547 of 5114)  Max disp:  0.575
+      Number of Molecules (ins, blk, cum, stdd)  39.00  39.71  43.41   4.95
+
+  Macro-iteration number 20000 (20000 micro) of simulation 4
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 200.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.495   (3270 of 6600)  
+      DELETE (BDELETE)          Acc. Ratio: 0.489   (3255 of 6660)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.506   (3413 of 6740)  Max disp:  0.362
+      Number of Molecules (ins, blk, cum, stdd)  44.00  46.58  44.19   5.31
+
+  Macro-iteration number 25000 (25000 micro) of simulation 4
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 200.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.494   (4084 of 8265)  
+      DELETE (BDELETE)          Acc. Ratio: 0.489   (4072 of 8334)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.499   (4194 of 8401)  Max disp:  1.439
+      Number of Molecules (ins, blk, cum, stdd)  41.00  44.60  44.43   5.33
+
+  Macro-iteration number 30000 (30000 micro) of simulation 4
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 200.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.491   (4883 of 9947)  
+      DELETE (BDELETE)          Acc. Ratio: 0.489   (4870 of 9964)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.507   (5113 of 10089)  Max disp:  1.434
+      Number of Molecules (ins, blk, cum, stdd)  42.00  43.37  44.57   5.31
+
+  Macro-iteration number 35000 (35000 micro) of simulation 4
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 200.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.492   (5726 of 11640)  
+      DELETE (BDELETE)          Acc. Ratio: 0.492   (5709 of 11599)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.496   (5835 of 11761)  Max disp:  0.631
+      Number of Molecules (ins, blk, cum, stdd)  46.00  47.28  44.55   5.33
+
+  Macro-iteration number 40000 (40000 micro) of simulation 4
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 200.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.494   (6577 of 13315)  
+      DELETE (BDELETE)          Acc. Ratio: 0.496   (6565 of 13243)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.504   (6777 of 13442)  Max disp:  1.446
+      Number of Molecules (ins, blk, cum, stdd)  41.00  43.53  44.73   5.26
+
+  Macro-iteration number 45000 (45000 micro) of simulation 4
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 200.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.494   (7401 of 14991)  
+      DELETE (BDELETE)          Acc. Ratio: 0.496   (7384 of 14899)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.498   (7525 of 15110)  Max disp:  0.519
+      Number of Molecules (ins, blk, cum, stdd)  46.00  49.57  44.70   5.30
+
+  Macro-iteration number 50000 (50000 micro) of simulation 4
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 200.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.494   (8218 of 16621)  
+      DELETE (BDELETE)          Acc. Ratio: 0.494   (8209 of 16617)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.499   (8369 of 16762)  Max disp:  1.756
+      Number of Molecules (ins, blk, cum, stdd)  38.00  39.38  44.42   5.30
+
+  Macro-iteration number 55000 (55000 micro) of simulation 4
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 200.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.492   (9009 of 18318)  
+      DELETE (BDELETE)          Acc. Ratio: 0.492   (8994 of 18280)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.497   (9151 of 18402)  Max disp:  0.629
+      Number of Molecules (ins, blk, cum, stdd)  44.00  37.80  44.46   5.40
+
+  Macro-iteration number 60000 (60000 micro) of simulation 4
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 200.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.492   (9825 of 19951)  
+      DELETE (BDELETE)          Acc. Ratio: 0.492   (9809 of 19943)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.508   (10210 of 20106)  Max disp:  0.629
+      Number of Molecules (ins, blk, cum, stdd)  45.00  43.66  44.38   5.39
+
+  Macro-iteration number 65000 (65000 micro) of simulation 4
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 200.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.493   (10641 of 21605)  
+      DELETE (BDELETE)          Acc. Ratio: 0.492   (10624 of 21578)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.493   (10745 of 21817)  Max disp:  2.000
+      Number of Molecules (ins, blk, cum, stdd)  46.00  44.56  44.43   5.32
+
+  Macro-iteration number 70000 (70000 micro) of simulation 4
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 200.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.490   (11447 of 23361)  
+      DELETE (BDELETE)          Acc. Ratio: 0.493   (11424 of 23149)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.507   (11901 of 23490)  Max disp:  2.000
+      Number of Molecules (ins, blk, cum, stdd)  52.00  50.84  44.73   5.40
+
+  Macro-iteration number 75000 (75000 micro) of simulation 4
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 200.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.491   (12285 of 25031)  
+      DELETE (BDELETE)          Acc. Ratio: 0.494   (12261 of 24835)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.491   (12353 of 25134)  Max disp:  0.717
+      Number of Molecules (ins, blk, cum, stdd)  53.00  49.26  44.72   5.37
+
+  Macro-iteration number 80000 (80000 micro) of simulation 4
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 200.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.490   (13092 of 26701)  
+      DELETE (BDELETE)          Acc. Ratio: 0.494   (13085 of 26482)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.497   (13319 of 26817)  Max disp:  0.717
+      Number of Molecules (ins, blk, cum, stdd)  36.00  41.20  44.65   5.34
+
+  Macro-iteration number 85000 (85000 micro) of simulation 4
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 200.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.490   (13914 of 28374)  
+      DELETE (BDELETE)          Acc. Ratio: 0.495   (13913 of 28102)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.503   (14360 of 28524)  Max disp:  0.717
+      Number of Molecules (ins, blk, cum, stdd)  30.00  34.98  44.65   5.33
+
+  Macro-iteration number 90000 (90000 micro) of simulation 4
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 200.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.491   (14743 of 30043)  
+      DELETE (BDELETE)          Acc. Ratio: 0.494   (14726 of 29796)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.509   (15341 of 30161)  Max disp:  0.717
+      Number of Molecules (ins, blk, cum, stdd)  46.00  44.58  44.58   5.26
+
+  Macro-iteration number 95000 (95000 micro) of simulation 4
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 200.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.491   (15593 of 31731)  
+      DELETE (BDELETE)          Acc. Ratio: 0.495   (15573 of 31449)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.504   (16049 of 31820)  Max disp:  1.420
+      Number of Molecules (ins, blk, cum, stdd)  49.00  50.18  44.57   5.31
+
+  Macro-iteration number 100000 (100000 micro) of simulation 4
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 200.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.492   (16396 of 33357)  
+      DELETE (BDELETE)          Acc. Ratio: 0.494   (16389 of 33145)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.496   (16626 of 33498)  Max disp:  1.420
+      Number of Molecules (ins, blk, cum, stdd)  36.00  31.79  44.46   5.32
+
+  Macro-iteration number 105000 (105000 micro) of simulation 4
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 200.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.491   (17231 of 35076)  
+      DELETE (BDELETE)          Acc. Ratio: 0.495   (17211 of 34780)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.494   (17350 of 35144)  Max disp:  0.338
+      Number of Molecules (ins, blk, cum, stdd)  49.00  46.61  44.48   5.34
+
+  Macro-iteration number 110000 (110000 micro) of simulation 4
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 200.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.491   (18084 of 36832)  
+      DELETE (BDELETE)          Acc. Ratio: 0.496   (18068 of 36418)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.507   (18625 of 36750)  Max disp:  0.338
+      Number of Molecules (ins, blk, cum, stdd)  45.00  43.63  44.58   5.34
+
+  Macro-iteration number 115000 (115000 micro) of simulation 4
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 200.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.491   (18916 of 38497)  
+      DELETE (BDELETE)          Acc. Ratio: 0.496   (18906 of 38106)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.501   (19221 of 38397)  Max disp:  2.000
+      Number of Molecules (ins, blk, cum, stdd)  39.00  40.73  44.52   5.36
+
+  Macro-iteration number 120000 (120000 micro) of simulation 4
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 200.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.493   (19745 of 40085)  
+      DELETE (BDELETE)          Acc. Ratio: 0.495   (19727 of 39839)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.491   (19675 of 40076)  Max disp:  0.681
+      Number of Molecules (ins, blk, cum, stdd)  47.00  46.69  44.41   5.35
+
+  Macro-iteration number 125000 (125000 micro) of simulation 4
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 200.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.492   (20569 of 41770)  
+      DELETE (BDELETE)          Acc. Ratio: 0.496   (20557 of 41467)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.496   (20730 of 41763)  Max disp:  0.681
+      Number of Molecules (ins, blk, cum, stdd)  41.00  40.58  44.45   5.35
+
+  Macro-iteration number 130000 (130000 micro) of simulation 4
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 200.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.492   (21374 of 43416)  
+      DELETE (BDELETE)          Acc. Ratio: 0.495   (21360 of 43161)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.501   (21743 of 43423)  Max disp:  0.681
+      Number of Molecules (ins, blk, cum, stdd)  43.00  45.13  44.43   5.31
+
+  Macro-iteration number 135000 (135000 micro) of simulation 4
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 200.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.493   (22192 of 45031)  
+      DELETE (BDELETE)          Acc. Ratio: 0.495   (22173 of 44818)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.504   (22758 of 45151)  Max disp:  0.681
+      Number of Molecules (ins, blk, cum, stdd)  48.00  49.97  44.44   5.31
+
+  Macro-iteration number 140000 (140000 micro) of simulation 4
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 200.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.493   (23022 of 46735)  
+      DELETE (BDELETE)          Acc. Ratio: 0.495   (23001 of 46455)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.508   (23769 of 46810)  Max disp:  0.681
+      Number of Molecules (ins, blk, cum, stdd)  50.00  52.05  44.54   5.34
+
+  Macro-iteration number 145000 (145000 micro) of simulation 4
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 200.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.493   (23856 of 48409)  
+      DELETE (BDELETE)          Acc. Ratio: 0.495   (23839 of 48132)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.509   (24672 of 48459)  Max disp:  1.165
+      Number of Molecules (ins, blk, cum, stdd)  46.00  51.48  44.58   5.31
+
+  Macro-iteration number 150000 (150000 micro) of simulation 4
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 200.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.493   (24680 of 50074)  
+      DELETE (BDELETE)          Acc. Ratio: 0.495   (24666 of 49819)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.506   (25362 of 50107)  Max disp:  1.165
+      Number of Molecules (ins, blk, cum, stdd)  43.00  37.45  44.56   5.31
+
+  Macro-iteration number 155000 (155000 micro) of simulation 4
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 200.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.493   (25494 of 51705)  
+      DELETE (BDELETE)          Acc. Ratio: 0.494   (25473 of 51515)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.502   (26014 of 51780)  Max disp:  1.165
+      Number of Molecules (ins, blk, cum, stdd)  50.00  48.01  44.55   5.30
+
+  Macro-iteration number 160000 (160000 micro) of simulation 4
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 200.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.493   (26292 of 53379)  
+      DELETE (BDELETE)          Acc. Ratio: 0.494   (26285 of 53178)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.499   (26670 of 53443)  Max disp:  1.165
+      Number of Molecules (ins, blk, cum, stdd)  36.00  35.74  44.69   5.41
+
+  Macro-iteration number 165000 (165000 micro) of simulation 4
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 200.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.493   (27089 of 54993)  
+      DELETE (BDELETE)          Acc. Ratio: 0.494   (27071 of 54842)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.496   (27352 of 55165)  Max disp:  1.165
+      Number of Molecules (ins, blk, cum, stdd)  47.00  53.20  44.75   5.44
+
+  Macro-iteration number 170000 (170000 micro) of simulation 4
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 200.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.492   (27897 of 56673)  
+      DELETE (BDELETE)          Acc. Ratio: 0.494   (27884 of 56500)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.494   (28048 of 56827)  Max disp:  1.165
+      Number of Molecules (ins, blk, cum, stdd)  42.00  42.88  44.76   5.46
+
+  Macro-iteration number 175000 (175000 micro) of simulation 4
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 200.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.492   (28721 of 58348)  
+      DELETE (BDELETE)          Acc. Ratio: 0.493   (28707 of 58179)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.491   (28707 of 58473)  Max disp:  1.165
+      Number of Molecules (ins, blk, cum, stdd)  43.00  46.54  44.78   5.44
+
+  Macro-iteration number 180000 (180000 micro) of simulation 4
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 200.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.492   (29548 of 60033)  
+      DELETE (BDELETE)          Acc. Ratio: 0.493   (29527 of 59881)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.491   (29504 of 60086)  Max disp:  0.697
+      Number of Molecules (ins, blk, cum, stdd)  50.00  50.25  44.82   5.43
+
+  Macro-iteration number 185000 (185000 micro) of simulation 4
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 200.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.493   (30376 of 61635)  
+      DELETE (BDELETE)          Acc. Ratio: 0.493   (30362 of 61624)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.495   (30540 of 61741)  Max disp:  0.697
+      Number of Molecules (ins, blk, cum, stdd)  43.00  43.73  44.78   5.47
+
+  Macro-iteration number 190000 (190000 micro) of simulation 4
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 200.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.493   (31184 of 63259)  
+      DELETE (BDELETE)          Acc. Ratio: 0.492   (31168 of 63318)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.498   (31556 of 63423)  Max disp:  0.697
+      Number of Molecules (ins, blk, cum, stdd)  45.00  50.40  44.76   5.48
+
+  Macro-iteration number 195000 (195000 micro) of simulation 4
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 200.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.493   (31991 of 64891)  
+      DELETE (BDELETE)          Acc. Ratio: 0.492   (31977 of 64940)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.501   (32633 of 65169)  Max disp:  0.697
+      Number of Molecules (ins, blk, cum, stdd)  43.00  41.46  44.77   5.48
+
+  Macro-iteration number 200000 (200000 micro) of simulation 4
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 200.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.493   (32813 of 66557)  
+      DELETE (BDELETE)          Acc. Ratio: 0.492   (32786 of 66619)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.503   (33623 of 66824)  Max disp:  0.697
+      Number of Molecules (ins, blk, cum, stdd)  56.00  48.98  44.76   5.48
+
+------------------------------------------------------------
+Ending GCMC simulation number 4    Nrg dev check: 0.110E-10
+  Methane:  P (kPa): 200.0    loading (molec/uc): 5.595
+------------------------------------------------------------
+------------------------------------------------------------
+Beginning GCMC simulation number 5 of 8   (200000 steps)
+------------------------------------------------------------
+The GCMC Simulation Parameters:
+  Simulation Number :    5
+  Configuration file: long.con.5
+  Restart file      : long.res.5
+  ------------------------------------------------------------
+  GCMC Species Parameters:
+    ----------------------------------------------------------
+    Species Name: Methane
+      Press.(kPa)   Fugacity      murti   B(Adams)
+          400.000    400.000    -13.381      1.422
+    ----------------------------------------------------------
+
+
+  Macro-iteration number 5000 (5000 micro) of simulation 5
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 400.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.338   (570 of 1686)  
+      DELETE (BDELETE)          Acc. Ratio: 0.344   (568 of 1652)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.507   (843 of 1662)  Max disp:  1.332
+      Number of Molecules (ins, blk, cum, stdd)  58.00  57.43  66.36   5.73
+
+  Macro-iteration number 10000 (10000 micro) of simulation 5
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 400.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.329   (1109 of 3367)  
+      DELETE (BDELETE)          Acc. Ratio: 0.329   (1104 of 3353)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.493   (1618 of 3280)  Max disp:  2.000
+      Number of Molecules (ins, blk, cum, stdd)  61.00  62.75  66.04   5.59
+
+  Macro-iteration number 15000 (15000 micro) of simulation 5
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 400.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.328   (1651 of 5035)  
+      DELETE (BDELETE)          Acc. Ratio: 0.325   (1651 of 5078)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.502   (2451 of 4887)  Max disp:  1.254
+      Number of Molecules (ins, blk, cum, stdd)  56.00  58.92  66.40   5.96
+
+  Macro-iteration number 20000 (20000 micro) of simulation 5
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 400.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.324   (2171 of 6708)  
+      DELETE (BDELETE)          Acc. Ratio: 0.321   (2159 of 6723)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.495   (3250 of 6569)  Max disp:  0.790
+      Number of Molecules (ins, blk, cum, stdd)  68.00  67.60  66.86   6.52
+
+  Macro-iteration number 25000 (25000 micro) of simulation 5
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 400.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.329   (2751 of 8363)  
+      DELETE (BDELETE)          Acc. Ratio: 0.323   (2735 of 8461)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.502   (4102 of 8176)  Max disp:  0.790
+      Number of Molecules (ins, blk, cum, stdd)  72.00  71.94  67.00   6.05
+
+  Macro-iteration number 30000 (30000 micro) of simulation 5
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 400.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.325   (3291 of 10118)  
+      DELETE (BDELETE)          Acc. Ratio: 0.325   (3277 of 10077)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.504   (4942 of 9805)  Max disp:  0.790
+      Number of Molecules (ins, blk, cum, stdd)  70.00  71.27  67.23   6.19
+
+  Macro-iteration number 35000 (35000 micro) of simulation 5
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 400.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.326   (3866 of 11875)  
+      DELETE (BDELETE)          Acc. Ratio: 0.330   (3858 of 11681)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.507   (5802 of 11444)  Max disp:  0.790
+      Number of Molecules (ins, blk, cum, stdd)  64.00  67.15  67.92   6.53
+
+  Macro-iteration number 40000 (40000 micro) of simulation 5
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 400.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.326   (4437 of 13593)  
+      DELETE (BDELETE)          Acc. Ratio: 0.332   (4418 of 13307)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.501   (6558 of 13100)  Max disp:  1.490
+      Number of Molecules (ins, blk, cum, stdd)  75.00  76.02  67.87   6.44
+
+  Macro-iteration number 45000 (45000 micro) of simulation 5
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 400.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.326   (4974 of 15268)  
+      DELETE (BDELETE)          Acc. Ratio: 0.331   (4953 of 14959)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.494   (7294 of 14773)  Max disp:  0.805
+      Number of Molecules (ins, blk, cum, stdd)  77.00  73.48  67.97   6.26
+
+  Macro-iteration number 50000 (50000 micro) of simulation 5
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 400.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.324   (5488 of 16945)  
+      DELETE (BDELETE)          Acc. Ratio: 0.330   (5474 of 16609)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.499   (8200 of 16446)  Max disp:  0.805
+      Number of Molecules (ins, blk, cum, stdd)  70.00  72.07  68.06   6.16
+
+  Macro-iteration number 55000 (55000 micro) of simulation 5
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 400.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.324   (6027 of 18611)  
+      DELETE (BDELETE)          Acc. Ratio: 0.330   (6020 of 18241)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.499   (9056 of 18148)  Max disp:  0.805
+      Number of Molecules (ins, blk, cum, stdd)  63.00  61.02  68.13   6.11
+
+  Macro-iteration number 60000 (60000 micro) of simulation 5
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 400.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.324   (6560 of 20261)  
+      DELETE (BDELETE)          Acc. Ratio: 0.329   (6546 of 19889)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.502   (9959 of 19850)  Max disp:  0.805
+      Number of Molecules (ins, blk, cum, stdd)  70.00  68.15  68.37   6.14
+
+  Macro-iteration number 65000 (65000 micro) of simulation 5
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 400.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.324   (7092 of 21920)  
+      DELETE (BDELETE)          Acc. Ratio: 0.329   (7077 of 21516)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.504   (10867 of 21564)  Max disp:  0.805
+      Number of Molecules (ins, blk, cum, stdd)  71.00  72.13  68.33   6.04
+
+  Macro-iteration number 70000 (70000 micro) of simulation 5
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 400.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.323   (7617 of 23605)  
+      DELETE (BDELETE)          Acc. Ratio: 0.328   (7606 of 23167)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.505   (11731 of 23228)  Max disp:  0.805
+      Number of Molecules (ins, blk, cum, stdd)  67.00  68.59  68.28   6.02
+
+  Macro-iteration number 75000 (75000 micro) of simulation 5
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 400.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.323   (8166 of 25278)  
+      DELETE (BDELETE)          Acc. Ratio: 0.329   (8161 of 24815)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.507   (12633 of 24907)  Max disp:  0.805
+      Number of Molecules (ins, blk, cum, stdd)  61.00  57.81  68.08   5.98
+
+  Macro-iteration number 80000 (80000 micro) of simulation 5
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 400.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.323   (8687 of 26926)  
+      DELETE (BDELETE)          Acc. Ratio: 0.328   (8676 of 26455)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.507   (13493 of 26619)  Max disp:  0.805
+      Number of Molecules (ins, blk, cum, stdd)  67.00  69.05  68.16   5.95
+
+  Macro-iteration number 85000 (85000 micro) of simulation 5
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 400.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.323   (9229 of 28593)  
+      DELETE (BDELETE)          Acc. Ratio: 0.328   (9211 of 28103)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.507   (14354 of 28304)  Max disp:  0.805
+      Number of Molecules (ins, blk, cum, stdd)  74.00  74.64  68.11   5.93
+
+  Macro-iteration number 90000 (90000 micro) of simulation 5
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 400.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.323   (9757 of 30242)  
+      DELETE (BDELETE)          Acc. Ratio: 0.328   (9744 of 29723)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.507   (15213 of 30035)  Max disp:  0.805
+      Number of Molecules (ins, blk, cum, stdd)  69.00  71.72  68.15   5.87
+
+  Macro-iteration number 95000 (95000 micro) of simulation 5
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 400.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.322   (10274 of 31920)  
+      DELETE (BDELETE)          Acc. Ratio: 0.328   (10261 of 31313)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.507   (16114 of 31767)  Max disp:  0.805
+      Number of Molecules (ins, blk, cum, stdd)  69.00  69.51  68.20   5.87
+
+  Macro-iteration number 100000 (100000 micro) of simulation 5
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 400.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.322   (10806 of 33609)  
+      DELETE (BDELETE)          Acc. Ratio: 0.328   (10792 of 32929)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.508   (17006 of 33462)  Max disp:  0.805
+      Number of Molecules (ins, blk, cum, stdd)  70.00  69.13  68.20   5.79
+
+  Macro-iteration number 105000 (105000 micro) of simulation 5
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 400.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.322   (11358 of 35297)  
+      DELETE (BDELETE)          Acc. Ratio: 0.328   (11343 of 34544)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.509   (17887 of 35159)  Max disp:  0.805
+      Number of Molecules (ins, blk, cum, stdd)  71.00  74.19  68.25   5.76
+
+  Macro-iteration number 110000 (110000 micro) of simulation 5
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 400.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.322   (11908 of 36992)  
+      DELETE (BDELETE)          Acc. Ratio: 0.329   (11907 of 36169)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.510   (18779 of 36839)  Max disp:  0.805
+      Number of Molecules (ins, blk, cum, stdd)  57.00  60.55  68.24   5.72
+
+  Macro-iteration number 115000 (115000 micro) of simulation 5
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 400.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.323   (12474 of 38618)  
+      DELETE (BDELETE)          Acc. Ratio: 0.329   (12466 of 37909)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.498   (19143 of 38473)  Max disp:  2.000
+      Number of Molecules (ins, blk, cum, stdd)  64.00  67.12  68.02   5.80
+
+  Macro-iteration number 120000 (120000 micro) of simulation 5
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 400.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.323   (13035 of 40322)  
+      DELETE (BDELETE)          Acc. Ratio: 0.329   (13027 of 39582)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.491   (19673 of 40096)  Max disp:  0.880
+      Number of Molecules (ins, blk, cum, stdd)  64.00  67.22  68.04   5.73
+
+  Macro-iteration number 125000 (125000 micro) of simulation 5
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 400.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.323   (13584 of 42024)  
+      DELETE (BDELETE)          Acc. Ratio: 0.329   (13572 of 41196)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.493   (20579 of 41780)  Max disp:  0.615
+      Number of Molecules (ins, blk, cum, stdd)  68.00  63.91  67.99   5.76
+
+  Macro-iteration number 130000 (130000 micro) of simulation 5
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 400.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.324   (14163 of 43655)  
+      DELETE (BDELETE)          Acc. Ratio: 0.330   (14151 of 42901)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.497   (21607 of 43444)  Max disp:  0.615
+      Number of Molecules (ins, blk, cum, stdd)  68.00  64.42  67.90   5.76
+
+  Macro-iteration number 135000 (135000 micro) of simulation 5
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 400.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.325   (14717 of 45351)  
+      DELETE (BDELETE)          Acc. Ratio: 0.330   (14705 of 44583)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.502   (22616 of 45066)  Max disp:  0.615
+      Number of Molecules (ins, blk, cum, stdd)  68.00  66.55  68.03   5.79
+
+  Macro-iteration number 140000 (140000 micro) of simulation 5
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 400.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.324   (15264 of 47080)  
+      DELETE (BDELETE)          Acc. Ratio: 0.330   (15244 of 46219)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.506   (23649 of 46701)  Max disp:  0.615
+      Number of Molecules (ins, blk, cum, stdd)  76.00  73.79  68.09   5.81
+
+  Macro-iteration number 145000 (145000 micro) of simulation 5
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 400.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.324   (15784 of 48751)  
+      DELETE (BDELETE)          Acc. Ratio: 0.330   (15776 of 47873)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.510   (24653 of 48376)  Max disp:  0.954
+      Number of Molecules (ins, blk, cum, stdd)  64.00  71.58  68.12   5.78
+
+  Macro-iteration number 150000 (150000 micro) of simulation 5
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 400.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.324   (16318 of 50442)  
+      DELETE (BDELETE)          Acc. Ratio: 0.329   (16308 of 49511)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.508   (25414 of 50047)  Max disp:  0.954
+      Number of Molecules (ins, blk, cum, stdd)  66.00  67.43  68.12   5.74
+
+  Macro-iteration number 155000 (155000 micro) of simulation 5
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 400.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.324   (16883 of 52120)  
+      DELETE (BDELETE)          Acc. Ratio: 0.330   (16865 of 51155)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.506   (26177 of 51725)  Max disp:  0.954
+      Number of Molecules (ins, blk, cum, stdd)  74.00  72.28  68.20   5.76
+
+  Macro-iteration number 160000 (160000 micro) of simulation 5
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 400.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.324   (17427 of 53826)  
+      DELETE (BDELETE)          Acc. Ratio: 0.330   (17422 of 52827)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.505   (26915 of 53347)  Max disp:  0.954
+      Number of Molecules (ins, blk, cum, stdd)  61.00  61.65  68.25   5.74
+
+  Macro-iteration number 165000 (165000 micro) of simulation 5
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 400.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.324   (17972 of 55468)  
+      DELETE (BDELETE)          Acc. Ratio: 0.329   (17959 of 54511)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.504   (27715 of 55021)  Max disp:  0.954
+      Number of Molecules (ins, blk, cum, stdd)  69.00  67.20  68.09   5.79
+
+  Macro-iteration number 170000 (170000 micro) of simulation 5
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 400.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.324   (18520 of 57091)  
+      DELETE (BDELETE)          Acc. Ratio: 0.329   (18511 of 56192)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.502   (28479 of 56717)  Max disp:  0.954
+      Number of Molecules (ins, blk, cum, stdd)  65.00  69.68  68.04   5.77
+
+  Macro-iteration number 175000 (175000 micro) of simulation 5
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 400.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.324   (19072 of 58816)  
+      DELETE (BDELETE)          Acc. Ratio: 0.330   (19060 of 57843)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.502   (29263 of 58341)  Max disp:  0.954
+      Number of Molecules (ins, blk, cum, stdd)  68.00  63.36  68.03   5.73
+
+  Macro-iteration number 180000 (180000 micro) of simulation 5
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 400.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.325   (19633 of 60434)  
+      DELETE (BDELETE)          Acc. Ratio: 0.330   (19626 of 59543)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.500   (30030 of 60023)  Max disp:  0.954
+      Number of Molecules (ins, blk, cum, stdd)  63.00  59.75  67.96   5.70
+
+  Macro-iteration number 185000 (185000 micro) of simulation 5
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 400.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.325   (20164 of 62123)  
+      DELETE (BDELETE)          Acc. Ratio: 0.329   (20149 of 61175)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.498   (30749 of 61702)  Max disp:  0.954
+      Number of Molecules (ins, blk, cum, stdd)  71.00  71.89  68.05   5.74
+
+  Macro-iteration number 190000 (190000 micro) of simulation 5
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 400.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.325   (20720 of 63752)  
+      DELETE (BDELETE)          Acc. Ratio: 0.330   (20701 of 62823)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.497   (31539 of 63425)  Max disp:  0.954
+      Number of Molecules (ins, blk, cum, stdd)  75.00  72.76  67.99   5.75
+
+  Macro-iteration number 195000 (195000 micro) of simulation 5
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 400.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.325   (21259 of 65406)  
+      DELETE (BDELETE)          Acc. Ratio: 0.330   (21246 of 64461)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.497   (32342 of 65133)  Max disp:  0.954
+      Number of Molecules (ins, blk, cum, stdd)  69.00  70.07  67.98   5.73
+
+  Macro-iteration number 200000 (200000 micro) of simulation 5
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 400.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.325   (21784 of 67066)  
+      DELETE (BDELETE)          Acc. Ratio: 0.330   (21783 of 66105)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.496   (33115 of 66829)  Max disp:  0.954
+      Number of Molecules (ins, blk, cum, stdd)  57.00  57.29  68.05   5.75
+
+------------------------------------------------------------
+Ending GCMC simulation number 5    Nrg dev check: 0.912E-11
+  Methane:  P (kPa): 400.0    loading (molec/uc): 8.506
+------------------------------------------------------------
+------------------------------------------------------------
+Beginning GCMC simulation number 6 of 8   (200000 steps)
+------------------------------------------------------------
+The GCMC Simulation Parameters:
+  Simulation Number :    6
+  Configuration file: long.con.6
+  Restart file      : long.res.6
+  ------------------------------------------------------------
+  GCMC Species Parameters:
+    ----------------------------------------------------------
+    Species Name: Methane
+      Press.(kPa)   Fugacity      murti   B(Adams)
+          600.000    600.000    -12.975      1.827
+    ----------------------------------------------------------
+
+
+  Macro-iteration number 5000 (5000 micro) of simulation 6
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 600.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.252   (418 of 1662)  
+      DELETE (BDELETE)          Acc. Ratio: 0.238   (391 of 1645)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.500   (847 of 1693)  Max disp:  2.000
+      Number of Molecules (ins, blk, cum, stdd)  84.00  85.89  80.86   6.98
+
+  Macro-iteration number 10000 (10000 micro) of simulation 6
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 600.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.252   (837 of 3316)  
+      DELETE (BDELETE)          Acc. Ratio: 0.243   (814 of 3349)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.492   (1642 of 3335)  Max disp:  2.000
+      Number of Molecules (ins, blk, cum, stdd)  80.00  81.89  78.87   6.05
+
+  Macro-iteration number 15000 (15000 micro) of simulation 6
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 600.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.247   (1223 of 4942)  
+      DELETE (BDELETE)          Acc. Ratio: 0.239   (1198 of 5022)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.493   (2483 of 5036)  Max disp:  0.731
+      Number of Molecules (ins, blk, cum, stdd)  82.00  80.35  79.07   5.61
+
+  Macro-iteration number 20000 (20000 micro) of simulation 6
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 600.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.245   (1626 of 6638)  
+      DELETE (BDELETE)          Acc. Ratio: 0.239   (1595 of 6675)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.507   (3391 of 6687)  Max disp:  0.731
+      Number of Molecules (ins, blk, cum, stdd)  88.00  88.70  79.95   5.71
+
+  Macro-iteration number 25000 (25000 micro) of simulation 6
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 600.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.241   (2009 of 8347)  
+      DELETE (BDELETE)          Acc. Ratio: 0.240   (1991 of 8283)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.492   (4119 of 8370)  Max disp:  1.079
+      Number of Molecules (ins, blk, cum, stdd)  75.00  78.07  80.55   5.80
+
+  Macro-iteration number 30000 (30000 micro) of simulation 6
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 600.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.242   (2416 of 9973)  
+      DELETE (BDELETE)          Acc. Ratio: 0.240   (2392 of 9965)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.493   (4963 of 10062)  Max disp:  1.751
+      Number of Molecules (ins, blk, cum, stdd)  81.00  81.63  80.35   5.61
+
+  Macro-iteration number 35000 (35000 micro) of simulation 6
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 600.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.243   (2829 of 11625)  
+      DELETE (BDELETE)          Acc. Ratio: 0.241   (2801 of 11607)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.492   (5791 of 11768)  Max disp:  0.540
+      Number of Molecules (ins, blk, cum, stdd)  85.00  85.82  80.42   5.47
+
+  Macro-iteration number 40000 (40000 micro) of simulation 6
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 600.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.244   (3240 of 13283)  
+      DELETE (BDELETE)          Acc. Ratio: 0.242   (3226 of 13321)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.509   (6824 of 13396)  Max disp:  0.540
+      Number of Molecules (ins, blk, cum, stdd)  71.00  74.99  80.16   5.45
+
+  Macro-iteration number 45000 (45000 micro) of simulation 6
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 600.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.247   (3682 of 14926)  
+      DELETE (BDELETE)          Acc. Ratio: 0.244   (3662 of 15034)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.500   (7513 of 15040)  Max disp:  0.192
+      Number of Molecules (ins, blk, cum, stdd)  77.00  74.81  79.93   5.58
+
+  Macro-iteration number 50000 (50000 micro) of simulation 6
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 600.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.245   (4071 of 16610)  
+      DELETE (BDELETE)          Acc. Ratio: 0.243   (4056 of 16707)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.494   (8241 of 16683)  Max disp:  0.162
+      Number of Molecules (ins, blk, cum, stdd)  72.00  71.69  79.81   5.46
+
+  Macro-iteration number 55000 (55000 micro) of simulation 6
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 600.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.246   (4483 of 18241)  
+      DELETE (BDELETE)          Acc. Ratio: 0.243   (4464 of 18378)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.495   (9096 of 18381)  Max disp:  2.000
+      Number of Molecules (ins, blk, cum, stdd)  76.00  79.66  79.89   5.33
+
+  Macro-iteration number 60000 (60000 micro) of simulation 6
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 600.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.245   (4894 of 19953)  
+      DELETE (BDELETE)          Acc. Ratio: 0.243   (4868 of 20049)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.509   (10179 of 19998)  Max disp:  1.809
+      Number of Molecules (ins, blk, cum, stdd)  83.00  81.12  79.83   5.21
+
+  Macro-iteration number 65000 (65000 micro) of simulation 6
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 600.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.246   (5304 of 21587)  
+      DELETE (BDELETE)          Acc. Ratio: 0.243   (5278 of 21722)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.493   (10691 of 21691)  Max disp:  0.477
+      Number of Molecules (ins, blk, cum, stdd)  83.00  87.41  79.93   5.25
+
+  Macro-iteration number 70000 (70000 micro) of simulation 6
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 600.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.245   (5692 of 23195)  
+      DELETE (BDELETE)          Acc. Ratio: 0.242   (5670 of 23413)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.507   (11859 of 23392)  Max disp:  0.477
+      Number of Molecules (ins, blk, cum, stdd)  79.00  77.89  79.93   5.20
+
+  Macro-iteration number 75000 (75000 micro) of simulation 6
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 600.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.244   (6074 of 24889)  
+      DELETE (BDELETE)          Acc. Ratio: 0.241   (6047 of 25063)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.496   (12417 of 25048)  Max disp:  1.780
+      Number of Molecules (ins, blk, cum, stdd)  84.00  82.83  80.26   5.28
+
+  Macro-iteration number 80000 (80000 micro) of simulation 6
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 600.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.244   (6488 of 26580)  
+      DELETE (BDELETE)          Acc. Ratio: 0.242   (6470 of 26732)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.505   (13475 of 26688)  Max disp:  0.241
+      Number of Molecules (ins, blk, cum, stdd)  75.00  77.96  80.46   5.23
+
+  Macro-iteration number 85000 (85000 micro) of simulation 6
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 600.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.244   (6907 of 28251)  
+      DELETE (BDELETE)          Acc. Ratio: 0.242   (6876 of 28393)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.499   (14153 of 28356)  Max disp:  1.615
+      Number of Molecules (ins, blk, cum, stdd)  88.00  91.33  80.53   5.24
+
+  Macro-iteration number 90000 (90000 micro) of simulation 6
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 600.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.244   (7307 of 29952)  
+      DELETE (BDELETE)          Acc. Ratio: 0.243   (7290 of 30046)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.497   (14898 of 30002)  Max disp:  0.218
+      Number of Molecules (ins, blk, cum, stdd)  74.00  73.18  80.53   5.20
+
+  Macro-iteration number 95000 (95000 micro) of simulation 6
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 600.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.244   (7716 of 31625)  
+      DELETE (BDELETE)          Acc. Ratio: 0.243   (7690 of 31689)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.507   (16067 of 31686)  Max disp:  1.265
+      Number of Molecules (ins, blk, cum, stdd)  83.00  78.13  80.60   5.16
+
+  Macro-iteration number 100000 (100000 micro) of simulation 6
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 600.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.244   (8116 of 33302)  
+      DELETE (BDELETE)          Acc. Ratio: 0.242   (8078 of 33357)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.498   (16599 of 33341)  Max disp:  1.265
+      Number of Molecules (ins, blk, cum, stdd)  95.00  93.19  80.79   5.22
+
+  Macro-iteration number 105000 (105000 micro) of simulation 6
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 600.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.243   (8511 of 35043)  
+      DELETE (BDELETE)          Acc. Ratio: 0.242   (8479 of 34986)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.490   (17140 of 34971)  Max disp:  1.265
+      Number of Molecules (ins, blk, cum, stdd)  89.00  86.48  81.00   5.27
+
+  Macro-iteration number 110000 (110000 micro) of simulation 6
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 600.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.242   (8910 of 36760)  
+      DELETE (BDELETE)          Acc. Ratio: 0.243   (8890 of 36624)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.496   (18145 of 36616)  Max disp:  0.557
+      Number of Molecules (ins, blk, cum, stdd)  77.00  74.18  81.18   5.33
+
+  Macro-iteration number 115000 (115000 micro) of simulation 6
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 600.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.242   (9310 of 38458)  
+      DELETE (BDELETE)          Acc. Ratio: 0.242   (9285 of 38300)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.501   (19177 of 38242)  Max disp:  0.557
+      Number of Molecules (ins, blk, cum, stdd)  82.00  82.89  81.21   5.27
+
+  Macro-iteration number 120000 (120000 micro) of simulation 6
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 600.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.242   (9715 of 40147)  
+      DELETE (BDELETE)          Acc. Ratio: 0.242   (9693 of 39982)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.509   (20299 of 39871)  Max disp:  0.557
+      Number of Molecules (ins, blk, cum, stdd)  79.00  81.75  81.12   5.28
+
+  Macro-iteration number 125000 (125000 micro) of simulation 6
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 600.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.243   (10139 of 41770)  
+      DELETE (BDELETE)          Acc. Ratio: 0.243   (10121 of 41651)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.506   (21042 of 41579)  Max disp:  1.102
+      Number of Molecules (ins, blk, cum, stdd)  75.00  71.52  80.95   5.36
+
+  Macro-iteration number 130000 (130000 micro) of simulation 6
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 600.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.242   (10527 of 43474)  
+      DELETE (BDELETE)          Acc. Ratio: 0.243   (10500 of 43252)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.502   (21725 of 43274)  Max disp:  1.102
+      Number of Molecules (ins, blk, cum, stdd)  84.00  83.00  81.10   5.38
+
+  Macro-iteration number 135000 (135000 micro) of simulation 6
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 600.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.242   (10933 of 45157)  
+      DELETE (BDELETE)          Acc. Ratio: 0.243   (10899 of 44875)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.497   (22364 of 44968)  Max disp:  1.102
+      Number of Molecules (ins, blk, cum, stdd)  91.00  88.41  81.11   5.35
+
+  Macro-iteration number 140000 (140000 micro) of simulation 6
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 600.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.242   (11352 of 46822)  
+      DELETE (BDELETE)          Acc. Ratio: 0.243   (11331 of 46536)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.493   (23017 of 46642)  Max disp:  1.102
+      Number of Molecules (ins, blk, cum, stdd)  78.00  77.22  81.05   5.31
+
+  Macro-iteration number 145000 (145000 micro) of simulation 6
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 600.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.242   (11759 of 48496)  
+      DELETE (BDELETE)          Acc. Ratio: 0.243   (11736 of 48233)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.490   (23674 of 48271)  Max disp:  0.627
+      Number of Molecules (ins, blk, cum, stdd)  80.00  74.69  80.98   5.34
+
+  Macro-iteration number 150000 (150000 micro) of simulation 6
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 600.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.243   (12183 of 50172)  
+      DELETE (BDELETE)          Acc. Ratio: 0.243   (12144 of 49945)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.494   (24654 of 49883)  Max disp:  0.627
+      Number of Molecules (ins, blk, cum, stdd)  96.00  92.56  80.95   5.39
+
+  Macro-iteration number 155000 (155000 micro) of simulation 6
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 600.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.243   (12572 of 51834)  
+      DELETE (BDELETE)          Acc. Ratio: 0.243   (12548 of 51650)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.498   (25630 of 51516)  Max disp:  0.627
+      Number of Molecules (ins, blk, cum, stdd)  81.00  80.59  81.00   5.47
+
+  Macro-iteration number 160000 (160000 micro) of simulation 6
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 600.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.243   (12969 of 53449)  
+      DELETE (BDELETE)          Acc. Ratio: 0.243   (12951 of 53354)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.500   (26608 of 53197)  Max disp:  0.627
+      Number of Molecules (ins, blk, cum, stdd)  75.00  77.88  81.08   5.52
+
+  Macro-iteration number 165000 (165000 micro) of simulation 6
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 600.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.243   (13385 of 55142)  
+      DELETE (BDELETE)          Acc. Ratio: 0.243   (13365 of 55015)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.503   (27609 of 54843)  Max disp:  0.627
+      Number of Molecules (ins, blk, cum, stdd)  77.00  76.48  81.00   5.52
+
+  Macro-iteration number 170000 (170000 micro) of simulation 6
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 600.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.243   (13814 of 56845)  
+      DELETE (BDELETE)          Acc. Ratio: 0.243   (13782 of 56665)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.506   (28571 of 56490)  Max disp:  0.627
+      Number of Molecules (ins, blk, cum, stdd)  89.00  87.23  81.01   5.51
+
+  Macro-iteration number 175000 (175000 micro) of simulation 6
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 600.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.243   (14211 of 58524)  
+      DELETE (BDELETE)          Acc. Ratio: 0.243   (14191 of 58332)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.509   (29570 of 58144)  Max disp:  0.627
+      Number of Molecules (ins, blk, cum, stdd)  77.00  80.07  81.06   5.50
+
+  Macro-iteration number 180000 (180000 micro) of simulation 6
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 600.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.243   (14631 of 60175)  
+      DELETE (BDELETE)          Acc. Ratio: 0.243   (14600 of 60053)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.507   (30334 of 59772)  Max disp:  1.242
+      Number of Molecules (ins, blk, cum, stdd)  88.00  88.08  81.07   5.47
+
+  Macro-iteration number 185000 (185000 micro) of simulation 6
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 600.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.243   (15041 of 61782)  
+      DELETE (BDELETE)          Acc. Ratio: 0.243   (15020 of 61803)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.503   (30913 of 61415)  Max disp:  1.242
+      Number of Molecules (ins, blk, cum, stdd)  78.00  80.36  80.95   5.62
+
+  Macro-iteration number 190000 (190000 micro) of simulation 6
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 600.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.244   (15451 of 63414)  
+      DELETE (BDELETE)          Acc. Ratio: 0.243   (15431 of 63564)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.499   (31446 of 63022)  Max disp:  1.242
+      Number of Molecules (ins, blk, cum, stdd)  77.00  78.23  80.91   5.60
+
+  Macro-iteration number 195000 (195000 micro) of simulation 6
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 600.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.244   (15865 of 65094)  
+      DELETE (BDELETE)          Acc. Ratio: 0.243   (15854 of 65235)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.495   (32002 of 64671)  Max disp:  1.242
+      Number of Molecules (ins, blk, cum, stdd)  68.00  71.27  80.86   5.62
+
+  Macro-iteration number 200000 (200000 micro) of simulation 6
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 600.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.244   (16276 of 66830)  
+      DELETE (BDELETE)          Acc. Ratio: 0.243   (16247 of 66896)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.491   (32565 of 66274)  Max disp:  1.242
+      Number of Molecules (ins, blk, cum, stdd)  86.00  84.26  80.88   5.61
+
+------------------------------------------------------------
+Ending GCMC simulation number 6    Nrg dev check: 0.732E-11
+  Methane:  P (kPa): 600.0    loading (molec/uc): 10.11
+------------------------------------------------------------
+------------------------------------------------------------
+Beginning GCMC simulation number 7 of 8   (200000 steps)
+------------------------------------------------------------
+The GCMC Simulation Parameters:
+  Simulation Number :    7
+  Configuration file: long.con.7
+  Restart file      : long.res.7
+  ------------------------------------------------------------
+  GCMC Species Parameters:
+    ----------------------------------------------------------
+    Species Name: Methane
+      Press.(kPa)   Fugacity      murti   B(Adams)
+          800.000    800.000    -12.688      2.115
+    ----------------------------------------------------------
+
+
+  Macro-iteration number 5000 (5000 micro) of simulation 7
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 800.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.203   (334 of 1647)  
+      DELETE (BDELETE)          Acc. Ratio: 0.198   (331 of 1668)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.495   (834 of 1685)  Max disp:  2.000
+      Number of Molecules (ins, blk, cum, stdd)  89.00  87.62  92.15   4.57
+
+  Macro-iteration number 10000 (10000 micro) of simulation 7
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 800.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.196   (643 of 3289)  
+      DELETE (BDELETE)          Acc. Ratio: 0.193   (638 of 3304)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.489   (1667 of 3407)  Max disp:  0.209
+      Number of Molecules (ins, blk, cum, stdd)  91.00  90.16  93.39   4.58
+
+  Macro-iteration number 15000 (15000 micro) of simulation 7
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 800.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.196   (975 of 4974)  
+      DELETE (BDELETE)          Acc. Ratio: 0.197   (971 of 4939)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.506   (2575 of 5087)  Max disp:  0.681
+      Number of Molecules (ins, blk, cum, stdd)  90.00  93.76  92.28   4.70
+
+  Macro-iteration number 20000 (20000 micro) of simulation 7
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 800.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.199   (1324 of 6639)  
+      DELETE (BDELETE)          Acc. Ratio: 0.199   (1327 of 6653)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.494   (3315 of 6708)  Max disp:  0.692
+      Number of Molecules (ins, blk, cum, stdd)  83.00  83.29  90.47   5.47
+
+  Macro-iteration number 25000 (25000 micro) of simulation 7
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 800.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.200   (1658 of 8288)  
+      DELETE (BDELETE)          Acc. Ratio: 0.199   (1657 of 8318)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.508   (4261 of 8394)  Max disp:  0.692
+      Number of Molecules (ins, blk, cum, stdd)  87.00  85.87  90.04   5.54
+
+  Macro-iteration number 30000 (30000 micro) of simulation 7
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 800.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.198   (1967 of 9942)  
+      DELETE (BDELETE)          Acc. Ratio: 0.197   (1969 of 10019)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.499   (5014 of 10039)  Max disp:  0.488
+      Number of Molecules (ins, blk, cum, stdd)  84.00  85.36  89.93   5.37
+
+  Macro-iteration number 35000 (35000 micro) of simulation 7
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 800.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.197   (2288 of 11619)  
+      DELETE (BDELETE)          Acc. Ratio: 0.196   (2285 of 11649)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.491   (5758 of 11732)  Max disp:  0.625
+      Number of Molecules (ins, blk, cum, stdd)  89.00  91.22  89.99   5.11
+
+  Macro-iteration number 40000 (40000 micro) of simulation 7
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 800.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.196   (2605 of 13307)  
+      DELETE (BDELETE)          Acc. Ratio: 0.195   (2599 of 13306)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.503   (6738 of 13387)  Max disp:  0.625
+      Number of Molecules (ins, blk, cum, stdd)  92.00  89.96  90.16   5.22
+
+  Macro-iteration number 45000 (45000 micro) of simulation 7
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 800.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.195   (2929 of 14983)  
+      DELETE (BDELETE)          Acc. Ratio: 0.196   (2934 of 14988)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.507   (7618 of 15029)  Max disp:  1.069
+      Number of Molecules (ins, blk, cum, stdd)  81.00  80.92  90.06   5.08
+
+  Macro-iteration number 50000 (50000 micro) of simulation 7
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 800.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.196   (3258 of 16596)  
+      DELETE (BDELETE)          Acc. Ratio: 0.194   (3252 of 16732)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.496   (8275 of 16672)  Max disp:  1.069
+      Number of Molecules (ins, blk, cum, stdd)  92.00  89.41  89.60   5.21
+
+  Macro-iteration number 55000 (55000 micro) of simulation 7
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 800.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.196   (3585 of 18255)  
+      DELETE (BDELETE)          Acc. Ratio: 0.194   (3581 of 18451)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.498   (9111 of 18294)  Max disp:  0.312
+      Number of Molecules (ins, blk, cum, stdd)  90.00  88.83  89.84   5.20
+
+  Macro-iteration number 60000 (60000 micro) of simulation 7
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 800.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.196   (3914 of 19923)  
+      DELETE (BDELETE)          Acc. Ratio: 0.195   (3918 of 20068)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.495   (9896 of 20009)  Max disp:  2.000
+      Number of Molecules (ins, blk, cum, stdd)  82.00  82.83  89.72   5.18
+
+  Macro-iteration number 65000 (65000 micro) of simulation 7
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 800.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.198   (4263 of 21557)  
+      DELETE (BDELETE)          Acc. Ratio: 0.196   (4272 of 21801)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.506   (10954 of 21642)  Max disp:  0.350
+      Number of Molecules (ins, blk, cum, stdd)  77.00  80.29  89.39   5.25
+
+  Macro-iteration number 70000 (70000 micro) of simulation 7
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 800.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.199   (4612 of 23213)  
+      DELETE (BDELETE)          Acc. Ratio: 0.196   (4612 of 23478)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.504   (11741 of 23309)  Max disp:  1.023
+      Number of Molecules (ins, blk, cum, stdd)  86.00  84.16  89.15   5.33
+
+  Macro-iteration number 75000 (75000 micro) of simulation 7
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 800.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.198   (4938 of 24896)  
+      DELETE (BDELETE)          Acc. Ratio: 0.197   (4943 of 25155)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.496   (12377 of 24949)  Max disp:  1.023
+      Number of Molecules (ins, blk, cum, stdd)  81.00  80.87  89.12   5.22
+
+  Macro-iteration number 80000 (80000 micro) of simulation 7
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 800.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.198   (5261 of 26633)  
+      DELETE (BDELETE)          Acc. Ratio: 0.196   (5259 of 26793)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.491   (13044 of 26574)  Max disp:  0.679
+      Number of Molecules (ins, blk, cum, stdd)  88.00  89.34  89.46   5.46
+
+  Macro-iteration number 85000 (85000 micro) of simulation 7
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 800.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.197   (5570 of 28309)  
+      DELETE (BDELETE)          Acc. Ratio: 0.196   (5574 of 28436)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.495   (13978 of 28255)  Max disp:  0.679
+      Number of Molecules (ins, blk, cum, stdd)  82.00  81.12  89.56   5.61
+
+  Macro-iteration number 90000 (90000 micro) of simulation 7
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 800.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.196   (5886 of 29998)  
+      DELETE (BDELETE)          Acc. Ratio: 0.196   (5887 of 30038)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.499   (14943 of 29964)  Max disp:  0.679
+      Number of Molecules (ins, blk, cum, stdd)  85.00  83.70  89.36   5.59
+
+  Macro-iteration number 95000 (95000 micro) of simulation 7
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 800.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.196   (6211 of 31720)  
+      DELETE (BDELETE)          Acc. Ratio: 0.196   (6211 of 31736)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.500   (15779 of 31544)  Max disp:  0.679
+      Number of Molecules (ins, blk, cum, stdd)  86.00  84.14  89.36   5.52
+
+  Macro-iteration number 100000 (100000 micro) of simulation 7
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 800.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.195   (6512 of 33424)  
+      DELETE (BDELETE)          Acc. Ratio: 0.195   (6509 of 33355)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.502   (16686 of 33221)  Max disp:  0.679
+      Number of Molecules (ins, blk, cum, stdd)  89.00  89.71  89.47   5.46
+
+  Macro-iteration number 105000 (105000 micro) of simulation 7
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 800.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.196   (6869 of 35126)  
+      DELETE (BDELETE)          Acc. Ratio: 0.196   (6856 of 35013)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.505   (17602 of 34861)  Max disp:  0.679
+      Number of Molecules (ins, blk, cum, stdd)  99.00  98.46  89.38   5.45
+
+  Macro-iteration number 110000 (110000 micro) of simulation 7
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 800.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.195   (7185 of 36787)  
+      DELETE (BDELETE)          Acc. Ratio: 0.196   (7189 of 36713)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.508   (18549 of 36500)  Max disp:  0.679
+      Number of Molecules (ins, blk, cum, stdd)  82.00  83.72  89.19   5.52
+
+  Macro-iteration number 115000 (115000 micro) of simulation 7
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 800.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.195   (7507 of 38410)  
+      DELETE (BDELETE)          Acc. Ratio: 0.195   (7504 of 38393)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.505   (19303 of 38197)  Max disp:  1.715
+      Number of Molecules (ins, blk, cum, stdd)  89.00  92.86  89.20   5.45
+
+  Macro-iteration number 120000 (120000 micro) of simulation 7
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 800.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.196   (7852 of 40126)  
+      DELETE (BDELETE)          Acc. Ratio: 0.196   (7852 of 40070)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.494   (19663 of 39804)  Max disp:  1.715
+      Number of Molecules (ins, blk, cum, stdd)  86.00  86.08  89.02   5.45
+
+  Macro-iteration number 125000 (125000 micro) of simulation 7
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 800.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.196   (8189 of 41836)  
+      DELETE (BDELETE)          Acc. Ratio: 0.196   (8182 of 41691)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.499   (20682 of 41473)  Max disp:  0.244
+      Number of Molecules (ins, blk, cum, stdd)  93.00  92.61  89.04   5.44
+
+  Macro-iteration number 130000 (130000 micro) of simulation 7
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 800.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.196   (8509 of 43508)  
+      DELETE (BDELETE)          Acc. Ratio: 0.196   (8507 of 43325)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.508   (21945 of 43167)  Max disp:  2.000
+      Number of Molecules (ins, blk, cum, stdd)  88.00  86.30  89.04   5.40
+
+  Macro-iteration number 135000 (135000 micro) of simulation 7
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 800.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.196   (8840 of 45209)  
+      DELETE (BDELETE)          Acc. Ratio: 0.196   (8835 of 45012)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.496   (22195 of 44779)  Max disp:  2.000
+      Number of Molecules (ins, blk, cum, stdd)  91.00  91.55  89.11   5.35
+
+  Macro-iteration number 140000 (140000 micro) of simulation 7
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 800.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.196   (9188 of 46867)  
+      DELETE (BDELETE)          Acc. Ratio: 0.197   (9178 of 46676)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.494   (22964 of 46457)  Max disp:  0.387
+      Number of Molecules (ins, blk, cum, stdd)  96.00  97.58  89.12   5.31
+
+  Macro-iteration number 145000 (145000 micro) of simulation 7
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 800.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.196   (9519 of 48598)  
+      DELETE (BDELETE)          Acc. Ratio: 0.197   (9515 of 48359)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.501   (24091 of 48043)  Max disp:  0.387
+      Number of Molecules (ins, blk, cum, stdd)  90.00  89.25  89.20   5.27
+
+  Macro-iteration number 150000 (150000 micro) of simulation 7
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 800.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.195   (9833 of 50316)  
+      DELETE (BDELETE)          Acc. Ratio: 0.197   (9832 of 50021)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.509   (25280 of 49663)  Max disp:  0.387
+      Number of Molecules (ins, blk, cum, stdd)  87.00  85.54  89.27   5.25
+
+  Macro-iteration number 155000 (155000 micro) of simulation 7
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 800.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.195   (10113 of 51913)  
+      DELETE (BDELETE)          Acc. Ratio: 0.196   (10105 of 51679)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.500   (25680 of 51408)  Max disp:  2.000
+      Number of Molecules (ins, blk, cum, stdd)  94.00  94.56  89.42   5.31
+
+  Macro-iteration number 160000 (160000 micro) of simulation 7
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 800.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.194   (10427 of 53615)  
+      DELETE (BDELETE)          Acc. Ratio: 0.195   (10416 of 53318)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.491   (26067 of 53067)  Max disp:  0.189
+      Number of Molecules (ins, blk, cum, stdd)  97.00  95.37  89.55   5.32
+
+  Macro-iteration number 165000 (165000 micro) of simulation 7
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 800.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.194   (10735 of 55339)  
+      DELETE (BDELETE)          Acc. Ratio: 0.195   (10734 of 54931)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.502   (27489 of 54730)  Max disp:  0.189
+      Number of Molecules (ins, blk, cum, stdd)  87.00  90.62  89.62   5.35
+
+  Macro-iteration number 170000 (170000 micro) of simulation 7
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 800.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.195   (11089 of 56967)  
+      DELETE (BDELETE)          Acc. Ratio: 0.196   (11085 of 56633)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.507   (28589 of 56400)  Max disp:  2.000
+      Number of Molecules (ins, blk, cum, stdd)  90.00  88.23  89.52   5.36
+
+  Macro-iteration number 175000 (175000 micro) of simulation 7
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 800.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.195   (11419 of 58584)  
+      DELETE (BDELETE)          Acc. Ratio: 0.196   (11414 of 58308)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.497   (28880 of 58108)  Max disp:  2.000
+      Number of Molecules (ins, blk, cum, stdd)  91.00  88.77  89.50   5.34
+
+  Macro-iteration number 180000 (180000 micro) of simulation 7
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 800.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.195   (11748 of 60235)  
+      DELETE (BDELETE)          Acc. Ratio: 0.196   (11751 of 60000)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.491   (29362 of 59765)  Max disp:  0.429
+      Number of Molecules (ins, blk, cum, stdd)  83.00  85.09  89.52   5.32
+
+  Macro-iteration number 185000 (185000 micro) of simulation 7
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 800.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.195   (12096 of 61905)  
+      DELETE (BDELETE)          Acc. Ratio: 0.196   (12092 of 61669)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.497   (30499 of 61426)  Max disp:  0.429
+      Number of Molecules (ins, blk, cum, stdd)  90.00  91.53  89.50   5.31
+
+  Macro-iteration number 190000 (190000 micro) of simulation 7
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 800.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.195   (12411 of 63589)  
+      DELETE (BDELETE)          Acc. Ratio: 0.196   (12402 of 63352)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.501   (31623 of 63059)  Max disp:  0.429
+      Number of Molecules (ins, blk, cum, stdd)  95.00  93.88  89.66   5.38
+
+  Macro-iteration number 195000 (195000 micro) of simulation 7
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 800.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.195   (12726 of 65212)  
+      DELETE (BDELETE)          Acc. Ratio: 0.196   (12723 of 65074)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.507   (32827 of 64714)  Max disp:  0.429
+      Number of Molecules (ins, blk, cum, stdd)  89.00  88.81  89.69   5.43
+
+  Macro-iteration number 200000 (200000 micro) of simulation 7
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 800.00 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.195   (13060 of 66834)  
+      DELETE (BDELETE)          Acc. Ratio: 0.196   (13053 of 66739)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.506   (33601 of 66427)  Max disp:  2.000
+      Number of Molecules (ins, blk, cum, stdd)  93.00  94.73  89.68   5.42
+
+------------------------------------------------------------
+Ending GCMC simulation number 7    Nrg dev check: 0.434E-11
+  Methane:  P (kPa): 800.0    loading (molec/uc): 11.21
+------------------------------------------------------------
+------------------------------------------------------------
+Beginning GCMC simulation number 8 of 8   (200000 steps)
+------------------------------------------------------------
+The GCMC Simulation Parameters:
+  Simulation Number :    8
+  Configuration file: long.con.8
+  Restart file      : long.res.8
+  ------------------------------------------------------------
+  GCMC Species Parameters:
+    ----------------------------------------------------------
+    Species Name: Methane
+      Press.(kPa)   Fugacity      murti   B(Adams)
+         1000.000   1000.000    -12.464      2.338
+    ----------------------------------------------------------
+
+
+  Macro-iteration number 5000 (5000 micro) of simulation 8
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 1000.0 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.166   (273 of 1647)  
+      DELETE (BDELETE)          Acc. Ratio: 0.153   (263 of 1724)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.495   (806 of 1629)  Max disp:  0.419
+      Number of Molecules (ins, blk, cum, stdd) 103.00 104.59  95.34   4.71
+
+  Macro-iteration number 10000 (10000 micro) of simulation 8
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 1000.0 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.157   (521 of 3316)  
+      DELETE (BDELETE)          Acc. Ratio: 0.153   (523 of 3426)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.510   (1663 of 3258)  Max disp:  2.000
+      Number of Molecules (ins, blk, cum, stdd)  91.00  90.91  95.50   4.54
+
+  Macro-iteration number 15000 (15000 micro) of simulation 8
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 1000.0 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.158   (792 of 5003)  
+      DELETE (BDELETE)          Acc. Ratio: 0.154   (787 of 5103)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.493   (2413 of 4894)  Max disp:  1.785
+      Number of Molecules (ins, blk, cum, stdd)  98.00  96.73  96.05   4.47
+
+  Macro-iteration number 20000 (20000 micro) of simulation 8
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 1000.0 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.161   (1073 of 6667)  
+      DELETE (BDELETE)          Acc. Ratio: 0.157   (1064 of 6762)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.506   (3327 of 6571)  Max disp:  1.036
+      Number of Molecules (ins, blk, cum, stdd) 102.00 100.50  95.31   4.84
+
+  Macro-iteration number 25000 (25000 micro) of simulation 8
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 1000.0 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.161   (1344 of 8369)  
+      DELETE (BDELETE)          Acc. Ratio: 0.161   (1347 of 8354)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.497   (4117 of 8277)  Max disp:  0.589
+      Number of Molecules (ins, blk, cum, stdd)  90.00  90.67  95.57   4.86
+
+  Macro-iteration number 30000 (30000 micro) of simulation 8
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 1000.0 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.160   (1597 of 10010)  
+      DELETE (BDELETE)          Acc. Ratio: 0.160   (1601 of 10001)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.492   (4911 of 9989)  Max disp:  0.321
+      Number of Molecules (ins, blk, cum, stdd)  89.00  89.24  95.64   5.01
+
+  Macro-iteration number 35000 (35000 micro) of simulation 8
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 1000.0 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.163   (1902 of 11673)  
+      DELETE (BDELETE)          Acc. Ratio: 0.162   (1901 of 11714)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.490   (5691 of 11613)  Max disp:  0.584
+      Number of Molecules (ins, blk, cum, stdd)  94.00  94.44  95.40   4.84
+
+  Macro-iteration number 40000 (40000 micro) of simulation 8
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 1000.0 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.164   (2193 of 13367)  
+      DELETE (BDELETE)          Acc. Ratio: 0.164   (2200 of 13398)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.502   (6647 of 13235)  Max disp:  0.584
+      Number of Molecules (ins, blk, cum, stdd)  86.00  86.82  94.87   5.05
+
+  Macro-iteration number 45000 (45000 micro) of simulation 8
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 1000.0 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.164   (2462 of 15013)  
+      DELETE (BDELETE)          Acc. Ratio: 0.163   (2461 of 15052)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.503   (7514 of 14935)  Max disp:  1.156
+      Number of Molecules (ins, blk, cum, stdd)  94.00  93.31  94.88   4.98
+
+  Macro-iteration number 50000 (50000 micro) of simulation 8
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 1000.0 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.163   (2729 of 16756)  
+      DELETE (BDELETE)          Acc. Ratio: 0.165   (2741 of 16622)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.492   (8172 of 16622)  Max disp:  0.658
+      Number of Molecules (ins, blk, cum, stdd)  81.00  83.39  94.92   4.96
+
+  Macro-iteration number 55000 (55000 micro) of simulation 8
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 1000.0 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.163   (3002 of 18396)  
+      DELETE (BDELETE)          Acc. Ratio: 0.165   (3005 of 18257)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.501   (9198 of 18347)  Max disp:  0.658
+      Number of Molecules (ins, blk, cum, stdd)  90.00  94.72  94.66   4.97
+
+  Macro-iteration number 60000 (60000 micro) of simulation 8
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 1000.0 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.164   (3280 of 20054)  
+      DELETE (BDELETE)          Acc. Ratio: 0.164   (3276 of 19921)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.507   (10152 of 20025)  Max disp:  0.658
+      Number of Molecules (ins, blk, cum, stdd)  97.00  98.81  94.75   5.03
+
+  Macro-iteration number 65000 (65000 micro) of simulation 8
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 1000.0 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.164   (3567 of 21741)  
+      DELETE (BDELETE)          Acc. Ratio: 0.165   (3569 of 21594)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.506   (10954 of 21665)  Max disp:  1.125
+      Number of Molecules (ins, blk, cum, stdd)  91.00  91.88  94.71   4.99
+
+  Macro-iteration number 70000 (70000 micro) of simulation 8
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 1000.0 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.164   (3854 of 23445)  
+      DELETE (BDELETE)          Acc. Ratio: 0.166   (3852 of 23232)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.495   (11544 of 23323)  Max disp:  1.125
+      Number of Molecules (ins, blk, cum, stdd)  95.00  92.65  94.88   4.96
+
+  Macro-iteration number 75000 (75000 micro) of simulation 8
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 1000.0 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.164   (4121 of 25136)  
+      DELETE (BDELETE)          Acc. Ratio: 0.166   (4121 of 24834)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.497   (12441 of 25030)  Max disp:  0.241
+      Number of Molecules (ins, blk, cum, stdd)  93.00  93.91  94.97   4.98
+
+  Macro-iteration number 80000 (80000 micro) of simulation 8
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 1000.0 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.164   (4393 of 26775)  
+      DELETE (BDELETE)          Acc. Ratio: 0.166   (4396 of 26522)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.501   (13387 of 26703)  Max disp:  2.000
+      Number of Molecules (ins, blk, cum, stdd)  90.00  90.06  95.01   5.01
+
+  Macro-iteration number 85000 (85000 micro) of simulation 8
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 1000.0 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.165   (4700 of 28423)  
+      DELETE (BDELETE)          Acc. Ratio: 0.167   (4706 of 28213)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.498   (14139 of 28364)  Max disp:  0.232
+      Number of Molecules (ins, blk, cum, stdd)  87.00  86.83  94.66   5.23
+
+  Macro-iteration number 90000 (90000 micro) of simulation 8
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 1000.0 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.166   (4998 of 30069)  
+      DELETE (BDELETE)          Acc. Ratio: 0.167   (4998 of 29870)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.503   (15122 of 30061)  Max disp:  1.715
+      Number of Molecules (ins, blk, cum, stdd)  93.00  91.35  94.55   5.21
+
+  Macro-iteration number 95000 (95000 micro) of simulation 8
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 1000.0 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.167   (5300 of 31677)  
+      DELETE (BDELETE)          Acc. Ratio: 0.168   (5302 of 31557)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.492   (15641 of 31766)  Max disp:  0.220
+      Number of Molecules (ins, blk, cum, stdd)  91.00  89.08  94.47   5.16
+
+  Macro-iteration number 100000 (100000 micro) of simulation 8
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 1000.0 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.168   (5601 of 33315)  
+      DELETE (BDELETE)          Acc. Ratio: 0.168   (5600 of 33249)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.510   (17051 of 33436)  Max disp:  0.220
+      Number of Molecules (ins, blk, cum, stdd)  94.00  95.28  94.38   5.09
+
+  Macro-iteration number 105000 (105000 micro) of simulation 8
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 1000.0 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.168   (5869 of 34975)  
+      DELETE (BDELETE)          Acc. Ratio: 0.168   (5861 of 34925)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.493   (17321 of 35100)  Max disp:  1.886
+      Number of Molecules (ins, blk, cum, stdd) 101.00 100.96  94.44   5.03
+
+  Macro-iteration number 110000 (110000 micro) of simulation 8
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 1000.0 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.167   (6124 of 36668)  
+      DELETE (BDELETE)          Acc. Ratio: 0.167   (6125 of 36586)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.498   (18306 of 36746)  Max disp:  0.347
+      Number of Molecules (ins, blk, cum, stdd)  92.00  90.89  94.67   5.11
+
+  Macro-iteration number 115000 (115000 micro) of simulation 8
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 1000.0 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.167   (6399 of 38333)  
+      DELETE (BDELETE)          Acc. Ratio: 0.167   (6398 of 38211)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.510   (19612 of 38456)  Max disp:  1.914
+      Number of Molecules (ins, blk, cum, stdd)  94.00  97.64  94.72   5.09
+
+  Macro-iteration number 120000 (120000 micro) of simulation 8
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 1000.0 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.167   (6674 of 40027)  
+      DELETE (BDELETE)          Acc. Ratio: 0.167   (6674 of 39906)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.496   (19877 of 40067)  Max disp:  1.914
+      Number of Molecules (ins, blk, cum, stdd)  93.00  92.82  94.73   5.02
+
+  Macro-iteration number 125000 (125000 micro) of simulation 8
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 1000.0 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.167   (6953 of 41720)  
+      DELETE (BDELETE)          Acc. Ratio: 0.167   (6946 of 41539)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.494   (20616 of 41741)  Max disp:  0.479
+      Number of Molecules (ins, blk, cum, stdd) 100.00 100.62  94.86   5.02
+
+  Macro-iteration number 130000 (130000 micro) of simulation 8
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 1000.0 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.166   (7199 of 43346)  
+      DELETE (BDELETE)          Acc. Ratio: 0.167   (7198 of 43189)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.502   (21803 of 43465)  Max disp:  0.479
+      Number of Molecules (ins, blk, cum, stdd)  94.00  94.77  94.93   5.01
+
+  Macro-iteration number 135000 (135000 micro) of simulation 8
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 1000.0 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.166   (7478 of 45016)  
+      DELETE (BDELETE)          Acc. Ratio: 0.166   (7470 of 44883)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.508   (22892 of 45101)  Max disp:  0.479
+      Number of Molecules (ins, blk, cum, stdd) 101.00  98.99  94.96   4.99
+
+  Macro-iteration number 140000 (140000 micro) of simulation 8
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 1000.0 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.166   (7747 of 46629)  
+      DELETE (BDELETE)          Acc. Ratio: 0.166   (7738 of 46576)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.509   (23805 of 46795)  Max disp:  0.904
+      Number of Molecules (ins, blk, cum, stdd) 102.00 101.19  95.09   5.00
+
+  Macro-iteration number 145000 (145000 micro) of simulation 8
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 1000.0 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.166   (8028 of 48344)  
+      DELETE (BDELETE)          Acc. Ratio: 0.166   (8019 of 48193)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.506   (24545 of 48463)  Max disp:  0.904
+      Number of Molecules (ins, blk, cum, stdd) 102.00 100.56  95.15   5.01
+
+  Macro-iteration number 150000 (150000 micro) of simulation 8
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 1000.0 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.166   (8288 of 50048)  
+      DELETE (BDELETE)          Acc. Ratio: 0.166   (8285 of 49836)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.504   (25260 of 50116)  Max disp:  0.904
+      Number of Molecules (ins, blk, cum, stdd)  96.00  93.84  95.19   4.97
+
+  Macro-iteration number 155000 (155000 micro) of simulation 8
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 1000.0 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.166   (8571 of 51776)  
+      DELETE (BDELETE)          Acc. Ratio: 0.166   (8565 of 51499)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.502   (25981 of 51725)  Max disp:  0.904
+      Number of Molecules (ins, blk, cum, stdd)  99.00  96.50  95.19   5.00
+
+  Macro-iteration number 160000 (160000 micro) of simulation 8
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 1000.0 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.165   (8836 of 53424)  
+      DELETE (BDELETE)          Acc. Ratio: 0.166   (8835 of 53154)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.501   (26753 of 53422)  Max disp:  0.904
+      Number of Molecules (ins, blk, cum, stdd)  94.00  92.02  95.21   4.99
+
+  Macro-iteration number 165000 (165000 micro) of simulation 8
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 1000.0 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.166   (9122 of 55053)  
+      DELETE (BDELETE)          Acc. Ratio: 0.166   (9113 of 54837)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.500   (27530 of 55110)  Max disp:  0.904
+      Number of Molecules (ins, blk, cum, stdd) 102.00 104.11  95.20   4.99
+
+  Macro-iteration number 170000 (170000 micro) of simulation 8
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 1000.0 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.166   (9404 of 56689)  
+      DELETE (BDELETE)          Acc. Ratio: 0.166   (9400 of 56539)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.498   (28281 of 56772)  Max disp:  0.904
+      Number of Molecules (ins, blk, cum, stdd)  97.00  98.94  95.22   4.94
+
+  Macro-iteration number 175000 (175000 micro) of simulation 8
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 1000.0 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.166   (9660 of 58344)  
+      DELETE (BDELETE)          Acc. Ratio: 0.166   (9665 of 58181)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.497   (29053 of 58475)  Max disp:  0.904
+      Number of Molecules (ins, blk, cum, stdd)  88.00  87.50  95.25   4.96
+
+  Macro-iteration number 180000 (180000 micro) of simulation 8
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 1000.0 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.165   (9924 of 60001)  
+      DELETE (BDELETE)          Acc. Ratio: 0.166   (9919 of 59837)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.495   (29798 of 60162)  Max disp:  0.904
+      Number of Molecules (ins, blk, cum, stdd)  98.00  98.51  95.29   4.98
+
+  Macro-iteration number 185000 (185000 micro) of simulation 8
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 1000.0 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.165   (10181 of 61713)  
+      DELETE (BDELETE)          Acc. Ratio: 0.165   (10171 of 61520)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.494   (30497 of 61767)  Max disp:  0.904
+      Number of Molecules (ins, blk, cum, stdd) 103.00 101.99  95.39   4.97
+
+  Macro-iteration number 190000 (190000 micro) of simulation 8
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 1000.0 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.165   (10436 of 63347)  
+      DELETE (BDELETE)          Acc. Ratio: 0.165   (10435 of 63214)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.492   (31219 of 63439)  Max disp:  0.904
+      Number of Molecules (ins, blk, cum, stdd)  94.00  96.29  95.44   4.96
+
+  Macro-iteration number 195000 (195000 micro) of simulation 8
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 1000.0 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.165   (10695 of 64985)  
+      DELETE (BDELETE)          Acc. Ratio: 0.165   (10695 of 64839)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.491   (32013 of 65176)  Max disp:  0.904
+      Number of Molecules (ins, blk, cum, stdd)  93.00  95.47  95.48   4.95
+
+  Macro-iteration number 200000 (200000 micro) of simulation 8
+  ------------------------------------------------------------
+  The GCMC Stats:
+    Species Name: Methane    Pressure: 1000.0 kPa
+      INSERT (BINSERT)          Acc. Ratio: 0.164   (10959 of 66678)  
+      DELETE (BDELETE)          Acc. Ratio: 0.165   (10963 of 66550)  
+      TRANSLATE (RTRANSLATE)    Acc. Ratio: 0.490   (32739 of 66772)  Max disp:  0.904
+      Number of Molecules (ins, blk, cum, stdd)  89.00  91.42  95.36   4.97
+
+------------------------------------------------------------
+Ending GCMC simulation number 8    Nrg dev check: 0.710E-11
+  Methane:  P (kPa): 1000.0    loading (molec/uc): 11.92
+------------------------------------------------------------
+Main Program   Time: 27.139 min   Number of calls: 1   Time per call: 27.139 min

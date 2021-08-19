@@ -1,0 +1,69 @@
+# control file for md of butane in Ideal gas phase.
+#
+#
+------ General Information ------------------------------------------
+Butane ideal gas
+1000                 # No. of iterations
+100                  # No. of steps between writes to output/log file
+100                  # No. of steps between writes to crash file
+100                  # No. of steps between writes to config. file
+1                    # Start numbering simulations from .
+1                    # Iseed for rnadom number generator
+4                    # specifies contents of config file
+butane.res           # Restart File to write to
+butane.con           # Configuration File
+------ Atomic Types --------------------------------------------------
+2                    # number of atomic types
+           	     
+Methyl               # atom type
+Methyl.atm           # basic atom info file
+		     
+Methylene            # atom type           
+Methylene.atm        # basic atom info file
+		     
+------ Molecule Types -------------------------------------------------
+1                    # number of sorbate types
+		     
+Butane               # sorbate 
+Butane.mol           # sorbate coordinates file
+		     
+------ Simulation Cell Information --------------------------------------
+NULL                 # Filename with simulation cell info
+       20.07000      19.92000      13.42000   # unit cell edge lengths
+       90.00000      90.00000      90.00000   # unit cell angles
+        0.00000       0.00000       0.00000   # origin of unit cell
+       20.07000      19.92000      13.42000   # effective bound box size
+2, 2, 2              # No. of unit cells in x, y, z direction
+1, 1, 1              # (1 = Periodic) in x, y, z
+------ Forcefield Information -------------------------------------------
+BASIC                # forcefield identifier
+MOL                  # storage level
+atm_atm_file         # atom-atom interaction file 
+spc_spc_file         # sorbate-sorbate interaction file 
+intramolecular_file  # intramolecular interaction file/specification
+------ MD Information -------------------------------------------------
+1                    # Number of MD Move types listed
+start_config         # Initial velocities (Generate, filename)
+
+INTEGRATE            # Type of move
+1                    # No. of moves
+0.001                # Time step, ps
+300.0                # Simulation temperature
+1000                 # Steps between writes to std IO
+100000               # Steps between writes to std IO
+NVE                  # Ensemble to simulate in (NVT, NVE)
+VelocityVerlet       # Integretor
+------ Configuration Initialization -------------------------------------
+Butane                            # Sorbate_Type  
+RESTARTFILE start_config          # Source Filename
+--------  Main Datafile Information -------------------------------------
+Energy, position, Velocity, pair_energy, time # contents of datafile
+------M ovie Information ------------------------------------------------
+movie.xyz          # Movie filename
+0, 1000            # Starting step, ending step
+10                 # Steps between frames
+No                 # Include zeolite in movie
+1, 1, 1            # Number of unit cells to dump in x, y, z directions
+
+
+

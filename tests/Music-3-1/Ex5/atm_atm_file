@@ -1,0 +1,46 @@
+# for now all hydrogens are off
+#
+#
+Silicon   Silicon   OFF
+Silicon   Oxygen    OFF
+Oxygen    Oxygen    OFF
+Methyl    Oxygen    OFF
+Methylene Oxygen    OFF
+
+################### Used by Maginn et al. #####################
+Methane   Methane   LJ SIG@3.730  EPS@148.013  HICUT@13.0  LOCUT@0.5
+Methylene Methylene LJ SIG@3.93   EPS@47.00    HICUT@13.0  LOCUT@0.5 
+Methyl    Methyl    LJ SIG@3.77   EPS@98.1     HICUT@13.0  LOCUT@0.5 
+Methyl    Methylene LJ SIG@3.84   EPS@67.9     HICUT@13.0  LOCUT@0.5
+CH        Methyl    LJ SIG@3.93   EPS@34.3     HICUT@13.0  LOCUT@0.5
+CH        Methylene LJ SIG@4.01   EPS@23.8     HICUT@13.0  LOCUT@0.5
+CH        CH        LJ SIG@4.10   EPS@12.0     HICUT@13.0  LOCUT@0.5
+################### Used by Maginn et al. #####################
+
+Carbon    Methyl    LJ SIG@LBMIX   EPS@LBMIX     HICUT@13.0  LOCUT@0.5
+Carbon    Methylene LJ SIG@LBMIX   EPS@LBMIX     HICUT@13.0  LOCUT@0.5
+Carbon    CH        LJ SIG@LBMIX   EPS@LBMIX     HICUT@13.0  LOCUT@0.5
+		    
+Oxygen    Methyl    LJ SIG@LBMIX   EPS@LBMIX     HICUT@13.0  LOCUT@0.5
+Oxygen    Methylene LJ SIG@LBMIX   EPS@LBMIX     HICUT@13.0  LOCUT@0.5
+Oxygen    CH        LJ SIG@LBMIX   EPS@LBMIX     HICUT@13.0  LOCUT@0.5
+
+Oxygen    Oxygen    LJ SIG@3.12   EPS@85.58     HICUT@13.0  LOCUT@0.5
+Carbon    Carbon    LJ SIG@3.50   EPS@33.22     HICUT@13.0  LOCUT@0.5
+Hydrogen  Hydrogen  LJ SIG@2.50   EPS@15.0      HICUT@13.0  LOCUT@0.5
+
+Carbon    Oxygen    LJ SIG@LBMIX   EPS@LBMIX     HICUT@13.0  LOCUT@0.5
+Hydrogen  Carbon    LJ SIG@LBMIX   EPS@LBMIX     HICUT@13.0  LOCUT@0.5
+Hydrogen  Oxygen    LJ SIG@LBMIX   EPS@LBMIX     HICUT@13.0  LOCUT@0.5
+Hydrogen  Methyl    LJ SIG@LBMIX   EPS@LBMIX     HICUT@13.0  LOCUT@0.5
+Hydrogen  Methylene LJ SIG@LBMIX   EPS@LBMIX     HICUT@13.0  LOCUT@0.5
+Hydrogen  CH        LJ SIG@LBMIX   EPS@LBMIX     HICUT@13.0  LOCUT@0.5
+
+
+## Coulombic
+Oxygen    Oxygen    COUL
+Carbon    Carbon    COUL
+Oxygen    Carbon    COUL
+Hydrogen  Carbon    COUL
+Hydrogen  Oxygen    COUL
+Hydrogen  Hydrogen  COUL

@@ -1,0 +1,4 @@
+Intra: n_Butane  BENDING  TORSION
+Intra: n_Hexane  BENDING  TORSION  INTRAPAIR 
+Intra: Methanol
+Intra: sili 
