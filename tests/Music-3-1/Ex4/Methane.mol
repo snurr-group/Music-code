@@ -1,7 +1,0 @@
-### Methane Molecule File
-
-Molecule_Name:  Methane                  
-
-Coord_Info: Listed Cartesian Rigid
-    1     # number of atoms in molecule
-    1    0.000000    0.000000    0.000000      Methane   0.0  0   0   #x,y,z,name,set,type
